@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reference03</title>
+    <style>
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NexonLv1Gothic';
+            line-height: 1.6;
+        }
+
+        body {
+            padding: 5%;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: rgb(255, 255, 255);
+            border-width: 0px;
+            border-bottom-width: 1px;
+        }
+
+        h1 {
+            padding-bottom: 20px;
+        }
+
+        .listl li {
+            display: inline;
+        }
+
+        .listl li a {
+            border: 1px solid #333;
+            padding: 8px 30px 5px 30px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .refer {
+            background: #000;
+            color: rgb(226, 226, 226);
+            padding: 0 10 0 10;
+            border-radius: 30px;
+
+        }
+
+            {
+            margin-top: 30px;
+            background-color: rgb(235, 181, 181);
+            color: #000;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 400;
+            padding: 0 10px 0 10px;
+            font-size: 24px;
+        }
+
+        .css {
+            font-size: 15px;
+            background: rgba(42, 165, 128, 0.199);
+            padding: 50px 50px 50px 50px;
+            border: cadetblue;
+            border-left: thick solid #000;
+
+            border-style: dashed;
+            border-color: rgb(174, 59, 228);
+            border-width: 0px;
+            border-bottom-width: 1px;
+
+        }
+    </style>
+</head>
+<h1>자바스크립트 식별자/키워드</h1>
+</head>
+<h2>키워드</h2>
+
+<body>
+
+    <p>자바스크립트가 처음 만들어질 때 정해진 특별한 의미가 있는 단어를 말한다. 다음 표는 자바 스크립트의 키워드이다. 현재 모든 브라우저에서 다음과 같은 28가지의 키워드를 지원한다
+    </p>
+
+    <hr>
+
+    <h2>식별자</h2>
+
+    <p>식별자는 자바 스크립트에서 이름을 붙일 때 사용하는 단어이다. 식별자의 예로는 변수명과 함수명이 있다. 식별자를 만들 때는 다음 규칙을 지켜야 한다.
+    </p>
+
+    <p>
+        1. 키워드를 사용하면 안된다.
+    </p>
+    <p>
+        2. 숫자로 시작하면 안된다.
+    </p>
+    <p>
+        3. 특수문자는 _.$만을 허용한다.
+    </p>
+    <p>
+        4. 공백 문자를 포함할 수 없다.
+    </p>
+
+</body>

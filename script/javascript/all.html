@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <style>
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NexonLv1Gothic';
+            line-height: 1.6;
+        }
+
+        body {
+            padding: 5%;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: rgb(142, 81, 170);
+            border-width: 0px;
+            border-bottom-width: 1px;
+        }
+
+        h1 {
+            padding-bottom: 20px;
+        }
+
+        .listl li {
+            display: inline;
+        }
+
+        .listl li a {
+            border: 1px solid #333;
+            padding: 8px 30px 5px 30px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .refer {
+            background: #000;
+            color: rgb(241, 240, 240);
+            padding: 2px 5px 2px 5px;
+            border-radius: 300px;
+
+        }
+
+        h2 {
+            margin-top: 30px;
+            background-color: rgb(235, 181, 181);
+            color: #000;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 400;
+            padding: 0 10px 0 10px;
+            font-size: 24px;
+        }
+
+        .sample {
+            border-radius: 5px;
+        }
+
+        .sample h3 {
+            background: #e5e5e5;
+            font-size: 16px;
+            padding: 20px 20px 15px 20px;
+            border-radius: 5px 5px 0 0;
+            border-bottom: 1px solid #e6e6e6;
+
+        }
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0 !important;
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/prism.css">
+</head>
+
+<body>
+
+    <hr>
+
+    <!-- //sample1 -->
+
+    <div id="samp01" class="sample">
+        <h3>1. 변수 : 데이터 저장</h3>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    var x = 100; //변수 x에 숫자 100을 저장
+    var y = 200; //변수 y에 숫자 200을 저장
+    var z = "javascript"; //변수 z에 문자 javascript를 저장
+        
+    document.write("*** 1. 변수 ***");
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+        
+            </code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- //sample2 -->
+
+    <div id="samp" class="sample">
+        <h3>2. 변수 : 데이터 저장 + 데이터 변경</h3>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+    x = 300;
+    y = 400;
+    z = "jquery";
+        
+    document.write("*** 2. 변수 ***");
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}    
+        
+            </code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- //sample3 -->
+
+    <div id="samp" class="sample">
+        <h3>3. 변수 : 데이터 저장 + 데이터 변경 + 테이터 추가</h3>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300;
+    y -= 600;
+    z += "<br>jQuery";
+
+    document.write("*** 3. 변수 ***");
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+    
+     <!-- //sample4 -->
+
+    <div id="samp" class="sample">
+        <h3>4. 변수 : 변수의 종류 : 지역변수 + 전역변수 + 매개변수</h3>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+        let x = 100;
+        let y = 200;
+        let z = "javascript";
+        
+        document.write("*** 4. 변수 : 변수의 종류 ***");
+        document.write(x);
+        document.write(y);
+        document.write(z);
+
+    
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+     <!-- //sample5 -->
+
+     <div id="samp" class="sample">
+        <h3>5. 상수 : 데이터 저장소 + 데이터 변경</h3>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const x = 100;
+    const y = 200;
+    const z = "javascript";
+
+    // x = 300;
+    // y = 400;
+    // z ="jQuery";
+
+    document.write("*** 5. 상수 ***");
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- //sample6 -->
+
+    <div id="samp" class="sample">
+       <h3>6. 배열 : 여러개의 데이터 저장 : 표현방법 1</h3>
+       <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+        const arr = new Array();
+        arr[0] = 100; 
+        arr[1] = 200;
+        arr[2] = "javascript";
+
+        document.write("*** 6. 배열 ***");
+        document.write(arr[0]);
+        document.write(arr[1]);
+        document.write(arr[2]);
+
+}
+</code></pre>
+       </div>
+   </div>
+
+   <hr>
+
+    <!-- //sample7 -->
+
+    <div id="samp" class="sample">
+        <h3>7. 배열 : 여러개의 데이터 저장 : 표현방법 2</h3>
+        <div class="code">
+ <pre class="line-numbers"><code class="language-js">{
+        const arr = new Array(100, 200, "javascript")
+    
+        document.write("*** 7. 배열 ***");
+        document.write(arr[0]);
+        document.write(arr[1]);
+        document.write(arr[2]);
+}
+ </code></pre>
+        </div>
+    </div>
+ 
+   <hr>
+
+   <!-- //sample8 -->
+
+   <div id="samp" class="sample">
+       <h3>8. 배열 : 여러개의 데이터 저장 : 표현방법 3</h3>
+       <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+        const arr = [];
+        arr[0] = 100;
+        arr[1] = 200;
+        arr[2] = "javascript";
+
+        document.write("*** 8. 배열 ***");
+        document.write(arr[0]);
+        document.write(arr[1]);
+        document.write(arr[2]);
+}
+</code></pre>
+       </div>
+   </div>
+
+   
+   <hr>
+
+    <!-- //sample9 -->
+
+    <div id="samp" class="sample">
+        <h3>9. 배열 : 여러개의 데이터 저장 : 표현방법 4</h3>
+        <div class="code">
+ <pre class="line-numbers"><code class="language-js">{
+        const arr  = [100, 200, "javascript"]
+
+        document.write("*** 9. 배열 ***");
+        document.write(arr[0]);
+        document.write(arr[1]);
+        document.write(arr[2]);
+}
+ </code></pre>
+        </div>
+    </div>
+    
+   <hr>
+
+   <!-- //sample10 -->
+
+   <div id="samp" class="sample">
+       <h3>10. 객체 : 데이터를 저장 (키와 값) : 표현 방법1</h3>
+       <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = new Object();
+    obj[0] =100;
+    obj[1] =200;
+    obj[2] ="javascript";
+
+    document.write("*** 10. 객체 ***");
+    document.write(obj[0]);
+    document.write(obj[1]);
+    document.write(obj[2]);
+
+}
+</code></pre>
+       </div>
+   </div>
+   
+   <hr>
+
+    <!-- //sample11 -->
+
+    <div id="samp" class="sample">
+        <h3> 11. 객체 : 데이터를 저장 (키와 값) : 표현방법 2</h3>
+        <div class="code">
+ <pre class="line-numbers"><code class="language-js">{
+    const obj = new Object();
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+
+    document.write("*** 11. 객체 ***");
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+
+}
+ </code></pre>
+        </div>
+    </div>
+    
+   <hr>
+
+   <!-- //sample12 -->
+
+   <div id="samp" class="sample">
+       <h3>12. 객체 : 데이터를 저장 (키와 값) : 표현방법 3</h3>
+       <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {};
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+
+    document.write("*** 12. 객체 ***");
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+
+}
+
+</code></pre>
+       </div>
+   </div>
+   
+   <hr>
+
+    <!-- //sample13 -->
+
+    <div id="samp" class="sample">
+        <h3>13. 객체 : 데이터를 저장 (키와 값) : 표현방법 4</h3>
+        <div class="code">
+ <pre class="line-numbers"><code class="language-js">{       
+    const obj = { a:100, b:200, c:"javascript"};
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+
+    document.write("*** 13. 객체 ***");
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+
+ </code></pre>
+        </div>
+    </div>
+
+
+</body>
+<script src="../assets/js/prism.js"></script>
+<!--javascript  -->
