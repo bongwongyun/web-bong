@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -91,7 +91,84 @@
         <li><a href="javascript04.html">데이터 제어하기</a></li>
     </ul>
     <h2>데이터 불러오기</h2>
+    <ul>
+        <li>1. 변수 : 데이터 불러오기</li>
+        <li>2. 상수 : 데이터 불러오기</li>
+        <li>3. 배열 : 데이터 불러오기</li>
+        <li>4. 배열 : 데이터 불러오기 : 2차 배열</li>
+        <li>5. 배열 : 데이터 불러오기 : 갯수 구하기</li>
+        <li>6. 배열 : 데이터 불러오기 : for ()</li>
+        <li>7. 배열 : 데이터 불러오기 : forEzch ()</li>
+        <li>8. 배열 : 데이터 불러오기 : for of</li>
+        <li>9. 배열 : 데이터 불러오기 : for in</li>
+        <li>10. 배열 : 데이터 불러오기 : map()</li>
+        <li>11. 배열 : 데이터 불러오기 : 펼침연산자</li>
+        <li>12. 객체 : 데이터 불러오기 : 기본</li>
+        <li>13. 객체 : 데이터 불러오기 : Object</li>
+        <li>14. 객체 : 데이터 불러오기 : 변수</li>
+        <li>15. 객체 : 데이터 불러오기 : for in</li>
+        <li>16. 객체 : 데이터 불러오기 : map()</li>
+        <li>17. 객체 : 데이터 불러오기 : hasOwnproperty()</li>
+        <li>18. 객체 : 데이터 불러오기 : 펼침 연산자 - 복사</li>
+        <li>19. 객체 : 데이터 불러오기 : 펼침 연산자 - 추가</li>
+        <li>20. 객체 : 데이터 불러오기 : 펼침 연산자 - 결합</li>
+        <li>21. 객체 : 데이터 불러오기 : 비구조화 할당</li>
+        <li>22. 객체 : 데이터 불러오기 : 비구조화 할당</li>
 
+    </ul>
+
+    <hr>
+    <script src="/assets/js/prism.js"></script>
+    <!-- javascript -->
+    <script>
+        // 1. 변수 : 데이터 불러오기
+        {
+            let x = 100,
+                y = 200,
+                z = "javascript"
+
+            document.write("<br>*** 1. 변수 ***<br>")
+            document.write(x, "<br>")
+            document.write(y, "<br>")
+            document.write(z, "<br>")
+        }
+        // 2. 상수 : 데이터 불러오기
+        {
+            const x = 100,
+                y = 200,
+                z = "javascript";
+
+            document.write("<br>*** 2. 상수 ***<br>")
+            document.write(x, "<br>")
+            document.write(y, "<br>")
+            document.write(z, "<br>")
+        }
+        // 3. 배열 : 데이터 불러오기
+        {
+            const arr = [100, 200, "javascript"];
+
+            document.write("<br>*** 3. 배열 ***<br>")
+            document.write(arr[0], "<br>")
+            document.write(arr[1], "<br>")
+            document.write(arr[2], "<br>")
+        }
+        //04. 배열 : 데이터 불러오기 : 2차 배열
+        {
+            const arr = [100, 200, ["javascript","jquery"]];
+           
+            document.write("<br>*** 04. 배열 ***<br>");
+            document.write(arr[0], "<br>")
+            document.write(arr[1], "<br>")
+            document.write(arr[2][0], "<br>")
+            document.write(arr[2][1], "<br>")
+        }
+        //05. 배열 : 데이터 불러오기 : 갯수 구하기
+        {
+            const arr = [100, 200, "javascript"];
+            document.write("<br>*** 05. 배열 ***<br>");
+            document.write(arr.length);
+        }
+    </script>
 </body>
 
 </html>
