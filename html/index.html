@@ -68,9 +68,9 @@
         #contents h2 {
             font-size: 80px;
             text-align: center;
-            padding: 15% 5% 5% 5%;
+            padding: 5% 5% 5% 5%;
         }
-        #contents em {
+        #contents h2 em {
               font-style: normal;
               color: #009900;
         }
@@ -82,9 +82,10 @@
         #contents .refer table {
             width: 100%;
             border: 1px solid #aaa;
+            border-collapse: collapse;
         }
         #contents .refer table caption {
-            text-indent: -99999;
+            text-indent: -9999px;
         }
         #contents .refer table th {
             border: 1px solid #aaa;
@@ -98,7 +99,7 @@
             font-weight: 300;
         }
         
-        #contents .refer table td:hover {
+        #contents .refer table tbody td:hover {
             background: #009900;
             color: #fff;
             cursor: grab;
@@ -110,13 +111,15 @@
         <h1>라인 중학교 1학년 코딩반</h1>
         <strong>봉원균</strong>
     </header>
+
     <main id="contents">
         <h2>HTML <em>레퍼런스 북</em></h2>
         <section class="refer">
             <table>
                 <caption>HTML 레퍼런스 록성과 설명을 나타내는 표입니다.</caption>
                 <colgroup>
-                    <col styl=""/>
+                    <col style="width: 30%" />
+                    <col style="width: 70%" />
                 </colgroup>
                 <thead>
                 <tr>
