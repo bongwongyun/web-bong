@@ -9,6 +9,7 @@
         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
     font-display: swap;
 }
+
 @font-face {
     font-family: 'NexonLv1Gothic';
     font-weight: 400;
@@ -20,6 +21,7 @@
         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
     font-display: swap;
 }
+
 @font-face {
     font-family: 'NexonLv1Gothic';
     font-weight: 700;
@@ -38,9 +40,11 @@
     padding: 0;
     font-family: 'NexonLv1Gothic';
 }
+
 li {
     list-style: none;
 }
+
 a {
     text-decoration: none;
     color: #000;
@@ -50,13 +54,16 @@ a {
 #header {
     padding: 30px;
 }
+
 #header h1 {
     margin-bottom: 30px;
     font-size: 40px;
 }
+
 #header nav ul li {
     display: inline;
 }
+
 #header nav ul li a {
     font-size: 20px;
     border: 1px solid #000;
