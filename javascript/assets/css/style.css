@@ -74,13 +74,13 @@ a {
     margin-bottom: 10px;
 }
 
-#heaedr nav ul li.active a {
+#header nav ul li.active a {
     background: #000;
     color: #fff;
 }
 
 @media (max-width: 800px) {
-    #heaedr {
+    #header {
         padding: 20px;
     }
 
@@ -89,7 +89,7 @@ a {
         margin-bottom: 15px;
     }
 
-    #heaeder nav ul li a {
+    #header nav ul li a {
         font-size: 16px;
         padding: 8px 15px 6px 15px;
         margin-bottom: 5px;
@@ -123,5 +123,35 @@ a {
     .list ul li {
         font-size: 14px;
         line-height: 1.6;
+    }
+}
+
+/* script */
+.scrip {
+    padding: 40px;
+}
+
+
+.scrip .sample h3 {
+    background: #F2F2F2;
+    font-size: 16px;
+    padding: 15px 20px 10px 20px;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #E6E6E6;
+    font-weight: 500;
+}
+
+.scrip .sample .code pre {
+    margin: 0 !important;
+    border-radius: 0 0 5px 5px;
+}
+
+@media (max-width: 800px) {
+    .scrip {
+        padding: 20px 0;
+    }
+    .scrip .sample h3 {
+        font-size:  14px;
+        padding: 10px 15px 8px 15;
     }
 }
