@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <!-- script -->
     <script src="assets/js/prism.js"></script>
 </head>
+
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
@@ -24,16 +26,64 @@
             </ul>
         </nav>
     </header>
-    
+
     <main id="main">
         <div class="doc">
             <h2>자바스크립트 선언문</h2>
+            선언문은 자바스크립트 코드를 작성할 영역을 선언하는 것이라고 이해하면 됩니다. 주로 &lt;head&gt;&lt;body&gt; 태그영역에 사용되지만 보통은 &lt;head&gt; 영역에 많이
+            태그합니다.
+            &lt;script&gt; 라는 태그로 선언문이 시작된곳부터 &lt;/script&gt; 라는 태그로 종료된 곳 까지 스크립트 영역 이라고 부릅니다.
+
+            <div class="line">
+                <pre><code>&lt;!DOCTYPE html&gt;
+                &lt;html lang="ko"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;title&gt;document&lt;/title&gt;
+                        &lt;script&gt;
+                        document.write("환영합니다");
+                        &lt;/script&gt;  
+                    &lt;head&gt;
+                    ......
+                &lt;/html&gt;
+                </code></pre>
+            </div>
 
             <h2>자바스크립트 주석처리</h2>
+            자바스크립트도 다른 언어들과 같이 주석을 넣을 수 있다 위치와 관계 없이 코드의 상세한 설명부터 간단한 사용법까지 개발자의 의도를 적어 놓을 수 있다. 한줄로 주석을 작성하는 방법이 있고,
+            여러줄로 주석을 작성하는 방법이 있다.
+            <p>한줄 주석일 경우 : //</p>
+            <p>여러줄 주석일 경우 : /*</p>
+
+            <div class="line">
+                <pre><code>
+                // 한줄 설명일 경우
+                /* 여러줄의 설명을 할 경우
+                   에는 이렇게 하시면 됩니다.
+                /*   
+                </code></pre>
+            </div>
 
             <h2>코드 입력시 주의사항</h2>
+            <p>1.대 소문자를 구분해야 합니다.</p>
+            <p>2.한줄 작성 후 세미콜론을 찍어주셔야합니다.</p>
 
+            <div class="line">
+                <pre><code>document.write("환영합니다") document.write("안녕하세요")
+                document.write("환영합니다"); document.write("안녕하세요");
+                </code></pre>
+            </div>
+
+            <p>3. 가독성을 위해 한줄만 작성하시는게 좋습니다.</p>
+            <p>4. 문자형 데이터를 작성할 때 작은 따옴표('), 큰 따옴표(") 의 겹치지 않게 오류를 주의해야 합니다.</p>
+            <div class="line">
+                <pre><code> 잘못된 예시 : document.write("환영합니다" 자바스크립트 겹침 오류 입니다"라고 알려드립니다")
+ 옳은 예시 : document.write('환영합니다" 자바스크립트 겹침 오류 입니다"라고 알려드립니다');
+                </code></pre>
+            </div>
+            <p>5. 중괄호{}와 소괄호() 짝이 맞아야 합니다.</p>
         </div>
     </main>
 </body>
+
 </html>
