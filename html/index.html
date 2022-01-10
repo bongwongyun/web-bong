@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Reference</title>
+    
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="/assets/img/face/face64.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/face/Face500.jpg">
+    <link rel="icon" href="/assets/img/face/face128.jpg" sizes="128x128">
+    
     <style>
         @font-face {
             font-family: 'GmarketSans';
@@ -17,6 +24,7 @@
                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
             font-display: swap;
         }
+
         @font-face {
             font-family: 'GmarketSans';
             font-weight: 500;
@@ -28,6 +36,7 @@
                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
             font-display: swap;
         }
+
         @font-face {
             font-family: 'GmarketSans';
             font-weight: 700;
@@ -39,23 +48,29 @@
                 url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
             font-display: swap;
         }
+
         * {
-            margin: 0; padding: 0;
+            margin: 0;
+            padding: 0;
             font-family: 'GmarketSans';
         }
+
         body {
             background: #f5f5f5;
         }
+
         #header {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
             border-bottom: 1px solid #000;
         }
+
         #header h1 {
             font-weight: 500;
             padding: 20px 10px 10px 20px;
         }
+
         #header strong {
             font-weight: 300;
             padding: 10px 20px 10px 10px;
@@ -63,42 +78,49 @@
 
         #contents {
             width: 1200px;
-            margin:  0 auto;
+            margin: 0 auto;
         }
+
         #contents h2 {
             font-size: 80px;
             text-align: center;
             padding: 5% 5% 5% 5%;
         }
+
         #contents h2 em {
-              font-style: normal;
-              color: #009900;
+            font-style: normal;
+            color: #009900;
         }
+
         #contents .refer {
             background: #fff;
             padding: 60px;
             border: 1px solid #000;
         }
+
         #contents .refer table {
             width: 100%;
             border: 1px solid #aaa;
             border-collapse: collapse;
         }
+
         #contents .refer table caption {
             text-indent: -9999;
         }
+
         #contents .refer table th {
             border: 1px solid #aaa;
             padding: 15px;
             background: #f5f5f5;
             font-weight: 500;
         }
+
         #contents .refer table td {
             border: 1px solid #aaa;
             padding: 15px;
             font-weight: 300;
         }
-        
+
         #contents .refer table tbody td:hover {
             background: #009900;
             color: #fff;
@@ -106,6 +128,7 @@
         }
     </style>
 </head>
+
 <body>
     <header id="header">
         <h1>라인 중학교 1학년 코딩반</h1>
@@ -122,10 +145,10 @@
                     <col style="width: 70%" />
                 </colgroup>
                 <thead>
-                <tr>
-                    <td>속성</td>
-                    <td>설명</td>
-                </tr>
+                    <tr>
+                        <td>속성</td>
+                        <td>설명</td>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -154,11 +177,12 @@
                     </tr>
                     <tr>
                         <td>&lt;article&gt;</td>
-                        <td>&lt;article&gt; 태그는 해당 문서나 페이지 또는 사이트와는 완전히 독립적으로 구성할 수 있는 요소를 정의할 때 사용합니다.  </td>
+                        <td>&lt;article&gt; 태그는 해당 문서나 페이지 또는 사이트와는 완전히 독립적으로 구성할 수 있는 요소를 정의할 때 사용합니다. </td>
                     </tr>
                     <tr>
                         <td>&lt;aside&gt;</td>
-                        <td>&lt;aside&gt; 태그는 페이지의 다른 콘텐츠들과 약간의 연관성을 가지고 있지만, 해당 콘텐츠들로부터 분리시킬 수 있는 콘텐츠로 구성된 페이지 영역을 정의할 때 사용합니다.</td>
+                        <td>&lt;aside&gt; 태그는 페이지의 다른 콘텐츠들과 약간의 연관성을 가지고 있지만, 해당 콘텐츠들로부터 분리시킬 수 있는 콘텐츠로 구성된 페이지 영역을 정의할
+                            때 사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;audio&gt;</td>
@@ -170,7 +194,8 @@
                     </tr>
                     <tr>
                         <td>&lt;base&gt;</td>
-                        <td>&lt;base&gt; 태그는 해당 문서의 모든 상대 주소 (relatice URL)에 대한 기본 URL(base URL)과 target 속성값을 정의할 때 사용합니다.</td>
+                        <td>&lt;base&gt; 태그는 해당 문서의 모든 상대 주소 (relatice URL)에 대한 기본 URL(base URL)과 target 속성값을 정의할 때
+                            사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;basefont&gt;</td>
@@ -178,11 +203,13 @@
                     </tr>
                     <tr>
                         <td>&lt;bdi&gt;</td>
-                        <td>&lt;bdi&gt; 태그의 BDI는 BI-Directional lsolation을 의미하며, 주위의 텍스트들과는다른 방향으로 써지는 텍스트 영역을 정의할 때 사용합니다.</td>
+                        <td>&lt;bdi&gt; 태그의 BDI는 BI-Directional lsolation을 의미하며, 주위의 텍스트들과는다른 방향으로 써지는 텍스트 영역을 정의할 때
+                            사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;bdo&gt;</td>
-                        <td>&lt;bdo&gt; 태그의 BDO는 BI-Directional Override를 의미하며, 자식 요소의 텍스트 방향성(text directionality)을 정의할 때 사용합니다.</td>
+                        <td>&lt;bdo&gt; 태그의 BDO는 BI-Directional Override를 의미하며, 자식 요소의 텍스트 방향성(text directionality)을 정의할
+                            때 사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;big&gt;</td>
@@ -190,7 +217,8 @@
                     </tr>
                     <tr>
                         <td>&lt;blockquote&gt;</td>
-                        <td>&lt;blockquote&gt; 태그는 다른 출처로부터 인용된 블록을 정의할 때 사용하며, 이렇게 인용된 블록을 브라우저는 보통 들여쓰기를 사용하여 표현합니다.</td>
+                        <td>&lt;blockquote&gt; 태그는 다른 출처로부터 인용된 블록을 정의할 때 사용하며, 이렇게 인용된 블록을 브라우저는 보통 들여쓰기를 사용하여 표현합니다.
+                        </td>
                     </tr>
                     <tr>
                         <td>&lt;blink&gt;</td>
@@ -246,7 +274,8 @@
                     </tr>
                     <tr>
                         <td>&lt;dd&gt;</td>
-                        <td>&lt;dd&gt; 태그는 용어와 그에 대한 설명을 리스트 형식으로 보여주는 &lt;dl&gt; 요소에서 설명 (description) 부분을 정의할 때 사용합니다.</td>
+                        <td>&lt;dd&gt; 태그는 용어와 그에 대한 설명을 리스트 형식으로 보여주는 &lt;dl&gt; 요소에서 설명 (description) 부분을 정의할 때 사용합니다.
+                        </td>
                     </tr>
                     <tr>
                         <td>&lt;del&gt;</td>
@@ -254,7 +283,8 @@
                     </tr>
                     <tr>
                         <td>&lt;details&gt;</td>
-                        <td>&lt;details&gt; 태그는 사용자가 직접 조작하여 보거나 숨길 수 있는 부가적인 세부사항(additional details)을 명시할 때 사용합니다.</td>
+                        <td>&lt;details&gt; 태그는 사용자가 직접 조작하여 보거나 숨길 수 있는 부가적인 세부사항(additional details)을 명시할 때 사용합니다.
+                        </td>
                     </tr>
                     <tr>
                         <td>&lt;dfn&gt;</td>
@@ -278,7 +308,8 @@
                     </tr>
                     <tr>
                         <td>&lt;dt&gt;</td>
-                        <td>&lt;dt&gt; 태그는 용어와 그에 대한 설명을 리스트 형식으로 보여주는 &lt;di&gt;요소와 해당 용어에 대한 설명을 나타내는 &lt;dd&gt;요소로 구성됩니다.</td>
+                        <td>&lt;dt&gt; 태그는 용어와 그에 대한 설명을 리스트 형식으로 보여주는 &lt;di&gt;요소와 해당 용어에 대한 설명을 나타내는 &lt;dd&gt;요소로
+                            구성됩니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;em&gt;</td>
@@ -294,7 +325,8 @@
                     </tr>
                     <tr>
                         <td>&lt;figcaption&gt;</td>
-                        <td>&lt;figcaption&gt; 태그는 이미지나 다이어그램, 사진과 같이 문서의 주요 흐름과는 독립적인 콘텐츠를 정의하는 &lt;figure&gt;요소의 캡션(caption)을 정의할 때 사용합니다.</td>
+                        <td>&lt;figcaption&gt; 태그는 이미지나 다이어그램, 사진과 같이 문서의 주요 흐름과는 독립적인 콘텐츠를 정의하는 &lt;figure&gt;요소의
+                            캡션(caption)을 정의할 때 사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;figure&gt;</td>
@@ -418,23 +450,28 @@
                     </tr>
                     <tr>
                         <td>&lt;meter&gt;</td>
-                        <td>&lt;meter&gt; 태그는 분수 값이나 게이지(gauge) 내에서 특정 스칼라 값(scalar measurement)이 어느 정도인지를 표현할 때 사용합니다.</td>
+                        <td>&lt;meter&gt; 태그는 분수 값이나 게이지(gauge) 내에서 특정 스칼라 값(scalar measurement)이 어느 정도인지를 표현할 때 사용합니다.
+                        </td>
                     </tr>
                     <tr>
                         <td>&lt;nav&gt;</td>
-                        <td>&lt;nav&gt; 태그는 다른 페이지 또는 현재 페이지의 다른 부분과 연결되는 네비게이션 링크(navigation links)들의 집합을 정의할 때 사용합니다.</td>
+                        <td>&lt;nav&gt; 태그는 다른 페이지 또는 현재 페이지의 다른 부분과 연결되는 네비게이션 링크(navigation links)들의 집합을 정의할 때 사용합니다.
+                        </td>
                     </tr>
                     <tr>
                         <td>&lt;noframes&gt;</td>
-                        <td>&lt;noframes&gt; 태그는 프레임(frame) 기능을 사용하지 않도록 설정했거나, 프레임 기능을 지원하지 않는 브라우저를 위한 별도의 콘텐츠를 정의할 때 사용합니다.</td>
+                        <td>&lt;noframes&gt; 태그는 프레임(frame) 기능을 사용하지 않도록 설정했거나, 프레임 기능을 지원하지 않는 브라우저를 위한 별도의 콘텐츠를 정의할 때
+                            사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;noscript&gt;</td>
-                        <td>&lt;noscript&gt; 태그는 클라이언트 사이드 스크립트(client-side scripts)를 사용하지 않도록 설정했거나, 스크립트를 지원하지 않는 브라우저를 위한 별도의 콘텐츠를 정의할 때 사용합니다.</td>
+                        <td>&lt;noscript&gt; 태그는 클라이언트 사이드 스크립트(client-side scripts)를 사용하지 않도록 설정했거나, 스크립트를 지원하지 않는
+                            브라우저를 위한 별도의 콘텐츠를 정의할 때 사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;object&gt;</td>
-                        <td>&lt;object&gt; 태그는 외부 리소스의 종류에 따라 문서 내에서 처리하는 방식을 변경할 수 있는 임베디드 객체(embedded object)를 정의할 때 사용합니다.</td>
+                        <td>&lt;object&gt; 태그는 외부 리소스의 종류에 따라 문서 내에서 처리하는 방식을 변경할 수 있는 임베디드 객체(embedded object)를 정의할 때
+                            사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;ol&gt;</td>
@@ -462,7 +499,8 @@
                     </tr>
                     <tr>
                         <td>&lt;picture&gt;</td>
-                        <td>&lt;picture&gt; 태그는 &lt;img&gt;요소의 다중 이미지 리소스(multiple image resources)를 위한 컨테이너를 정의할 때 사용합니다.</td>
+                        <td>&lt;picture&gt; 태그는 &lt;img&gt;요소의 다중 이미지 리소스(multiple image resources)를 위한 컨테이너를 정의할 때
+                            사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;pre&gt;</td>
@@ -518,7 +556,8 @@
                     </tr>
                     <tr>
                         <td>&lt;source&gt;</td>
-                        <td>&lt;source&gt; 태그는 &lt;audio&gt; 요소나 &lt;video&gt;, &lt;picture&gt; 요소에서 사용할 수 있는 다중 미디어 자원(multiple media resources)을 정의할 때 사용합니다.</td>
+                        <td>&lt;source&gt; 태그는 &lt;audio&gt; 요소나 &lt;video&gt;, &lt;picture&gt; 요소에서 사용할 수 있는 다중 미디어
+                            자원(multiple media resources)을 정의할 때 사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;span&gt;</td>
@@ -621,4 +660,5 @@
         </section>
     </main>
 </body>
+
 </html>

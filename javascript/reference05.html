@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <!-- script -->
     <script src="assets/js/prism.js"></script>
 </head>
+
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
@@ -26,17 +28,268 @@
             </ul>
         </nav>
     </header>
-    
+
     <main id="main">
-            <div class="doc">
-                <h1>연산자</h1>
-                <h2>연산자란?</h2>
-                <p>초등학교때 덧셈, 뺄셈, 나눗셈과 같은 연산을 해본 적이 있죠? 컴퓨터에서도 다양한 연산자를 통해 계산 작업을 합니다. 자바스크립트 프로그래밍에서 사용하는 연산자에는 산술, 문자결합, 대입(복합 대입), 증감, 비교, 논리, 삼항 조건 연산자가 있습니다. 예를 들어 자신의 평균 체중을 구할 때 빼고 곱하는 작업등은 산술 연산자를 이용합니다. 그리고 이러헤 빼기, 더하기, 곱하기, 나누기, 비교 등을 하는 일련의 작업을 연산 작업이라고 합니다.</p>
-    
-                <h2>산술 연산자</h2>
-                <p>산술 연산자에는 산수 시간에 배운 더하기(+), 빼기(-), 곱하기(*), 나누기(/), 나머지(%)가 있습니다. 산술 연사자로 연산을 하기 위해서는 연산 대상 데이터가 반드시 2개 있어야 합니다. 다음은 산술 연산자의 종류와 기본형을 정리한 표입니다.</p>
+        <div class="doc">
+            <h1>연산자</h1>
+            <h2>연산자란?</h2>
+            <p>초등학교때 덧셈, 뺄셈, 나눗셈과 같은 연산을 해본 적이 있죠? 컴퓨터에서도 다양한 연산자를 통해 계산 작업을 합니다. 자바스크립트 프로그래밍에서 사용하는 연산자에는 산술, 문자결합,
+                대입(복합 대입), 증감, 비교, 논리, 삼항 조건 연산자가 있습니다. 예를 들어 자신의 평균 체중을 구할 때 빼고 곱하는 작업등은 산술 연산자를 이용합니다. 그리고 이러헤 빼기,
+                더하기, 곱하기, 나누기, 비교 등을 하는 일련의 작업을 연산 작업이라고 합니다.</p>
+
+            <h2>산술 연산자</h2>
+            <p>산술 연산자에는 산수 시간에 배운 더하기(+), 빼기(-), 곱하기(*), 나누기(/), 나머지(%)가 있습니다. 산술 연사자로 연산을 하기 위해서는 연산 대상 데이터가 반드시 2개 있어야
+                합니다. 다음은 산술 연산자의 종류와 기본형을 정리한 표입니다.</p>
+            <br>
+            <h4>산술 연산자의 종류와 기본형</h4>
+            <table>
+                <style>
+                    table {
+                        border-top: 1px solid#000;
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+
+                    th,
+                    td {
+                        border-bottom: 1px solid #000;
+                        border-left: 1px solid #000;
+                        padding: 10px;
+                        border-collapse: collapse;
+                        text-align: center;
+                    }
+
+                    th:first-child,
+                    td:first-child {
+                        border-left: none;
+                    }
+                </style>
+                <tr>
+                    <td>종류</td>
+                    <td>기본형</td>
+                    <td>설명</td>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td>A+B</td>
+                    <td>더하기</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>A-B</td>
+                    <td>빼기</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>A*B</td>
+                    <td>곱하기</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>A/B</td>
+                    <td>니누기</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>A%B</td>
+                    <td>나머지</td>
+                </tr>
+            </table>
+
+            <br>
+            <p>다음 예제를 통해 더하기, 빼기, 곱하기, 나누기, 나머지, 연산자를 어떻게 사용하는지 확인해 보세요.</p>
+            <br>
+            <div class="code">
+                <pre><code>06: &lt;script&gt;
+07:   var num1 = 15;
+08:   var num2 = 2;
+09:   var result;
+10:   result = num 1 + num 2;
+11:   document.write(result, "&lt;br&gt;"); //17
+12:   result = num 1 - num 2;
+13:   document.write(result, "&lt;br&gt;"); //13
+14:   result = num 1 * num 2;
+15:   document.write(result, "&lt;br&gt;"); //30
+16:   result = num 1 / num 2;
+17:   document.write(result, "&lt;br&gt;"); //7.5
+18:   result = num 1 % num 2;
+19:   document.write(result, "&lt;br&gt;"); //1
+20: &lt;/script&gt;
+                    </pre></code>
+            </div>
+
+            <h2>문자 결합 연산자</h2><br>
+            <p>문자 결합 연산자는 피연산자(연산 대상 데이터)가 문자형 데이터입니다. 여러 개의 문자를 하나의 문자형 데이터로 결합할 때 사용합니다.
+            </p>
+            <p>다음과 같이 더하기에 피연사로 문자형 데이터가 한 개라도 포함되어 있으면 다른 피연산자의 데이터는 자동으로 문자형 데이터로 형 변환되고 문자 결합이 이루어져 하나의 문자형 데이터를
+                반환합니다.</p>
+            <br>
+
+            <div class="code">
+                <pre><code>기본형
+            문자형 데이터 + 문자형 데이터 = 하나의 문자형 데이터
+            ex) "do it" + "javascript" = "do it javascript";
+          
+            문자형 데이터 + 숫자형 데이터 = 하나의 문자형 데이터
+            ex) "100" + "200" = "100200";
+            </div>
+            <br>
+            <p>다음은 t1, t2, t3, t4라는 변수에 문자와 숫자 데이터를 각각 넣고 하나의 문자 데이터로 결합하는 예제입니다.</p>
+            <br>
+
+            <div class="code">
+                <pre><code>06: &lt;script&gt;
+07:   var t1 = "학교종이";
+08:   var t2 = "땡떙떙";
+09:   var t3 = 8282;
+10:   var t4 = "어서 모이자";
+11:   var result;
+12:   
+13:   result = t1 + t2 + t3 + t4;
+14:   document.write; //"학교종이 땡땡땡 8282 어서 모이자"
+15: &lt;/script&gt;
+        </pre></code>
+            </div>
+
+            <h2>대입 연산자</h2><br>
+            <p>대입 연산자(=)는 연산된 데이터를 변수에 저장할 때 사용합니다. 복합 대입 연산자(+=,-=,*=,/=,%=)는 산술 연산자와 대입 연산자가 복합적으로 적용된 것을 말합니다.</p>
+            <h4>대입 연산자의 종류</h4>
+            <table>
+                <style>
+                    table {
+                        border-top: 1px solid#000;
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+
+                    th,
+                    td {
+                        border-bottom: 1px solid #000;
+                        border-left: 1px solid #000;
+                        padding: 10px;
+                        border-collapse: collapse;
+                        text-align: center;
+                    }
+
+                    th:first-child,
+                    td:first-child {
+                        border-left: none;
+                    }
+                </style>
+                <tr>
+                    <td>종류</td>
+                    <td>풀이</td>
+                </tr>
+                <tr>
+                    <td>A=B</td>
+                    <td>A=B</td>
+                </tr>
+                <tr>
+                    <td>A+-B</td>
+                    <td>A-A+B</td>
+                </tr>
+                <tr>
+                    <td>A*=B</td>
+                    <td>A=A*B</td>
+                </tr>
+                <tr>
+                    <td>A/=B</td>
+                    <td>A=A/B</td>
+                </tr>
+                <tr>
+                    <td>A%=B</td>
+                    <td>A=A%B</td>
+                </tr>
+            </table>
+            <br>
+            <p>다음 예제를 보며 대입 연산자에 대해 알아보겠습니다.</p>
+            <div class="code">
+                <pre><code>06: &lt;script&gt;
+07:   var num1 = 10;
+08:   var num2 = 3;
+09:   
+10:   num1 + num2; //num1 = num1(10) + num2(3);
+11:   document.write;(num1,"&lt;br&gt;");  //13
+12:   
+13:   num1 -= num2; //num1 = num1(13) - num2(3);
+14:   document.write;(num1, "&lt;br&gt;"); //10
+15:   
+16:   num1 *= num2; //num1 = num1(10) * num2(3);
+17:   document.write;(num1, "&lt;br&gt;"); //30
+18:   
+19:   num1 %= num2; //num1 = num1(30) % num2(3);
+20:   document.write;(num1, "&lt;br&gt;"); //0
+21: &lt;/script&gt;
+        </pre></code>
+            </div>
+            <p>다음은 여러 개의 분석형 데이터로 저장된 HTML 태그를 복삽 대입 연산자를 이용하여 하나의 문자로 결합한 다음 document.write(srr);을 이용하여 화면에 출력하는 예제입니다.</p>
+            <div class="code">
+                <pre><code>06: &lt;script&gt;
+07:   var str = "&lt;table boder='1'&gt;";
+08:   str += "&lt;tr&gt;";
+09:   str += "&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;";
+10:   str += "&lt;/tr&gt;";
+11:   str += "&lt;/table&gt;";
+12:   document.write;( str );
+13: &lt;/script&gt;  
+        </pre></code>
+            </div>
+
+            <div class="code">
+                <pre><code>var str = "문자1";
+                    str +="문자2";
+                    str +="문자3";
+                    //"문자1문자2문자3";
+                </pre></code>
+            </div>
+
+            <h2>중감 연산자</h2><br>
+            <p>중감 연산자에는 숫자형 데이터를 1씩 증가시키는 증가 연산자(++)와 반대로 1씩 감소시키는 감소 연산자(--)가 있습니다. 증김 연산자는 앞에서 배운 연산자와는 달리 피연산자가 한 개만
+                필요한 단항 연산자입니다. 증감 연산자는 변수의 어느 위치에 오는가에 따라 결괏값이 달라집니다.</p>
+            <br>
+
+            <div class="code">
+                <pre><code>기본형
+                1 변수의 값을 1만큼 감소시킵니다.
+                변수--; 또는--변수;
+
+                2 변수의 값을 1만큼 증가시킵니다.
+                변수++; 또는 ++변수;
+                </pre></code>
+            </div>
+            <p>다음은 중간 연산자를 사용해 변수에 저장된 숫자를 증가하거나 감소하여 문서에 출력하는 예제입니다.</p>
+            
+            <div class="code">
+                <pre><code>06: &lt;script&gt;
+07:   var num1 = 10;
+08:   var num2 = 20; 
+09:   var result;
+10:   
+11:   num1--;                           //9
+12:   document.write;(num1, "&lt;br&gt;");
+13:
+14:   num1++;                           //10
+15:   document.write;(num1, "&lt;br&gt;");
+16:
+17:   result = num2++;                  //result:20,num2:21
+18:   document.write;(result, "&lt;br&gt;");
+19:
+20:   result = num2++;                  //result:22,num2:22
+21:   document.write;(result, "&lt;br&gt;");
+22: &lt;/script&gt;  
+        </pre></code>
+            </div>
+
+            <h2>비교 연산자</h2><br>
+            <p>두 데이터를 '크다,작다,같다'와 같이 비교할 때 사용하는 연산자입니다. 연산된 결괏값은 true(참)또는 false(거짓)로 논리형 데이터를 반환합니다. 다음은 비교 연산자의 종류입니다.
+            </p>
+            <p>비교 연산자 ==와 !=는 피연산자의 자료형(type)이 비교 연산자의 실행 결과에 영향을 미치지 않습니다. 다음 예제의 경우 변수 k에는 숫자형 데이터 10이 저장되었고, 변수 m에는
+                문자형 데이터 "10"이 저장되었습니다. 그리고 두 변수 모두 숫자형 데이터 10과 같은지 비교하였고 결과는 둘 다 true를 반환합니다.</p>
+            <p>하지만 비교 연산자중 ===과 !==는 피연산자 자료형에 따라 결괏값이 달라집니다. 다음예제의 경우 변수 k에는 숫자형 데이터 10이 저장되었고, k===10은 숫자형 데이터로 둘 다
+                일치하기 때문데 true를 반환합니다. 하지만 변수 m에는 문자형 데이터 "10"이 저장되었습니다. 문자형 데이터 "10"과 숫자형 데이터 10은 자료형이 다르므로 m===10은
+                false를 반환합니다.</p>
                 <br>
-                <h4>산술 연산자의 종류와 기본형</h4>
+                <h4>비교 연산의 종류</h4>
                 <table>
                     <style>
                         table {
@@ -44,67 +297,161 @@
                             border-collapse: collapse;
                             width: 100%;
                         }
-                        th, td {
-                          border-bottom: 1px solid #000;
-                          border-left: 1px solid #000;
-                          padding: 10px;
-                          border-collapse: collapse;
-                          text-align: center;
+    
+                        th {
+                            border-bottom: 1px solid #000;
+                            border-left: 1px solid #000;
+                            padding: 10px;
+                            border-collapse: collapse;
+                            text-align: center;
                         }
-                        th:first-child, td:first-child {
+    
+                        th:first-child,
+                        td:first-child {
                             border-left: none;
                         }
                     </style>
                     <tr>
                         <td>종류</td>
-                        <td>기본형</td>
-                        <td>설명</td>
+                        <td>풀이</td>
+                        <td>비고</td>
                     </tr>
                     <tr>
-                        <td>+</td>
-                        <td>A+B</td>
-                        <td>더하기</td>
+                        <td>A>B</td>
+                        <td>A가 B보다 크다.</td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>-</td>
-                        <td>A-B</td>
-                        <td>빼기</td>
+                        <td>A&lt;B</td>
+                        <td>A가 B보다 작다</td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>*</td>
-                        <td>A*B</td>
-                        <td>곱하기</td>
+                        <td>A>=B</td>
+                        <td>A가 B보다 크거나 같다.</td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>/</td>
-                        <td>A/B</td>
-                        <td>니누기</td>
+                        <td>A&lt;=B</td>
+                        <td>A가 B보다 작거나 같다.</td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>%</td>
-                        <td>A%B</td>
-                        <td>나머지</td>
+                        <td>A==B</td>
+                        <td>A와 B는 같다.</td>
+                        <td>숫자를 비교할 경우 자료형(type)은 숫자형이든 문자형이든 상관하지 않고 표기된 숫자만 일치하면 true를 반환합니다. 라형, 숫자형 10과 문자형 "10"은 같은 것으로 인식되어 true를 반환합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>A!=B</td>
+                        <td>A와 B는 다르다.</td>
+                        <td>숫자를 비교할 경우 자료형은 숫자형이든 문자형이든 상관하지 않고 표기된 숫자만 다르면 true를 반환합니다. 가령, 숫자형 10과 문자형 "10"은 같은 것으로 인식되어 A!=B에 대해 false를 반환합니다. </td>
+                    </tr>
+                    <tr>
+                        <td>A===B</td>
+                        <td>A와 B는 같다.</td>
+                        <td>숫자를 비교할 경우 반드시 표기된숫자와 자료형도 일치해야만 true를 반환합니다. 10와 "10"을 비교했을 경우 표기된 숫자는 같지만 하나는 숫자형 10이고 하나는 문자형 "10"이므로 false를 반환합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>A!==B</td>
+                        <td>A와 B는 다르다.</td>
+                        <td>숫자를 비교할 경우 반드시 표기된 숫자 또는 자료형이 일치하지 않을 때 true를 반환합니다. 가령, 10과 "10"을 비교했을 경우 표기된 숫자는 같지만 하나는 숫자형 10이고 하나는 문자형 "10"이므로 이때는 true를 반환합니다.</td>
                     </tr>
                 </table>
-                <h2>문자 결합 연산자</h2><br>
-                <p>문자 결합 연산자는 피연산자(연산 대상 데이터)가 문자형 데이터입니다. 여러 개의 문자를 하나의 문자형 데이터로 결합할 때 사용합니다.
-                </p>
-                <p>다음과 같이 더하기에 피연사로 문자형 데이터가 한 개라도 포함되어 있으면 다른 피연산자의 데이터는 자동으로 문자형 데이터로 형 변환되고 문자 결합이 이루어져 하나의 문자형 데이터를 반환합니다.</p>
-<br>
-                <h2>대입 연산자</h2><br>
-                <p>대입 연산자(=)는 연산된 데이터를 변수에 저장할 때 사용합니다. 복합 대입 연산자(+=,-=,*=,/=,%=)는 산술 연산자와 대입 연산자가 복합적으로 적용된 것을 말합니다.</p>
-<br>
-                <h2>중감 연산자</h2><br>
-                <p>중감 연산자에는 숫자형 데이터를 1씩 증가시키는 증가 연산자(++)와 반대로 1씩 감소시키는 감소 연산자(--)가 있습니다. 증김 연산자는 앞에서 배운 연산자와는 달리 피연산자가 한 개만 필요한 단항 연산자입니다. 증감 연산자는 변수의 어느 위치에 오는가에 따라 결괏값이 달라집니다.</p>
-<br>
-                <h2>비교 연산자</h2><br>
-                <p>두 데이터를 '크다,작다,같다'와 같이 비교할 때 사용하는 연산자입니다. 연산된 결괏값은 true(참)또는 false(거짓)로 논리형 데이터를 반환합니다. 다음은 비교 연산자의 종류입니다.</p>
-                <p>비교 연산자 ==와 !=는 피연산자의 자료형(type)이 비교 연산자의 실행 결과에 영향을 미치지 않습니다. 다음 예제의 경우 변수 k에는 숫자형 데이터 10이 저장되었고, 변수 m에는 문자형 데이터 "10"이 저장되었습니다. 그리고 두 변수 모두 숫자형 데이터 10과 같은지 비교하였고 결과는 둘 다 true를 반환합니다.</p>
-                <p>하지만 비교 연산자중 ===과 !==는 피연산자 자료형에 따라 결괏값이 달라집니다. 다음예제의 경우 변수 k에는 숫자형 데이터 10이 저장되었고, k===10은 숫자형 데이터로 둘 다 일치하기 때문데 true를 반환합니다. 하지만 변수 m에는 문자형 데이터 "10"이 저장되었습니다. 문자형 데이터 "10"과 숫자형 데이터 10은 자료형이 다르므로 m===10은 false를 반환합니다.</p>
-<br>                
-                <h2>논리 연산자</h2><br>
-                <p>논리 연산자에는 ㅣㅣ(or), &&(and), !(not)이 있으며, 논리 연산자는 피연산자가 논리형데이터인 true 또는 false로 결괏값을 반환합니다. ㅣㅣ(or) 연산자는 피연산자 중 하나만 true이면 true라는 결괏값을 반환합니다. 하지만 &&(and)연산자는 피연산자 중 하나만 false이면 false라는 결괏값을 반환합니다. !(not)은 논리 부정 연산자로, 피연산자가 true이면 false라는 반대의 결괏값을 반환합니다.</p>
+            <br>
+            <p>비교 연산자 == 와 !=는 피연산자의 (type)이 비교 연산자의 실행 결과에 영향을 미치지 않습니다. 다음 예제의 경우 변수 k에는 숫자형 데이터 10이 저장되었고, 변수 m에는 문자형 데이터 "10"이 저장되었습니다. 그리고 두 변수 모두 숫자형 데이터 10과 같은지 비교하였고 결과는 둘다 true를 반환합니다. </p>
+            
+            <div class="code">
+                <pre><code>
+var k = 10, "10";
+k == 10          //true
+m == 10         //true
+        </pre></code>
             </div>
+
+        <p>하지만 비교 연산자 중 ====과 !==는 피연산자 자료형에 따라 결괏값이 달라집니다. 다음 예제의 경우 변수 k에는 숫자형 데이터 10이 저장되었고, k===10은 숫자형 데이터로 둘 다 일치하기 때문에 true를 반환합니다. 하지만 변수 m에는 문자형 데이터 "10"이 저장되었습니다. 문자형 데이터 "10"과 숫자형 데이터 10은 자료형이 다르므로 m===10은 false를 반환합니다.</p>
+        
+        <div class="code">
+            <pre><code>
+var k = 10, m="10";
+k === 10           //true
+m === 10          //true
+    </pre></code>
+        </div>
+        <p>다음 예제로 비교 연산자에 대해 더 살펴보겠습니다. a,b,c,d라는 변수에 값을 각각 지정하고 위에서 배운 비교 연산자를 이용해 결괏값을 반환합니다.</p>
+            
+        <div class="code">
+            <pre><code>06: &lt;script&gt;
+07:    var a = 10;
+08:    var b = 20; 
+09:    var c = 10;
+10:    var f = "20";
+11:    var result                         
+12:   
+13:    result = a > b; //false
+14:    document.write;(result, "&lt;br&gt;");
+15:    result = a &lt; b; //true
+16:    document.write;(result, "&lt;br&gt;");
+17:    result = a &lt;= b; //true
+18:    document.write;(result, "&lt;br&gt;");
+19:    result = b == f; //true
+20:    document.write;(result, "&lt;br&gt;");
+21:    result = a != b; //true
+22:    document.write;(result, "&lt;br&gt;");
+23:    result = b === f; //false
+24:    document.write;(result, "&lt;br&gt;");
+25: &lt;/script&gt;  
+    </pre></code>
+        </div>
+
+            <h2>논리 연산자</h2><br>
+            <p>논리 연산자에는 ㅣㅣ(or), &&(and), !(not)이 있으며, 논리 연산자는 피연산자가 논리형데이터인 true 또는 false로 결괏값을 반환합니다. ㅣㅣ(or) 연산자는 피연산자
+                중 하나만 true이면 true라는 결괏값을 반환합니다. 하지만 &&(and)연산자는 피연산자 중 하나만 false이면 false라는 결괏값을 반환합니다. !(not)은 논리 부정
+                연산자로, 피연산자가 true이면 false라는 반대의 결괏값을 반환합니다.</p>
+            <br>
+            <p>논리 연산자의 종류를 표로 정리하자면 다음과 같습니다.</p>
+            <h4>논리 연산자의 종류</h4>
+
+            <table>
+                <style>
+                    table {
+                        border-top: 1px solid#000;
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+
+                    th {
+                        border-bottom: 1px solid #000;
+                        border-left: 1px solid #000;
+                        padding: 10px;
+                        border-collapse: collapse;
+                        text-align: center;
+                    }
+
+                    th:first-child,
+                    td:first-child {
+                        border-left: none;
+                    }
+                </style>
+                <tr>
+                    <td>종류</td>
+                    <td>설명</td>
+                </tr>
+                <tr>
+                    <td>ㅣㅣ</td>
+                    <td>or 연산자라 부르며, 피연산자 중 값이 하나라도 true가 존재하면 true로 결괏값을 반환합니다.</td>
+                </tr>
+                <tr>
+                    <td>&&</td>
+                    <td>and 연산자라 부르며, 피연산자 중 값이 하나라도 false가 존재하면 false로 결괏값을 반환합니다.</td>
+                </tr>
+                <tr>
+                    <td>!</td>
+                    <td>not 연산자라 부르며, 단항 연산자입니다. 피연산자의 값이 true이면 반대로 false로 결괏값을 반환합니다.</td>
+                </tr>
+            </table>
+            
+        </div>
     </main>
 </body>
+
 </html>
