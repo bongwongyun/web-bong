@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <!-- script -->
     <script src="assets/js/prism.js"></script>
 </head>
+
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
@@ -26,44 +28,119 @@
             </ul>
         </nav>
     </header>
-    
+
     <main id="main">
         <div class="doc">
             <h2>데이터 타입(자료형)</h2>
             <p>
-                변수에는 여러가지 유형이 들어갈 수 있습니다. 
-                프로그램 언어에 있어 가장 기본적인 요소이며, 데이터 타입이라고 합니다. 
+                변수에는 여러가지 유형이 들어갈 수 있습니다.
+                프로그램 언어에 있어 가장 기본적인 요소이며, 데이터 타입이라고 합니다.
                 데이터 타입에는 숫자, 문자열, 논리값, 특수값, 심벌, 객체, 배열
                 함수 등을 표현할 수 있습니다.
             </p>
 
+            <div class="code">
+                <pre><code>
+                       let message = "hi";
+                       message = 123456;
+                </pre></code>
+                            </div>
+
             <h3>숫자(Number)</h3>
-            <p></p>
+            <p>숫자를 넣으면 됩니다. 다른 언어처럼 (Int), (Short), (Long), (Double) 이런 구분이 없습니다. 그냥 아무거나 다 넣으면 됩니다.</p>
+
+            <div class="code">
+                <pre><code>
+                        1. let n = 123;
+                        2. n = 12.345;
+                            </div>
 
             <h3>문자열(String)</h3>
-            <p></p>
+            <p>문자열은 데이터에 문자를 저장하는 겁니다. 문자열은 큰 따옴표나 작은 따옴표 중에 하나를 쓰면 됩니다. 상황에 맞게요. 작은 따옴표가 문자열에 포함되어 있으면 큰 따옴표로 감싸고요. 반대의
+                상황은 반대로 하면 됩니다. 그냥 한 가지 따옴표만 쓰고 싶을 경우는 \ 를 문자열의 따옴표 앞에 붙여 이거는 문자열 안의 따옴표라는 것을 알려주어야합니다. \ 를 붙이는 행위를
+                이스케이핑이라고 부릅니다.</p>
+           
+                <div class="code">
+                    <pre><code>
+                        let str = "you";
+                        let str2 = 'hi';
+                        let phrase = 'bye ${str}';
+                    </pre></code>
+            </div>
 
             <h3>논리값(Boolean)</h3>
-            <p></p>
+            <p>true와 false입니다. 'true'가 아니라 따옴표 없이 true 입니다. on/off 나 yes/no 라고 생각하셔도 됩니다.</p>
+
+            <div class="code">
+                <pre><code>
+                        let namebongChecked = true;
+                        let agebongchecked = false;  
+                </pre></code>
+            </div>
 
             <h3>특수값(Null)</h3>
-            <p></p>
+            <p>null은 빈 값을 변수에 의도적으로 넣을 때 사용됩니다.</p>
+
+            <div class="code">
+                <pre><code>
+                        let age = null;
+                </pre></code>
+            </div>
 
             <h3>특수값(Undefined)</h3>
-            <p></p>
+            <p>undefined는 변수를 만들어 놓았는데 아무 값도 집어넣지 않았을 때 자동으로 undefined가 됩니다.</p>
 
-            <h3>심벌(Symbol)</h3>
-            <p></p>
+            <div class="code">
+                <pre><code>
+                         let age;
+
+                         alert(age);
+                </pre></code>
+            </div>
+
+            <h3>심볼(Symbol)</h3>
+            <p>심볼(symbol)은 유일한 식별자(unique identifier)를 만들고 싶을 때 사용됩니다.</p>
+
+            <div class="code">
+                <pre><code>
+                        let id = Symbol();
+                </pre></code>
+            </div>
 
             <h3>객체(Object)</h3>
-            <p></p>
+            <p>객체는 우리 주변의 사물(Object)을 상태(State)과 행위(Behavior)로 나타내어 추상화하는 개념입니다. 상태는 어떠한 사물의 특성을 나타내고, 행위는 그 사물이 가지는 행동을
+                나타내요. 즉, 객체란 사물에 대한 모델링을 위해 사물을 특정짓는 변수와 함수를 그룹핑 한 것이라고 할 수 있습니다.</p>
+
+            <div class="code">
+                <pre><code>
+                        let user = new object
+                        let user = {};
+                    </pre></code>
+            </div>
 
             <h3>배열(Array)</h3>
-            <p></p>
+            <p>자바스크립트의 배열은 숫자형이나 문자열과 마찬가지로 일반적인 스크립트 언어와 크게 다른 것이 없다. 배열은 []나 newArray()로 생성하며, 크기의 제약이 없고, 하나의 배열에 서로
+                다른 타입의 변수가 들어갈 수 있습니다.</p>
+
+            <div class="code">
+                <pre><code>
+                        let arr = new Array();
+                        let arr = [];
+                    </pre></code>
+            </div>
 
             <h3>함수(Function)</h3>
-            <p></p>
+            <p>함수(function)란 하나의 특별한 목적의 작업을 수행하도록 설계된 독립적인 블록을 의미합니다. 이러한 함수는 필요할 때마다 호출하여 해당 작업을 반복해서 수행할 수 있습니다.</p>
+
+            <div class="code">
+                <pre><code>
+                        function showmessage() {
+                                     alert  '환영합니다.');
+                        }
+                </pre></code>
+            </div>
         </div>
     </main>
 </body>
+
 </html>
