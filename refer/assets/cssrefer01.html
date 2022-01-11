@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Refernce</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <h1><a href="##">라인 중학교 1학년 코딩반</a></h1>
+        <strong>봉원균</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html"> CSS <em>기초 문법</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li class="html"><a href="css.html">속성</a></li>
+                <li class="active"><a href="cssrefer01.html">기초 문법</a></li>
+                <li><a href="cssrefer02.html">block/inline</a></li>
+                <li><a href="cssrefer03.html">css 단위</a></li>
+                <li><a href="cssrefer04.html">css 색상</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>CSS란?</h3>
+                <p><strong>CSS</strong>는 Cascading Style Sheets의 약자입니다.</p>
+                <strong>CSS</strong>는 HTML 요소들이 각종 미디어에서 어떻게 보이는가를 정의하는데 사용되는 스타일 시트 언어입니다.
+                HTML4 부터는 이러한 모든 서식 설정을 HTML 문서로부터 따로 분리하는 것이 가능해졌습니다. 오늘날 대부분의 웹 브라우저들은 모두 <strong>CSS</strong>를 지원하고
+                있습니다.
+
+
+                <h3>CSS 주석 표시</h3>
+                <p>1. {/*로 시작해서 */로 끝납니다.</p>
+                <p>2. 대/소문자를 구분하지 않습니다.</p>
+                <p>3. 주석은 소스코드상에서만 표시될 뿐 실제적으로는 아무런 영향을 주지 않는 코드입니다.</p>
+                <div class="code">
+                    <pre><code>{/*CSS 주석*/</pre></code>
+                </div>
+
+                <h3>CSS 선언 방법</h3>
+                <p>1. inline </p>
+                <ul>
+                    <li>HTML 태그 안에 적용합니다.</li>
+                    <li>다른 CSS 파일에 적용한 것보다 우선순위가 높습니다.</li>
+                </ul>
+<br>
+                <p>2. internal </p>
+                <ul>
+                    <li>html 파일 head 태그 안에 style 태그로 지정합니다.</li>
+                    <li>별도의 css 파일을 관리하지 않아도 됩니다.</li>
+                    <li>서버에 css 파일을 부르기 위해 별도의 브라우저가 요청을 보낼 필요가 없습니다.</li>
+                </ul>
+<br>
+                <p>3. 외부파일(.CSS)로 저장하는 방식입니다. </p>
+                <ul>
+                    <li>HTML 태그 안에 적용합니다</li>
+                    <li>다른 CSS 파일에 적용한 것보다 우선순위가 높습니다.</li>
+                </ul>
+
+
+
+                <h4>내부 스타일</h4>
+                <p>HTML 문서 내부 상단에 &lt;style&gt; 태그를 이용해 별도로 스타일 정의합니다.</p>
+                <div class="code">
+                    &lt;head&gt;
+                    <br>
+                       &lt;style&gt;
+                    <br>
+                    body { background-color: lightyellow; }
+                    <br>
+                    h2 { color: red; text-decoration: underline;
+                    <br> 
+                    &lt;/style&gt;
+                    <br>
+                    &lt;/head&gt;
+                </div>
+
+                <h4>외부 스타일</h4>
+                <p>HTML 문서와 별도로 확장자가 css인 파일 (예: style.css) 생성 후,
+                    HTML 문서에 상단에 &lt;link&gt; 태그로 불러와 스타일을 적용합니다.</p>
+                <div class="code">
+                    &lt;head&gt;
+                    <br>
+                    &lt;style type="text/css"&gt;
+                    <br>
+                    body {
+                    margin: 0;
+                    padding: 0;
+                    }
+                    &lt;/style&gt;
+                    <br>
+                    &lt;/head&gt;
+                </div>
+
+                <h4>인라인 스타일</h4>
+                <p>HTML 태그 명령어 라인 내부에 스타일 정의합니다.</p>
+                <div class="code">
+                &LT;body&gt;
+                <br>
+                &LT;h2 style="color:green; text-decoration:underline"&gt;
+                <br>
+                &LT;/h2&gt;
+                <br>
+                &LT;/body&gt;
+                </div>
+            </div>
+        </div>
+        <!-- refer -->
+    </main>
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+
+</body>
+
+</html>

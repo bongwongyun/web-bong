@@ -254,6 +254,9 @@ a {
     padding: 20px 20px 15px 20px;
     border-radius: 10px;
     background: #f4f8fa;
+    overflow-x: scroll;
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 .doc strong {
@@ -262,6 +265,57 @@ a {
     border-radius: 20px;
     padding: 2px 15px 0px 15px;
     display: inline-block;
+}
+
+.doc .table {
+    overflow-x: auto;
+}
+
+.doc .table table {
+    width: 100%;
+    min-width: 800px;
+    border: 1px solid #cdcdcd;
+    border-collapse: collapse;
+}
+
+.doc .table table th {
+    border-bottom: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
+    background-color: #f5f5f5;
+    padding: 5px;
+}
+
+.doc .table table td {
+    border-bottom: 1px solid #cdcdcd;
+    border-right: 1px solid #cdcdcd;
+    padding: 5px;
+}
+
+.doc .table table .mieddle {
+    vertical-align: middle;
+}
+
+.doc .table table .center {
+    text-align: center;
+}
+
+
+@media (max-width: 800px) {
+    .doc h2 {
+        font-size: 18px;
+    }
+
+    .doc {
+        font-size: 14px;
+    }
+
+    .doc .line {
+        padding: 10px 15px;
+    }
+
+    .doc .table table {
+        overflow-x: scroll;
+    }
 }
 
 /* result */
@@ -294,4 +348,58 @@ a {
         font-size: 14px;
         padding: 15px;
     }
+}
+
+/* javascript */
+
+.javascript {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    border: 8px solid#444fff;
+    box-sizing: border-box;
+    border-radius: 20px;
+    position: relative;
+}
+
+.javascript h1 {
+    font-size: 8vw;
+    color: #444fff;
+    font-weight: 700;
+}
+
+.javascript .menu {
+    text-align: center;
+}
+
+.javascript .menu li {
+    display: inline;
+}
+
+.javascript .menu li a {
+    border: 1px dashed #444fff;
+    border-radius: 50px;
+    color: #444fff;
+    padding: 10px 30px;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.javascript .menu li a:hover {
+    background: #444fff;
+    color: #fff;
+}
+
+
+/* width : width + padding + border + margin */
+/* box-sizing: border-box; */
+
+@media (max-width: 800px) {
+    .javescript h1 {
+        font-size: 55px;
+        padding: 10px 0;
+    }
+    
 }
