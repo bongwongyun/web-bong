@@ -354,33 +354,20 @@
                 <h3>11 . 배열 : 데이터 불러오기 : 펼침 연산자(spread Operator)</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-    const num = [100, 200, 300, 400, 500]
+    const num = [100, 200, 300, 400, 500];
                         
-    document.write(num); // 100, 200, 300, 400, 500
-    document.write(num[0],num[1],num[2],num[3],num[4]); //100 200 300 400 500
-    document.write(...num); //100 200 300 400 500
+    document.write(num,"&lt;br&gt;"); // 100, 200, 300, 400, 500
+    document.write(num[0],num[1],num[2],num[3],num[4], "&lt;br&gt;"); //100200300400500
+    document.write(...num"&lt;br&gt;"); //100200300400500
 }
                     </code></pre>
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
                     <div class="result11">
-                    100 200 300 400 500 <br>
-                    100 <br>
-                    0 <br>
-                    100,200,300,400,500 <br>
-                    100 <br>
-                    1 <br>
-                    100,200,300,400,500 <br>
-                    100 <br>
-                    2 <br>
-                    100,200,300,400,500 <br>
-                    100 <br>
-                    3 <br>
-                    100,200,300,400,500 <br>
-                    100 <br>
-                    4 <br>
-                    100,200,300,400,500 <br>
+                    100, 200, 300, 400, 500 <br>
+                    100200300400500 <br>
+                    100200300400500 <br>
                     </div>
                 </div>
             </div>
@@ -389,7 +376,7 @@
 
         <div class="script">
             <!-- sample12 -->
-            <div id="sample11" class="sample">
+            <div id="sample12" class="sample">
                 <h3>12 . 배열 : 데이터 불러오기 : 배열 구조분해할당</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
@@ -405,7 +392,9 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result12"></div>
+                    <div class="result12">
+                        100 200 javascript
+                    </div>
                 </div>
             </div>
             <!-- //sample12 -->
@@ -413,27 +402,26 @@
 
         <div class="script">
             <!-- sample13 -->
-            <div id="sample11" class="sample">
+            <div id="sample13" class="sample">
                 <h3>13. 객체 : 데이터 불러오기 : 기본</h3>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
     const obj = {
-      a : 100,
-      b : 200,
-      c : "javascript"
-    }
+      a: 100,
+      b: 200,
+      c: "javascript"
+    };
     document.write(obj,a);
     document.write(obj,b);
     document.write(obj,c);
-    document.write(obj[a]);
-    document.write(obj[b]);
-    document.write(obj[c]);
 }
                     </code></pre>
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result13"></div>
+                    <div class="result13">
+                       100 200 javascript
+                    </div>
                 </div>
             </div>
             <!-- //sample13 -->
@@ -449,7 +437,7 @@
         a : 100,
         b : 200,
         c : "javascript"
-    }
+    };
 
     document.write(object.keys(obj));
     document.write(object.values(obj));
@@ -459,7 +447,13 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result14"></div>
+                    <div class="result14">
+                        a,b,c, 
+                        <br>
+                        100,200,javascript
+                        <br>
+                        a,100,b,200,c,javascript
+                    </div>
                 </div>
             </div>
             <!-- //sample14 -->
@@ -475,7 +469,7 @@
         a : 100,
         b : 200,
         c : "javascript"
-    }
+    };
 
     const name1 = obj.a;
     const name2 = obj.b;
@@ -489,7 +483,13 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result15"></div>
+                    <div class="result15">
+                        100
+                        <br>
+                        200
+                        <br>
+                        javascript
+                    </div>
                 </div>
             </div>
             <!-- //sample15 -->
