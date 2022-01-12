@@ -392,6 +392,19 @@ a {
     color: #fff;
 }
 
+.javascript::before {
+    content: '';
+    width: 100%;
+    height: calc(100vh - 16px);
+    border: 8px solid #50B5F9;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 13px;
+}
+
 
 /* width : width + padding + border + margin */
 /* box-sizing: border-box; */
