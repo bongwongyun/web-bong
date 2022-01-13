@@ -164,12 +164,14 @@
         x = 200;        //지역변수 100->200
         y = 300;        //전역변수 200->300      
 
+        document.write("함수 안);
         document.write(x);
         document.write(y);
         document.write(z);
     }
     func();
 
+    document.write("함수 밖);
     document.write(x);
     document.write(y);
     document.write(z);
@@ -179,12 +181,13 @@
             <div class="result">
                 <h4>결과보기</h4>
                 <div>
+                    함수 안 <br>
                     200 <br>
                     300 <br>
                     javascript <br>
+                    함수 밖 <br>
                     100 <br>
                     300 <br>
-                    javascript <br>
                 </div>
             </div>
         </div>
