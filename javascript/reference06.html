@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li class="active"><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h1>조건문</h1>
+            <p>조건문은 조건식의 값이 (taue)인지, 거짓(false)인지에 따라 자바스크립트 코드를 제어합니다. 예를 들어 질의응답 창을 이용해 방문자가 좋아하는 숫자를 입력 받습니다. 이때 입력된
+                값을 2로 나누어 나머지 값이 0이면 "당신이 좋아하는 숫자는 짝수 입니다." 라고 출력하게 되고, 아닐 경우에는 "당신이 좋아하는 숫자는 홀수 입니다." 라고 출력하게 한다고 합시다.
+                이렇게 나눈 수를 나눈 나머지 값에 따라 다른 결과를 출력하게 하려면 조건문을 사용해야 합니다. 조건문의 종류에는 if문,else 문 그리고 else if 문이 있습니다.</p>
+
+            <h2>if 문</h2>
+            <p>if 문은 조건식을 만족(true)할 경우에만 코드를 실행합니다. 다음은 if 문의 기본형입니다. 조건식은 앞에서 배웠던 Boolean() 내장 메서드와 마찬가지로 그 어떤 데이터를
+                입력해도 true 또는 false를 반환합니다. 이 내용은 적용예제를 보며 자세히 살펴보겠습니다. </p>
+            <div class="line">
+                if (조건식) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드; <br>
+                }
+            </div>
+            <br>
+            <p>[적용 예제 1]에서 num&lt;500의 비교결과는 10&lt;500이므로 true를 반환합니다. 조건문 내의 코드를 실행하면 "hello"가 출력되겠죠</p>
+            <div class="line">
+                var num=10; <br>
+                if(num%lt;500){ //true를 반환합니다. <br>
+                document.write("hello");
+                <br> }
+            </div><br>
+            <p>[적용 예제 2]의 조건식에 ()은 Boolean() 메서드에 ()을 입력했을 때와 결과가 같습니다. 그 결과 false를 반환하여 조건문의 코드를 실행하지 않습니다.</p>
+            <br>
+            <div class="line">
+                if (0) <br> //false를 반환합니다.
+                document.write("hello") <br>
+                }
+            </div>
+            <br>
+            <p>그럼 예제를 통해 if 문을 살펴보겠습니다. 다음 에제는 방문자로 부터 입력받은 걸음 수를 조건문으로 만들고, 걸음 수가 10,000 이상일 경우에만 결과를 출력하도록 작성했습니다.</p>
+            <div class="code">
+                <pre><code>
+06: &lt;script&gt;
+07: var walkAmount=promps("당신의 하루 걷는 양은 몇 보인가요?","0");
+08: 
+09: if(walkAmount&gt;= 10000) { 
+10:      document.write("매우 좋은 습관을 가지고 있군요!!", "&lt;br&gt;"); 
+11: } 
+12: document.write("================The End====================");
+13:&lt;/script&gt;  
+                </code></pre>
+            </div>
+            <br>
+            <h4>조건식에 논리형 데이터가 아닌 다른 형이 오는경우</h4>
+            <p>조건식에 논리형 데이터(true,false)가 아닌 다른 형의 데이터가 입력되어도 true 또는 false로 인식됩니다. 다음은 조건식에 논리형 데이터가 아닌 다른 형의 데이터가 입력되었을
+                때 반환되는 결과 입니다.</p>
+            <br>
+            <p>다음 값이 조건식에 입력되면 false를 반환하지만 그 밖의 값은 true로 인식합니다.</p>
+            <div class="line">
+                0,null,""(빈 문자),undefined
+            </div>
+            <br>
+            <p>출력되는 경우</p>
+            <div class="code">
+                <pre><code>
+var num=3;
+if(num){   //3은 true입니다.
+    document.write(num); 
+}
+                </code></pre>
+            </div>
+            <p>출력되지 않은 경우</p>
+            <div class="code">
+                <pre><code>
+var num=0;
+if(num){   //0은 false입니다.
+    document.write(num); 
+}
+                </code></pre>
+            </div>
+            <p>다음 예제에서 방문자가 질의응답 창에 이름을 입력하지 않으면 기본 응답값인 빈 문자("")가 변수에 저장되어 조건식에 거짓(false)값을 반환되고 그 결과 문장이 출력되지 않습니다.
+            </p>
+
+            <div class="code">
+                <pre><code>
+06: &lt;script&gt;
+07: var userName=prempt("방문자의 이름은?","");
+08: 
+09: if(userName) { 
+10:      document.write("님 반갑습니다! 방문을 환영합니다."); 
+11: } 
+12:&lt;/script&gt;  
+                </code></pre>
+            </div>
+            <h2>else 문</h2>
+            <p> else 문은 조건식을 만족할(true) 경우와 만족하지 않을(false) 경우에 따라 실행되는 코드가 달라집니다.
+                즉, 두 가지 결과가 나올 수 있습니다.</p>
+            <p>다음은 조건식의 만족 여부에 따라 실행되는 코드가 달라지는 else 문의 기본형입니다.</p>
+            <div class="code">
+                <pre><code>
+if(조건식){
+    자바스크립트 코드1; 
+}else{
+    자바스크립트 코드2;
+}
+            </code></pre>
+            </div>
+            <p>다음 예제를 통해 else 문에 대해 알아보겠습니다. 방문자에게 질의응답 창으로 좋아하는 숫자를 입력받고 if~else 문을 사용하여 입력된 값인 짝수인지, 홀수 인지에 따라 출력되는 결과가 다르게 나타나도록 하였습니다.</p>
+            <div class="code">
+                <pre><code>
+06: &lt;script&gt;
+07: var num=prempt("당신이 좋아하는 숫자는?","7");
+08: 
+09: if(num % 2 == 0) {   //짝수일 경우에 실행 
+10:      document.write("당신이 좋아하는 숫자는 짝수입니다."); 
+11: } else {            //홀수일 경우에 실행
+12:      document.write("당신이 좋아하는 숫자는 홀수입니다.");
+13: }
+14:&lt;/script&gt; 
+            </code></pre>
+            </div>
+            <h2>else if 문</h2>
+            <p>else if 문은 두 가지 이상의 조건식과 정해 놓은 조건을 만족하지 않았을 때 실행되는 코드로 이루어져 있습니다.</p>
+            <p>다음은 else if 문의 기본형입니다. 가장 위에 있는 조건식1 부터 5까지 차례로 조건 검사를 하면서 만족(true)하는 값이 나오면 그에 해당하는코드를 실행하고 조건문을 종료합니다. 조건식 중 만족(true)하는 값이 하나도 없으면 else문의 중괄호{..}에 있는 코드를 실행합니다. </p>
+            <div class="code">
+                <pre><code>
+if(조건식1){
+코드1;
+}else if (조건식2){
+코드2;
+}else if (조건식3){
+코드3;
+}else if (조건식4){
+코드4;
+}else if (조건식5){
+코드5;
+}else{
+코드6;
+}
+            </code></pre>
+            </div>   
+            <h2>중첩 if문</h2>
+            <p>조건문 안에 조건문이 있으면 중첩 if 문이라고 합니다. 중첩 if 문의 기본형은 다음과 같습니다. </p>
+                <div class="code">
+                    <pre><code>
+if(조건식1){
+    if(조건식2){
+        자바스크립트 코드;
+    }
+}
+                    </code></pre>
+                </div>
+                <p>중첩 if 문을 바깥쪽에 있는 조건문인 조건식1을 만족해야만 안쪽에 있는 조건문인 조건식2를 검사합니다. 만일 안쪽 if 문의 조건식2를 만족하지 않으면 바깥쪽 조건문인 조건식1의 중괄호 안에 있는 코드만 실행하고 종료됩니다.
+                    다음 예제와 같이 방문자로분터 아이디와 비밀번호를 입력받았을 때 아이디와 비밀번호를 한 번에 처리하지 않아도 됩니다. 방문자의 아이디가 일치하지 않으면 비밀번호의 일치 여부를 굳이 검사하지 않아도 되니까요. 
+                </p>
+                <br>
+                다음은 중첩 if문을 사용해 아이디와 비밀번호가 일치했을 때 환영문구가 출력되도록 작성한 예제입니다. 비밀번호가 일치하지 않을 경우에는 브라우저가 새로 고침이 되도록 했습니다.
+                <div class="code">
+                    <pre><code>
+06: &lt;script&gt;
+07: var id = "easy1004";    //아이디
+08: var pw = "112233";      //비밀번호
+09: 
+10: var user_id = prompt("아이디는?","");   //아이디 입력
+11: var user_pw = prempt("비밀번호는?",""); //비밀번호 입력
+12:
+13: if( id == user_id){
+14: if( pw == user_pw){
+15:    docmuent.wrtie(user_id+"님 반갑습니다.");
+16: }else{
+17:   alert("비밀번호가 일치하지 않습니다.");
+18:   location.reload();
+19:    }
+20: }else{
+21:    alert("아이디가 일치하지 않습니다.");
+22:    locatoon.reload();
+23:    }
+24:&lt;/script&gt; 
+                </code></pre>
+        </div>
+    </main>
+</body>
+
+</html>
