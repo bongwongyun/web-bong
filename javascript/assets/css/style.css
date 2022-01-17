@@ -339,13 +339,14 @@ a {
 
 }
 
-.result div {
+.result > div {
     background: #282722;
     padding: 20px;
     color: #fff;
     border-radius: 0 0 5px 5px;
     line-height: 1.4;
     font-size: 16px;
+    display: none;
 }
 
 @media (max-width:800px) {
