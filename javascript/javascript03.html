@@ -112,10 +112,74 @@
             function func() {
                 const str = "함수가 실행되었습니다.";
                 return str;
-
             }
             document.write(func());
         }
+        //05. 화살표 함수 : 선언적 함수
+        //{
+        //    function func() {
+        //        document.write("함수가 실행되었습니다.5");
+        //    }
+        //    func();
+        //}
+        {
+            func = () => function{
+                document.write("함수가 실행되었습니다.5");
+            }
+            func();
+        }
+        //06. 화살표 함수 : 익명 함수
+        //const func =  function(){
+        //    document.write("함수가 실행되었습니다.6");
+        //}
+
+        const func = () => {
+            document.write("함수가 실행되었습니다.6")
+            func();
+        }
+
+        //07. 화살표 함수 : 리턴값 함수
+        //{
+        //    function func(){
+        //        const str ="함수가 실행되었습니다.7";
+        //        return str;
+        //   }
+        //    document.write(func());
+        //}
+        {
+            func = () => {
+                const str ="함수가 실행되었습니다.7";
+                return str;
+            }
+            document.write(func());
+        }
+
+        //08. 화살표 함수 : 익명 함수  + 매개변수 + 리턴값 
+        {
+            const func = (str) => {
+                return str;
+            }
+            document.write(func("함수가 실행되었습니다.8"));
+        }
+
+        //힘수의 종류 (4가지)
+        //선언적 함수
+        //익명 함수
+        //매개변수 함수
+        //리턴값 함수
+
+        //화살표 함수 종류 (4가지)
+        //화살표 함수 : 선언적 함수
+        //화살표 함수 : 익명 함수
+        //화살표 함수 : 매개변수 함수
+        {
+            func = (str) => {
+                document.write(str)
+            }
+            func("함수가 실행되었습니다.");
+        }
+        //화살표 함수 : 리턴값 함수
+
     </script>
     
 </body>

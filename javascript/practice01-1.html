@@ -19,36 +19,48 @@
 <body>
 
     <div class="top"><a href="#header">Top</a></div>
+    <div class="back"><a href="practice01.html">back</a></div>
 
     <body>
         <main id="main">
             <div class="test">
                 <h2>1.1부터 100까지 출력하기</h2>
                 <p>1.1 while 문을 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</p>
-<!-- 01 -->
+                <!-- 01 -->
                 <div class="code">
-                    <pre class="line-numbers"><code class="language-js">{
-                        
+                    <pre class="line-numbers"><code class="language-js">{             
     let num = 1;
                         
     while (num &gt;= 100) {
          document.write(num);
     }
-
-
 }</code></pre>
                 </div>
             </div>
-<!-- 02 -->
+            <!-- 02 -->
             <div class="test">
-            <h3>1.2 for 문을 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
-            <p>조건 1. 짝수만 출력하세요!</p>
-            <p>조건 2. 배수만 출력하세요!</p>
-            
+                <h3>1.2 for 문을 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
+                <p>조건 1. 짝수만 출력하세요!</p>
+                <p>조건 2. 배수만 출력하세요!</p>
+//홀수
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-
-                    }</code></pre>
+    for (let i=1; i&lt;=100; i++){
+             if ( i % 2 !== 0 ) {
+                console.log(i);
+             }
+    }
+}</code></pre>
+//짝수
+                    <div class="code">
+                        <pre class="line-numbers"><code class="language-js">{
+    for (let i=1; i&lt;=100; i++){
+             if (i % 2 == 0) {
+                console.log(i);
+             }
+    }                                                       
+}</code></pre>
+                    </div>
                 </div>
             </div>
         </main>

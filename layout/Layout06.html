@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout06</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1280px;
+            margin: 0 auto;
+            background-color: #E1F5FE;
+        }
+        #header {
+            width: 1280px;
+            height: 100px;
+            background-color: #B3E5FC;
+        }
+        #nav {
+            width: 1280px;
+            height: 100px;
+            background-color: #81D4FA;
+        }
+        #nav .left {
+            width: 640px;
+            height: 100px;
+            background-color: #81D4FA;
+            float: left;
+        }
+        #nav .right {
+            width: 640px;
+            height: 100px;
+            background-color: #9bbbc9;
+            float: right;
+        }
+        #section {
+            width: 1280px;
+            height: 720px;
+            background-color: #4FC3F7;
+        }
+        #section .top {
+            width: 980px;
+            height: 240px;
+            background-color: #6dbee4;
+            float: right;
+        }
+        #section .middle {
+            width: 980px;
+            height: 240px;
+            background-color: #4fabd6;
+            float: right;
+        }
+        #section .bottom {
+            width: 1280px;
+            height: 240px;
+            background-color: #2299d4;
+            float: right;
+        }
+        #footer {
+            width: 1280px;
+            height: 100px;
+            background-color: #0277BD;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav">
+            <nav class="left"></nav>
+            <nav class="right"></nav>
+        </nav>
+        <section id="section">
+            <section class="top"></section>
+            <section class="middle"></section>
+            <section class="bottom"></section>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,39 +1,39 @@
 //결과보기
 //제목을 클릭했을 때
-document.querySelector(".result01t h4").addEventListener("click",function(){
-    document.querySelector(".result01").style.display = "block";
+document.querySelector(".result1t h4").addEventListener("click",function(){
+    document.querySelector(".result1").style.display = "block";
 })
 
-document.querySelector(".result02t h4").addEventListener("click",function(){
-    document.querySelector(".result02").style.display = "block";
+document.querySelector(".result2t h4").addEventListener("click",function(){
+    document.querySelector(".result2").style.display = "block";
 })
 
-document.querySelector(".result03t h4").addEventListener("click",function(){
-    document.querySelector(".result03").style.display = "block";
+document.querySelector(".result3t h4").addEventListener("click",function(){
+    document.querySelector(".result3").style.display = "block";
 })
 
-document.querySelector(".result04t h4").addEventListener("click",function(){
-    document.querySelector(".result04").style.display = "block";
+document.querySelector(".result4t h4").addEventListener("click",function(){
+    document.querySelector(".result4").style.display = "block";
 })
 
-document.querySelector(".result05t h4").addEventListener("click",function(){
+document.querySelector(".result5t h4").addEventListener("click",function(){
     document.querySelector(".result05").style.display = "block";
 })
 
-document.querySelector(".result06t h4").addEventListener("click",function(){
+document.querySelector(".result6t h4").addEventListener("click",function(){
     document.querySelector(".result06").style.display = "block";
 })
 
-document.querySelector(".result07t h4").addEventListener("click",function(){
-    document.querySelector(".result07").style.display = "block";
+document.querySelector(".result7t h4").addEventListener("click",function(){
+    document.querySelector(".result7").style.display = "block";
 })
 
-document.querySelector(".result08t h4").addEventListener("click",function(){
-    document.querySelector(".result08").style.display = "block";
+document.querySelector(".result8t h4").addEventListener("click",function(){
+    document.querySelector(".result8").style.display = "block";
 })
 
-document.querySelector(".result09t h4").addEventListener("click",function(){
-    document.querySelector(".result09").style.display = "block";
+document.querySelector(".result9t h4").addEventListener("click",function(){
+    document.querySelector(".result9").style.display = "block";
 })
 
 document.querySelector(".result10t h4").addEventListener("click",function(){
@@ -64,29 +64,36 @@ document.querySelector(".result16t h4").addEventListener("click",function(){
     document.querySelector(".result16").style.display = "block";
 })
 
-document.querySelector(".result17t h4").addEventListener("click",function(){
-    document.querySelector(".result17").style.display = "block";
-})
+//for문을 이용해서 1~12까지 출력
 
-document.querySelector(".result18t h4").addEventListener("click",function(){
-    document.querySelector(".result18").style.display = "block";
-})
 
-document.querySelector(".result19t h4").addEventListener("click",function(){
-    document.querySelector(".result19").style.display = "block";
-})
+//for ( let i= 1; i<=12; i++ ){
+//   document.querySelector(".result0"+i+"t h4").addEventListener("click",function(){
+//        document.querySelector(".result"+i).style.display="block";
+//    });
+//}
 
-document.querySelector(".result20t h4").addEventListener("click",function(){
-    document.querySelector(".result20").style.display = "block";
-})
+//for Each문을 이용해서 1~12까지 출력
 
-document.querySelector(".result21t h4").addEventListener("click",function(){
-    document.querySelector(".result21").style.display = "block";
-})
-document.querySelector(".result22t h4").addEventListener("click",function(){
-    document.querySelector(".result22").style.display = "block";
-})
+//num.function ("result").addEventListener {
+//    document.querySelectorAll(".result h4").forEach(function(el){
+        //console.log(el)
+//        el.addEventListener("click",function(){
+//            alert("클릭");
+//        }
+//    }
+//}
 
-document.querySelector(".result23t h4").addEventListener("click",function(){
-    document.querySelector(".result23").style.display = "block";
-})
+//for()
+//const num = [100, 200, 300, 400, 500];
+
+//for (let i=0; i<=5; i++){
+    //console.log(i) // 0 . 1 . 2 . 3
+    //console.log(num[i]) // 0. 100 . 200 . 300
+//}
+
+//for Each()
+//num.forEach(function(el){
+//    console.log(el)//100.200.300
+//    console.log(index) // 0 1 2 3 4
+//});
