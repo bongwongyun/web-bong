@@ -1,90 +1,100 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout06</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        #wrap {
-            width: 1280px;
-            margin: 0 auto;
-            background-color: #E1F5FE;
-        }
-        #header {
-            width: 1280px;
-            height: 100px;
-            background-color: #B3E5FC;
-        }
-        #nav {
-            width: 1280px;
-            height: 100px;
-            background-color: #81D4FA;
-        }
-        #nav .left {
-            width: 640px;
-            height: 100px;
-            background-color: #81D4FA;
-            float: left;
-        }
-        #nav .right {
-            width: 640px;
-            height: 100px;
-            background-color: #9bbbc9;
-            float: right;
-        }
-        #section {
-            width: 1280px;
-            height: 720px;
-            background-color: #4FC3F7;
-        }
-        #section .top {
-            width: 980px;
-            height: 240px;
-            background-color: #6dbee4;
-            float: right;
-        }
-        #section .middle {
-            width: 980px;
-            height: 240px;
-            background-color: #4fabd6;
-            float: right;
-        }
-        #section .bottom {
-            width: 1280px;
-            height: 240px;
-            background-color: #2299d4;
-            float: right;
-        }
-        #footer {
-            width: 1280px;
-            height: 100px;
-            background-color: #0277BD;
-        }
-
-    </style>
 </head>
-
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    #wrap {
+        width: 100%;
+    }
+    #header {
+        width: 100%;
+        height: 100px;
+        background-color: #111;
+    }
+    #nav {
+        width: 100%;
+        height: 100px;
+        background-color: #333;
+    }
+    #contents {
+        width: 100%;
+        height: 780px;
+        background-color: #555;
+    }
+    #footer {
+        width: 100%;
+        height: 100px;
+        background-color: #999;
+    }
+    .header-container {
+        width: 60%;
+        height: 100px;
+        background-color: rgb(133, 119, 119);
+        margin: 0 auto;
+    }
+    .nav-container {
+        width: 60%;
+        height: 100px;
+        background-color: rgb(121, 47, 47);
+        margin: 0 auto;
+    }
+    .contnets-container {
+        width: 60%;
+        height: 780px;
+        background-color: rgb(48, 0, 0);
+        margin: 0 auto;
+    }
+    .footer-container {
+        width: 60%;
+        height: 100px;
+        background-color: rgb(255, 255, 255);
+        margin: 0 auto;
+    }
+    .contnets-container .aside {
+        width: 60%;
+        height: 780px;
+        background-color: rgb(226, 152, 152);
+        margin-right: 0 auto;
+    }
+    .contnets-container .aside .article {
+        width: 100%;
+        height: 390px;
+        background-color: rgb(153, 2, 2);
+    }
+    .contnets-container .aside .article01 {
+        width: 100%;
+        height: 390px;
+        background-color: rgb(248, 7, 7);
+        
+    }
+</style>
 <body>
     <div id="wrap">
-        <header id="header"></header>
+        <header id="header">
+            <div class="header-container"></div>
+        </header>
         <nav id="nav">
-            <nav class="left"></nav>
-            <nav class="right"></nav>
+            <div class="nav-container"></div>
         </nav>
-        <section id="section">
-            <section class="top"></section>
-            <section class="middle"></section>
-            <section class="bottom"></section>
+        <section id="contents">
+            <div class="contnets-container">
+            <aside class="aside">
+                <div class="article"></div>
+                <div class="article01"></div>
+            </aside>
+        </div>
         </section>
-        <footer id="footer"></footer>
+        <footer id="footer">
+            <div class="footer-container"></div>
+        </footer>
     </div>
-
 </body>
-
 </html>
