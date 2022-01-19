@@ -1,51 +1,112 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practive01</title>
 
-     <!-- style -->
-     <link rel="stylesheet" href="assets/css/style.css">
-     <link rel="stylesheet" href="assets/css/prism.css">
-     <link rel="stylesheet" href="assets/css/dog.css">
- 
-     <!-- script -->
-     <script src="assets/js/prism.js"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism2.css">
+    <link rel="stylesheet" href="assets/css/dog.css">
+
+    <!-- script -->
+    <script src="assets/js/prism2.js"></script>
 </head>
+
 <body>
+
+    <div class="top"><a href="#header">Top</a></div>
+    <div class="back"><a href="practice01.html">back</a></div>
+
+    <body>
+        <main id="main">
+            <div class="test">
+                <h2>2. 2단부터 9단까지 출력하기</h2>
+                <br>
+                <h3>2.1 for 문을 이용해서 2단부터 9단까지 출력해주세요.</h3>
+
+                <!-- 01 -->
+            <div class="code">
+            <pre class="line-numbers"><code class="language-js">{             
+    for (let i=2; i&lt;=9; i++){
+        document.write("&lt;br&gt;");
+           
+        for (let j=1; j&lt;=9; j++){
+            let sum = i * j; 
+               document.write( i + " * " + j + " = " + sum, "&lt;br&gt;");
+        }
+    }
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- 02 -->
+            <div class="test">
+                <h3>2.2 while 문을 이용해서 2단부터 9단까지 출력해주세요.</h3>
+            <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    let i = 1;
+      while(i&lt;=8){
+        document.write("&lt;br&gt;");
+        i++
+        let j=1;
+          while(j&lt;=9){
+            document.write( i + "*"+ j + "=", ( i * j ), "&lt;br&gt;");
+            j++;
+          }
+      }                
+}</code></pre>
+
+                    </div>
+                </div>
+        </main>
+<!-- script -->
+<script>
+     //2 * 1 = 2
+     //2 * 2 = 4
+     //2 * 3 = 6
+     //2 * 4 = 8
+     //2 * 5 = 10
+     //2 * 6 = 12
+     //2 * 7 = 14
+     //2 * 8 = 16
+     //2 * 9 = 18
+     //-----------
+     //3 * 1 = 2
+     //3 * 2 = 6
+
+
+     //i = for (let i=2; i<=9; i++)
+     //j = for (let j=1; j<=9; j++)
+     
+     // sum = i * j
+     
+     //for 문을 이용해서 구구단을 출력 
     
-<div class="top"><a href="#header">Top</a></div>
+     for (let i=2; i<=9; i++){
+         document.write("<br>");
 
-<body>
-    <header id="header">
-        <h1><a href="index.html">Javascript</a></h1>
-        <nav>
-            <ul>
-                <li><a href="javascript01.html">데이터 저장하기</a></li>
-                <li><a href="javascript02.html">데이터 불러오기</a></li>
-                <li><a href="javascript03.html">데이터 실행하기</a></li>
-                <li><a href="javascript04.html">데이터 제어하기</a></li>
-            </ul>
-            <ul>
-                <li class="active"><a href="practice01.html">데이터 연습하기</a></li>
-            </ul>
-        </nav>
-    </header>
+        for (let j=1; j<=9; j++){
+            let sum = i * j; 
+            document.write( i + " * " + j + " = " + sum, "<br>");
+        }
+    }
+      //while 문을 이용해서 구구단을 출력
 
-    <!-- //header -->
-    <main id="main">
-        <div class="list">
-            <ul>
-                <li><a href="practice01-1.html">01. 1부터 100까지 출력하기</a></li>
-                <li><a href="practice01-2.html">02. 구구단 출력하기</a></li>
-                <li><a href="practice01-3.html">03. 테이블 출력하기</a></li>
-                
-            </ul>
-        </div>
-    </main>
-    <!-- //main -->
+      let i = 1;
+        while(i<=8){
+            document.write("<br>");
+            i++
+            let j=1;
+              while(j<=9){
+                document.write( i + "*"+ j + "=",(i*j), "<br>");
+                j++;
+              }
+        }
+</script>
+    </body>
 
-</body>
 </html>

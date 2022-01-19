@@ -1,51 +1,174 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practive01</title>
 
-     <!-- style -->
-     <link rel="stylesheet" href="assets/css/style.css">
-     <link rel="stylesheet" href="assets/css/prism.css">
-     <link rel="stylesheet" href="assets/css/dog.css">
- 
-     <!-- script -->
-     <script src="assets/js/prism.js"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism2.css">
+    <link rel="stylesheet" href="assets/css/dog.css">
+
+    <!-- script -->
+    <script src="assets/js/prism2.js"></script>
 </head>
+
 <body>
+
+    <div class="top"><a href="#header">Top</a></div>
+    <div class="back"><a href="practice01.html">back</a></div>
+
+    <body>
+        <main id="main">
+            <div class="test">
+                <h2>3. 테이블 출력하기</h2>
+                <h3>3.1 for 문을 이용해서 테이블을 출력하시오!</h3>
+                <!-- 01 -->
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{             
+    let table = "&lt;table border='1'&gt;";
+
+    for (let i=1; i&lt;=5; i++ ){
+        table += "&lt;tr&gt;";
+        for (let j=1; j&lt;=5; j++){
+            table += "&lt;td&gt;1&lt;/td&gt;";
+        }
+    table += "&lt;/tr&gt;";
+    }
+                    
+    table += "&lt;/table&gt;";
+                    
+    document.querySelector(".result01").innerHTML = table;
+}</code></pre>
+                </div>
+            </div>
+
+            <table border="1">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+            </table>
+            
+            <!-- 02 -->
+            <div class="test">
+                <h3>3.2 for 문을 이용해서 테이블을 출력해주세요.</h3>
+                <p>1~25까지 숫자를 넣으시오</p>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+
+}</code></pre>
+                    </div>
+                </div>
+
+                <table>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                </table>
+        </main>
+<!-- script -->
+<script>
+    //01
+    let table = "<table border='1'>";
+
+        for (let i=1; i<=5; i++ ){
+            table += "<tr>";
+                for (let j=1; j<=5; j++){
+                    table += "<td>1</td>";
+                }
+            table += "</tr>";
+        }
+
+        table += "</table>";
+
+    document.querySelector(".result01").innerHTML = table;
     
-<div class="top"><a href="#header">Top</a></div>
+    //02
+    {
+        let num = 1;
 
-<body>
-    <header id="header">
-        <h1><a href="index.html">Javascript</a></h1>
-        <nav>
-            <ul>
-                <li><a href="javascript01.html">데이터 저장하기</a></li>
-                <li><a href="javascript02.html">데이터 불러오기</a></li>
-                <li><a href="javascript03.html">데이터 실행하기</a></li>
-                <li><a href="javascript04.html">데이터 제어하기</a></li>
-            </ul>
-            <ul>
-                <li class="active"><a href="practice01.html">데이터 연습하기</a></li>
-            </ul>
-        </nav>
-    </header>
+        let table = "<table>";
 
-    <!-- //header -->
-    <main id="main">
-        <div class="list">
-            <ul>
-                <li><a href="practice01-1.html">01. 1부터 100까지 출력하기</a></li>
-                <li><a href="practice01-2.html">02. 구구단 출력하기</a></li>
-                <li><a href="practice01-3.html">03. 테이블 출력하기</a></li>
-                
-            </ul>
-        </div>
-    </main>
-    <!-- //main -->
+        for (let i=1; i<=5; i++)    
+            table +="<tr>";
+                for(let j=1; j<=5; j++){
+                    table +="<td>" + num + "</td>";
+                    num++;
+                }
+            table +="</tr>";
+        
+        table +="</table>";
 
-</body>
+        document.querySelector(".result02").innerHTML = table;
+    }    
+</script>
+    </body>
+
 </html>

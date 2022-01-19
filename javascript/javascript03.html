@@ -83,8 +83,8 @@
         <!-- script -->
     </main>
 
+    <!-- //sample1 -->
     <div class="script">
-        <!-- sample1 -->
         <div id="sample1" class="sample">
             <h3>01. 선언적 함수</h3>
             <div class="code">
@@ -95,46 +95,89 @@
     func();
 }</code></pre>
             </div>
-
-            <div class="result result1t">
+            <div class="result">
                 <h4>결과보기</h4>
-                <div class="result1">
-                    100 <br>
-                    200 <br>
-                    javascript
+                <div>
+                    "함수가 실행되었습니다."
                 </div>
             </div>
         </div>
-        <!-- //sample1 -->
     </div>
-    
+    <!-- //sample1 -->
+
+    <!-- sample2 -->
     <div class="script">
-        <!-- sample1 -->
-        <div id="sample1" class="sample">
-            <h3>01. 선언적 함수</h3>
+        <div id="sample2" class="sample">
+            <h3>02. 익명 함수</h3>
             <div class="code">
                 <pre class="line-numbers"><code class="language-js">{
-    function func(){
+    const func = function () {
       document.write("함수가 실행되었습니다.");
     }
     func();
 }</code></pre>
             </div>
 
-            <div class="result result1t">
+            <div class="result">
                 <h4>결과보기</h4>
-                <div class="result1">
-                    100 <br>
-                    200 <br>
-                    javascript
+                <div>
+                    "함수가 실행되었습니다."
                 </div>
             </div>
         </div>
-        <!-- //sample1 -->
     </div>
+    <!-- //sample2 -->
+
+        <!-- sample3 -->
+        <div class="script">
+            <div id="sample3" class="sample">
+                <h3>03. 매개변수 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    function func(str) {
+      document.write(str);
+    }
+    func("함수가 실행되었습니다.");
+}</code></pre>
+                </div>
     
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다."
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample3 -->
 
-
+        <!-- sample3 -->
+        <div class="script">
+            <div id="sample4" class="sample">
+                <h3>04. 리턴값 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    function func() {
+      const str = "함수가 실행되었습니다.";
+        return str;
+    }
+    document.write(func());
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다."
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample2 -->
+    
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/script.js"></script>
     <script>
         // 데이터 저장 : 변수 , 상수 , 배열 , 객체(저장소)
         // 변수: 데이터 저장 , 변경, 추가
@@ -183,7 +226,7 @@
         //    func();
         //}
         {
-            func = () => function {
+            func = () => function () {
                 document.write("함수가 실행되었습니다.5");
             }
             func();

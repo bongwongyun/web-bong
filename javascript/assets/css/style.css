@@ -37,11 +37,13 @@
 /* reset */
 
 :root {
-    font-size: ;
+    font-size: 16px;
 }
 
 @media (max-width : 800px) {
-    :root {}
+    :root {
+        font-size: 14px;
+    }
 }
 
 * {
@@ -257,6 +259,11 @@ img {
     border-radius: 1.3em;
     background-color: #444fff;
 }
+.script .sample .view > div.blue {
+    border: 4px dashed #0011fc;
+    border-radius: 1.3em;
+    background-color: #0011f8;
+}
 
 .script .sample .view > div.selected img {
     opacity: 0.3;
@@ -303,18 +310,14 @@ img {
         font-size: 14px;
         padding: 10px 15px 8px 15px;
     }
+    .script .sample .view > div {
+        width: 48%;
+        margin: 1%;
+    }
 
     .script .sample .code pre {
         font-size: 14px;
     }
-}
-
-.script .sample .view > div {
-    width: 50%;
-}
-.script .sample .code .pre {
-    font-size: 14px;
-
 }
 
 /* doc */
@@ -425,24 +428,33 @@ img {
     font-weight: normal;
     margin-top: 10px;
     font-size: 16px;
-    border-radius: 5px 5px 0 0;
-
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.result>div {
+.result > div {
     background: #282722;
     padding: 20px;
     color: #fff;
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
     line-height: 1.4;
     font-size: 16px;
     display: none;
 }
 
+.result.active h4 {
+    border-radius: 5px 5px 0 0;
+}
+
+.result.active > div {
+    display: block;
+    border-radius: 0 0 5px 5px;
+}
+
 @media (max-width:800px) {
     .result h4 {
         font-size: 14px;
-        padding: 10px 15px;
+        padding: 15px;
     }
 
     .result div {
