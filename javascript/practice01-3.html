@@ -46,6 +46,8 @@
                 </div>
             </div>
 
+            
+
             <table border="1">
                 <tr>
                     <td>1</td>
@@ -90,12 +92,26 @@
                 <p>1~25까지 숫자를 넣으시오</p>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
+        let num = 1;
 
+        let table = "<table>";
+                
+        for (let i=1; i&lt;=5; i++)    
+            table +="<tr>";
+            for(let j=1; j&lt;=5; j++){
+                table +="<td>" + num + "</td>";
+                    num++;
+            }
+            table +="</tr>";
+                        
+            table +="</table>";
+                
+document.querySelector(".result02").innerHTML = table;
 }</code></pre>
                     </div>
                 </div>
 
-                <table>
+                <table id="table">
                     <tr>
                         <td>1</td>
                         <td>2</td>
