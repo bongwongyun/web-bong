@@ -49,19 +49,44 @@
             <div class="code">
             <pre class="line-numbers"><code class="language-js">{
     let i = 1;
-      while(i&lt;=8){
-        document.write("&lt;br&gt;");
+    while(i&lt;=8){
+      document.write("&lt;br&gt;");
         i++
-        let j=1;
+          let j=1;
           while(j&lt;=9){
             document.write( i + "*"+ j + "=", ( i * j ), "&lt;br&gt;");
             j++;
           }
-      }                
+    }                
 }</code></pre>
 
                     </div>
                 </div>
+
+                <!-- 03 -->
+            <div class="test">
+                <h3>2.3 사용자가 원하는 단을 받아 출력하시오.<a href="#" class="btn btn03">클릭</a></h3>
+            <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    let num, result;
+            
+    document.querySelector(".btn03").addEventListener("click", () => {
+        num = prompt("출력할 구구단 숫자를 입력해주세요", "2");
+        //console.log(num)
+    
+        for(let i=2; i&lt;=9; i++){
+            result = num + "*" + i + "=" + (num * i) + "<br>";
+        //console.log(result)
+            document.querySelector(".result03").innerHTML += result
+        }
+    });
+}</code></pre>
+<div class="result03">
+    <h4>결과보기</h4>
+</div>
+                    </div>
+                </div>
+
         </main>
 <!-- script -->
 <script>
@@ -86,7 +111,7 @@
      
      //for 문을 이용해서 구구단을 출력 
     
-     for (let i=2; i<=9; i++){
+        for (let i=2; i<=9; i++){
          document.write("<br>");
 
         for (let j=1; j<=9; j++){
@@ -96,15 +121,44 @@
     }
       //while 문을 이용해서 구구단을 출력
 
-      let i = 1;
-        while(i<=8){
-            document.write("<br>");
-            i++
-            let j=1;
-              while(j<=9){
-                document.write( i + "*"+ j + "=",(i*j), "<br>");
-                j++;
-              }
+        let num1 = 2;
+        let num2 = 1;
+            
+        while (num1 <= 9) {
+          num2 = 1;
+            while (num2 <= 9) {
+                document.write(num1 + " * " + num2 + " = " + (num1 * num2) + "<br>");
+                num2++;
+            }
+                num1++;
+                document.write("<br>");
+        }
+
+      //let i = 1;
+        //while(i<=8){
+            //document.write("<br>");
+            //i++
+            //let j=1;
+              //while(j<=9){
+                //document.write( i + "*"+ j + "=",(i*j), "<br>");
+                //j++;
+              //}
+        //}
+
+        // 사용자가 원하는 단을 받아 출력
+        {
+            let num, result;
+            
+            document.querySelector(".btn03").addEventListener("click", () => {
+                 num = prompt("출력할 구구단 숫자를 입력해주세요", "2");
+                 //console.log(num)
+
+                 for(let i=2; i<=9; i++){
+                     result = num + "*" + i + "=" + (num * i) + "<br>";
+                     //console.log(result)
+                     document.querySelector(".result03").innerHTML += result
+                 }
+            });
         }
 </script>
     </body>

@@ -560,6 +560,16 @@ img {
     margin-top: 1em;
 }
 
+/* 버튼 */
+.pbtn {
+    background: #000;
+    color: #fff;
+    padding: 3px 5px;
+    font-size: 0.8em;
+    vertical-align: 2px;
+    border-radius: 5px;
+}
+
 /* 간격 설정 */
 .mt0 {
     margin-top: 0px !important;
