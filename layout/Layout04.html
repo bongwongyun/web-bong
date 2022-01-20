@@ -4,77 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout04</title>
+    <title>Layout07</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
         #wrap {
-            width: 100%;
+            margin: 0 auto;
         }
         #header {
             width: 100%;
             height: 100px;
-            background-color: #E1F5FE;
+            background-color: rgb(226, 226, 143);
         }
-        #banner {
+        #nav {
             width: 100%;
             height: 100px;
-            background-color: #B2DFDB;
-        } 
-        #contents {
+            background-color: rgb(156, 141, 0);
+        }
+        #contnets {
             width: 100%;
-            height: 580px;
-            background-color: #4DB6AC;
+            height: 780px;
+            background-color: lawngreen;
         }
         #footer {
             width: 100%;
             height: 100px;
-            background-color: #009688;
+            background-color: lightcoral;
         }
-        .haeder-conteainer {
-            width: 1200px;
-            height: 300px;
-            background-color: #B2DFDB;
-            margin: 0 auto;
-        }
-        .banner-conteainer {
-            width: 1200px;
-            height: 300px;
-            background-color: #6EC8BB;
-            margin: 0 auto;
-        }
-        .contents-conteainer {
-            width: 1200px;
-            height: 580px;
-            background-color: #009688;
-            margin: 0 auto;
-        }
-        .footer-conteainer {
-            width: 1200px;
+        .header-continer {
+            width: 60%;
             height: 100px;
-            background-color: #00796B;
+            background-color: lightgrey;
             margin: 0 auto;
         }
+        .nav-continer {
+            width: 60%;
+            height: 100px;
+            background-color: rgb(245, 245, 245);
+            margin: 0 auto;
+        }
+        .contnets-continer {
+            width: 60%;
+            height: 780px;
+            background-color: rgb(161, 0, 0);
+            margin: 0 auto;
+        }
+        .footer-continer {
+            width: 60%;
+            height: 100px;
+            background-color: rgb(177, 177, 177);
+            margin: 0 auto;
+        }
+        .contnets-continer .aside .article {
+            width: 70%;
+            height: 390px;
+            background-color: rgb(24, 2, 2);
+        }
+        .contnets-continer .aside .article01 {
+            width: 70%;
+            height: 390px;
+            background-color: rgb(160, 146, 146);
+        }
+
     </style>
 </head>
 <body>
-
     <div id="wrap">
         <header id="header">
-            <div class="header-conteainer"></div>
+            <div class="header-continer"></div>
         </header>
-        <article id="banner">
-            <div class="banner-conteainer"></div>
-        </article>
-        <section id="contents">
-            <div class="contents-conteainer"></div>
+        <nav id="nav">
+            <div class="nav-continer"></div>
+        </nav>
+        <section id="contnets">
+            <div class="contnets-continer">
+                <aside class="aside">
+                    <article class="article"></article>
+                    <article class="article01"></article>
+                </aside>
+            </div>
         </section>
         <footer id="footer">
-            <div class="footer-conterainer"></div>
+            <div class="footer-continer"></div>
         </footer>
-    </div> 
-    
+    </div>
 </body>
 </html>
