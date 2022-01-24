@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/prism2.css">
     <link rel="stylesheet" href="assets/css/dog.css">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table td {
+            border: 1px solid #000;
+            font-size: 14px;
+            padding: 15px;
+            font-family: 'NexonLv1Gothic';
+        }
+    </style>
+
 
     <!-- script -->
     <script src="assets/js/prism2.js"></script>
@@ -19,7 +31,7 @@
 <body>
 
     <div class="top"><a href="#header">Top</a></div>
-    <div class="back"><a href="practice01.html">back</a></div>
+    <div class="back"><a href="practice00.html">back</a></div>
 
     <body>
         <main id="main">
@@ -45,8 +57,6 @@
 }</code></pre>
                 </div>
             </div>
-
-            
 
             <table border="1">
                 <tr>
@@ -92,21 +102,21 @@
                 <p>1~25까지 숫자를 넣으시오</p>
                 <div class="code">
                     <pre class="line-numbers"><code class="language-js">{
-        let num = 1;
+    let num = 1;
 
-        let table = "<table>";
+    let table = "&lt;table&gt;";
                 
-        for (let i=1; i&lt;=5; i++)    
-            table +="<tr>";
-            for(let j=1; j&lt;=5; j++){
-                table +="<td>" + num + "</td>";
-                    num++;
-            }
-            table +="</tr>";
+    for (let i=1; i&lt;=5; i++)    
+        table +="&lt;tr&gt;";
+        for(let j=1; j&lt;=5; j++){
+            table +="&lt;td&gt;" + num + "&lt;/td&gt;";
+                num++;
+        }
+        table +="&lt;/tr&gt;";
                         
-            table +="</table>";
+        table +="&lt;/table&gt;";
                 
-document.querySelector(".result02").innerHTML = table;
+    document.querySelector(".result02").innerHTML = table;
 }</code></pre>
                     </div>
                 </div>
@@ -152,34 +162,33 @@ document.querySelector(".result02").innerHTML = table;
 <!-- script -->
 <script>
     //01
-    let table = "<table border='1'>";
+    {
+        let table = "<table>";
 
-        for (let i=1; i<=5; i++ ){
+        for (let i=1; i<=5; i++){
             table += "<tr>";
                 for (let j=1; j<=5; j++){
                     table += "<td>1</td>";
                 }
             table += "</tr>";
         }
-
         table += "</table>";
-
-    document.querySelector(".result01").innerHTML = table;
-    
+        document.querySelector(".result01").innerHTML = table;
+    }
     //02
     {
         let num = 1;
 
         let table = "<table>";
 
-        for (let i=1; i<=5; i++)    
+        for (let i=1; i<=5; i++){    
             table +="<tr>";
                 for(let j=1; j<=5; j++){
                     table +="<td>" + num + "</td>";
                     num++;
                 }
             table +="</tr>";
-        
+        }
         table +="</table>";
 
         document.querySelector(".result02").innerHTML = table;

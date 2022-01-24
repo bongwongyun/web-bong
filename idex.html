@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //.14
+        const obj = {
+            a:100,
+            b:[200,300],
+            c:"javascript",
+            d:function(){
+                document.write("javascript가 실행되었습니다.");
+            },
+            e:function(){
+                document.write(obj.c+"가 실행되었습니다.");
+            },
+            f:function(){
+                document.write(this.c+"가 실행되었습니다.");
+            }
+        }
+
+        document.write(obj.a,"<br>");
+        document.write(obj.b,"<br>");
+        document.write(obj.b[0],"<br>");
+        document.write(obj.b[1],"<br>");
+        document.write(obj.c,"<br>");
+        obj.d("<br>");
+        obj.e("<br>");
+        obj.f("<br>");
+        //.11
+        {
+             const obj = [
+                 {a:100, b:200},
+                 {c:"javascript"}
+             ];
+             
+             document.write(obj[0].a,"<br>")
+             document.write(obj[0].b,"<br>")
+             document.write(obj[1].c,"<br>")
+        }
+    </script>
+</body>
+</html>
