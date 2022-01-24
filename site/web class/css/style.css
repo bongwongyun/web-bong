@@ -8,43 +8,45 @@
     3. 가상의 영역(clearfix) 속성을 설정
 */
 #header {
-    padding: 10%;
-    overflow: hidden;
-    white-space: nowrap;
-    min-width: 1200;
+    
 }
-
-#header .h1 {
+#header .logo {
     width: 20%;
     float: left;
+}
+#header .logo a {
+    display: inline-block;
+    text-align: left;
     padding: 20px 30px;
 }
-
-#header .h1 em {
+#header .logo a em {
     font-size: 20px;
+    font-weight: 300;
 }
-
 #header .menu {
     width: 60%;
     float: left;
+}
+#header .menu li {
+    display: inline-block;
     text-align: center;
 }
-
-#header .menu ul li {
-    padding: 30px 30px;
+#header .menu li a {
     display: inline-block;
+    padding: 20px 30px;
+    
 }
-
 #header .member {
     width: 20%;
-    float: right;
+    float: left;
     text-align: right;
-    padding: 20px 30px;
+    padding: 10px 20px;
 }
 
 #header .member a {
-    display: inline-block;
-    padding: 10px 20px;
     border: 1px solid #000;
     border-radius: 50px;
+    display: inline-block;
+    padding: 9px 18px;
 }
+
