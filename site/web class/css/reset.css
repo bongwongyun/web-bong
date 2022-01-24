@@ -1,0 +1,100 @@
+/* 전체 레이아웃 */
+#wrap {
+    background-color: #ccc;
+}
+
+/* 헤더 */
+#header {}
+#header .logo {}
+#header .menu {}
+#header .member {}
+
+/* 여백 초기화 */
+body, div, dl, dt, ul, ol, li, h1, h2, h3, h4, h5, h6,
+pre, code, form, fieldset, legend, textarea,
+p, blockquote, th, td, input, select, button 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* 폰트 초기화 */
+body,
+button,
+input,
+select,
+table,
+textarea {
+    color: #222;
+    font-family: 'NexonLv1Gothic';
+}
+
+/* 폰트 셋팅 */
+.NexonLv1 {font-family: 'NexonLv1Gothic';}
+.NexonLv1-300 {font-family: 'NexonLv1Gothic';}
+.NexonLv1-400 {font-family: 'NexonLv1Gothic';}
+.NexonLv1-700 {font-family: 'NexonLv1Gothic';}
+.NexonLv2 {font-family: 'NexonLv1Gothic';}
+.NexonLv2-300 {font-family: 'NexonLv1Gothic';}
+.NexonLv2-400 {font-family: 'NexonLv1Gothic';}
+.NexonLv2-500 {font-family: 'NexonLv1Gothic';}
+.NexonLv2-700 {font-family: 'NexonLv1Gothic';}
+.gmarket {font-family: 'GmarketSans';}
+.gmarket-300 {font-family: 'GmarketSans';}
+.gmarket-500 {font-family: 'GmarketSans';}
+.gmarket-700 {font-family: 'GmarketSans';}
+
+
+/* 간격 셋팅 */
+.mt0 {
+    margin-top: 0px !important;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}
+
+.mt30 {
+    margin-top: 30px !important;
+}
+
+.mt40 {
+    margin-top: 40px !important;
+}
+
+.mt50 {
+    margin-top: 50px !important;
+}
+
+.mt0 {
+    margin-bottom: 0px !important;
+}
+
+.mt10 {
+    margin-bottom: 10px !important;
+}
+
+.mt20 {
+    margin-bottom: 20px !important;
+}
+
+.mt30 {
+    margin-bottom: 30px !important;
+}
+
+.mt40 {
+    margin-bottom: 40px !important;
+}
+
+.mt50 {
+    margin-bottom: 50px !important;
+}
+
+
