@@ -53,7 +53,7 @@
             </div>
 
             <div class="doc">
-                <p>Flexbox는 모던 웹을 위하여 제안된 기존 레이아웃보다 더 세련된 방식의 니즈를 부합하기 위한 CSS3의 새로운 레이아웃 방식입니다.</p>
+                <p>flexbox는 모던 웹을 위하여 제안된 기존 레이아웃보다 더 세련된 방식의 니즈를 부합하기 위한 CSS3의 새로운 레이아웃 방식입니다.</p>
                 <p>flexbox에서 사용하는 속성은 부모요소와 자식요소를 나누어집니다. 전체적인 정렬이나 흐름에 관한 속성은 flex container에서 정의하고 자식 요소의 크기나 순서와 관련된 속성은 flex item에서 정의합니다. 이를 분리해서 적용하는 것이 flex-box에서 가장 중요합니다.</p>
                 <li>flex container 속성 : flex-direction, flex-wrap, justify-content, align-items, align-content</li>
                 <li>flex item 속성 : flex, flex-grow, flex-shrink, flex-basis, order</li>
@@ -61,6 +61,8 @@
 
 
             <div class="table">
+                <h3>flex item</h3>
+                <br>
                 <table>
                     <colgroup>
                         <col style="width: 30%;" />
@@ -73,7 +75,62 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+                        <th>flex</th>
+                        <td>flex 속성은 flex-grow, flex-shrink, flex-basis의 축약 속성으로, 같은 컨테이너안쪽에 flexible item들에 대한 속성값을 지정한다.</td>
+                    </tr>
+                    <tr>
+                        <th>flex-grow</th>
+                        <td>flexible item들이 차지할 너비들에 대한 증가형 숫자를 지정한다.</td>
+                    </tr>
+                    <tr>
+                        <th>flex-shrink</th>
+                        <td>flexible item들이 차지할 너비들에 대한 감소형 숫자를 지정한다.</td>
+                    </tr>
+                    <tr>
+                        <th>flex-basis</th>
+                        <td>item의 길이를 지정한다.</td>
+                    </tr>
+                    <tr>
+                        <th>order</th>
+                        <td>flex Item의 순서를 설정한다.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table">
+                <h3>flex container</h3>
+                <br>
+                <table>
+                    <colgroup>
+                        <col style="width: 30%;" />
+                        <col style="width: 70%;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>속성</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <th>flex-direction</th>
+                        <td>flex items의 주 축(main-axis)을 설정한다.</td>
+                    </tr>
+                    <tr>
+                        <th>flex-wrap</th>
+                        <td>flex items의 여러 줄 묶음(줄 바꿈) 설정한다.</td>
+                    </tr>
+                    <tr>
+                        <th>justify-content</th>
+                        <td>주 축(main-axis)의 정렬 방법을 설정한다.</td>
+                    </tr>
+                    <tr>
+                        <th>align-items</th>
+                        <td>교차 축(cross-axis)에서 items의 정렬 방법을 설정(1줄)</td>
+                    </tr>
+                    <tr>
+                        <th>align-content</th>
+                        <td>교차 축(cross-axis)의 정렬 방법을 설정(2줄 이상)</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
