@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS 레퍼런스 북</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="/assets/img/face/face64.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/assets/img/face/Face500.jpg">
+    <link rel="icon" href="/assets/img/face/face128.jpg">
+    <link rel="icon" href="/assets/img/face/face64.jpg" sizes="16x16">
+    <link rel="icon" href="/assets/img/face/face64.jpg" sizes="32x32">
+    <link rel="icon" href="/assets/img/face/face64.jpg" sizes="48x48">
+    <link rel="icon" href="/assets/img/face/face64.jpg" sizes="64x64">
+    <link rel="icon" href="/assets/img/face/face128.jpg" sizes="128x128">
+
+    <style>
+        @font-face {
+            font-family: 'Cafe24Ssurround';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Ssurround/Cafe24Ssurround.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Ssurround/Cafe24Ssurround.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Ssurround/Cafe24Ssurround.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Ssurround/Cafe24Ssurround.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Ssurround/Cafe24Ssurround.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Cafe24SsurroundAir';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Jalnan';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'YanoljaYache';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/yanolja/YanoljaYacheRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/yanolja/YanoljaYacheRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/yanolja/YanoljaYacheRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/yanolja/YanoljaYacheRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/yanolja/YanoljaYacheRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'YanoljaYache';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/yanolja/YanoljaYacheBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/yanolja/YanoljaYacheBold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/yanolja/YanoljaYacheBold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/yanolja/YanoljaYacheBold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/yanolja/YanoljaYacheBold.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffdbe5;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .wrap {}
+
+        .sea {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30vh;
+            background: linear-gradient(to bottom, #fcc3ca 10%, #dfc8fa);
+            z-index: 10;
+        }
+
+        .text {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .text h1 {
+            font-family: 'Jalnan';
+            font-size: 6vw;
+            color: #d36b69;
+            font-weight: normal;
+            /* text-shadow:  */
+            /* 3px 3px #fff, */
+            /* -3px -3px #fff, */
+            /* 3px -3px #fff, */
+            /* -3px 3px #fff; */
+            -webkit-text-stroke: 2px #fff;
+
+            /* 벤더 프리픽스 */
+        }
+
+        .text h1 strong {
+            color: #e16365;
+        }
+
+        .text h1 em {
+            font-style: normal;
+            color: #fff;
+            -webkit-text-stroke: 2px #6c4c4d;
+        }
+
+        .text .subTitle {
+            font-family: 'Cafe24SsurroundAir';
+            background: #eb6567;
+            color: #fff;
+            border-radius: 50px;
+            padding: 14px 60px 10px 60px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 30px;
+            box-shadow: 3px 5px 0 #6c4c4d;
+            position: relative;
+        }
+
+        .text .subTitle::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #6c4c4d;
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            border-radius: 50%;
+            margin-top: -5px;
+        }
+
+        .text .subTitle::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #6c4c4d;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            border-radius: 50%;
+            margin-top: -5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="sea"></div>
+        <div class="text">
+            <span class="subTitle">Html/Css 레퍼런스 북</span>
+            <h1>
+                <em>!!!</em>
+                <strong>???</strong>
+                <span>@@@</span>
+            </h1>
+            <h1></h1>
+        </div>
+    </div>
+</body>
+
+</html>

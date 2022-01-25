@@ -153,9 +153,27 @@ body {
     background-color: #000;
     color: #fff;
 }
+.refer .subtitle {
+    margin-top: 10px;
+}
+.refer .subtitle li {
+    display: inline-block;
+}
+.refer .subtitle li.a {
+    margin-right: 10px;
+}
+.refer .subtitle li.active a {
+    border-bottom: 2px solid #000;
+}
 
 .refer .table {
+    margin-top: 40px;
     overflow-x: auto;
+}
+
+.refer .table h3 {
+    font-weight: normal;
+    margin-top: 5px;
 }
 
 .refer .table table {
@@ -298,3 +316,11 @@ body {
         margin: 40px 0 5px;
     }
 }
+
+/* 간격 설정 */
+.mt0 {margin-top: 0 !important;}
+.mt10 {margin-top: 10 !important;}
+.mt20 {margin-top: 20 !important;}
+.mt30 {margin-top: 30 !important;}
+.mt40 {margin-top: 40 !important;}
+.mt50 {margin-top: 50 !important;}

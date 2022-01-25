@@ -45,32 +45,395 @@
                 <ul>
                     <li><a href="css.html">Alphabet</a></li>
                     <li class="active"><a href="cssSelector.html">selector</a></li>
-                </ul>
-                <ul>
-                    <li class="active"><a href="cssSelector.html">기본 선택자</a></li>
-                    <li><a href="cssSelector.html">계층 선택자</a></li>
-                    <li><a href="cssSelector.html">속성 선택자</a></li>
-                    <li><a href="cssSelector.html">가상 요소</a></li>
-                    <li><a href="cssSelector.html">가상 클래스</a></li>
-                    <li><a href="cssSelector.html">링크 가상 클래스</a></li>
-                    <li><a href="cssSelector.html">폼 클래스</a></li>
+                    <li><a href="cssflex.html">flex</a></li>
+                    <li><a href="cssGrid.html">grid</a></li>
+                    <li><a href="cssTransform.html">transform</a></li>
+                    <li><a href="cssAnimation.html">animation</a></li>
                 </ul>
             </div>
 
-            <div class="table">
-                <table>
-                    <thead>
+            <div class="subtitle">
+                <ul>
+                    <li class="active"><a href="cssSelector.html">기본 선택자</a></li>
+                    <li><a href="#">계층 선택자</a></li>
+                    <li><a href="#">속성 선택자</a></li>
+                    <li><a href="#">가상 요소</a></li>
+                    <li><a href="#">가상 클래스</a></li>
+                    <li><a href="#">링크 가상 선택자</a></li>
+                    <li><a href="#">폼 선택자</a></li>
+                </ul>
+            </div>
+            <br>
+
+            <div class="table-wrap">
+                <div class="table">
+                    <h3>기본 선택자</h3>
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%;">
+                            <col style="width: 20%;">
+                            <col style="width: 50%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>속성</th>
+                                <th>예시</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>태그 선택자</th>
+                                <td>p {color: #fff}</td>
+                                <td>p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+
+                            <tr>
+                                <th>클래스 선택자</th>
+                                <td>.class {color: #fff}</td>
+                                <td>.class 클래스를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>아이디 선택자</th>
+                                <td>#id {color: #fff}</td>
+                                <td>id 아이디를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>그룹 선택자</th>
+                                <td>div,p {color: #fff}</td>
+                                <td>div태그와 p 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>전체 선택자</th>
+                                <td>* {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                        <tbody>
+                    </table>
+                </div>
+                <div class="table">
+                    <h3>계층 선택자</h3>
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%;">
+                            <col style="width: 20%;">
+                            <col style="width: 50%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>속성</th>
+                                <th>예시</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
                         <tr>
-                            <th>속성</th>
-                            <th>설명</th>
+                            <th>하위 선택자<br>(Descendant selector)</th>
+                            <td>* {color: #fff}</td>
+                            <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
                         </tr>
-                    </thead>
-                    <tbody>
                         <tr>
-                            <th>animation</th>
-                            <td>애니메이션을 나타냅니다.</td>
+                            <th>자식 선택자<br>(child selector)</th>
+                            <td>* {color: #fff}</td>
+                            <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
                         </tr>
-                </table>
+                        <tr>
+                            <th>형제 선택자<br>(Sibling selector)</th>
+                            <td>* {color: #fff}</td>
+                            <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>인접 형제 선택자<br>(Sibling selector)</th>
+                            <td>* {color: #fff}</td>
+                            <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table">
+                    <h3>속성 선택자</h3>
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%;">
+                            <col style="width: 20%;">
+                            <col style="width: 50%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>속성</th>
+                                <th>예시</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>::first-line</th>
+                                <td>p::first-line {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::first-letter</th>
+                                <td>p::first-letter {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::before</th>
+                                <td>p::before {color: #시작}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::after</th>
+                                <td>p::after {color: #끝}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::selection</th>
+                                <td>p::selection {color: #red}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table">
+                    <h3>가상 요소</h3>
+                    <table>
+                        <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 25%;">
+                            <col style="width: 55%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>속성</th>
+                                <th>예시</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>::first-line</th>
+                                <td>p::first-line {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::first-letter</th>
+                                <td>p::first-letter {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::before</th>
+                                <td>p::before {color: #시작}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::after</th>
+                                <td>p::after {color: #끝}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::selection</th>
+                                <td>p::selection {color: #red}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:last-of-type</th>
+                                <td>p::last-of-type {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:nth-last-child()</th>
+                                <td>p::nth-last-child(){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:only-child()</th>
+                                <td>p::only-child(){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:only-of-type()</th>
+                                <td>p::only-of-type(){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:not()</th>
+                                <td>li:not(:ntn-child(2)){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:root()</th>
+                                <td>li:root(){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:empty()</th>
+                                <td>li:empty(){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table">
+                    <h3>가상 클래스</h3>
+                    <table>
+                        <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 28%;">
+                            <col style="width: 52%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>속성</th>
+                                <th>예시</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>::first-line</th>
+                                <td>p::first-line {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::first-letter</th>
+                                <td>p::first-letter {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::before</th>
+                                <td>p::before {color: #시작}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::after</th>
+                                <td>p::after {color: #끝}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::selection</th>
+                                <td>p::selection {color: #red}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:last-of-type</th>
+                                <td>p::last-of-type {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:nth-last-child()</th>
+                                <td>p::nth-last-child(){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:only-child()</th>
+                                <td>p::only-child(){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:only-of-type()</th>
+                                <td>p::only-of-type(){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:not()</th>
+                                <td>li:not(:ntn-child(2)){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:root()</th>
+                                <td>li:root(){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:empty()</th>
+                                <td>li:empty(){color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table">
+                    <h3>링크 가상 선택자</h3>
+                    <table>
+                        <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 25%;">
+                            <col style="width: 55%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>속성</th>
+                                <th>예시</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>::link</th>
+                                <td>a::link {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::visited</th>
+                                <td>a::visited {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::hover</th>
+                                <td>a::hover {color: #시작}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::active</th>
+                                <td>a::active {color: #끝}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table">
+                    <h3>폼 선택자</h3>
+                    <table>
+                        <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 25%;">
+                            <col style="width: 55%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>속성</th>
+                                <th>예시</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>:checked</th>
+                                <td>input:checked {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>:focus</th>
+                                <td>input:focus {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::visited</th>
+                                <td>a::visited {color: #fff}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::hover</th>
+                                <td>a::hover {color: #시작}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>::active</th>
+                                <td>a::active {color: #끝}</td>
+                                <td>전체 태그를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <!-- refer -->
@@ -78,6 +441,14 @@
 
     <!-- script -->
     <script src="assets/js/prism.js"></script>
+    <script>
+        document.querySelectorAll(".subtitle ul li").forEach((el) => {
+            el.addEventListener("click", (e) => {
+                e.preventDefault();
+                el.classList.toggle("active");
+            });
+        });
+    </script>
 
 </body>
 
