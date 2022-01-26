@@ -47,8 +47,6 @@
                 <br>
                 <h4>1. 부모 태그 지정</h4>
                 <p>float 속성을 부여할 태그들(가로형 컨텐츠를 만들 태그들)을 감싸고 있는 부모 태그가 반드시 있어야 합니다.</p>
-                <br>
-                <div class="doc">
                     <div class="code">
                         &lt;div class="float_ex"&gt;
                         <br>
@@ -60,12 +58,8 @@
                         <br>
                         &lt;/div&gt;
                     </div>
-                </div>
                 <h4>2. float 속성 css 파일에 추가</h4>
-                <br>
                 <p>css파일로 넘어가서 가로 형태로 이어줄 블럭 요소 2개를 선택한 후 float 속성을 지정해줍니다.</p>
-                <br>
-                <div class="doc">
                     <div class="code">
                         .float_ex.left { <br>
                             float:left; <br>
@@ -79,8 +73,40 @@
                             border:1px solid #f00; <br>
                         }                          <br>
                     </div>
+
+                <h3>float으로 인한 깨짐 현상</h3>
+                <p>CSS3에서 float:left로 레이아웃을 잡게 되었을 때, 영역 깨짐(즉, height 값이 사라져 0이 되는 현상)이 발생합니다.</p>
+                <p>이 에러를 잡는 방법은 4가지 입니다.</p>
+                <h4>1. 깨지는 영역에 똑같이 float:left를 사용</h4>
+                <div>
+                    <ul>
+                        <li>모든 박스에 float:left를 사용해야 하며 구조가 복잡해 지면 어디에 float:left를 넣어야 할지 알기가 어려워 지므로 추천하지 않습니다.</li>
+                    </ul>
                 </div>
-                <br>
+                <h4>2. 깨지는 영역에 clear:both를 사용</h4>
+                <div>
+                    <ul>
+                        <li>위치를 잡을 수 있으나 구조가 복잡할 때는 어떤 영역이 깨졌는지 찾기가 어렵기에 추천하지 않습니다.</li>
+                    </ul>
+                </div>
+                <h4>3. float을 사용한 상위 박스에게 overflow:hidden을 사용</h4>
+                <div>
+                    <ul>
+                        <li>현재 가장 많이 사용하는 방법이지만 2단 메뉴 사용시에는 사용할 수 없음</li>
+                    </ul>
+                    <div class="code">
+                        .nav {overflow:hedden;} <br>
+                        .nav > div{float:left;}
+                    </div>
+                </div>
+                <h4>4. clearfix를 사용한다.</h4>
+                <ul>
+                    <li>이를 사용해서 특별한 문제점이 발생되지 않아 제일 많이 사용하는 방법이다.</li>
+                    <li>float 속성을 clearfix 하기 위해서 가상 선택자 ::after를 사용하면 된다. float 속성을 적용한 요소들의 부모 컨테이너에 다음과 같은 ::after 스타일을 추가한다.</li>
+                </ul>
+                <div class="code">
+                    clertfix::after{content:''; display:block; clear:both;}
+                </div>
             </div>
         </div>
 
