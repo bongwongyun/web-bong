@@ -1,5 +1,13 @@
 /* 전체 레이아웃 */
-#wrap {}
+#wrap {
+    height: 2000px;
+}
+
+/* 컨테이너 */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
 
 /* 헤더 01 float를 사용한 경우
     float으로 인한 영역 깨짐 현상 발생 (하이트 값을 인식 못함) 
@@ -145,7 +153,7 @@
 
 /* 배너 */
 #banner {}
-.imgType {
+.img_Type {
     width: 100%;
     height: 700px;
     /* background-image: url(/refer/img/gd01.jpg);
@@ -153,7 +161,7 @@
     background-repeat: no-repeat;
     background-position: center; */
     
-    background: url(/refer/img/gd01.jpg) no-repeat center / cover;
+    background: url(/site/img/gd01.jpg) no-repeat center / cover;
 }
 
 /* 웹 사이트에서 이미지를 표현하는 방법
@@ -161,3 +169,40 @@
     2. CSS 속성을 통해서  : background 속성 : 의미가 없는 이미지 --> ir효과(대체 문자를 CSS속성으로)
     3. 이미지 스프라이트 : background와 ir 효과를 통해서 이미지 표현
 */
+/* 이미지 텍스트 유형 */
+/* 유형1 img_text_type */
+.itType01 {
+    padding: 150px 0;
+    overflow: hidden;
+}
+.itType01 .text {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    margin-right: 20px;
+    background-color: #ccc;
+}
+.itType01 .img1 {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    margin-right: 20px;
+    background-image: url(/site/img/test@1x.jpg);
+    background-size: 100%;
+}
+.itType01 .img2 {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    background-image: url();
+}
+@media (-webkit-min-device-pixel-ratio : 1.5) {
+    .itType01 .img1 {
+        background-image: url(/site/img/text@2x.jpg);
+    }
+}
+@media (-webkit-min-device-pixel-ratio : 2.5) {
+    .itType01 .img1 {
+        background-image: url(/site/img/text@3x.jpg);
+    }
+}
