@@ -34,93 +34,57 @@
                 <li><a href="cssrefer02.html">block/inline</a></li>
                 <li><a href="cssrefer03.html">css 단위</a></li>
                 <li><a href="cssrefer04.html">css 색상</a></li>
-                <li class="active"><a href="cssrefer05.html">id/class 차이점</a></li>
+                <li><a href="cssrefer05.html">id/class 차이점</a></li>
+                <li class="active"><a href="cssrefer06.html">float</a></li>
             </ul>
         </div>
         <!-- //menu -->
 
         <div class="refer">
             <div class="doc">
-                <h3>CSS 색상</h3>
-                <p>CSS에서 색을 표현하는 방법에는 다음과 같이 세 가지 방법이 있습니다.</p>
-                <ul>
-                    <li>색상의 이름으로 표현</li>
-                    <li>RGB 색상값으로 표현</li>
-                    <li>16진수 색상값으로 표현</li>
-                </ul>
-            </div>
-            <br>
-            <h3>색상의 이름으로 표현하는 방법</h3>
-            <br>
-            <div class="table">
-                <table>
-                    <tr>
-                        <th><strong>aqua</strong></th>
-                        <th><strong>black</strong></th>
-                        <th><strong>blue</strong></th>
-                        <th><strong>fuchsia</strong></th>
-                    </tr>
-                    <tr>
-                        <th>gray</th>
-                        <th>green</th>
-                        <th>lime</th>
-                        <th>maroon</th>
-                    </tr>
-                    <tr>
-                        <th>navy</th>
-                        <th>olive</th>
-                        <th>purple</th>
-                        <th>red</th>
-                    </tr>
-                    <tr>
-                        <th>silver</th>
-                        <th>teal</th>
-                        <th>white</th>
-                        <th>yellow</th>
-                    </tr>
-                </table>
-            </div>
-            <br>
-            <h3>RGB 색상으로 표현</h3>
-        <br>
-        <p>모니터나 스크린은 빨간색(red),녹색(green),파란색(blue)을 혼합하여 색을 표현한다. 따라서 HTML에서도 이 세 가지 색을 가지고 색을 표현하는 RGB 색상을 사용한다. <br>RGB 색상의 기본색 (red,green,blue)은 각각 0부터 255까지의 범위를 가진다.</p>
-        <br>
-            <div class="doc">
-            <div class="code">
-                &lt;style&gt;
+                <h3>float</h3>
+                <p>html에서 사용하는 태그 중 <strong>블럭 요소들은 ‘태그 안에 들어있는 컨텐츠 크기’ 에 관계 없이</strong> 한 줄 전체를 차지합니다.</p>
                 <br>
-                    .blue {color: rgb(0,0,255;)}
+                <h4>1. 부모 태그 지정</h4>
+                <p>float 속성을 부여할 태그들(가로형 컨텐츠를 만들 태그들)을 감싸고 있는 부모 태그가 반드시 있어야 합니다.</p>
                 <br>
-                    .green {color: rgb(0,128,0;)}
+                <div class="doc">
+                    <div class="code">
+                        &lt;div class="float_ex"&gt;
+                        <br>
+                        <br>
+                        &lt;div class="left"&gt;좌측&lt;/div&gt;
+                        <br>
+                        &lt;div class="right"&gt;우측&lt;/div&gt;
+                        <br>
+                        <br>
+                        &lt;/div&gt;
+                    </div>
+                </div>
+                <h4>2. float 속성 css 파일에 추가</h4>
                 <br>
-                    .silver {color: rgb(192,192,192;)}
+                <p>css파일로 넘어가서 가로 형태로 이어줄 블럭 요소 2개를 선택한 후 float 속성을 지정해줍니다.</p>
                 <br>
-                &lt;/style&gt;
-            </div>
-        </div>
-        <br>
-        <h3>16 진수 색상값으로 표현</h3>
-        <br>
-        <p>6진수 색상값은 RGB 색상값을 각각 16진수로 변환한 것이다. 따라서 RGB 색상의 기본색(Red, Green, Blue)은 각각 00부터 FF까지의 범위를 가진다.
-            <br>
-        예를 들면, 녹색을 나타내는 RGB 색상값 rgb(0,255,0)은 16진수 색상값으로는 #00FF00이 된다.</p>
-        <br>
-        <div class="doc">
-            <div class="code">
-                &lt;style&gt;
+                <div class="doc">
+                    <div class="code">
+                        .float_ex.left { <br>
+                            float:left; <br>
+                        }               <br>
+                        .float_ex.right { <br>
+                            float:right; <br>
+                        }                <br>
+                        // 각 div영역 표시  <br>
+                        .float_ex.div {    <br>
+                            width: 50%; height: 100px; <br>
+                            border:1px solid #f00; <br>
+                        }                          <br>
+                    </div>
+                </div>
                 <br>
-                    .blue {color: #0000FF;}
-                <br>
-                    .green {color: #008000;}
-                <br>
-                    .silver {color: #c0c0c0;}
-                <br>
-                &lt;/style&gt;
             </div>
         </div>
 
-
-            <!-- refer -->
+        <!-- refer -->
     </main>
 
     <!-- script -->

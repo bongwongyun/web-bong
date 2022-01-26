@@ -35,6 +35,7 @@
                 <li><a href="cssrefer03.html">css 단위</a></li>
                 <li><a href="cssrefer04.html">css 색상</a></li>
                 <li class="active"><a href="cssrefer05.html">id/class 차이점</a></li>
+                <li><a href="cssrefer06.html">float</a></li>
             </ul>
         </div>
         <!-- //menu -->
@@ -58,7 +59,34 @@
                 <p>모니터나 스크린은 빨간색(red),녹색(green),파란색(blue)을 혼합하여 색을 표현한다. 따라서 HTML에서도 이 세 가지 색을 가지고 색을 표현하는 RGB 색상을 사용한다.
                     <br>RGB 색상의 기본색 (red,green,blue)은 각각 0부터 255까지의 범위를 가진다.</p>
                 <br>
-                
+            </div>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 50%;">
+                        <col style="width: 50%;">
+                    </colgroup>
+                    <tr>
+                        <th>id</th>
+                        <th>class</th>
+                    </tr>
+                    <tr>
+                        <td>id는 한페이지에 하나의 정의로 단 하나의 태그(id="")만 사용할 수 있다.</td>
+                        <td>class는 한페이지에 반복적으로 사용되는 스타일을 정의할 수 있다. </td>
+                    </tr>
+                    <tr>
+                        <td>로고,상단메뉴,하단정보 같은 스타일을 정의할 때 id를 사용한다</td>
+                        <td>반복적으로 사용되는 스타일에는 class를 이용하여 정의하고 그 내부에 세부 스타일을 정의할 때 id를 사용해주면 효과적이다.</td>
+                    </tr>
+                    <tr>
+                        <td>#ID명 (선언자 : #)</td>
+                        <td>.CLASS명 (선언자 :  . )</td>
+                    </tr>
+                    <tr>
+                        <td>#footer {clear:both;background-color:#333333;}</td>
+                        <td>.center {text-align:center;background-color:#333333;}</td>
+                    </tr>
+                </table>
             </div>
         </div>
 
