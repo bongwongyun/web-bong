@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Refernce</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <h1><a href="/index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>봉원균</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="/refer/index.html">CSS <em>이미지 표현방법</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li class="html"><a href="css.html">속성</a></li>
+                <li><a href="cssrefer01.html">기초 문법</a></li>
+                <li><a href="cssrefer02.html">block/inline</a></li>
+                <li><a href="cssrefer03.html">css 단위</a></li>
+                <li><a href="cssrefer04.html">css 색상</a></li>
+                <li><a href="cssrefer05.html">id/class 차이점</a></li>
+                <li><a href="cssrefer06.html">float</a></li>
+                <li><a href="cssrefer07.html">벤더 프리픽스</a></li>
+                <li class="active"><a href="cssrefer08.html">이미지 표현방법</a></li>
+                <li><a href="cssrefer09.html">ir 효과</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>이미지 표현방법</h3>
+                <p>이미지를 표현하는데 있어 3가지의 방법이 있습니다.</p>
+                <h4>img 태그</h4>
+                <p>이미지 태그는 태그 쌍없이 단독 태그(&lt;img&gt;)로 사용하는 태그이며, 이미지 위치를 표시하는 속성인 src, 이미지 크기를 표시하는 whdth, height 등의 속성을 사용합니다.</p>
+                <br>
+                <ul>
+                    <li>이미지의 의미가 있을 때 img 태그를 사용합니다.</li>
+                    <li>Alt 태그를 이용해서 대체 문자를 적어야 합니다.</li>
+                </ul>
+                <br>
+                <div class="code">
+                    &lt;img src="이미지 주소 기입" alt="대체 문자 기입"&gt;
+                </div>
+                <h4>Background 속성</h4>
+                <p>Background 속성은 태그의 배경을 지정하는 속성으로, font 속성과 비슷하게 세부적인 속성들을 한번에 쓸 수 있는 속성입니다.</p>
+                <br>
+                <ul>
+                    <li>이미지가 의미가 없을 때 Background 속성을 사용해야 합니다.</li>
+                    <li>의미가 없기 때문에 대체 문자를 적을 필요가 없습니다.</li>
+                </ul>
+                <br>
+                <div class="code">
+                    - Background : url(이미지 주소) center top repeat-x;  <br>
+                    - Background : url(이미지 주소) no-repeat *px(가로) *px(세로); <br>
+                </div>
+                <h4>이미지 스프라이트(image sprite)</h4>
+                <p>하나의 이미지에 여러 개의 이미지들이 포함되어 있는 것을 이미지 스프라이트라고 합니다. 
+                    하나의 이미지에 여러 개의 이미지를 찾고 CSS로 해당 부분의 이미지만을 사용하는 것 이죠. 
+                    이런 방식을 사용하는 이유는 웹 사이트의 로딩 시간을 단축시켜 주기 위해서입니다. </p>
+                    <br>
+                    <ul>
+                        <li>여러 개의 이미지를 하나의 이미지로 합쳐서 관리합니다.</li>
+                        <li>위 기법을 사용하면 이미지 관리가 용이하며 웹페이지의 로딩 시간 및 용량을 줄일 수 있습니다.</li>
+                        <li>위 기법으로 이미지를 넣을 때는 웹표준 준수를 위해 가상으로 대체 문자를 만들어야 합니다.</li>
+                        <li>가상으로 대체 문자를 만들어 주기 위해서는 IR 기법을 사용합니다. </li>
+                        <li>먼저 이미지의 크기를 지정 해주고 Background 태그를 사용해서 이미지를 넣습니다.</li>
+                        <li>그 후에  Background-position을 사용해서 이미지 위치를 지정하여 원하는 이미지를 로딩 합니다.</li>
+                    </ul>
+                    <br>
+                    <div class="code">
+                        - width: *px; height: *px; Background: url(../img/icon.png) no-repeat; <br>
+                        - Background-position: *px *px; 
+                    </div>
+            </div>
+        </div>
+
+        <!-- refer -->
+    </main>
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+
+</body>
+
+</html>
