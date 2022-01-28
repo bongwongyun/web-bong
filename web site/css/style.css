@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#wrap {
+}
+
+.body {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    width: 1920px;
+    height: 109px;
+    display: flex;
+    margin: 0 auto;
+}
+.header .bg1 {
+    width: 1200px;
+    height: 109px;
+    background: #fadcfa;
+    margin: 0 auto;
+}
+.header .main {
+    font-size: 24px;
+    font-family: 'NexonLv1Gothic';
+    position: relative;
+    top: 35px; left: 145px;
+}
+.header .manu {
+    font-size: 24px;
+    font-family: 'NexonLv1Gothic';
+    position: relative;
+    top: 40px; left: -145px;
+}
+.banner {
+    width: 1920px;
+    height: 893px;
+    background: url(../img/laptop-g826f3b8a1_1920-min.jpg);
+    margin: 0 auto;
+}
+.banner .cg1 {
+    width: 1200px;
+    height: 893px;
+    margin: 0 auto;
+}
+.contents {
+    width: 1920px;
+    height: 4966px;
+}
+.contents .cont1 {
+    width: 1200px;
+    height: 640px;
+    margin: 0 auto;
+    background: #c5c5c5;
+}
+
+.contents .text_cont1 {
+    font-family: 'GmarketSans';
+    font-size: 50px;
+    position: relative;
+    top: 120px; 
+}
+.contents .cont2 {
+    width: 1200px;
+    height: 3250px;
+    background: #776c6c;
+    margin: 0 auto;
+}
+.contents .cont3 {
+    width: 1200px;
+    height: 1076px;
+    margin: 0 auto;
+}
+.contents .cont_img01 {
+    width: 366px;
+    height: 460px;
+    background: url(../img/Frame\ 5.jpg);
+    float: left;
+    position: relative;
+    top: 276px;
+}
+.contents .cont_img02 {
+    width: 366px;
+    height: 460px;
+    background: url(../img/Frame\ 6.jpg);
+    margin: 0 auto;
+    position: relative;
+    top: 276px;
+}
+.contents .cont_img03 {
+    width: 366px;
+    height: 460px;
+    background: url(../img/Frame\ 7.jpg);
+    float: right;
+    position: relative;
+    bottom: 185px;
+}
+.contents .text_cont2 {
+    font-family: 'GmarketSans';
+    font-size: 30px;
+    position: relative;
+    top: 300px; 
+}
+.contents .text_con1 {
+    font-family: 'NexonLv1Gothic';
+    font-size: 16px;
+    position: relative;
+    top: 310px; 
+}
+.contents .text_cont3 {
+    font-family: 'GmarketSans';
+    font-size: 30px;
+    position: relative;
+    top: 250px; left: 420px;
+}
+.contents .text_con2 {
+    font-family: 'NexonLv1Gothic';
+    font-size: 16px;
+    position: relative;
+    top: 260px; left: 420px;
+}
+.contents .text_cont4 {
+    font-family: 'GmarketSans';
+    font-size: 30px;
+    position: relative;
+    top: 200px; left: 835px;
+}
+.contents .text_con3 {
+    font-family: 'NexonLv1Gothic';
+    font-size: 16px;
+    position: relative;
+    top: 210px; left:835px;
+}
+
+.footer {
+    width: 1920px;
+    height: 399px;
+    background: #000;
+    
+}
