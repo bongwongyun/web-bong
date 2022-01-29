@@ -1,19 +1,16 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
-#wrap {
-}
+#wrap {}
 
-.body {
-    margin: 0;
-    padding: 0;
-}
 .header {
     width: 1920px;
     height: 109px;
     display: flex;
-    margin: 0 auto;
+    background: #fff;
+    overflow: hidden;
 }
 .header .bg1 {
     width: 1200px;
@@ -37,7 +34,7 @@
     width: 1920px;
     height: 893px;
     background: url(../img/laptop-g826f3b8a1_1920-min.jpg);
-    margin: 0 auto;
+    overflow: hidden;
 }
 .banner .cg1 {
     width: 1200px;
@@ -47,6 +44,7 @@
 .contents {
     width: 1920px;
     height: 4966px;
+    overflow: hidden;
 }
 .contents .cont1 {
     width: 1200px;
@@ -137,5 +135,6 @@
     width: 1920px;
     height: 399px;
     background: #000;
+    overflow: hidden;
     
 }
