@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    
 }
 #wrap {}
 
@@ -98,25 +97,25 @@
     font-family: 'GmarketSans';
     font-size: 30px;
     position: relative;
-    top: 300px; 
+    top: 340px; 
 }
 .contents .text_con1 {
     font-family: 'NexonLv1Gothic';
     font-size: 16px;
     position: relative;
-    top: 310px; 
+    top: 350px; 
 }
 .contents .text_cont3 {
     font-family: 'GmarketSans';
     font-size: 30px;
     position: relative;
-    top: 250px; left: 420px;
+    top: 270px; left: 420px;
 }
 .contents .text_con2 {
     font-family: 'NexonLv1Gothic';
     font-size: 16px;
     position: relative;
-    top: 260px; left: 420px;
+    top: 280px; left: 420px;
 }
 .contents .text_cont4 {
     font-family: 'GmarketSans';
