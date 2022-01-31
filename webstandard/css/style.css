@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/* 스킵 내비게이션 */
+#skip {position: relative;}
+#skip a {
+    position: absolute;
+    left: 0;
+    top: -35px;
+    border: 1px solid #cdcdcd;
+    color: #fff;
+    background: #cecece;
+    line-height: 30px;
+    width: 140px;
+    text-align: center;
+}
+#skip a:active,
+#skip a:focus {
+    top: 0;
+}
+
+/* 레이아웃 */
+#wrap {
+    width: 100%;
+}
+
+#header {
+    width: 100%;
+    height: 325px;
+    background: url(/web-bong/webstandard/img/san-francisco-ge1e654d5e_1920-min.jpg) top center repeat-x;
+}
+
+#contents {
+    width: 100%;
+    height: 800px;
+    background: #222;
+}
+
+#footer {
+    width: 100%;
+    height: 200px;
+    background: #444;
+}
+
+/* 컨텐츠 레이아웃 */
+#con_nav {
+    width: 100%;
+    height: 200px;
+    background: #666;
+}
+
+#con_tit {
+    width: 100%;
+    height: 200px;
+    background: #777;
+}
+
+#con_ban {
+    width: 100%;
+    height: 200px;
+    background: #888;
+}
+
+#con_cont {
+    width: 100%;
+    height: 200px;
+    background: #999;
+}
+
+/* 컨테이너 */
+.container {
+    width: 990px;
+    margin: 0 auto;
+    height: inherit;
+    background: ivory;
+}
