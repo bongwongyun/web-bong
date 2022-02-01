@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
 /* 스킵 내비게이션 */
-#skip {position: relative;}
+#skip {
+    position: relative;
+}
+
 #skip a {
     position: absolute;
     left: 0;
@@ -13,9 +16,96 @@
     width: 140px;
     text-align: center;
 }
+
 #skip a:active,
 #skip a:focus {
     top: 0;
+}
+
+/* 헤더 메뉴 */
+.header {}
+
+.header-manu {
+    text-align: right;
+}
+
+.header-manu a {
+    color: wheat;
+    padding: 10px 10px 10px 14px;
+    display: inline-block;
+}
+
+.header-manu a:hover {
+    color: violet;
+}
+
+.header-tit {
+    text-align: center;
+}
+
+.header-tit h1 {
+    color: violet;
+    display: inline-block;
+    background-color: #222;
+    font-size: 34px;
+    padding: 5px 20px 8px 20px;
+    margin-top: 50px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.header-tit a {
+    display: inline- block;
+    background-color: #222;
+    padding: 5px 30px 8px 30px;
+    font-size: 16px;
+    color: lawngreen;
+    margin-top: -5px;
+}
+
+.header-icon {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.header-icon a {
+    width: 11%;
+    height: 120px;
+    display: inline-block;
+    background: url(../img/pngwing.com.png);
+    margin: 0 3; 
+}
+
+.header-icon a.icon1 {
+    background-position: 0 0;
+}
+
+.header-icon a.icon2 {
+    background-position: 0 -120px;
+}
+
+.header-icon a.icon3 {
+    background-position: 0 -370px;
+}
+
+.header-icon a.icon4 {
+    background-position: 0 -520px;
+}
+
+.header-icon a.icon1:hover {
+    background-position: -460px 0;
+}
+
+.header-icon a.icon2:hover {
+    background-position: -590px -120px;
+}
+
+.header-icon a.icon3:hover {
+    background-position: -130px -370px;
+}
+
+.header-icon a.icon4:hover {
+    background-position: -1310px -520px;
 }
 
 /* 레이아웃 */
@@ -26,7 +116,7 @@
 #header {
     width: 100%;
     height: 325px;
-    background: url(/web-bong/webstandard/img/san-francisco-ge1e654d5e_1920-min.jpg) top center repeat-x;
+    background: url(/web-bong/webstandard/img/san-francisco-ge1e654d5e_1920-min.jpg) center top repeat-x
 }
 
 #contents {
@@ -71,5 +161,5 @@
     width: 990px;
     margin: 0 auto;
     height: inherit;
-    background: ivory;
+    background: rgba(red, green, blue, alpha);
 }
