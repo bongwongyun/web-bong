@@ -23,8 +23,6 @@
 }
 
 /* 헤더 메뉴 */
-.header {}
-
 .header-manu {
     text-align: right;
 }
@@ -47,7 +45,7 @@
     color: violet;
     display: inline-block;
     background-color: #222;
-    font-size: 34px;
+    font-size: 44px;
     padding: 5px 20px 8px 20px;
     margin-top: 50px;
     font-weight: normal;
@@ -55,25 +53,25 @@
 }
 
 .header-tit a {
-    display: inline- block;
+    display: inline-block;
     background-color: #222;
     padding: 5px 30px 8px 30px;
-    font-size: 16px;
+    font-size: 27.5px;
     color: lawngreen;
     margin-top: -5px;
 }
 
 .header-icon {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .header-icon a {
     width: 11%;
-    height: 120px;
+    height: 110px;
     display: inline-block;
     background: url(../img/pngwing.com.png);
-    margin: 0 3; 
+    margin: 0 3;
 }
 
 .header-icon a.icon1 {
@@ -93,7 +91,7 @@
 }
 
 .header-icon a.icon1:hover {
-    background-position: -460px 0;
+    background-position: -460px 0px;
 }
 
 .header-icon a.icon2:hover {
@@ -108,52 +106,249 @@
     background-position: -1310px -520px;
 }
 
-/* 레이아웃 */
-#wrap {
+/* 전체 메뉴*/
+.nav {
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+.nav>div {
+    float: left;
+    width: 40%;
+}
+
+.nav>div:last-child {
+    width: 20%;
+}
+
+.nav>div.last {
+    width: 20%;
+}
+
+.nav>div h3 {
+    font-size: 24px;
+    color: #f5f;
+    margin-bottom: 4px;
+}
+
+.nav>div ul li a {
+    color: #222;
+}
+.nav>div ul li a:hover {
+    color: violet;
+}
+.nav>div ul {
+    overflow: hidden;
+}
+
+.nav>div ul li {
+    float: left;
+    width: 50%;
+}
+
+.nav>div.last ul li {
     width: 100%;
 }
+
+.nav>div.last ul li a:hover {
+    text-decoration: underline;
+}
+/* 타이틀 */
+.tit {
+    position: relative;
+}
+.tit h2 {
+    font-size: 40px;
+    font-family: 'Nanum Brush Script', cursive;
+    text-align: center;
+    padding: 5px 0;
+    letter-spacing: 2px;
+    color: #f5f;
+}
+.tit .btn {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: url(../img/pngwing.com.png) no-repeat -298px -260px;    
+}
+/* 배너 */
+.ban {
+    position: relative;
+    padding: 20px 0 20px;
+}
+.ban a.prev {
+    position: absolute;
+    left: -100px;
+    top: 65px;
+    width: 80px;
+    height: 80px; 
+    background: url(../img/pngwing.com.png) no-repeat -298px -240px;
+}
+.ban a.next {
+    position: absolute;
+    right: -100px;
+    top: 65px;
+    width: 80px;
+    height: 80px;
+    background: url(../img/pngwing.com.png) no-repeat -298px -240px;
+}
+.ban a.prev:hover {
+    background-position: -298px -260px;
+}
+.ban a.next:hover {
+    background-position: -298px -260px;
+}
+.ban ul {
+    overflow: hidden;
+}
+.ban ul li {
+    float: left;
+    width: 330px;
+    height: 170px;
+}
+.ban ul li a {
+    color: #222;
+}
+.ban ul li:last-child {
+    text-align: right;
+}
+.ban ul li:nth-child(2) {
+    text-align: center;
+}
+.ban ul li.ban_img1 {
+    text-align: left;
+}
+.ban ul li.ban_img2 {
+    text-align: center;
+}
+.ban ul li.ban_img3 {
+    text-align: right;
+}
+.ban ul li img {
+    border: 4px solid #cdcdcd;
+}
+.ban ul li img:hover {
+    border-color: #f5f;
+}
+/* 컨텐츠 */
+.con {
+    overflow: hidden;
+    padding-top: 30px;
+}
+
+.con .column {
+    width: 289px;
+    height: 363px;
+    float: left;
+    margin: 0 30px 30px 0;
+    padding-right: 30px;
+    position: relative;
+}
+.con .col1 {
+    border-right: 1px solid #222;
+}
+.con .col2 {
+    border-right: 1px solid #222;
+}
+.con .col3 {
+    margin-right: 0;
+    padding-right: 0;
+}
+.con .col4 {
+    border-right: 1px solid #222; 
+}
+.con .col5 {
+    border-right: 1px solid #222;
+}
+.con .col6 {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.con .column .ico_img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: url(/web-bong/webstandard/img/pngwing.com.png) no-repeat; 
+    position: absolute;
+    top: -34px;
+    left: -8px; 
+}
+.con .column .ico_tit {
+    padding-left: 70px;
+    font-size: 25px;
+    color: #f5f;;
+}
+.con .column .ico_desc {
+    padding-left: 70px;
+    border-bottom: 1px solid #000;
+    padding: 15px;
+}
+.con .col1 .ico_img {
+    background-position: -2px -775px;
+}
+.con .col2 .ico_img {
+    background-position: -5px -775px;
+}
+.con .col3 .ico_img {
+    background-position: -5px -775px;
+}
+.con .col4 .ico_img {
+    background-position: -42px -645px;
+}
+.con .col5 .ico_img {
+    background-position: -152px -645px;
+}
+.con .col6 .ico_img {
+    background-position: -96px -645px;
+}
+.con .col1 .ico_img:hover {
+    background-position: -110px -775px;
+}
+.con .col2 .ico_img:hover {
+    background-position: -215px -775px;
+}
+.con .col3 .ico_img:hover {
+    background-position: 5px -645px;
+}
+.con .col4 .ico_img:hover {
+    background-position: -5px -775px;
+}
+.con .col5 .ico_img:hover {
+    background-position: -115px -775px;
+}
+.con .col6 .ico_img:hover {
+    background-position: -215px -775px;
+}
+/* 레이아웃 */
+#wrap {}
 
 #header {
-    width: 100%;
     height: 325px;
-    background: url(/web-bong/webstandard/img/san-francisco-ge1e654d5e_1920-min.jpg) center top repeat-x
+    background: url(/web-bong/webstandard/img/wallpaperbetter.com_1920x1200.jpg) center top repeat-x
 }
 
-#contents {
-    width: 100%;
-    height: 800px;
-    background: #222;
-}
+#contents {}
 
-#footer {
-    width: 100%;
-    height: 200px;
-    background: #444;
-}
+#footer {}
 
 /* 컨텐츠 레이아웃 */
 #con_nav {
-    width: 100%;
-    height: 200px;
-    background: #666;
+    background-color: rgb(226, 253, 231);
 }
 
 #con_tit {
-    width: 100%;
-    height: 200px;
-    background: #777;
+    background-color: rgb(190, 255, 190);
 }
 
-#con_ban {
-    width: 100%;
-    height: 200px;
-    background: #888;
+#con_ban { 
+    background-color: rgb(159, 253, 159);
 }
 
 #con_cont {
-    width: 100%;
-    height: 200px;
-    background: #999;
+    background-color: rgb(242, 255, 242);
 }
 
 /* 컨테이너 */
