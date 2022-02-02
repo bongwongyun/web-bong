@@ -31,6 +31,7 @@
     color: wheat;
     padding: 10px 10px 10px 14px;
     display: inline-block;
+    font-size: 20px;
 }
 
 .header-manu a:hover {
@@ -133,6 +134,7 @@
 
 .nav>div ul li a {
     color: #222;
+    font-size: 18px;
 }
 .nav>div ul li a:hover {
     color: violet;
@@ -326,7 +328,7 @@
 #wrap {}
 
 #header {
-    height: 325px;
+    height: 365px;
     background: url(/web-bong/webstandard/img/wallpaperbetter.com_1920x1200.jpg) center top repeat-x
 }
 
