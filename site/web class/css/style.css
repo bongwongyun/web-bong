@@ -326,8 +326,14 @@
     position: relative;
     left: 20px;
     bottom: -150px;
-    background-color: #636363;
-    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 1;
+}
+.img_Type01 .img-wrap .bgi {
+    width: 400px;
+    height: 200px;
+    opacity: 60%;
+    position: relative;
+    left: 10px; top: -30px;
 }
 .img_Type01 .img-wrap h3 {
     color: #fff;
@@ -341,8 +347,6 @@
     margin-bottom: 15px;
 }
 .img_Type01 .img-wrap a {
-    background: #000;
-    padding: 20px 30px;
     color: #fff;
     display: inline-block;
 }
