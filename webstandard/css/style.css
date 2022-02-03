@@ -169,7 +169,7 @@
 }
 .tit .btn {
     position: absolute;
-    top: 2px;
+    top: 10px;
     right: 0;
     width: 60px;
     height: 60px;
@@ -273,7 +273,7 @@
     display: block;
     width: 80px;
     height: 80px;
-    background: url(/web-bong/webstandard/img/pngwing.com.png) no-repeat; 
+    background: url(../img/pngwing.com.png) no-repeat; 
     position: absolute;
     top: -34px;
     left: -8px; 
@@ -329,7 +329,7 @@
 
 #header {
     height: 365px;
-    background: url(/web-bong/webstandard/img/wallpaperbetter.com_1920x1200.jpg) center top repeat-x
+    background: url(../img/wallpaperbetter.com_1920x1200.jpg) center top repeat-x
 }
 
 #contents {}

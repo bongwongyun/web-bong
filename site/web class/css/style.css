@@ -161,7 +161,7 @@
     background-repeat: no-repeat;
     background-position: center; */
     
-    background: url(/web-bong/site/img/gd01.jpg) no-repeat center / cover;
+    background: url(/site/img/gd01.jpg) no-repeat center / cover;
 }
 
 /* 웹 사이트에서 이미지를 표현하는 방법
@@ -170,94 +170,95 @@
     3. 이미지 스프라이트 : background와 ir 효과를 통해서 이미지 표현
 */
 /* 이미지 텍스트 유형 */
+
 /* 유형1 img_text_type */
-.itType01 {
+.imgtext_Type01 {
     padding: 150px 0;
     overflow: hidden;
 }
-.itType01 .text {
+.imgtext_Type01 .text {
     float: left;
     width: 386.66px;
     height: 530px;
     margin-right: 20px;
 }
-.itType01 .text .text_title {
+.imgtext_Type01 .text .text_title {
     font-family: 'GmarketSans';
     font-size: 50px;
     font-weight: 500;   
     margin: 70px 0 45px -4px;
 }
-.itType01 .text .text_desc {
+.imgtext_Type01 .text .text_desc {
     font-family: 'NEXON Lv1 Gothic';
     font-size: 18px;
     font-weight: 300;
     color: #888;
     margin-bottom: 55px;
 }
-.itType01 .text .text_more {
+.imgtext_Type01 .text .text_more {
     font-family: 'NEXON Lv1 Gothic';
     font-size: 18px;
 }
-.itType01 .text .text_more a {
+.imgtext_Type01 .text .text_more a {
     color: #af3029;
 }
-.itType01 .text .text_more svg  {
+.imgtext_Type01 .text .text_more svg  {
     vertical-align: 2px;
 }
-.itType01 .img1 {
+.imgtext_Type01 .img1 {
     float: left;
     width: 386.66px;
     height: 530px;
     margin-right: 20px;
-    background-image: url(/web-bong/site/img/text_Type_bg01.jpg);
+    background-image: url(/site/img/text_Type_bg01.jpg);
     background-size: 100%;
 }
-.itType01 .img2 {
+.imgtext_Type01 .img2 {
     float: left;
     width: 386.66px;
     height: 530px;
-    background-image: url(/web-bong/site/img/text_Type_bg02.jpg);
+    background-image: url(/site/img/text_Type_bg02.jpg);
 }
 @media (-webkit-min-device-pixel-ratio : 1.5) {
-    .itType01 .img1 {
-        background-image: url(/web-bong/site/img/text_Type_bg01@2x.jpg);
+    .imgtext_Type01 .img1 {
+        background-image: url(/site/img/text_Type_bg01@2x.jpg);
     }
-    .itType01 .img2 {
-        background-image: url(/web-bong/site/img/text_Type_bg02@2x.jpg);
+    .imgtext_Type01 .img2 {
+        background-image: url(/site/img/text_Type_bg02@2x.jpg);
     }
 }
 @media (-webkit-min-device-pixel-ratio : 2.5) {
-    .itType01 .img1 {
-        background-image: url(/web-bong/site/img/text_Type_bg01@3x.jpg);
+    .imgtext_Type01 .img1 {
+        background-image: url(/site/img/text_Type_bg01@3x.jpg);
     }
-    .itType01 .img2 {
-        background-image: url(/web-bong/site/img/text_Type_bg02@3x.jpg);
+    .imgtext_Type01 .img2 {
+        background-image: url(/site/img/text_Type_bg02@3x.jpg);
     }
 }
 
-/* itType02 */
-.itType02 {
+/* imgtext_Type02 */
+.imgtext_Type02 {
     background: #ffffff;
     overflow: hidden;
     padding: 150px 0;
     min-width: 1200px;
 }
-.itType02 .left {
+.imgtext_Type02 .left {
     float: left;
     width: 48.5%;
     height: 535px;
-    background: url(/web-bong/site/img/josh-bryan-7uEiMYcnhM4-unsplash\ 1@1x.jpg) no-repeat center center;
+    background: url(/site/img/josh-bryan-7uEiMYcnhM4-unsplash\ 1@1x.jpg) no-repeat center center;
     background-size: cover;
     margin-right: 1.5%
 }
-.itType02 .right {
+.imgtext_Type02 .right {
     font-family: 'GmarketSans';
     float: left;
     width: 48.5%;
     height: 535px;
     margin-left: 1.5%;
 }
-.itType02 .right .sub {
+.imgtext_Type02 .right .sub {
     font-size: 16px;
     color: #000;
     margin-top: 43px;
@@ -265,24 +266,85 @@
     display: inline-block;
     border-bottom: 1px solid #000;
 }
-.itType02 .right .title {
+.imgtext_Type02 .right .title {
     font-size: 50px;
     font-weight: 500;
     margin-bottom: 38px;
     white-space: nowrap;
 }
-.itType02 .right .desc {
+.imgtext_Type02 .right .desc {
     font-size: 24px;
     font-weight: 300;
     margin-bottom: 38px;
     
 }
-.itType02 .right .view {
+.imgtext_Type02 .right .view {
     font-size: 24px;
     font-weight: 300;
     background: #000;
     padding: 9px 46px;
     display: inline-block;
     color: #fff;
-}   
-
+}
+/* 이미지 유형 01(img_type01) */
+.img_Type01 {
+    padding: 150px 0;
+    height: 500px;
+    margin-top: 500px;
+}
+.img_Type01 h3 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+.img_Type01 h3 em {
+    font-size: 20px;
+    color: #777;
+    vertical-align: -4px;
+}
+.img_Type01 .img-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.img_Type01 .img-wrap .left {
+    width: 590px;
+    height: 360px;
+    background: url(/site/img/nike-NIKE\ Air\ Force\ 1_1920\ 1.jpg);
+}
+.img_Type01 .img-wrap .right {
+    width: 590px;
+    height: 360px;
+    background: url(/site/img/nike-NIKE\ Air\ Force\ 1_1920\ 2.jpg);
+} 
+.img_Type01 .img-wrap .left-cont {
+    position: relative;
+    left: 20px;
+    bottom: -150px;
+}
+.img_Type01 .img-wrap .right-cont {
+    position: relative;
+    left: 20px;
+    bottom: -150px;
+    background-color: #636363;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.img_Type01 .img-wrap h3 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+}
+.img_Type01 .img-wrap p {
+    color: #fff;
+    font-size: 14px;
+    padding-right: 200px;
+    margin-bottom: 15px;
+}
+.img_Type01 .img-wrap a {
+    background: #000;
+    padding: 20px 30px;
+    color: #fff;
+    display: inline-block;
+}
+/* 이미지 유형 02(img_type02) */
+.img_Type01 {}
