@@ -117,10 +117,11 @@
         .board .list li {
             background-color: #bdd6e6;
             margin: 5px;
-            padding: 5px 0;
+            padding: 7px 10px;
             border-radius: 4px;
             list-style: none;
             transform: all 0.3s;
+            display: none;
         }
 
         .board .list li:hover {
@@ -154,8 +155,9 @@
                 padding: 5px 20px;
                 width: 100%;
             }
-            .board .list {}
-            .board .list li {}
+            .board .list li {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -183,7 +185,7 @@
             <div class="count">
                 전체 속성 갯수 : <em>0</em>개
             </div>
-            
+
             <div class="list">
                 <ul>
                     <li data-name="all"><strong>ALL</strong> : all 속성은 CSS 속성을 재설정하는데 사용할 수있는 약식 속성입니다.</li>
