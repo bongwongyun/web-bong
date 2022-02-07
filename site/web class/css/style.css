@@ -110,42 +110,51 @@
     display: grid;
     grid-template-columns: 20% 60% 20%;
 }
+
 #header .logo a {
     font-size: 30px;
     padding: 12px 18px;
     display: inline-block;
 }
+
 #header .logo a em {
     font-size: 18px;
     font-weight: 300;
 }
+
 #header .menu {
     text-align: center;
 }
+
 #header .menu li {
     display: inline-block;
     padding: 20px 30px;
 }
+
 #header .menu li a {
     display: inline-block;
     padding: 20px 30px;
     position: relative;
     transition: background 0.4s;
 }
+
 #header .menu li a:hover {
     background: #f5f5f5;
     border-radius: 10px;
 }
+
 #header .member {
     text-align: right;
     padding: 10px 18px;
 }
+
 #header .member a {
     border: 1px solid #000;
     border-radius: 50px;
     display: inline-block;
     padding: 9px 22px;
 }
+
 #header .member a:hover {
     background: #000;
     color: #fff;
@@ -153,6 +162,7 @@
 
 /* 배너 */
 #banner {}
+
 .img_Type {
     width: 100%;
     height: 700px;
@@ -160,7 +170,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; */
-    
+
     background: url(/site/img/gd01.jpg) no-repeat center / cover;
 }
 
@@ -176,18 +186,21 @@
     padding: 150px 0;
     overflow: hidden;
 }
+
 .imgtext_Type01 .text {
     float: left;
     width: 386.66px;
     height: 530px;
     margin-right: 20px;
 }
+
 .imgtext_Type01 .text .text_title {
     font-family: 'GmarketSans';
     font-size: 50px;
-    font-weight: 500;   
+    font-weight: 500;
     margin: 70px 0 45px -4px;
 }
+
 .imgtext_Type01 .text .text_desc {
     font-family: 'NEXON Lv1 Gothic';
     font-size: 18px;
@@ -195,16 +208,20 @@
     color: #888;
     margin-bottom: 55px;
 }
+
 .imgtext_Type01 .text .text_more {
     font-family: 'NEXON Lv1 Gothic';
     font-size: 18px;
 }
+
 .imgtext_Type01 .text .text_more a {
     color: #af3029;
 }
-.imgtext_Type01 .text .text_more svg  {
+
+.imgtext_Type01 .text .text_more svg {
     vertical-align: 2px;
 }
+
 .imgtext_Type01 .img1 {
     float: left;
     width: 386.66px;
@@ -213,24 +230,29 @@
     background-image: url(/site/img/text_Type_bg01.jpg);
     background-size: 100%;
 }
+
 .imgtext_Type01 .img2 {
     float: left;
     width: 386.66px;
     height: 530px;
     background-image: url(/site/img/text_Type_bg02.jpg);
 }
+
 @media (-webkit-min-device-pixel-ratio : 1.5) {
     .imgtext_Type01 .img1 {
         background-image: url(/site/img/text_Type_bg01@2x.jpg);
     }
+
     .imgtext_Type01 .img2 {
         background-image: url(/site/img/text_Type_bg02@2x.jpg);
     }
 }
+
 @media (-webkit-min-device-pixel-ratio : 2.5) {
     .imgtext_Type01 .img1 {
         background-image: url(/site/img/text_Type_bg01@3x.jpg);
     }
+
     .imgtext_Type01 .img2 {
         background-image: url(/site/img/text_Type_bg02@3x.jpg);
     }
@@ -243,6 +265,7 @@
     padding: 150px 0;
     min-width: 1200px;
 }
+
 .imgtext_Type02 .left {
     float: left;
     width: 48.5%;
@@ -251,6 +274,7 @@
     background-size: cover;
     margin-right: 1.5%
 }
+
 .imgtext_Type02 .right {
     font-family: 'GmarketSans';
     float: left;
@@ -258,6 +282,7 @@
     height: 535px;
     margin-left: 1.5%;
 }
+
 .imgtext_Type02 .right .sub {
     font-size: 16px;
     color: #000;
@@ -266,18 +291,21 @@
     display: inline-block;
     border-bottom: 1px solid #000;
 }
+
 .imgtext_Type02 .right .title {
     font-size: 50px;
     font-weight: 500;
     margin-bottom: 38px;
     white-space: nowrap;
 }
+
 .imgtext_Type02 .right .desc {
     font-size: 24px;
     font-weight: 300;
     margin-bottom: 38px;
-    
+
 }
+
 .imgtext_Type02 .right .view {
     font-size: 24px;
     font-weight: 300;
@@ -286,69 +314,200 @@
     display: inline-block;
     color: #fff;
 }
+
 /* 이미지 유형 01(img_type01) */
 .img_Type01 {
     padding: 150px 0;
-    height: 500px;
-    margin-top: 500px;
 }
+
 .img_Type01 h3 {
     font-size: 50px;
     font-weight: 500;
     margin-bottom: 30px;
     line-height: 1;
 }
+
 .img_Type01 h3 em {
     font-size: 20px;
     color: #777;
     vertical-align: -4px;
 }
+
 .img_Type01 .img-wrap {
     display: flex;
     justify-content: space-between;
 }
+
 .img_Type01 .img-wrap .left {
     width: 590px;
     height: 360px;
     background: url(/site/img/nike-NIKE\ Air\ Force\ 1_1920\ 1.jpg);
 }
+
+.img_Type01 .img-wrap .left .view {
+    font-size: 14px;
+    font-weight: 300;
+    background: #000;
+    padding: 9px 46px;
+    display: inline-block;
+    color: #fff;
+}
+
 .img_Type01 .img-wrap .right {
     width: 590px;
     height: 360px;
     background: url(/site/img/nike-NIKE\ Air\ Force\ 1_1920\ 2.jpg);
-} 
-.img_Type01 .img-wrap .left-cont {
-    position: relative;
-    left: 20px;
-    bottom: -150px;
 }
-.img_Type01 .img-wrap .right-cont {
+
+.img_Type01 .img-wrap .left .left-cont {
     position: relative;
     left: 20px;
-    bottom: -150px;
+    bottom: -320px;
+    transition: bottom 0.40s cubic-bezier(0.07, 0.71, 0.26, 0.99);
+}
+
+.img_Type01 .img-wrap .left:hover .left-cont {
+    bottom: -100px;
+}
+
+.img_Type01 .img-wrap .right .right-cont {
+    position: relative;
+    left: 20px;
+    bottom: -320px;
     z-index: 1;
+    transition: bottom 0.40s cubic-bezier(0.07, 0.71, 0.26, 0.99);
 }
-.img_Type01 .img-wrap .bgi {
+
+.img_Type01 .img-wrap .right:hover .right-cont {
+    bottom: -100px;
+}
+
+.img_Type01 .img-wrap .right .bgi {
     width: 400px;
     height: 200px;
-    opacity: 60%;
-    position: relative;
-    left: 10px; top: -30px;
+    opacity: 0.3;
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    z-index: 1;
+    transition: bottom 0.40s cubic-bezier(0.07, 0.71, 0.26, 0.99);
 }
+
+.img_Type01 .img-wrap .right .bgi:hover {
+    bottom: -100px;
+}
+
 .img_Type01 .img-wrap h3 {
     color: #fff;
     font-size: 30px;
     font-weight: 500;
 }
+
 .img_Type01 .img-wrap p {
     color: #fff;
     font-size: 14px;
     padding-right: 200px;
     margin-bottom: 15px;
 }
+
 .img_Type01 .img-wrap a {
     color: #fff;
     display: inline-block;
 }
+
 /* 이미지 유형 02(img_type02) */
-.img_Type01 {}
+.img_Type02 {
+    padding: 150px 0;
+    background: #f5f5f5;
+}
+
+.img_Type02 h3 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+.img_Type02 h3 em {
+    font-size: 20px;
+    color: #777;
+    vertical-align: -4px;
+}
+
+.img_Type02 .img-wrap ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img_Type02 .img-wrap li {
+    width: 387px;
+    height: 387px;
+    background-size: 100%;
+    position: relative;
+    perspective: 800px;
+}
+
+.img_Type02 .img-wrap li::after {
+    content: '';
+    display: block;
+    background: #fff;
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    top: 30px;
+    bottom: 30px;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    transform: rotateX(-90deg);
+}
+.img_Type02 .img-wrap li:hover:after {
+    opacity: 0.8;
+    transform: rotateX(0deg);
+}
+.img_Type02 .img-wrap li span {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 36px);
+    color: #000;
+    z-index: 100;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+.img_Type02 .img-wrap li span em {
+    display: block;
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.3s;
+}
+.img_Type02 .img-wrap li span a {
+    display: block;
+    background: #000;
+    border-radius: 40px;
+    margin-top: 5px;
+    padding: 7px 24px 5px 24px;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.img_Type02 .img-wrap li:hover span {
+    top: 50%;   
+}
+.img_Type02 .img-wrap li:hover span em {
+    color: #000;
+}
+.img_Type02 .img-wrap li:hover span a {
+    opacity: 1;
+}
+.img_Type02 .img-wrap li:nth-child(1) {
+    background-image: url(/site/img/shoes-g4c1d1ba20_1920.jpg);
+}
+
+.img_Type02 .img-wrap li:nth-child(2) {
+    background-image: url(/site/img/feet-g34a9e97da_1920.jpg);
+}
+
+.img_Type02 .img-wrap li:nth-child(3) {
+    background-image: url(/site/img/shoes-g4c1d1ba20_1920.jpg);
+}
