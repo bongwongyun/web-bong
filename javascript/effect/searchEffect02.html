@@ -112,7 +112,6 @@
         }
         .board .list {
             text-align: left;
-            display: none;
         }
 
         .board .list li {
@@ -122,13 +121,16 @@
             border-radius: 4px;
             list-style: none;
             transform: all 0.3s;
+            display: none;
         }
 
         .board .list li:hover {
             background-color: #a5c3d5;
             cursor: grabbing;
         }
-
+        .board .list li.show {
+            display: block;
+        }
         @media (max-width:800px) {
             .board {
                 margin: 2vw 2vw 2vw 2vw;
@@ -155,10 +157,6 @@
             }
             .board .list {}
             .board .list li {}
-        }
-        /*  */
-        .board .list li.show {
-            display: block;
         }
     </style>
 </head>
@@ -236,6 +234,7 @@
 
             cssList.forEach(el => {
                 const cssName = el.dataset.name; //css 속성값 (모두)
+                
                 // console.log(cssName);
 
                 if(cssName.includes(searchWord)){

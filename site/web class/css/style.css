@@ -342,6 +342,8 @@
     width: 590px;
     height: 360px;
     background: url(/site/img/nike-NIKE\ Air\ Force\ 1_1920\ 1.jpg);
+    position: relative;
+    overflow: hidden;
 }
 
 .img_Type01 .img-wrap .left .view {
@@ -357,6 +359,8 @@
     width: 590px;
     height: 360px;
     background: url(/site/img/nike-NIKE\ Air\ Force\ 1_1920\ 2.jpg);
+    position: relative;
+    overflow: hidden;
 }
 
 .img_Type01 .img-wrap .left .left-cont {
@@ -413,6 +417,8 @@
 .img_Type01 .img-wrap a {
     color: #fff;
     display: inline-block;
+    background: #000;
+    padding: 5px 20px;
 }
 
 /* 이미지 유형 02(img_type02) */
