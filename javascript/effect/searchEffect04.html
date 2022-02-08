@@ -271,10 +271,10 @@
 
         });
         document.querySelectorAll(".list span").forEach(span => {
-            span.addEventListener(".click", () => {
+            span.addEventListener("click", () => {
                 //클릭한 값을 가져올 때 
-                const searchWord = span.innerText;
-                findprop(searchWord);
+                const listprop = span.innerText;
+                findprop(listprop);
             })
         })
 
