@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
 </head>
 
 <body>
@@ -44,7 +46,6 @@
         <a href="contents">컨텐츠 바로가기</a>
     </div>
     <!-- skip -->
-</body>
 
 <div id="wrap">
     <header id="header">
@@ -68,15 +69,77 @@
     <!-- header -->
 
     <section id="banner">
-        <h2 class="ir_so">배너 영역</h2>
+        <h3 class="ir_so">배너 영역</h3>
         <div class="img_Type">
-            <!-- <img src="/refer/img/gd01.jpg" alt="메인배너"> -->
+           <div class="img_Type slider">
+               <div class="slider-img">
+               </div>
+               <div class="slider-arrow">
+                   <a href="#" class="left"> <span class="ir_pm">이전 이미지</span></a>
+                   <a href="#" class="right"><span class="ir_pm">다음 이미지</span></a>
+               </div>
+               <div class="slider-dot">
+                   <a href="#" class="dot active"><span class="ir_pm">1</span></a>
+                   <a href="#" class="dot">       <span class="ir_pm">2</span></a>
+                   <a href="#" class="dot">       <span class="ir_pm">3</span></a>
+                   <a href="#" class="dot">       <span class="ir_pm">4</span></a>
+                   <a href="#" class="dot play">  <span class="ir_pm">자동 플레이</span></a>
+                   <a href="#" class="dot stop">  <span class="ir_pm">정지</span></a>
+               </div>
+           </div>
         </div>
+
+<div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="desc">
+            <span>Night view</span>
+            <h4>Metropolis</h4>
+            <p>한 국가나 지역내에서 정치적, 경제적, 문화적,   <br>
+             산업적 중심이 되는 커다란 영향력을 지니고 지역은  <br>
+             물론 국제적인 소통에 중요한 역할을 하는 거대도시의 총칭.</p>
+            <div class="btn">
+                <a href="#" class="white">자세히 보기</a>
+                <a href="#" class="black">사이트 보기</a>
+            </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="desc">
+            <span>Night view</span>
+            <h4>Metropolis</h4>
+            <p>한 국가나 지역내에서 정치적, 경제적, 문화적,   <br>
+             산업적 중심이 되는 커다란 영향력을 지니고 지역은  <br>
+             물론 국제적인 소통에 중요한 역할을 하는 거대도시의 총칭.</p>
+            <div class="btn">
+                <a href="#" class="white">자세히 보기</a>
+                <a href="#" class="black">사이트 보기</a>
+            </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="desc">
+            <span>Night view</span>
+            <h4>Metropolis</h4>
+            <p>한 국가나 지역내에서 정치적, 경제적, 문화적,   <br>
+             산업적 중심이 되는 커다란 영향력을 지니고 지역은  <br>
+             물론 국제적인 소통에 중요한 역할을 하는 거대도시의 총칭.</p>
+            <div class="btn">
+                <a href="#" class="white">자세히 보기</a>
+                <a href="#" class="black">사이트 보기</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
     </section>
     <!-- banner -->
 
     <main id="contents">
-        <h2 class="ir_so">컨텐츠 영역</h2>
+        <h3 class="ir_so">컨텐츠 영역</h3>
         <section class="imgtext_Type01 container">
             <div class="text">
                 <h3 class="text_title">이미지 & 텍스트</h3>
@@ -178,10 +241,6 @@
             </div>
         </section>
         <!--img_type02  -->
-
-        
-
-        <!-- <div class="img_text_type ittype03"></div> -->
     </main>
     <!-- main -->
 
@@ -255,5 +314,24 @@
     </footer>
     <!-- footer -->
 </div>
+</body>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
 
+    direction: 'horizontal',
+    loop: false,
+    effect: "cube",
+
+
+    pagination: {
+    el: '.swiper-pagination',
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
 </html>
