@@ -246,9 +246,9 @@
            {view: "22", name:"Animation-iteration-count", desc: "Animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
            {view: "24", name:"Animation-name", desc : "Animation-name 속성은 애니메이션 키프레임 이름을 설정하기 위한 약식 속성입니다."},
            {view: "33", name:"Animation-play-state", desc : "Animation-play-state 속성은 애니메이션의 진행상태를 설정하기 위한 약식 속성입니다."},
-           {view: "45", name:"backdrop-filter", desc : "backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
-           {view: "50", name:"backdrop-bisibility", desc : "backdrop-bisibility 속성은 요소 뒷면 출력여부를 설정합니다."},
-           {view: "55", name:"caption-side", desc : "caption-side 속성은 표(table)의 캡션의 위치를 설정합니다."},
+           {view: "40", name:"backdrop-filter", desc : "backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
+           {view: "32", name:"backdrop-bisibility", desc : "backdrop-bisibility 속성은 요소 뒷면 출력여부를 설정합니다."},
+           {view: "36", name:"caption-side", desc : "caption-side 속성은 표(table)의 캡션의 위치를 설정합니다."},
            {view: "29", name:"direction", desc : "direction 속성은 문장의 방향을 설정합니다."},
            {view: "15", name:"filter", desc : "filter 속성은 그래픽 효과 설정합니다."},
            {view: "17", name:"flex", desc : "flex 속성은 콘텐츠의 성질을 flex로 설정합니다."},
@@ -260,35 +260,65 @@
         const cssList = document.querySelector(".list ul");    
         const cssCount = document.querySelector(".count em");   
         
-        let listHtml = '';
-        
+        let listHtml = "";
         //목록 보여주기
-        function updatelist(){
+        function updateList(list){
+            listHtml = "";
 
-            for (const data of cssproperty) {
-                listHtml += `<li>${data.name}:${data.desc}<span>${data.view}</span></li>`;
+        for (const data of list) {
+            listHtml += `<li>${data.name} : ${data.desc}<span>${data.view}</span></li>`;
             }
             cssList.innerHTML = listHtml;
         }
-        updatelist();
+        updateList(cssproperty);
 
-        //버튼 클릭해서 데이터 가져오기
+        //버튼 클릭하기
         searchBox.forEach(span => {
-            span.addEventListener("click",(event)=>{
-                const button = event.target;                //타겟 설정 : 몇번때 버튼인지 알려고 합니다.
-                const tagetView = button.dataset.view;      //타겟 값이 저장
-                const filterList = cssproperty.filter(data => data.view >= tagetView)
-                
-                let listHtml = '';
-
-                for (const data of cssproperty) {
-                listHtml += `<li>${data.name}:${data.desc}<span>${data.view}</span></li>`;
-            }
-            cssList.innerHTML = listHtml;
-            })
+            span.addEventListener("click",()=>{
+              const target = span.dataset.view;
+              const filterList = cssproperty.filter(data => data.view >= target)
+              
+              updateList(filterList);
+            });
         })
         
+        
+        
+        
+        
 
+
+
+
+
+
+
+
+        
+        // function updatelist(){
+
+        //     for (const data of cssproperty) {
+        //         listHtml += `<li>${data.name}:${data.desc}<span>${data.view}</span></li>`;
+        //     }
+        //     cssList.innerHTML = listHtml;
+        // }
+        // updatelist();
+
+        // //버튼 클릭해서 데이터 가져오기
+        // searchBox.forEach(span => {
+        //     span.addEventListener("click",(event)=>{
+        //         const button = event.target;                //타겟 설정 : 몇번때 버튼인지 알려고 합니다.
+        //         const tagetView = button.dataset.view;      //타겟 값이 저장
+        //         const filterList = cssproperty.filter(data => data.view >= tagetView)
+                
+        //         let listHtml = '';
+
+        //         for (const data of cssproperty) {
+        //         listHtml += `<li>${data.name}:${data.desc}<span>${data.view}</span></li>`;
+        //     }
+        //     cssList.innerHTML = listHtml;
+        //     })
+        // })
         //변수(데이터 저장), 
         //상수, 
         //배열(순차적으로 여러개 데이터 저장), 
