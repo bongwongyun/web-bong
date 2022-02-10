@@ -59,6 +59,7 @@
             display: inline-block;
             text-align: center;
             line-height: 30px;
+            transition: all 0.3s;
         }
 
         .number li.active a {
@@ -118,21 +119,16 @@
 
         .board .list li {
             background-color: #bdd6e6;
-            margin: 5px;
+            margin: 5px 0;
             padding: 7px 10px;
             border-radius: 4px;
             list-style: none;
-            transform: all 0.3s;
-            display: none;
+            transition: all 0.3s;
         }
 
         .board .list li:hover {
             background-color: #a5c3d5;
             cursor: grabbing;
-        }
-
-        .board .list li.show {
-            display: block;
         }
 
         @media (max-width:800px) {
@@ -168,14 +164,30 @@
         .board .search span {
             border: 1px solid #000;
             border-radius: 30px;
-            padding: 5px 20px;
+            padding: 5px 30px;
             display: inline-block;
             margin: 3px;
+            transition: all 0.2s;
         }
         .board .search span:hover {
             background: #223347;
             color: #fff;
             cursor: pointer;
+        }
+        .board .list li {
+            padding-right: 100px;
+            position: relative;
+        }
+        .board .list li span {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            font-size: 14px;
+            transform: translateY(-50%);
+        }
+        .board .list li span::before {
+            content: 'view : ';
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -202,11 +214,10 @@
 
             <!-- 검색 영역 -->
             <div class="search">
-                <span>조회수 10개 이상</span>
-                <span>조회수 20개 이상</span>
-                <span>조회수 30개 이상</span>
-                <span>조회수 40개 이상</span>
-                <span>조회수 50개 이상</span>
+                <span data-view="10">조회수 10개 이상</span>
+                <span data-view="20">조회수 20개 이상</span>
+                <span data-view="30">조회수 30개 이상</span>
+                <span data-view="40">조회수 40개 이상</span>
             </div>
 
             <!-- 전체 목록 갯수 -->
@@ -228,12 +239,12 @@
        const cssproperty = [
            {view: "10", name:"ALL", desc : "ALL 속성은 CSS 속성을 재설정하는데 사용할 수있는 약식 속성입니다."},
            {view: "11", name:"Animation", desc : "Animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다."},
-           {view: "12", name:"Animation-delay", desc : "Animation-delay 속성은 애니메이션이 시작되는 시간을 설정하기 위한 약식 속성입니다."},
-           {view: "13", name:"Animation-direction", desc : "Animation-direction 속성은 애니메이션이 움직이는 방향을 설정하기 위한 약식 속성입니다."},
-           {view: "14", name:"Animation-duration", desc: "Animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다."},
-           {view: "18", name:"Animation-fill-mode", desc : "Animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정하기 위한 약식 속성입니다."},
-           {view: "20", name:"Animation-iteration-count", desc: "Animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
-           {view: "26", name:"Animation-name", desc : "Animation-name 속성은 애니메이션 키프레임 이름을 설정하기 위한 약식 속성입니다."},
+           {view: "14", name:"Animation-delay", desc : "Animation-delay 속성은 애니메이션이 시작되는 시간을 설정하기 위한 약식 속성입니다."},
+           {view: "16", name:"Animation-direction", desc : "Animation-direction 속성은 애니메이션이 움직이는 방향을 설정하기 위한 약식 속성입니다."},
+           {view: "19", name:"Animation-duration", desc: "Animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다."},
+           {view: "21", name:"Animation-fill-mode", desc : "Animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정하기 위한 약식 속성입니다."},
+           {view: "22", name:"Animation-iteration-count", desc: "Animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
+           {view: "24", name:"Animation-name", desc : "Animation-name 속성은 애니메이션 키프레임 이름을 설정하기 위한 약식 속성입니다."},
            {view: "33", name:"Animation-play-state", desc : "Animation-play-state 속성은 애니메이션의 진행상태를 설정하기 위한 약식 속성입니다."},
            {view: "45", name:"backdrop-filter", desc : "backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
            {view: "50", name:"backdrop-bisibility", desc : "backdrop-bisibility 속성은 요소 뒷면 출력여부를 설정합니다."},
@@ -248,40 +259,41 @@
         const searchBox = document.querySelectorAll(".search span"); 
         const cssList = document.querySelector(".list ul");    
         const cssCount = document.querySelector(".count em");   
+        
+        let listHtml = '';
+        
+        //목록 보여주기
+        function updatelist(){
 
+            for (const data of cssproperty) {
+                listHtml += `<li>${data.name}:${data.desc}<span>${data.view}</span></li>`;
+            }
+            cssList.innerHTML = listHtml;
+        }
+        updatelist();
 
-        //버튼을 클릭했을 때
+        //버튼 클릭해서 데이터 가져오기
         searchBox.forEach(span => {
-            span.addEventListener("click", () => {
-                onClickButton(span)
+            span.addEventListener("click",(event)=>{
+                const button = event.target;                //타겟 설정 : 몇번때 버튼인지 알려고 합니다.
+                const tagetView = button.dataset.view;      //타겟 값이 저장
+                const filterList = cssproperty.filter(data => data.view >= tagetView)
+                
+                let listHtml = '';
+
+                for (const data of cssproperty) {
+                listHtml += `<li>${data.name}:${data.desc}<span>${data.view}</span></li>`;
+            }
+            cssList.innerHTML = listHtml;
             })
-        });
+        })
+        
 
         //변수(데이터 저장), 
         //상수, 
         //배열(순차적으로 여러개 데이터 저장), 
         //객체(데이터 저장(키와값)), 
         //함수 (실행문, 집합체, 재활용)
-        function onClickButton(span){
-
-        }
-
-        //CSS 리스트 작성하기
-        function upDataList(){
-            let list = "";
-
-            for (let i = 0; i < list.length; i++) {
-                list = "<li>"+cssproperty[i]+"</li>";  
-            }
-            cssproperty.forEach(li => {
-                list +="<li>"+li.view+"</li>";
-            })
-            list = "<li>1</li>";
-            
-        }
-        upDataList();
-
-
         //  for(let i = 0; i < cssProperty.length; i++){
         //      console.log(cssProperty[i].view);
         //  }
