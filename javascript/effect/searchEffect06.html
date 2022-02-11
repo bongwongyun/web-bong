@@ -52,13 +52,14 @@
         }
 
         .number li a {
-            border: 1px solid #000;
+            border: 1px solid #223547;
             width: 30px;
             height: 30px;
             border-radius: 50px;
             display: inline-block;
             text-align: center;
             line-height: 30px;
+            transition: all 0.3s;
         }
 
         .number li.active a {
@@ -111,19 +112,21 @@
             text-align: right;
             color: #777;
         }
-
+        .board .count em {
+            font-style: normal;
+            color: #223547;
+        }
         .board .list {
             text-align: left;
         }
 
         .board .list li {
             background-color: #bdd6e6;
-            margin: 5px;
+            margin: 5px 0;
             padding: 7px 10px;
             border-radius: 4px;
             list-style: none;
             transform: all 0.3s;
-            display: none;
         }
 
         .board .list li:hover {
@@ -165,19 +168,35 @@
             }
         }
         /* option */
-        .board .list span {
-            border: 1px solid #223447;
-            border-radius: 20px;
-            padding: 5px 20px;
+        .board .list li {
+            padding-right: 100px;
+            position: relative;
+        }
+        .board .list li span {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            font-size: 14px;
+            transform:  translateY(-50%);    
+        }
+        .board .list li span::before {
+            content: 'view: ';
+            text-transform: uppercase;
+        }
+        .board .search span {
+            border: 1px solid #223547;
+            border-radius: 30px;
+            padding: 5px 30px;
             margin: 3px;
             display: inline-block;
-            transform: all 0.3s;
-            cursor: pointer;
+            transition: all 0.2s;
         }
-        .board .list span:hover {
-            background: #223547;
-            color: #fff;
+        .board .search span:hover {
+          background-color: #223547;
+          color: #fff;
+          cursor: pointer;
         }
+        
     </style>
 </head>
 
@@ -185,20 +204,18 @@
     <div id="wrap">
         <div class="number">
             <ul>
-                <ul>
-                    <li><a href="searchEffect01.html">1</a></li>
-                    <li><a href="searchEffect02.html">2</a></li>
-                    <li><a href="searchEffect03.html">3</a></li>
-                    <li><a href="searchEffect04.html">4</a></li>
-                    <li><a href="searchEffect05.html">5</a></li>
-                    <li class="active"><a href="searchEffect06.html">6</a></li>
-                    <li><a href="searchEffect07.html">7</a></li>
-                    <li><a href="searchEffect08.html">8</a></li>
-                </ul>
+                <li><a href="searchEffect01.html">1</a></li>
+                <li><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li class="active"><a href="searchEffect06.html">6</a></li>
+                <li><a href="searchEffect07.html">7</a></li>
+                <li><a href="searchEffect08.html">8</a></li>
             </ul>
         </div>
         <div class="board">
-            <span class="sub"><a href="../javascript06.html#sample5">sort()</a>를 이용해서 알파벳 별로 검색하기</span>
+            <span class="sub"><a href="../javascript06.html#sample5">sort(),reverse()</a>를 이용해서 알파벳 별로 검색하기</span>
             <h1> <a href="searchEffect.html">CSS 속성 검색하기</a> </h1>
 
             <!-- 검색 영역 -->
@@ -211,13 +228,12 @@
             </div>
 
             <!-- 전체 목록 갯수 -->
-            <div class="conut"></div>
-
-            <!-- css 설명 영역 -->
-            <div class="desc"></div>
+            <div class="count">전체 목록 갯수 : 0개</div>
 
             <!-- css 속성 리스트 -->
-            <div class="list"></div>
+            <div class="list">
+                <ul></ul>
+            </div>
         </div>
     </div>
 
@@ -225,50 +241,53 @@
     <script>
 
        const cssproperty = [
-           {num: 1, name:"ALL", desc : "ALL 속성은 CSS 속성을 재설정하는데 사용할 수있는 약식 속성입니다."},
-           {num: 2, name:"Animation", desc : "Animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다."},
-           {num: 3, name:"Animation-delay", desc : "Animation-delay 속성은 애니메이션이 시작되는 시간을 설정하기 위한 약식 속성입니다."},
-           {num: 4, name:"Animation-direction", desc : "Animation-direction 속성은 애니메이션이 움직이는 방향을 설정하기 위한 약식 속성입니다."},
-           {num: 5, name:"Animation-duration", desc: "Animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다."},
-           {num: 6, name:"Animation-fill-mode", desc : "Animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정하기 위한 약식 속성입니다."},
-           {num: 7, name:"Animation-iteration-count", desc: "Animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
-           {num: 8, name:"Animation-name", desc : "Animation-name 속성은 애니메이션 키프레임 이름을 설정하기 위한 약식 속성입니다."},
-           {num: 9, name:"Animation-play-state", desc : "Animation-play-state 속성은 애니메이션의 진행상태를 설정하기 위한 약식 속성입니다."},
-           {num: 10, name:"backdrop-filter", desc : "backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
-           {num: 11, name:"backdrop-bisibility", desc : "backdrop-bisibility 속성은 요소 뒷면 출력여부를 설정합니다."},
-           {num: 12, name:"caption-side", desc : "caption-side 속성은 표(table)의 캡션의 위치를 설정합니다."},
-           {num: 13, name:"direction", desc : "direction 속성은 문장의 방향을 설정합니다."},
-           {num: 14, name:"filter", desc : "filter 속성은 그래픽 효과 설정합니다."},
-           {num: 15, name:"flex", desc : "flex 속성은 콘텐츠의 성질을 flex로 설정합니다."},
-           {num: 16, name:"grid-template-columnsion", desc : "grid-template-columns 속성은 가로 컬럼의 크기와 위치를 설정합니다."}
-
+           {num: 1, name: "ALL", desc : "ALL 속성은 CSS 속성을 재설정하는데 사용할 수있는 약식 속성입니다."},
+           {num: 2, name: "Animation", desc : "Animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다."},
+           {num: 3, name: "Animation-delay", desc : "Animation-delay 속성은 애니메이션이 시작되는 시간을 설정하기 위한 약식 속성입니다."},
+           {num: 4, name: "Animation-direction", desc : "Animation-direction 속성은 애니메이션이 움직이는 방향을 설정하기 위한 약식 속성입니다."},
+           {num: 5, name: "Animation-duration", desc: "Animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다."},
+           {num: 6, name: "Animation-fill-mode", desc : "Animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정하기 위한 약식 속성입니다."},
+           {num: 7, name: "Animation-iteration-count", desc: "Animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
+           {num: 8, name: "Animation-name", desc : "Animation-name 속성은 애니메이션 키프레임 이름을 설정하기 위한 약식 속성입니다."},
+           {num: 9, name: "Animation-play-state", desc : "Animation-play-state 속성은 애니메이션의 진행상태를 설정하기 위한 약식 속성입니다."},
+           {num: 10, name: "backdrop-filter", desc : "backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
+           {num: 11, name: "backdrop-bisibility", desc : "backdrop-bisibility 속성은 요소 뒷면 출력여부를 설정합니다."},
+           {num: 12, name: "caption-side", desc : "caption-side 속성은 표(table)의 캡션의 위치를 설정합니다."},
+           {num: 13, name: "direction", desc : "direction 속성은 문장의 방향을 설정합니다."},
+           {num: 14, name: "filter", desc : "filter 속성은 그래픽 효과 설정합니다."},
+           {num: 15, name: "flex", desc : "flex 속성은 콘텐츠의 성질을 flex로 설정합니다."},
+           {num: 16, name: "grid-template-columnsion", desc : "grid-template-columns 속성은 가로 컬럼의 크기와 위치를 설정합니다."}
        ]
 
-        const searchBox = document.querySelectorAll(".search span");    //버튼
-        const cssList = document.querySelector(".list ul");             //속성리스트
-        const cssCount = document.querySelector(".conut");              //css 갯수
+        const searchBox = document.querySelectorAll(".search span");   //버튼
+        const cssList = document.querySelector(".list ul");            //속성리스트
+        const cssCount = document.querySelector(".count");             //css 갯수
 
         //데이터 출력
         const updateList = function(){
             let listHTML = '';
 
             cssproperty.forEach((data, index) => {
-                listHtml += `<li>${data.num}. ${data.name} : ${data.desc}</li>`;
+                listHTML  += `<li>${data.num}. ${data.name} : ${data.desc}</li>`;
                 cssCount.innerHTML = `전체 목록 갯수 : <em> ${index+1} </em>개`;
-            });
-            cssList.innerHTML = listHTML;
+            })
+
+            cssList.innerHTML = listHTML ;
         } 
         updateList();
         
         //반대정렬
-        function reverse(){}
+        function reverse(){
+            cssproperty.reverse()
+            updateList()
+        }
         
         //오름차순 정렬
         function sortAscending(){
             cssproperty.sort((a,b) => {
                 return a.num - b.num;
             })
-            updateList();
+            updateList()
         }
         
         //내림차순 정렬
@@ -276,38 +295,47 @@
             cssproperty.sort((a,b) => {
                 return b.num - a.num;
             })
-            updateList();
+            updateList()
         }
         
         //알파벳 정렬(a~z)
         function sortAlphabet(){
-            cssProperty.sort((a, b) => {
+            cssproperty.sort((a, b) => {
                 let x = a.name;
                 let y = b.name;
                 return x.localeCompare(y);
             });
-            updateList();
+            updateList()
         }
         //알파벳 정렬(z~a)
         function sortAlphabetZ(){
-            cssProperty.sort((a, b) => {
+            cssproperty.sort((a, b) => {
                 let x = a.name;
                 let y = b.name;
                 return y.localeCompare(x);
             });
-            updateList();
+            updateList()
         }
-        //오름차순 버튼 클릭시
+        //반대차순 버튼 클릭시
         document.querySelector(".btn1").addEventListener(".click",() => {
-            const target = span.dataset.btn1;
-            const sortList = cssproperty.sort(data => data.btn1 >= target)
+            reverse();
+        })
+        //오름차순 버튼 클릭시
+        document.querySelector(".btn2").addEventListener(".click",() => {
+            sortAscending();
         })
         //내림차순 버튼 클릭시
-        document.querySelector(".btn2").addEventListener(".click",() => {
-            const target = span.dataset.btn2;
-            const sortList = cssproperty.sort(data => data.btn2 >= target)
+        document.querySelector(".btn3").addEventListener(".click",() => {
+            sortDescending();
+        })
+        //알파벳순 버튼 클릭시
+        document.querySelector(".btn4").addEventListener(".click",() => {
+            sortAlphabet();
+        })
+        //알파벳순 반대 버튼 클릭시
+        document.querySelector(".btn5").addEventListener(".click",() => {
+            sortAlphabetZ();
         })
     </script>
 </body>
-
 </html>
