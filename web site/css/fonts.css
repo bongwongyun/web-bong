@@ -112,3 +112,5 @@
          url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
     font-display: swap;
 } 
+/* 구글 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
