@@ -910,7 +910,25 @@ document.querySelector(".sample07_R7").innerHTML = text7;
         </div>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{ 
- 
+    const text = "https://webstoryboy.co.kr/자바스크립트.html";
+    const url = encodeURI(text);
+    
+    document.querySelector(".sample11_R1").innerHTML = url;
+    
+    const text2 = "https://webstoryboy.co.kr/자바스크립트.html";
+    const url2 = encodeURIComponent(text2);
+    
+    document.querySelector(".sample11_R2").innerHTML = url2;
+    
+    const text3 = "https://webstoryboy.co.kr/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8.html";
+    const url3 = decodeURI(text3);
+    
+    document.querySelector(".sample11_R3").innerHTML = url3;
+    
+    const text4 = "https%3A%2F%2Fwebstoryboy.co.kr%2F%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8.html";
+    const url4 = decodeURIComponent(text4);
+    
+    document.querySelector(".sample11_R4").innerHTML = url4;
 }</code></pre>
         </div>
     </div>
