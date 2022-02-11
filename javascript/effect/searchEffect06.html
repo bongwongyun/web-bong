@@ -268,15 +268,15 @@
             let listHTML = '';
 
             cssproperty.forEach((data, index) => {
-                listHTML  += `<li>${data.num}. ${data.name} : ${data.desc}</li>`;
-                cssCount.innerHTML = `전체 목록 갯수 : <em> ${index+1} </em>개`;
-            })
+            listHTML += `<li>${data.num}. ${data.name} : ${data.desc}</li>`;
+            cssCount.innerHTML = `전체 목록 갯수 : <em>${index+1}</em>개`
+                })
 
             cssList.innerHTML = listHTML;
-        } 
+        }
         updateList();
         
-        //반대정렬
+        //반대 정렬
         function reverse(){
             cssproperty.reverse()
             updateList()
@@ -285,56 +285,58 @@
         //오름차순 정렬
         function sortAscending(){
             cssproperty.sort((a,b) => {
-                return a.num - b.num
+                return a.num - b.num;
             })
-            updateList()
+        updateList()
         }
         
         //내림차순 정렬
         function sortDescending(){
             cssproperty.sort((a,b) => {
-                return b.num - a.num
+                return b.num - a.num;
             })
             updateList()
         }
         
         //알파벳 정렬(a~z)
         function sortAlphabet(){
-            cssproperty.sort((a, b) => {
+            cssproperty.sort((a,b) => {
                 let x = a.name
                 let y = b.name
                 return x.localeCompare(y)
-            });
+            })
             updateList()
         }
+        
         //알파벳 정렬(z~a)
         function sortAlphabetZ(){
-            cssproperty.sort((a, b) => {
+            cssproperty.sort((a,b) => {
                 let x = a.name
                 let y = b.name
                 return y.localeCompare(x)
-            });
+            })
             updateList()
         }
+
         //반대차순 버튼 클릭시
-        document.querySelector(".btn1").addEventListener(".click",() => {
-            reverse()
+        document.querySelector(".btn1").addEventListener("click", () => {
+            reverse();
         })
         //오름차순 버튼 클릭시
-        document.querySelector(".btn2").addEventListener(".click",() => {
-            sortAscending()
+        document.querySelector(".btn2").addEventListener("click", () => {
+            sortAscending();
         })
         //내림차순 버튼 클릭시
-        document.querySelector(".btn3").addEventListener(".click",() => {
-            sortDescending()
+        document.querySelector(".btn3").addEventListener("click", () => {
+            sortDescending();
         })
         //알파벳순 버튼 클릭시
-        document.querySelector(".btn4").addEventListener(".click",() => {
-            sortAlphabet()
+        document.querySelector(".btn4").addEventListener("click",() => {
+            sortAlphabet();
         })
         //알파벳순 반대 버튼 클릭시
-        document.querySelector(".btn5").addEventListener(".click",() => {
-            sortAlphabetZ()
+        document.querySelector(".btn5").addEventListener("click",() => {
+            sortAlphabetZ();
         })
     </script>
 </body>
