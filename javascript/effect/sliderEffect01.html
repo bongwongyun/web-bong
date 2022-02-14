@@ -235,9 +235,9 @@
                             <div class="view-title">
                                 <ul>
                                     <li class="active"><a href="#">html</a></li>
-                                    <li><a href="#">css</a></li>
-                                    <li><a href="#">javascript</a></li>
-                                    <li><a href="#">jquery</a></li>
+                                    <li class="bctive"><a href="#">css</a></li>
+                                    <li class="cctive"><a href="#">javascript</a></li>
+                                    <li class="dctive"><a href="#">jquery</a></li>
                                 </ul>
                             </div>
                             <div class="view-cont">
@@ -281,11 +281,30 @@ modal();
                 const tabbtn = document.querySelectorAll(".view-title > ul > li");
                 const tabCont = document.querySelectorAll(".view-cont > div");
 
-                document.querySelector(".view-title .active").addEventListener("click", function () {
-                    document.querySelector(".view-title").classList.add("show");
+                document.querySelector(".view-title").addEventListener("click", function () {
+                    document.querySelector(".view-title .active").classList.add("show");
+                    document.querySelector(".view-title .bctive").classList.remove("show");
                 });
-                document.querySelector(".view-title .active").addEventListener("click", function () {
-                    document.querySelector(".view-title").classList.remove("show");
+                document.querySelector(".view-title").addEventListener("click", function () {
+                    document.querySelector(".view-title .active").classList.remove("show");
+                });
+                document.querySelector(".view-title").addEventListener("click", function () {
+                    document.querySelector(".view-title .bctive").classList.add("show");
+                });
+                document.querySelector(".view-title").addEventListener("click", function () {
+                    document.querySelector(".view-title .bctive").classList.remove("show");
+                });
+                document.querySelector(".view-title").addEventListener("click", function () {
+                    document.querySelector(".view-title .cctive").classList.add("show");
+                });
+                document.querySelector(".view-title").addEventListener("click", function () {
+                    document.querySelector(".view-title .cctive").classList.remove("show");
+                });
+                document.querySelector(".view-title").addEventListener("click", function () {
+                    document.querySelector(".view-title .dctive").classList.add("show");
+                });
+                document.querySelector(".view-title").addEventListener("click", function () {
+                    document.querySelector(".view-title .dctive").classList.remove("show");
                 });
             }
             tabmanu();
