@@ -192,29 +192,29 @@ tabMenu();
             tabMenu();
 
             //slider01
-            const sliderwrap = document.querySelector(".slider__wrap");
-            const sliderimg = document.querySelector(".slider__img");
-            const slider = document.querySelectorAll(".slider");
+            const sliderwrap = document.querySelector(".slider__wrap"); //이미지 전체 박스
+            const sliderimg = document.querySelector(".slider__img");   //이미지 박스
+            const slider = document.querySelectorAll(".slider");        //슬라이더 할 이미지들
 
             let currentIndex = 0;                   //현재 보이는 이미지
             let sliderCount = slider.length;        //이미지 갯수
            
-            setInterval(()=>{
-                let NextIndex = (currentIndex + 1) % 5;
+            setInterval(()=>{                               //정해진 시간 뒤에 반복해서 실행한다
+                let NextIndex = (currentIndex + 1) % 5;     //5로 나눈 나머지 값(0~4로 표현)
 
-                slider[currentIndex].style.opacity = "0" //첫번째 이미지를 안보이게
-                slider[NextIndex].style.opacity = "1" //두번째 이미지를 보이게
+                slider[currentIndex].style.opacity = "0"     //첫번째 이미지를 안보이게
+                slider[NextIndex].style.opacity = "1"        //두번째 이미지를 보이게
 
                 //currentIndex : 0
                 //NextIndex : 1
                 //currentIndex : 1
                 //NextIndex : 2
 
-                slider.forEach(slider=> {
-                    slider.style.transition = "all 0.3s"
+                slider.forEach(slider=> {                   
+                    slider.style.transition = "all 0.3s"      //이미지에 트랜지션 효과
                 });
 
-                currentIndex = NextIndex;
+                currentIndex = NextIndex;                     //다음 값을 현재 값에 입력
                 //2초가 지나면 
                 //첫번쨰 이미지는 --> opacity : 0
                 //두번쨰 이미지는 --> opacity : 1
@@ -229,8 +229,8 @@ tabMenu();
                 //두번쨰 이미지는 --> opacity : 0
                 //세번쨰 이미지는 --> opacity : 0
                 //네번쨰 이미지는 --> opacity : 1
-            },2000);
-        </script>
+            },2000);                                           //2초뒤에 반복
+        </script>                                              
 
 
         
