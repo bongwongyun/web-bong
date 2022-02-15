@@ -19,5 +19,5 @@ https://bongwongyun.github.io/web-bong/site/web%20class/index.html
 가구 사이트 제작
 https://bongwongyun.github.io/web-bong/web%20site/index.html
 
-2
-http://127.0.0.1:5501/web%20site/web%20site.html
+slider effct
+https://bongwongyun.github.io/web-bong/javascript/effect/sliderEffect01.html
