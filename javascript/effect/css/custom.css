@@ -21,26 +21,26 @@ img {
 body {
     width: 100%;
     height: 100vh;
-    background: url(/javascript/effect/img/Frame\ 1.jpg);
+    background: url(../img/Frame1.jpg);
     background-size: cover;
     background-position: center center;
     overflow: hidden;
     color: #fff;
 }
 .body-img01 {
-    background-image: url(/javascript/effect/img/Frame\ 21.jpg);
+    background-image: url(../img/Frame21.jpg);
 }
 .body-img02 {
-    background-image: url(/javascript/effect/img/Frame\ 22.jpg);
+    background-image: url(../img/Frame22.jpg);
 }
 .body-img03 {
-    background-image: url(/javascript/effect/img/Frame\ 23.jpg);
+    background-image: url(../img/Frame23.jpg);
 }
 .body-img04 {
-    background-image: url(/javascript/effect/img/Frame\ 24.jpg);
+    background-image: url(../img/Frame24.jpg);
 }
 .body-img05 {
-    background-image: url(/javascript/effect/img/Frame\ 25.jpg);
+    background-image: url(../img/Frame25.jpg);
 }
 body::before {
     content: ' ';
