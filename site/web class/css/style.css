@@ -787,7 +787,15 @@
 }
 .member-form {
     max-width: 665px;
-    height: 1400px;
+    height: 1200px;
+    border: 1px solid #dedede;
+    background: #fff;
+    margin: 0 auto;
+    padding: 50px;
+}
+.member-form02 {
+    max-width: 665px;
+    height: 500px;
     border: 1px solid #dedede;
     background: #fff;
     margin: 0 auto;
@@ -817,7 +825,7 @@
 .member-form .tag {
     font-size: 16px;
     text-decoration: underline;
-    padding-top: 60px;
+    padding-top: 50px;
     padding-bottom: 10px;
 }
 .member-form2 {
@@ -839,7 +847,9 @@
     top: 7px;
     border-radius: 100%;
 }
-.join-box {}
+form {
+    margin-top: 30px;
+}
 .join-box label {
     display: block;
     font-size: 14px;
