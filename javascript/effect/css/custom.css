@@ -16,7 +16,7 @@ li {
 }
 img {
     width: 100%;
-    vertical-align: top;
+    vertical-align: top;   /*이미지 여백제거*/
 }
 body {
     width: 100%;
@@ -27,7 +27,21 @@ body {
     overflow: hidden;
     color: #fff;
 }
-
+.body-img01 {
+    background-image: url(/javascript/effect/img/Frame\ 21.jpg);
+}
+.body-img02 {
+    background-image: url(/javascript/effect/img/Frame\ 22.jpg);
+}
+.body-img03 {
+    background-image: url(/javascript/effect/img/Frame\ 23.jpg);
+}
+.body-img04 {
+    background-image: url(/javascript/effect/img/Frame\ 24.jpg);
+}
+.body-img05 {
+    background-image: url(/javascript/effect/img/Frame\ 25.jpg);
+}
 body::before {
     content: ' ';
     position: absolute;

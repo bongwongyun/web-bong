@@ -74,13 +74,13 @@
         <div class="number">
             <ul>
                 <li class="active"><a href="sliderEffect01.html">1</a></li>
-                <li><a href="sliderEffect01.html">2</a></li>
-                <li><a href="sliderEffect01.html">3</a></li>
-                <li><a href="sliderEffect01.html">4</a></li>
-                <li><a href="sliderEffect01.html">5</a></li>
-                <li><a href="sliderEffect01.html">6</a></li>
-                <li><a href="sliderEffect01.html">7</a></li>
-                <li><a href="sliderEffect01.html">8</a></li>
+                <li><a href="sliderEffect02.html">2</a></li>
+                <li><a href="sliderEffect03.html">3</a></li>
+                <li><a href="sliderEffect04.html">4</a></li>
+                <li><a href="sliderEffect05.html">5</a></li>
+                <li><a href="sliderEffect06.html">6</a></li>
+                <li><a href="sliderEffect07.html">7</a></li>
+                <li><a href="sliderEffect08.html">8</a></li>
             </ul>
         </div>
 
@@ -138,36 +138,7 @@ const tabMenu = function(){
 tabMenu();
                               </code></pre></div>
                             <div><pre><code class="language-css">
-const modal = function(){       
-    document.querySelector(".source-btn").addEventListener("click", () => {
-        document.querySelector("#modal").classList.add("show");
-    });
-    document.querySelector(".modal-close").addEventListener("click", () => {
-        document.querySelector("#modal").classList.remove("show");
-    });
-}
-modal();
-
-const tabMenu = function(){
-    const tabBtn = document.querySelectorAll(".view-title > ul > li");
-    const tabCont = document.querySelectorAll(".view-cont > div");
-
-    tabBtn.forEach((btn, index) => {
-        btn.addEventListener("click", () => {
-            tabBtn.forEach((el) => {
-                el.classList.remove("active");
-            });
-
-            btn.classList.add("active");
-
-            tabCont.forEach(el=>{
-                el.style.display = "none";
-            });
-            tabCont[index].style.display = "block"
-        })
-    })
-}
-tabMenu();
+                                
                             </code></pre></div>
                             <div><pre><code class="language-css">
 
@@ -184,6 +155,7 @@ tabMenu();
         </div>
         
         <!-- script -->
+        <script src="js/gsap.min.js"></script>
         <script src="js/highlight.min.js"></script>
         <script src=js/custom.js></script>
         <script>
