@@ -289,21 +289,33 @@
             func("함수가 실행되었습니다.");
         }
         //09. 화살표 함수 : 리턴값 함수
-
+        {
+            func = () => {
+                const str = "함수가 실행되었습니다."
+                return str;
+            }
+            document.write(func());
+        }
         //10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값
         {
             const func = (str) => {
                 return str;
             }
-            document.write(func("함수가 실행되었씁니다."));
+            document.write(func("함수가 실행되었습니다."));
         }
         //11. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
         {
-            const func = str => str;
-
+            const func = str => {
+                return str;
+            }
             document.write(func("함수가 실행되었습니다."));
         }
         //12. 화살표 함수 : 선언적 함수 + 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
+        {
+            func = str => str;
+
+            document.write("함수가 실행되었습니다.");
+        }
     </script>
 </main>
 </body>
