@@ -100,11 +100,11 @@
             <div class="slider__wrap">
                 <div class="slider__img">
                     <div class="slider__inner">
-                    <div class="slider"><img src="img/Frame16.jpg" alt="이미지1"></div>
-                    <div class="slider"><img src="img/Frame12.jpg" alt="이미지2"></div>
-                    <div class="slider"><img src="img/Frame13.jpg" alt="이미지3"></div>
-                    <div class="slider"><img src="img/Frame14.jpg" alt="이미지4"></div>
-                    <div class="slider"><img src="img/Frame15.jpg" alt="이미지5"></div>
+                    <div class="slider"><img src="img/Frame35.jpg" alt="이미지1"></div>
+                    <div class="slider"><img src="img/Frame36.jpg" alt="이미지2"></div>
+                    <div class="slider"><img src="img/Frame37.jpg" alt="이미지3"></div>
+                    <div class="slider"><img src="img/Frame38.jpg" alt="이미지4"></div>
+                    <div class="slider"><img src="img/Frame39.jpg" alt="이미지5"></div>
                     </div>
                 </div>
                 <div class="slider__btn">
@@ -162,7 +162,60 @@
                             <div class="view-cont">
                                 <div>
 <pre><code class="language-css">
+    const sliderwrap = document.querySelector(".slider__wrap");        
+    const sliderimg = document.querySelector(".slider__img");               //이미지 보이는 구간
+    const sliderInner = document.querySelector(".slider__inner");         //이미지 움직이는 영역
+    const slider = document.querySelectorAll(".slider");
+    const sliderBtn = document.querySelector(".slider__btn"); 
+    const sliderDot = document.querySelector(".slider__dot"); 
 
+    let currentIndex = 0;
+    let sliderCount = slider.length;
+    let sliderWidth = sliderimg.offsetWidth;
+    let dotIndex = "";
+    let dotActive; 
+
+    function init() {
+        //이미지 갯수 만큼 &lt;a&gt;&lt;/a&gt;
+
+        slider.forEach(()=>{
+            dotIndex += "&lt;a href='#' class='dot'>&lt;/a&gt;";
+            sliderDot.innerHTML = dotIndex;
+            sliderDot.firstElementChild.classList.add("active");
+        })
+    }   
+    init();
+
+    function gotoslider(num){
+        sliderInner.style.transition = "all 600ms";
+        sliderInner.style.transform ="translateX("+ -sliderWidth * num +"px)";
+        currentIndex = num;
+        
+        dotActive = document.querySelectorAll(".slider__dot .dot");
+        // num = [1,2,3,4,5]
+        dotActive.forEach(el => {
+            el.classList.remove("active"); 
+        })
+        dotActive[num].classList.add("active")
+    }
+
+    document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
+        btn.addEventListener("click", () =>{
+            let prevIndex = (currentIndex - -4) % sliderCount;
+            let nextIndex = (currentIndex + 1) % sliderCount;
+
+            if(btn.classList.contains("prev")){
+                gotoslider(prevIndex)
+            } else {
+                gotoslider(nextIndex)
+            }
+        })
+    })
+    document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
+        dot.addEventListener("click", ()=> {
+            gotoslider(index);
+        })
+    })
                               </code></pre></div>
                             <div><pre><code class="language-css">
 
