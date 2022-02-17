@@ -42,6 +42,15 @@ body {
 .body-img05 {
     background-image: url(../img/Frame25.jpg);
 }
+.body-img06 {
+    background-image: url(../img/Frame\ 26.jpg);
+}
+.body-img07 {
+    background-image: url(../img/Frame\ 27.jpg);
+}
+.body-img08 {
+    background-image: url(../img/Frame\ 28.jpg);
+}
 body::before {
     content: ' ';
     position: absolute;
