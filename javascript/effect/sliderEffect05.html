@@ -47,14 +47,38 @@
         .slider:nth-child(3)::before {content: '이미지3';}
         .slider:nth-child(4)::before {content: '이미지4';}
         .slider:nth-child(5)::before {content: '이미지5';}
-        .slider:nth-child(6)::before {content: '이미지1';}
+        
+        .slider__btn a {
+            position: absolute;
+            top: 50%;
+            transform:translateY(-50%);
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            line-height: 50px;
+            transition: all 0.2s;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+        .slider__btn a.prev {
+            left: 0;
+        }
+        .slider__btn a.next {
+             right: 0;
+        }
+        .slider__btn a:hover {
+            background: rgb(241, 96, 86);
+        }
     </style>
 </head>
 
-<body class="body-img03">
+<body class="body-img05">
 
     <!-- main -->
-        <section id="slidertype03">
+        <section id="slidertype05">
             <div class="slider__wrap">
                 <div class="slider__img">
                     <div class="slider__inner">
@@ -65,22 +89,26 @@
                     <div class="slider"><img src="img/Frame15.jpg" alt="이미지5"></div>
                     </div>
                 </div>
+                <div class="slider__btn">
+                    <a href="#" class="prev">prev</a>
+                    <a href="#" class="next">next</a>
+                </div>
             </div>
         </section>
     <!-- main -->
     <!-- info  -->
     <div class="title">
-        <h1><a href="sliderEffect.html">javascript sliderEffect03</a></h1>
-        <p>이미지 슬라이드 - 연속적으로 움직이기</p>
+        <h1><a href="sliderEffect.html">javascript sliderEffect05</a></h1>
+        <p>이미지 슬라이드 -  버튼 추가</p>
     </div>
 
         <div class="number">
             <ul>
                 <li><a href="sliderEffect01.html">1</a></li>
-                <li ><a href="sliderEffect02.html">2</a></li>
-                <li class="active"><a href="sliderEffect03.html">3</a></li>
+                <li><a href="sliderEffect02.html">2</a></li>
+                <li><a href="sliderEffect03.html">3</a></li>
                 <li><a href="sliderEffect04.html">4</a></li>
-                <li><a href="sliderEffect05.html">5</a></li>
+                <li class="active"><a href="sliderEffect05.html">5</a></li>
                 <li><a href="sliderEffect06.html">6</a></li>
                 <li><a href="sliderEffect07.html">7</a></li>
                 <li><a href="sliderEffect08.html">8</a></li>
@@ -109,42 +137,7 @@
                             <div class="view-cont">
                                 <div>
 <pre><code class="language-css">
-    const sliderwrap = document.querySelector(".slider__wrap");        
-    const sliderimg = document.querySelector(".slider__img");               //이미지 보이는 구간
-    const sliderInner = document.querySelector(".slider__inner");         //이미지 움직이는 영역
-    const slider = document.querySelectorAll(".slider");
-    
-    let currentIndex = 0;
-    let sliderCount = slider.length;                                                    //이미지 갯수
-    let sliderWidth = sliderimg.offsetWidth;                                      //이미지 가로 값
-    let sliderClone = sliderInner.firstElementChild.cloneNode(true);       //첫번째 이미지 복사 
-    sliderInner.appendChild(sliderClone);                                        //첫번째 이미지를 마지막에 넣어줌
 
-    function sliderEffect(){    
-        currentIndex++;
-        sliderInner.style.transition = "all 0.3s";
-        sliderInner.style.transform = "translateX(-"+sliderWidth * currentIndex +"px)";
-        
-        // sliderInner.style.transform = "translateX(-800px)"
-        // sliderInner.style.transform = "translateX(-1600px)"
-        // sliderInner.style.transform = "translateX(-2400px)"
-        // sliderInner.style.transform = "translateX(-3200px)"
-        // sliderInner.style.transform = "translateX(-4000px)"
-        // sliderInner.style.transform = "translateX(-4800px)"
-
-        //마지막 사진에 갔을때
-        if (currentIndex == 5) {
-            setTimeout(() => {
-            //초기화
-            sliderInner.style.transition = "0s";
-            sliderInner.style.transform = "translateX(0px)"
-            }, 300)
-
-            
-            currentIndex = 0;
-        }
-    }
-    setInterval(sliderEffect, 2000);
                               </code></pre></div>
                             <div><pre><code class="language-css">
 
@@ -171,43 +164,40 @@
             modal();
             tabMenu();
 
-            //slider02
+            //slider05
             const sliderwrap = document.querySelector(".slider__wrap");        
             const sliderimg = document.querySelector(".slider__img");               //이미지 보이는 구간
             const sliderInner = document.querySelector(".slider__inner");         //이미지 움직이는 영역
             const slider = document.querySelectorAll(".slider");
-            
+            const sliderBtn = document.querySelector(".slider__btn"); 
+            const sliderBtnPrev = sliderBtn.querySelector(".prev"); 
+            const sliderBtnNext = sliderBtn.querySelector(".next");
+
             let currentIndex = 0;
-            let sliderCount = slider.length;                                                    //이미지 갯수
-            let sliderWidth = sliderimg.offsetWidth;                                      //이미지 가로 값
-            let sliderClone = sliderInner.firstElementChild.cloneNode(true);       //첫번째 이미지 복사 
-            sliderInner.appendChild(sliderClone);                                                   //첫번째 이미지를 마지막에 넣어줌
+            let sliderCount = slider.length;
+            let sliderWidth = sliderimg.offsetWidth;    
 
-            function sliderEffect(){    
-                currentIndex++;
-                sliderInner.style.transition = "all 0.3s";
-                sliderInner.style.transform = "translateX(-"+sliderWidth * currentIndex +"px)";
+            function gotoslider(num){
+                sliderInner.style.transition = "all 400ms";
+                sliderInner.style.transform ="translateX("+ -sliderWidth * num +"px)";
+                currentIndex = num;
                 
-                // sliderInner.style.transform = "translateX(-800px)"
-                // sliderInner.style.transform = "translateX(-1600px)"
-                // sliderInner.style.transform = "translateX(-2400px)"
-                // sliderInner.style.transform = "translateX(-3200px)"
-                // sliderInner.style.transform = "translateX(-4000px)"
-                // sliderInner.style.transform = "translateX(-4800px)"
-
-                //마지막 사진에 갔을때
-                if (currentIndex == 5) {
-                    setTimeout(() => {
-                    //초기화
-                    sliderInner.style.transition = "0s";
-                    sliderInner.style.transform = "translateX(0px)"
-                    }, 300)
-
-                    
-                    currentIndex = 0;
-                }
             }
-            setInterval(sliderEffect, 2000);
+            sliderBtnPrev.addEventListener("click", () =>{
+                let prevIndex = (currentIndex - -4) % sliderCount;
+                gotoslider(prevIndex)
+                // let prevIndex = (currentIndex - -4 + (sliderCount - 1)) % sliderCount;
+                // if (currentIndex == 0){
+                //     prevIndex = sliderCount - 1;
+                // }
+            })
+            sliderBtnNext.addEventListener("click", () =>{
+                let nextIndex = (currentIndex + 1) % sliderCount;
+                gotoslider(nextIndex)
+            })
+            
+            
+        
         </script>                                              
 
 
