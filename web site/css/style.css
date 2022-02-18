@@ -309,6 +309,21 @@ section {
     top: 30px;
     left: -50px;
 }
+.container .list .chair06 {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.container .list .chair07 {
+    position: relative;
+    top: 50px;
+    right: 40px;
+}
+.container .list .chair08 {
+    position: relative;
+    top: 30px;
+    right: 50px;
+}
 .container .list a {
     color: #fff;
     font-size: 14px;
@@ -369,6 +384,57 @@ section {
     left: 1200px;
 }
 .container .list .list03 a {
+    background-color: #d9ab82;
+    border: 1px solid #d9ab82;
+    border-radius: 40px;
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+    top: -25px;
+    left: 70px;
+}
+.container .list .list04 {
+    background: #fff4e8;
+    width: 312px;
+    height: 305px;
+    position: absolute;
+    top: 3400px;
+    right: 1200px;
+}
+.container .list .list04 a {
+    background-color: #d9ab82;
+    border: 1px solid #d9ab82;
+    border-radius: 40px;
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+    top: -25px;
+    left: 70px;
+}
+.container .list .list05 {
+    background: #fff4e8;
+    width: 312px;
+    height: 305px;
+    position: absolute;
+    top: 3400px;
+    right: 800px;
+}
+.container .list .list05 a {
+    background-color: #d9ab82;
+    border: 1px solid #d9ab82;
+    border-radius: 40px;
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+    top: -25px;
+    left: 70px;
+}
+.container .list .list06 {
+    background: #fff4e8;
+    width: 312px;
+    height: 305px;
+    position: absolute;
+    top: 3400px;
+    right: 400px;
+}
+.container .list .list06 a {
     background-color: #d9ab82;
     border: 1px solid #d9ab82;
     border-radius: 40px;
