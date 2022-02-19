@@ -96,7 +96,6 @@ em {
 #skip a:focus {
     left: 5px;
 }
-
 /* 클리어 픽스 */
 .clearfix {
     zoom: 1;

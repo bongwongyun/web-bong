@@ -527,16 +527,16 @@ section {
 }
 #footer h4 {
     position: relative;
-    left: -700px;
-    top: 770px;
+    left: -250px;
+    top: 470px;
     font-size: 20px;
 }
 #footer .foo__logo {
     width: 35px;
     height: 35px;
     position: relative;
-    top: 765px;
-    left: -850px;
+    top: 465px;
+    left: -400px;
 }
 #footer .footer__list ul {
     display: flex;
@@ -544,9 +544,16 @@ section {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    left: -550px;
-    top: 730px;
+    left: -150px;
+    top: 430px;
 }
+#footer .footer__list p {
+    margin-top: 100px;
+}
+.footer__list img {
+    margin-top: 247px;
+    margin-left: 200px;
+} 
 #footer .footer__list ul li {
     line-height: 1.33;
     letter-spacing: normal;
@@ -566,22 +573,22 @@ section {
     letter-spacing: -0.5px;
     text-align: left;
     position: relative;
-    top: 0;
+    top: -100px;
     right: -380px;
 }
 #footer .footer__menu h3 {
     font-size: 53px;
     font-weight: bold;
-    line-height: 1.06;
-    letter-spacing: normal;
+    line-height: 1.1;
     text-align: left;
     color: #3d3d3f;
     position: relative;
-    top: 204px;
+    top: 80px;
     right: -380px;
 }
-.foo__sns1 {
-    background: url(../img/sns.svg.svg);
-    background-position: 0px 80px;
+#footer .footer__menu img {
+    position: relative;
+    top: -150px;
+    left: 1200px;
 }
 
