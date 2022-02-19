@@ -99,10 +99,12 @@
             transition: all 0.2s;
             border: 1px dashed #fff;
         }
+
         #header nav li.active a {
             background: #fff;
             color: #000;
         }
+
         #footer {
             margin-top: 200px;
             width: 100%;
@@ -220,7 +222,7 @@
 
         /* dog */
         .dog {
-            padding-top: 10px;
+            padding-top: 50px;
         }
 
         .dog .head,
@@ -509,21 +511,25 @@
             }
         }
 
-        .dog.like {}
-
-        .dog.like .face::before {
+        .dog .face::before,
+        .dog .face::before {
             margin-top: 10px;
         }
 
-        .dog.like .face::after {
+        .dog .face::after,
+        .dog .face::after {
             height: 85px;
         }
 
-        .dog.like .eyes {
+        .dog .eyes,
+        .dog .eyes {
             top: 13%;
         }
 
-        .dog.like .eyes::before {
+        .dog .eyes::before,
+        .dog .eyes::after,
+        .dog .eyes::before,
+        .dog .eyes::after {
             width: 18px;
             height: 5px;
             margin: 0px 12.5%;
@@ -531,62 +537,41 @@
             border-radius: 20px;
         }
 
-        .dog.like .eyes::after {
+        .dog .eyes::after,
+        .dog .eyes::after {
             transform: rotate(37.5deg);
         }
 
-        .dog.like .nose {
+        .dog .nose,
+        .dog .nose {
             top: 18%;
         }
 
-        .dog.like .mouth {
+        .dog .mouth,
+        .dog .mouth {
             top: 16.5%;
         }
 
-        .dog.like .tongue::before {
+        .dog .tongue::before,
+        .dog .tongue::before {
             height: 12px;
         }
 
-        .dog.like .tongue::after {
+        .dog .tongue::after,
+        .dog .tongue::after {
             height: 24px;
             animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
         }
 
-        .dog.like .chin {
+        .dog .chin,
+        .dog .chin {
             top: 34%;
         }
 
-        .dog.like .tail {
+        .dog .tail,
+        .dog .tail {
             animation: movetail 0.1s linear infinite alternate forwards;
         }
-
-        .dog.dislike .ears::before {
-            transform: rotate(-50deg) translate(-7px, 2px);
-        }
-
-        .dog.dislike .ears::after {
-            transform: rotate(50deg) translate(7px, 2px);
-        }
-
-        .dog.dislike .face {
-            height: 55px;
-        }
-
-        .dog.dislike .eyes {
-            top: 38%;
-        }
-
-        .dog.dislike .eyes::before {
-            width: 18px;
-            height: 5px;
-            margin: 0px 14.5%;
-            transform: rotate(-37.5deg);
-            border-radius: 20px;
-        }
-
-        .dog.dislike .eyes::after {}
-
-        .dog.dislike {}
     </style>
 </head>
 
@@ -680,6 +665,7 @@
             quizconfirm.style.display = "none";
             quizResult.style.display = "block";
             quizDog.classList.add("like");
+            quizDog.classList.remove("dislike");
         });
     </script>
 </body>

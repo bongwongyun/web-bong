@@ -95,13 +95,16 @@
             transition: all 0.2s;
             border: 1px dashed #fff;
         }
+
         #header nav li.active a {
             background: #fff;
             color: #000;
         }
+
         #header nav li a:hover {
             opacity: 0.5;
         }
+
         #footer {
             margin-top: 200px;
             width: 100%;
@@ -111,10 +114,12 @@
             position: absolute;
             bottom: 0;
         }
+
         #footer a {
             color: #ffff;
             font-size: 16px;
         }
+
         .quiz__wrap {
             display: flex;
             align-items: center;
@@ -181,6 +186,7 @@
         .quiz__view {
             background-color: #f5f5f5;
         }
+
         .quiz__view .true {
             position: absolute;
             left: 70%;
@@ -193,8 +199,9 @@
             line-height: 120px;
             text-align: center;
             color: #fff;
-            /* opacity: 0; */
+            opacity: 0;
         }
+
         .quiz__view .false {
             position: absolute;
             right: 70%;
@@ -206,10 +213,10 @@
             z-index: 100;
             line-height: 120px;
             text-align: center;
-            color:#F5534F;
-            /*   */
+            color: #F5534F;
+            opacity: 0;
         }
-        
+
 
         .quiz__answer {
             background-color: #f5f5f5;
@@ -243,6 +250,7 @@
             text-shadow: 1px 1px 1px #fff;
             display: none;
         }
+
         .quiz__input {
             width: 100%;
             border: 6px ridge #cacaca;
@@ -253,9 +261,10 @@
             text-shadow: 1px 1px 1px #fff;
             margin-bottom: 10px;
         }
+
         /* dog */
         .dog {
-            padding-top: 10px;
+            padding-top: 50px;
         }
 
         .dog .head,
@@ -544,21 +553,20 @@
             }
         }
 
-        .dog.like {}
-
-        .dog.like .face::before {
-            margin-top: 10px;
+        .true .face::before {
+            margin-top: 50px;
         }
 
-        .dog.like .face::after {
+        .true .face::after {
             height: 85px;
         }
 
-        .dog.like .eyes {
+        .true .eyes {
             top: 13%;
         }
 
-        .dog.like .eyes::before {
+        .true .eyes::before,
+        .true .eyes::after {
             width: 18px;
             height: 5px;
             margin: 0px 12.5%;
@@ -566,52 +574,57 @@
             border-radius: 20px;
         }
 
-        .dog.like .eyes::after {
+        .true .eyes::after {
             transform: rotate(37.5deg);
         }
 
-        .dog.like .nose {
+        .true .nose {
             top: 18%;
         }
 
-        .dog.like .mouth {
+        .true .mouth {
             top: 16.5%;
         }
 
-        .dog.like .tongue::before {
+        .true .tongue::before {
             height: 12px;
         }
 
-        .dog.like .tongue::after {
+        .true .tongue::after {
             height: 24px;
             animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
         }
 
-        .dog.like .chin {
+        .true .chin {
             top: 34%;
         }
 
-        .dog.like .tail {
+        .true .tail {
             animation: movetail 0.1s linear infinite alternate forwards;
         }
 
-        .dog.dislike .ears::before {
+        .false .ears::before {
             transform: rotate(-50deg) translate(-7px, 2px);
         }
 
-        .dog.dislike .ears::after {
+        .false .ears::after {
             transform: rotate(50deg) translate(7px, 2px);
         }
 
-        .dog.dislike .face {
+        .false .face::before {
+            margin-top: 28px;
+        }
+
+        .false .face::after {
             height: 55px;
         }
 
-        .dog.dislike .eyes {
+        .false .eyes {
             top: 38%;
         }
 
-        .dog.dislike .eyes::before {
+        .false .eyes::before,
+        .false .eyes::after {
             width: 18px;
             height: 5px;
             margin: 0px 14.5%;
@@ -619,9 +632,30 @@
             border-radius: 20px;
         }
 
-        .dog.dislike .eyes::after {}
+        .false .eyes::after {
+            transform: rotate(37.5deg);
+        }
 
-        .dog.dislike {}
+        .false .teardrop {
+            animation: cry 0.1s ease-in 0.25s forwards;
+        }
+
+        .false .nose {
+            top: 44%;
+        }
+
+        .false .mouth {
+            top: 42%;
+        }
+
+        .false .chin {
+            top: 52%;
+        }
+
+        .false .tail {
+            transform: rotate(0);
+        }
+        
     </style>
 </head>
 
@@ -651,8 +685,8 @@
                     <span class="quiz__Ask"></span>
                 </h3>
                 <div class="quiz__view">
-                    <div class="true">정답입니다.</div>
-                    <div class="false">틀렸습니다.</div>
+                        <div class="true">정답입니다.</div>
+                        <div class="false">틀렸습니다.</div>
                     <div class="dog">
                         <div class='head'>
                             <div class='ears'></div>
@@ -679,44 +713,44 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="quiz__source"></div>
 
     </main>
-
 
     <footer id="footer">
         <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
     </footer>
 
     <script>
-                const quizType =document.querySelector(".quiz__Type");               //퀴즈 종류
-                const quiznumber =document.querySelector(".quiz__number");       //퀴즈 번호
-                const quizAsk =document.querySelector(".quiz__Ask");                 //퀴즈질문
-                const quizconfirm =document.querySelector(".quiz__confirm");       //정답 확인 버튼
-                const quizResult =document.querySelector(".quiz__result");             //정답 확인
-                const quizDog = document.querySelector(".quiz__view .dog");
+        const quizType = document.querySelector(".quiz__Type"); //퀴즈 종류
+        const quiznumber = document.querySelector(".quiz__number"); //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz__Ask"); //퀴즈질문
+        const quizconfirm = document.querySelector(".quiz__confirm"); //정답 확인 버튼
+        const quizResult = document.querySelector(".quiz__result"); //정답 확인
+        const quizDog = document.querySelector(".quiz__view .dog");
 
-                //문제정보
-                const answerType = "javascript";
-                const answerNum =1;
-                const answerAsk = "객체 기반의 스크립트 프로그래밍 언어는?";    //문제
-                const answerResult = "JAVASCRIPT";                                                 //답안   
+        //문제정보
+        const answerType = "javascript";
+        const answerNum = 1;
+        const answerAsk = "객체 기반의 스크립트 프로그래밍 언어는?"; //문제
+        const answerResult = "javascript"; //답안   
 
-                //문제출력
-                quizType.textContent = answerType;
-                quiznumber.textContent = answerNum + ". ";
-                quizAsk.textContent = answerAsk;
-                quizResult.textContent = answerResult;
+        //문제출력
+        quizType.textContent = answerType;
+        quiznumber.textContent = answerNum + ". ";
+        quizAsk.textContent = answerAsk;
+        quizResult.textContent = answerResult;
 
-                //정답확인
-                //정답 버튼을 클릭하면 정답을 보이게 설정
+        //정답확인
+        //정답 버튼을 클릭하면 정답을 보이게 설정
 
-                quizconfirm.addEventListener("click", () => {
-                    quizconfirm.style.display = "none";
-                    quizResult.style.display = "block";
-                    quizDog.classList.add("like");
-                });
+        quizconfirm.addEventListener("click", () => {
+            quizconfirm.style.display = "none";
+            quizResult.style.display = "block";
+            quizDog.classList.add("true");
+            quizDog.classList.remove("false");
+        });
     </script>
 </body>
 
