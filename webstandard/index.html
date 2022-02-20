@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../webstandard/css/reset.css">
     <link rel="stylesheet" href="../webstandard/css/style.css">
     <link rel="stylesheet" href="../webstandard/css/slick.css">
+    <link type="text/css" rel="stylesheet" href="css/lightgallery.css" />
 
     <!-- WEB font -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -242,9 +243,9 @@
                                             <h5 class="ir_su">로그인 영역</h5>
                                             <div class="login_text">
                                                <label for="uid" class="ir_su">아이디</label>
-                                                <input type="text" name="uid" id="uid" class="input_text" maxlength="20">
+                                                <input type="text" name="uid" id="uid" class="input_text" maxlength="20" placeholder="id">
                                                 <label for="upw" class="ir_su">비밀번호</label>
-                                                <input type="text" name="upw" id="upw" class="input_text" maxlength="20">
+                                                <input type="text" name="upw" id="upw" class="input_text" maxlength="20" placeholder="password">
                                             </div>
                                             <button class="login_btn" type="submit">로그인</button>
                                         </div>
@@ -263,9 +264,11 @@
                             <div class="popup">
                                 <h4>Advertisement</h4>
                                 <ul>
-                                    <li><a href="#"><img src="img/popup01 (1).jpg" alt="img1"></a></li>
-                                    <li><a href="#"><img src="img/popup01 (2).jpg" alt="img2"></a></li>
-                                    <li class="last"><a href="#"><img src="img/popup01 (3).jpg" alt="img3"></a></li>
+                                    <li class="layer"><a href="#"><img src="img/popup01(1).jpg" alt="이미지01"></a></li>
+                                    <li class="window"><a href="#"><img src="img/popup01(2).jpg" alt="이미지02"></a></li>
+                                    <li class="last lightgallery"><a href="img/popa1(4).jpg"  style="display: block;"><img src="img/popup01(3).jpg" alt="이미지03"></a>
+                                        <a href="img/popa1(5).jpg" style="display:none;"><img src="img/popup01(3).jpg" alt="이미지04"></a>
+                                        <a href="img/popa1(1).jpg" style="display:none;"><img src="img/popup01(3).jpg" alt="이미지05"></a></li>
                                 </ul>
                             </div>
                             <!-- 팝업(종료) -->
@@ -371,21 +374,30 @@
                             <div class="gallery">
                                 <h4>포트폴리오</h4>
                                 <div class="gallery_btn">
-                                <ul>
+                                <!-- <ul>
                                     <li class="gb__icon1"><a href="#"><span class="ir_pm">시작</span></a></li>
                                     <li class="gb__icon2"><a href="#"><span class="ir_pm">정지</span></a></li>
                                     <li class="gb__icon3"><a href="#"><span class="ir_pm">이전 이미지</span></a></li>
                                     <li class="gb__icon4"><a href="#"><span class="ir_pm">다음 이미지</span></a></li>
-                                </ul>
+                                </ul> --> 
+                                <button class="gb__icon1 play"><span class="ir_pm">시작</span></button>
+                                <button class="gb__icon2 pause"><span class="ir_pm">정지</span></button>
+                                <button class="gb__icon3 prev"><span class="ir_pm">이전 이미지</span></button>
+                                <button class="gb__icon4 next"><span class="ir_pm">다음 이미지</span></button>
                                 </div>
                                 <div class="gallery_img">
-                                    <ul>
+                                    <!-- <ul>
                                         <li><a href="#"><img src="img/popa1 (1).jpg" alt="gallery1"></a></li>
                                         <li><a href="#"><img src="img/popa1 (2).jpg" alt="gallery2"></a></li>
                                         <li><a href="#"><img src="img/popa1 (3).jpg" alt="gallery3"></a></li>
                                         <li><a href="#"><img src="img/popa1 (4).jpg" alt="gallery4"></a></li>
                                         <li><a href="#"><img src="img/popa1 (5).jpg" alt="gallery5"></a></li>
-                                    </ul>
+                                    </ul> -->
+                                    <div><a href="#"><img src="img/popa1(1).jpg" alt="gallery1"></a></div>
+                                    <div><a href="#"><img src="img/popa1(2).jpg" alt="gallery2"></a></div>
+                                    <div><a href="#"><img src="img/popa1(3).jpg" alt="gallery3"></a></div>
+                                    <div><a href="#"><img src="img/popa1(4).jpg" alt="gallery4"></a></div>
+                                    <div><a href="#"><img src="img/popa1(5).jpg" alt="gallery5"></a></div>
                                 </div>
                             </div>
                             <!-- 갤러리(종료) -->
@@ -429,10 +441,45 @@
         <!-- //footer -->
     </div>
     <!-- wrap -->
+    <!-- layer popup -->
+    <div id="layer">
+        <img src="img/woman-1274056_1920.jpg" alt="팝업">
+        <a href="#" class="close">close</a>
+    </div>
+    <!-- layer popup(stop) -->
+
     <!-- jquery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/slick.min.js"></script>
-    <script type="text/javascript">
+    <script src="js/lightgallery.min.js"></script>
+    <script src="js/lg-zoom.min.js"></script>
+    <script>
+        //라이트 박스
+        lightGallery(document.getElementById('lightgallery'), {
+        plugins: [lgZoom],
+        licenseKey: '.last lightgallery',
+        speed: 500,
+        autoplay:true
+        });
+        //윈도우 팝업
+        $(".window").click(function(e){
+            e.preventDefault();
+            // window.open("파일명", "팝업이름", "옵션설정");
+            // 옵션 : left, top, width, status, toolbar, location, menubar, scrollbars, fullscreen
+            window.open("popup.html","popup01","width=800, height=600, left=50, top=50, scrollbars=0,toolbar=0,menubar=0");
+        });  
+        //레이어 팝업
+        $(".layer").click(function(e){
+            e.preventDefault();
+            // $("#layer").css("display","block");
+            $("#layer").show();
+        });
+        $("#layer .close").click(function(e){
+            e.preventDefault();
+            // $("#layer").css("display","block");
+            $("#layer").hide();
+        });  
+
         //탭 메뉴
         const $tab_list = $(".tab_manu");
 
@@ -455,6 +502,33 @@
             autoplaySpeed:3000,
             dots:true
         });
+
+        //갤러리 
+        $(".gallery_img").slick({
+            arrows:false,
+            fode:true,
+            pauseOnHover:true,
+            arrows:false,
+            infinite:true,
+            autoplay:true,
+            autoplaySpeed:3000,
+            speed:300,
+            slidesToShow:1,
+            slidesToScroll:1
+        });
+        $(".play").click(function(){
+            $(".gallery_img").slick("slickPlay");
+        });
+        $(".pause").click(function(){
+            $(".gallery_img").slick("slickPause");
+        });
+        $(".prev").click(function(){
+            $(".gallery_img").slick("slickPrev");
+        });
+        $(".next").click(function(){
+            $(".gallery_img").slick("slickNext");
+        });
+
         //버튼을 클릭하면 전체 메뉴 보이기
         $(".tit .btn").click(function(e){
             e.preventDefault()

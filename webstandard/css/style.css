@@ -299,6 +299,7 @@
     display: block;
     width: 100%;
     text-align: center;
+    margin-bottom: -10px;
 }
 .ban .slick-dots li {
     display: inline-block;
@@ -778,10 +779,10 @@
 /* 갤러리 */
 .gallery {
     position: relative;
-    border: 1px solid #000;
-    height: 254px;
-    overflow: hidden;
+    border: 1px solid #000; 
     margin-top: 16px;
+    height: 255px;
+    overflow: hidden;
 }
 .gallery h4 {
     font-size: 14px;
@@ -835,6 +836,39 @@
 }
 .gallery .gallery_img img {
     width: 100%;
+}
+/* 슬릭 갤러리 */
+.gallery .gallery_btn button {
+    float: left;
+    margin: 1px 2px;
+    display: block;
+    width: 23px;
+    height: 23px;
+    background: url(../img/icon.png) no-repeat ;
+}
+.gallery .gallery_btn .gb__icon1 {
+    background-position: -150px -120px;
+}
+.gallery .gallery_btn .gb__icon2 {
+    background-position: -150px -143px;
+}
+.gallery .gallery_btn .gb__icon3 {
+    background-position: -150px -166px;
+}
+.gallery .gallery_btn .gb__icon4 {
+    background-position: -150px -189px;
+}
+.gallery .gallery_btn .gb__icon1:hover {
+    background-position: -173px -120px;
+}
+.gallery .gallery_btn .gb__icon2:hover {
+    background-position: -173px -143px;
+}
+.gallery .gallery_btn .gb__icon3:hover {
+    background-position: -173px -166px;
+}
+.gallery .gallery_btn .gb__icon4:hover {
+    background-position: -173px -189px;
 }
 /* 로그인 */
 #login-wrap {
@@ -946,4 +980,28 @@
 .footer .w3c {
     margin-top: 15px;
 }   
-.container {}
+/* layer popup */
+#layer {
+    position: fixed;
+    display: none;
+    left: 50px;
+    top: 50px;
+    width: 700px;
+    border: 10px solid #dcdcdc;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+#layer img {
+    width: 100%;
+    display: block;
+}
+#layer .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: #f5f;
+    padding: 1px 6px;
+    color: #fff;
+}
+#layer .close:hover {
+    text-decoration: underline;
+}
