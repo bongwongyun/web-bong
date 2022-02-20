@@ -13,9 +13,10 @@
     <!-- CSS style -->
     <link rel="stylesheet" href="../webstandard/css/reset.css">
     <link rel="stylesheet" href="../webstandard/css/style.css">
+    <link rel="stylesheet" href="../webstandard/css/slick.css">
 
     <!-- WEB font -->
-    <link rel="stylesheet" href="#">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
 </head>
 
@@ -127,13 +128,22 @@
             <div id="con_ban">
                 <div class="container">
                     <div class="ban">
-                        <a href="#" class="prev"><span class="ir_pm">이전 이미지</span></a>
+                        <!-- <a href="#" class="prev"><span class="ir_pm">이전 이미지</span></a>
                         <ul>
                             <li><a href="ban_img1"><img src="../webstandard/img/banner-gd3ee1e716_1920.jpg" alt="웹 표준 지침서 보기"></a></li>
                             <li><a href="ban_img2"><img src="../webstandard/img/union-jack-26119.jpg" alt="css 버튼 만들기"></a></li>
                             <li><a href="ban_img3"><img src="../webstandard/img/india-1617463.jpg" alt="로그인 폼 만들기"></a></li>
                         </ul>
-                        <a href="#" class="next"><span class="ir_pm">다음 이미지</span></a>
+                        <a href="#" class="next"><span class="ir_pm">다음 이미지</span></a> -->
+                        <div><a href="ban_img1"><img src="../webstandard/img/banner-gd3ee1e716_1920.jpg" alt="웹 표준 지침서 보기"></a></div>
+                        <div><a href="ban_img2"><img src="../webstandard/img/union-jack-26119.jpg" alt="css 버튼 만들기"></a></div>
+                        <div><a href="ban_img3"><img src="../webstandard/img/india-1617463.jpg" alt="로그인 폼 만들기"></a></div>
+                        <div><a href="ban_img1"><img src="../webstandard/img/banner-gd3ee1e716_1920.jpg" alt="웹 표준 지침서 보기"></a></div>
+                        <div><a href="ban_img2"><img src="../webstandard/img/union-jack-26119.jpg" alt="css 버튼 만들기"></a></div>
+                        <div><a href="ban_img3"><img src="../webstandard/img/india-1617463.jpg" alt="로그인 폼 만들기"></a></div>
+                        <div><a href="ban_img1"><img src="../webstandard/img/banner-gd3ee1e716_1920.jpg" alt="웹 표준 지침서 보기"></a></div>
+                        <div><a href="ban_img2"><img src="../webstandard/img/union-jack-26119.jpg" alt="css 버튼 만들기"></a></div>
+                        <div><a href="ban_img3"><img src="../webstandard/img/india-1617463.jpg" alt="로그인 폼 만들기"></a></div>
                     </div>
                 </div>
             </div>
@@ -212,6 +222,53 @@
                         <div class="column col3">
                             <h3><span class="ico_img ir_pm">아이콘</span><span class="ico_tit">Notice</span></h3>
                             <p class="ico_desc">가장 웹 페이지에서 기본이 되는 게시판 유형입니다.</p>
+                            <!-- 로그인 -->
+                            <div id="login-wrap">
+                                <h4 class="ir_su">로그인 정보</h4>
+                                <form id="login-form" name="login-form" action="post">
+                                    <fieldset>
+                                        <legend class="ir_su">로그인 및 관련 설정</legend>
+                                        <div class="login_header">
+                                            <h5 class="ir_su">로그인</h5>
+                                            <div class="lh_check">
+                                                <input id="infor_check" type="checkbox" class="input_check">
+                                                <label for="infor_check">로그인 상태 유지</label>
+                                            </div>
+                                            <div class="lh_ip">
+                                                ip보안 <em>on</em>
+                                            </div>
+                                        </div>
+                                        <div class="login_content">
+                                            <h5 class="ir_su">로그인 영역</h5>
+                                            <div class="login_text">
+                                               <label for="uid" class="ir_su">아이디</label>
+                                                <input type="text" name="uid" id="uid" class="input_text" maxlength="20">
+                                                <label for="upw" class="ir_su">비밀번호</label>
+                                                <input type="text" name="upw" id="upw" class="input_text" maxlength="20">
+                                            </div>
+                                            <button class="login_btn" type="submit">로그인</button>
+                                        </div>
+                                        <div class="login_footer">
+                                            <h5 class="ir_su">로그인 문제해결</h5>
+                                            <ul>
+                                                <li><a href="#"><strong>회원가입</strong></a> / </li>
+                                                <li><a href="#">아이디</a> &middot; <a href="#">비밀번호 찾기</a></li>
+                                            </ul>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <!-- 로그인(종료) -->
+                            <!-- 팝업 -->
+                            <div class="popup">
+                                <h4>Advertisement</h4>
+                                <ul>
+                                    <li><a href="#"><img src="img/popup01 (1).jpg" alt="img1"></a></li>
+                                    <li><a href="#"><img src="img/popup01 (2).jpg" alt="img2"></a></li>
+                                    <li class="last"><a href="#"><img src="img/popup01 (3).jpg" alt="img3"></a></li>
+                                </ul>
+                            </div>
+                            <!-- 팝업(종료) -->
                         </div>
                         <!-- col3 -->
                         <div class="column col4">
@@ -280,14 +337,14 @@
                                         </ul>
                                     </li>
                                     <li><a href="#">공지사항2</a>
-                                        <ul style="display: none">
+                                        <ul>
                                             <li><a href="#">두번째 공지사항1</a></li>
                                             <li><a href="#">두번째 공지사항2</a></li>
                                             <li><a href="#">두번째 공지사항3</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">공지사항3</a>
-                                        <ul style="display: none">
+                                        <ul>
                                             <li><a href="#">세번째 공지사항1</a></li>
                                             <li><a href="#">세번째 공지사항2</a></li>
                                             <li><a href="#">세번째 공지사항3</a></li>
@@ -296,11 +353,42 @@
                                 </ul>
                             </div>
                             <!-- 탭 메뉴(종료) -->
+                            <div class="notice4 15">
+                                <h4>최신 <em>공지사항1</em></h4>
+                                <ul>
+                                    <li><a href="#">웹 디자이너와 웹 퍼블리셔의 차이는?</a><span>2022.02.20</span></li>
+                                    <li><a href="#">웹 디자이너와 웹 퍼블리셔의 차이는?</a><span>2022.02.20</span></li>
+                                    <li><a href="#">웹 디자이너와 웹 퍼블리셔의 차이는?</a><span>2022.02.20</span></li>
+                                </ul>
+                                <a href="#" class="more" title="더 보기">더 보기</a>
+                            </div>
                         </div>
                         <!-- col5 -->
                         <div class="column col6">
                             <h3><span class="ico_img ir_pm">아이콘</span><span class="ico_tit">Notice</span></h3>
                             <p class="ico_desc">가장 웹 페이지에서 기본이 되는 게시판 유형입니다.</p>
+                            <!-- 갤러리 -->
+                            <div class="gallery">
+                                <h4>포트폴리오</h4>
+                                <div class="gallery_btn">
+                                <ul>
+                                    <li class="gb__icon1"><a href="#"><span class="ir_pm">시작</span></a></li>
+                                    <li class="gb__icon2"><a href="#"><span class="ir_pm">정지</span></a></li>
+                                    <li class="gb__icon3"><a href="#"><span class="ir_pm">이전 이미지</span></a></li>
+                                    <li class="gb__icon4"><a href="#"><span class="ir_pm">다음 이미지</span></a></li>
+                                </ul>
+                                </div>
+                                <div class="gallery_img">
+                                    <ul>
+                                        <li><a href="#"><img src="img/popa1 (1).jpg" alt="gallery1"></a></li>
+                                        <li><a href="#"><img src="img/popa1 (2).jpg" alt="gallery2"></a></li>
+                                        <li><a href="#"><img src="img/popa1 (3).jpg" alt="gallery3"></a></li>
+                                        <li><a href="#"><img src="img/popa1 (4).jpg" alt="gallery4"></a></li>
+                                        <li><a href="#"><img src="img/popa1 (5).jpg" alt="gallery5"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 갤러리(종료) -->
                         </div>
                         <!-- col6 -->
                     </div>
@@ -310,10 +398,75 @@
         </div>
         <!--contents  -->
         <div id="footer">
-            <div class="container">footer</div>
+            <div class="container">
+                <h2 class="ir_su">푸터 영역</h2>
+                <div class="footer">
+                    <ul>
+                        <li><a href="#">사이트 도움말</a></li>
+                        <li><a href="#">사이트 이용약관</a></li>
+                        <li><a href="#">사이트 운영규칙</a></li>
+                        <li><a href="#"><strong>개인정보 취급 방침</strong></a></li>
+                        <li><a href="#">책임의 한계와 법적고지</a></li>
+                        <li><a href="#">게시중단요청 서비스</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                    <address>
+                        webstoryboy.co.kr all right
+                    </address>
+                    <div class="w3c">
+                        <a href="http://validator.w3.org/check?uri=referer"><img
+                            src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+                        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                            <img style="border:0;width:88px;height:31px"
+                                src="http://jigsaw.w3.org/css-validator/images/vcss"
+                                alt="올바른 CSS입니다!" />
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
         </div>
         <!-- //footer -->
     </div>
     <!-- wrap -->
+    <!-- jquery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script type="text/javascript">
+        //탭 메뉴
+        const $tab_list = $(".tab_manu");
+
+        $tab_list.find("ul ul").hide();
+        $tab_list.find("li.active > ul").show();
+
+        function tabmanu(e){
+            e.preventDefault();
+            const $this = $(this);
+            $this.next("ul").show().parent("li").addClass("active").siblings("li").removeClass("active").find('>ul').hide();
+        }
+        $tab_list.find("ul>li>a").click(tabmanu).focus(tabmanu);
+
+        //배너
+        $(".ban").slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            autoplay:true,
+            autoplaySpeed:3000,
+            dots:true
+        });
+        //버튼을 클릭하면 전체 메뉴 보이기
+        $(".tit .btn").click(function(e){
+            e.preventDefault()
+            // $("#con_nav").css("display","block");
+            // $("#con_nav").show();
+            // $("#con_nav").fadeIn();
+            // $("#con_nav").slideDown();
+            // $("#con_nav").toggle();
+            // $("#con_nav").fadeToggle(); 
+            $("#con_nav").slideToggle(500);
+            $(this).toggleClass("on");
+        });
+    </script>
 </body>
 </html>
