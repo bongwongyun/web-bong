@@ -487,26 +487,6 @@
             height: 250%;
             border-radius: 20px 20px 35px 35px;
         }
-        @keyframes movetongue {
-            100% {
-                height: 27px;
-            }
-        }
-        @keyframes movetail {
-            0% {
-                transform: rotate(37deg);
-            }
-
-            100% {
-                transform: rotate(52deg);
-            }
-        }
-        @keyframes cry {
-            100% {
-                visibility: visible;
-            }
-        }
-
         .dog .face::before,
         .dog .face::before {
             margin-top: 10px;
@@ -568,6 +548,26 @@
         .dog .tail {
             animation: movetail 0.1s linear infinite alternate forwards;
         }
+        @keyframes movetongue {
+            100% {
+                height: 27px;
+            }
+        }
+        @keyframes movetail {
+            0% {
+                transform: rotate(37deg);
+            }
+
+            100% {
+                transform: rotate(52deg);
+            }
+        }
+        @keyframes cry {
+            100% {
+                visibility: visible;
+            }
+        }
+
     </style>
 </head>
 
@@ -635,18 +635,18 @@
     </footer>
 
     <script>
-        const quizType = document.querySelector(".quiz__Type"); //퀴즈 종류
-        const quiznumber = document.querySelector(".quiz__number"); //퀴즈 번호
-        const quizAsk = document.querySelector(".quiz__Ask"); //퀴즈질문
+        const quizType = document.querySelector(".quiz__Type");       //퀴즈 종류
+        const quiznumber = document.querySelector(".quiz__number");   //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz__Ask");         //퀴즈질문
         const quizconfirm = document.querySelector(".quiz__confirm"); //정답 확인 버튼
-        const quizResult = document.querySelector(".quiz__result"); //정답 확인
-        const quizDog = document.querySelector(".quiz__view .dog");
+        const quizResult = document.querySelector(".quiz__result");   //정답 확인
+        const quizDog = document.querySelector(".quiz__view .dog");   
 
         //문제정보
         const answerType = "HTML";
         const answerNum = 1;
         const answerAsk = "컨텐츠의 구조를 정의 하는 마크업 언어는?"; //문제
-        const answerResult = "html"; //답안   
+        const answerResult = "html";                               //답안   
 
         //문제출력
         quizType.textContent = answerType;

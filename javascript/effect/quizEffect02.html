@@ -529,30 +529,7 @@
             height: 250%;
             border-radius: 20px 20px 35px 35px;
         }
-
-
-        @keyframes movetongue {
-            100% {
-                height: 27px;
-            }
-        }
-
-        @keyframes movetail {
-            0% {
-                transform: rotate(37deg);
-            }
-
-            100% {
-                transform: rotate(52deg);
-            }
-        }
-
-        @keyframes cry {
-            100% {
-                visibility: visible;
-            }
-        }
-
+        /* 정답 오답 */
         .true .dog .face::before {
             margin-top: 50px;
         }
@@ -655,6 +632,28 @@
         .false .dog .tail {
             transform: rotate(0);
         }
+
+        @keyframes movetongue {
+            100% {
+                height: 27px;
+            }
+        }
+
+        @keyframes movetail {
+            0% {
+                transform: rotate(37deg);
+            }
+
+            100% {
+                transform: rotate(52deg);
+            }
+        }
+
+        @keyframes cry {
+            100% {
+                visibility: visible;
+            }
+        }
         
     </style>
 </head>
@@ -723,12 +722,13 @@
     </footer>
 
     <script>
-        const quizType = document.querySelector(".quiz__Type"); //퀴즈 종류
-        const quiznumber = document.querySelector(".quiz__number"); //퀴즈 번호
-        const quizAsk = document.querySelector(".quiz__Ask"); //퀴즈질문
-        const quizconfirm = document.querySelector(".quiz__confirm"); //정답 확인 버튼
+        const quizType = document.querySelector(".quiz__Type");      //퀴즈 종류
+        const quiznumber = document.querySelector(".quiz__number");  //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz__Ask");        //퀴즈질문
+        const quizconfirm = document.querySelector(".quiz__confirm");//정답 확인 버튼
         const quizResult = document.querySelector(".quiz__result"); //정답 확인
-        const quizDog = document.querySelector(".quiz__view .dog");
+        const quizview = document.querySelector(".quiz__view"); //강아지
+        const quizinput = document.querySelector(".quiz__input");   //input
 
         //문제정보
         const answerType = "javascript";
@@ -746,12 +746,12 @@
         //정답 버튼을 클릭하면 정답을 보이게 설정
 
         quizconfirm.addEventListener("click", () => {
-                const userWord = quizInput.value.toLowerCase().trim();  //사용자 데이터
+                const userWord = quizinput.value.toLowerCase().trim();  //사용자 데이터
                 //사용자 데이터 == 정답
             if(userWord == answerResult){
-                quizView.classList.add("true");
+                quizview.classList.add("true");
             } else {
-                quizView.classList.add("false");
+                quizview.classList.add("false");
             }
         });
     </script>
