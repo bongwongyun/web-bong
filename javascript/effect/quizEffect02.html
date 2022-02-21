@@ -119,7 +119,7 @@
             color: #ffff;
             font-size: 16px;
         }
-
+        /* quiz__wrap */
         .quiz__wrap {
             display: flex;
             align-items: center;
@@ -133,7 +133,7 @@
             max-width: 500px;
             background: #fff;
             border: 8px ridge #cacaca;
-            margin: 5px;
+            margin: 10px;
         }
 
         .quiz__Type {
@@ -151,8 +151,8 @@
             position: absolute;
             left: 2px;
             top: 2px;
-            width: 5px;
-            height: 5px;
+            width: 15px;
+            height: 15px;
             border: 6px ridge #cacaca;
         }
 
@@ -161,8 +161,8 @@
             position: absolute;
             right: 2px;
             top: 2px;
-            width: 5px;
-            height: 5px;
+            width: 15px;
+            height: 15px;
             border: 6px ridge #ff4141;
         }
 
@@ -216,7 +216,23 @@
             color: #F5534F;
             opacity: 0;
         }
-
+        .quiz__view.like .true {
+            opacity: 1;
+            animation: wobble 0.6s;
+        }
+        .quiz__view.dislike .false {
+            opacity: 1;
+            animation: wobble 0.6s;
+        }
+        @keyframes wobble {
+            0%   {transform: translateZ(0)}
+            15%  {transform: translate3d(-25%, 0, 0) rotate(-5deg)}
+            30%  {transform: translate3d(20%, 0, 0) rotate(3deg)}
+            45%  {transform: translate3d(-15%, 0, 0) rotate(-3deg)}
+            60%  {transform: translate3d(10%, 0, 0) rotate(2deg)}
+            75%  {transform: translate3d(-5%, 0, 0) rotate(-1deg)}
+            100% {transform: translateZ(0)}
+        }
 
         .quiz__answer {
             background-color: #f5f5f5;
@@ -232,6 +248,7 @@
             background: #d4d5d6;
             text-shadow: 1px 1px 1px #fff;
             transition: all 0.3s;
+            font-family: 'Cafe24Dangdanghae';
             cursor: pointer;
         }
 
@@ -248,7 +265,7 @@
             background: #fff;
             font-family: 'Cafe24Dangdanghae';
             text-shadow: 1px 1px 1px #fff;
-            display: none;
+            /* display: none; */
         }
 
         .quiz__input {
@@ -263,6 +280,20 @@
         }
 
         /* dog */
+        .dog .tail, 
+        .dog .chin, 
+        .dog .tongue::before, 
+        .dog .tongue::after, 
+        .dog .mouth, 
+        .dog .nose, 
+        .dog .teardrop, 
+        .dog .eyes, 
+        .dog .face::before, 
+        .dog .face::after, 
+        .dog .ears::before, 
+        .dog .ears::after {
+            transition: 0.2s ease-in;
+        }
         .dog {
             padding-top: 50px;
         }
@@ -685,7 +716,7 @@
                 </h3>
                 <div class="quiz__view">
                         <div class="true">정답입니다.</div>
-                        <div class="false">틀렸습니다.</div>
+                        <div class="false">오답입니다.</div>
                     <div class="dog">
                         <div class='head'>
                             <div class='ears'></div>
