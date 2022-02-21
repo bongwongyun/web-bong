@@ -620,7 +620,7 @@
                 </div>
                 <div class="quiz__answer">
                     <button class="quiz__confirm">정답 확인하기</button>
-                    <div class="quiz__result"></div>
+                    <div class="quiz__result"> </div>
                 </div>
             </div>
         </div>
@@ -640,7 +640,7 @@
         const quizAsk = document.querySelector(".quiz__Ask");         //퀴즈질문
         const quizconfirm = document.querySelector(".quiz__confirm"); //정답 확인 버튼
         const quizResult = document.querySelector(".quiz__result");   //정답 확인
-        const quizDog = document.querySelector(".quiz__view .dog");   
+        const quizDog = document.querySelector(".quiz__view .dog");   //강아지
 
         //문제정보
         const answerType = "HTML";
@@ -661,7 +661,7 @@
             quizconfirm.style.display = "none";
             quizResult.style.display = "block";
             quizDog.classList.add("like");
-            quizDog.classList.remove("dislike");
+            quizDog.classList.add("dislike");
         });
     </script>
 </body>
