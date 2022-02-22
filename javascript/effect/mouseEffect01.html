@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse Effect01</title>
+
+    <link rel="stylesheet" href="css/NexonLv1Gothic.css">
+    <link rel="stylesheet" href="css/min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        body::before {
+           background: rgba(5,90,80,0.4);
+        }
+        #mouseType01 {}
+        .mouse__wrap {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           flex-direction: column;
+           color: #fff;
+           width: 100%;
+           height: 100vh;
+           overflow: hidden;
+           cursor: none;
+        }
+        .mouse__wrap p {
+           line-height: 2;
+           font-weight: 300;
+           font-size: 2.5vw;
+
+        }
+        .mouse__wrap p:last-child {
+            font-size: 2.5vw;
+            font-weight: 400;
+        }
+        .mouse__wrap p span {
+            border-bottom: 0.15vw dashed #fff;
+        }
+        .cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.4);
+            user-select: none;
+            pointer-events: none;
+            transition:  background-color .2s,border-color .2s,border-radius .2s ,transform .6s;
+        }
+        .cursor.style1 {
+            background-color: aqua;
+            border-color: aquamarine;
+        }
+        .cursor.style2 {
+            background-color: rgba(0, 13, 64, 89);
+            border-color: rgb(29, 0, 14);
+            transform: rotate(45deg) scale(2);
+        }
+        .cursor.style3 {
+            background-color: rgb(3, 31, 145);
+            border-color: rgb(8, 68, 92);
+            transform: rotate(90deg) scale(2);
+        }
+        .cursor.style4 {
+            background-color: rgb(143, 8, 170);
+            border-color: rgb(255, 76, 165);
+            transform: rotate(180deg) scale(2);
+        }
+        .cursor.style5 {
+            background-color: rgb(255, 28, 96);
+            border-color: rgb(255, 76, 165);
+            transform: rotate(360deg) scale(2);
+        }
+        .cursor.style6 {
+            background-color: rgb(255, 85, 17);
+            border-color: rgba(253, 30, 0, 0.986);
+            transform: rotate(720deg) scale(2);
+        }
+    </style>
+</head>
+<body>
+
+     <!-- main -->
+     <main>
+        <section id="mouseType01">
+            <div class="cursor"></div>
+
+            <div class="mouse__wrap">
+            <p> When you go through <span class="style1">hardships</span> and decide not to surrender, <span class="style2">that is strength.</span><br>
+                <span class="style3">— Arnold Schwarzenegger</span></p>
+               <p>당신이 <span class="style4">어려움</span> 을 겪고 <span class="style5">항복</span> 하지 않기로 결정할 때, 그것이 <span class="style6">힘</span> 이다.</p>
+            </div>
+            
+        </section>
+     </main>
+    <!-- main -->
+
+    <!-- info  -->
+    <div class="title">
+        <h1><a href="mouseEffect.html">javascript mouse Effect01</a></h1>
+        <p>마우스 이펙트 - 따라다니기</p>
+    </div>
+
+        <div class="number">
+            <ul>
+                <li class="active"><a href="mouseEffect01.html">1</a></li>
+                <li><a href="mouseEffect02.html">2</a></li>
+                <li><a href="mouseEffect03.html">3</a></li>
+                <li><a href="mouseEffect04.html">4</a></li>
+                <li><a href="mouseEffect05.html">5</a></li>
+                <li><a href="mouseEffect06.html">6</a></li>
+                <li><a href="mouseEffect07.html">7</a></li>
+                <li><a href="mouseEffect08.html">8</a></li>
+            </ul>
+        </div>
+
+        <div class="source">
+            <button class="source-btn">소스보기</button>
+            <div id="modal">
+                <div class="modal-wrap">
+                    <div class="modal-cont">
+                        <div class="code-view">
+                            <div class="view-header" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="view-title">
+                                <ul>
+                                    <li class="active"><a href="#">html</a></li>
+                                    <li><a href="#">css</a></li>
+                                    <li><a href="#">javascript</a></li>
+                                    <li><a href="#">jquery</a></li>
+                                </ul>
+                            </div>
+                            <div class="view-cont">
+                                <div>
+<pre><code class="language-css">
+             </code></pre></div>
+                            <div><pre><code class="language-css">
+                                
+                            </code></pre></div>
+                            <div><pre><code class="language-css">
+
+                            </code></pre></div>
+                            <div><pre><code class="language-css">
+
+                            </code></pre></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="modal-close">닫기</button>
+                </div>
+            </div>
+        </div>
+        <div class="attr">
+            <ul>
+                <li>clientX : <span class="clientX">0</span>px</li>
+                <li>clientY : <span class="clientY">0</span>px</li>
+                <li>offsetX : <span class="offsetX">0</span>px</li>
+                <li>offsetY : <span class="offsetY">0</span>px</li>
+                <li>pageX : <span class="pageX">0</span>px</li>
+                <li>pageY : <span class="pageY">0</span>px</li>
+                <li>screenX : <span class="screenX">0</span>px</li>
+                <li>screenY : <span class="screenY">0</span>px</li>
+            </ul>
+        </div>
+
+        <!-- script -->
+        <script src="js/highlight.min.js"></script>
+        <script src=js/custom.js></script>
+        <script>
+            // highlightAll();
+            // modal();
+            // tabMenu();
+
+            //출력용
+            window.addEventListener("mousemove", (event) => {
+                document.querySelector(".clientX").innertext = event.clientX;
+                document.querySelector(".clientY").innertext = event.clientY;
+                document.querySelector(".offsetX").innertext = event.offsetX;
+                document.querySelector(".offsetY").innertext = event.offsetY;
+                document.querySelector(".pageX").innertext = event.pageX;
+                document.querySelector(".pageY").innertext = event.pageY;
+                document.querySelector(".screenX").innertext = event.screenX;
+                document.querySelector(".screenY").innertext = event.screenY;
+            })
+
+            //마우스 움직이기
+            window.addEventListener("mousemove", (e) => {
+                document.querySelector(".cursor").style.left = e.clientX - 25 + "px";
+                document.querySelector(".cursor").style.top = e.clientY - 25 + 'px';
+            })
+
+            document.querySelector(".style1").addEventListener("mouseover", () => {
+                document.querySelector(".cursor").classList.add("style1")
+            })
+            document.querySelector(".style1").addEventListener("mouseout", () => {
+                document.querySelector(".cursor").classList.remove("style1")
+            })
+            document.querySelector(".style2").addEventListener("mouseover", () => {
+                document.querySelector(".cursor").classList.add("style2")
+            })
+            document.querySelector(".style3").addEventListener("mouseout", () => {
+                document.querySelector(".cursor").classList.remove("style3")
+            })
+            document.querySelector(".style3").addEventListener("mouseover", () => {
+                document.querySelector(".cursor").classList.add("style3")
+            })
+            document.querySelector(".style4").addEventListener("mouseout", () => {
+                document.querySelector(".cursor").classList.remove("style4")
+            })
+            document.querySelector(".style4").addEventListener("mouseover", () => {
+                document.querySelector(".cursor").classList.add("style4")
+            })
+            document.querySelector(".style5").addEventListener("mouseout", () => {
+                document.querySelector(".cursor").classList.remove("style5")
+            })
+            document.querySelector(".style6").addEventListener("mouseover", () => {
+                document.querySelector(".cursor").classList.add("style6")
+            })
+            document.querySelector(".style6").addEventListener("mouseout", () => {
+                document.querySelector(".cursor").classList.remove("style6")
+            })
+        </script>
+</body>
+</html>

@@ -126,6 +126,16 @@ body::before {
     background: #FFF;
     color: #000;
 }
+
+/* attr */
+.attr {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
 /* modal */
 #modal {
     position: fixed;
