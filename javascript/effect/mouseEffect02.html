@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트</title>
+    <link rel="stylesheet" href="css/nexon.css">
+    <link rel="stylesheet" href="css/dracula.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        body::before {
+            background: rgba(5, 36, 70, 0.87)
+        }
+    </style>
+</head>
+<body class="img08">
+    <!-- main -->
+    <main>
+    </main>
+    <!-- //main -->
+    <!-- info -->
+    <div class="info">
+        <div class="title">
+            <h1><a href="mouseEffect.html">JavaScript Mouse Effect01</a></h1>
+            <p>마우스 이펙트 - 따라다니기</p>
+        </div>
+        <div class="number">
+            <ul>
+                <li class="active"><a href="mouseEffect01.html">1</a></li>
+                <li><a href="mouseEffect02.html">2</a></li>
+                <li><a href="mouseEffect03.html">3</a></li>
+                <li><a href="mouseEffect04.html">4</a></li>
+                <li><a href="mouseEffect05.html">5</a></li>
+                <li><a href="mouseEffect06.html">6</a></li>
+                <li><a href="mouseEffect07.html">7</a></li>
+                <li><a href="mouseEffect08.html">8</a></li>
+            </ul>
+        </div>
+        <div class="source">
+            <button class="source-btn">소스보기</button>
+            <div id="modal">
+                <div class="modal-wrap">
+                    <div class="modal-cont">
+                        <div class="code-view">
+                            <div class="view-header" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="view-title">
+                                <ul>
+                                    <li class="active"><a href="#">HTML</a></li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                            <div class="view-cont">
+                                <div>
+<pre><code class="language-html">
+</code></pre>
+                                </div>
+                                <!-- //cont1 -->
+                                <div>
+<pre><code class="language-javascript">
+</code></pre>
+                                </div>
+                                <!-- //cont2 -->
+                                <div>
+<pre><code class="language-javascript">
+</code></pre>
+                                </div>
+                                <!-- //cont3 -->
+                            </div>
+                        </div>
+                    </div>
+                    <button class="modal-close">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="attr">
+        <ul>
+            <li>clientX : <span class="clientX">0</span>px</li>
+            <li>clientY : <span class="clientY">0</span>px</li>
+            <li>offsetX : <span class="offsetX">0</span>px</li>
+            <li>offsetY : <span class="offsetY">0</span>px</li>
+            <li>pageX : <span class="pageX">0</span>px</li>
+            <li>pageY : <span class="pageY">0</span>px</li>
+            <li>screenX : <span class="screenX">0</span>px</li>
+            <li>screenY : <span class="screenY">0</span>px</li>
+        </ul>
+    </div>
+    <!-- //info -->
+    <!-- script -->
+    <script src="js/highlight.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        highlight();
+        modal();
+        tabMenu();
+
+        //출력용
+        window.addEventListener("mousemove", (event) => {
+                document.querySelector(".clientX").innertext = event.clientX;
+                document.querySelector(".clientY").innertext = event.clientY;
+                document.querySelector(".offsetX").innertext = event.offsetX;
+                document.querySelector(".offsetY").innertext = event.offsetY;
+                document.querySelector(".pageX").innertext = event.pageX;
+                document.querySelector(".pageY").innertext = event.pageY;
+                document.querySelector(".screenX").innertext = event.screenX;
+                document.querySelector(".screenY").innertext = event.screenY;
+            })
+    </script>
+</body>
+</html>
