@@ -695,7 +695,7 @@
         /* window */
         .quiz__source {
             position: absolute;
-            right: 100px;
+            right: 120px;
             bottom: 100px;
         }
 
@@ -720,7 +720,7 @@
             display: block;
         }
 
-        #button:checked ~ #window {
+        #button:checked~#window {
             display: block;
         }
 
@@ -733,7 +733,6 @@
             border-top: 2px solid #FCFCFC;
             border-right: 2px solid #2A2A2A;
             border-bottom: 2px solid #2A2A2A;
-            /* display: none; */
         }
 
         .title-bar {
@@ -1048,8 +1047,9 @@
         </div>
 
         <div class="quiz__source">
-            <button class="source-btn">소스보기</button>
-            <div id="window">
+            <button class="source-btn" onclick="getShow()">소스보기</button>
+            <button class="source-btn" onclick="getHide()">닫기</button>
+            <div id="window" style="display: none;">
                 <div class="title-bar">
                     <div class="minimize">
                         <div class="symbol"></div>
@@ -1134,6 +1134,15 @@
             } else {
                 display.style.display == 'block'
             }
+        }
+
+        function getShow() {
+            document.getElementById("window").style.display = "block";
+
+        }
+
+        function getHide() {
+            document.getElementById("window").style.display = "none";
         }
     </script>
 </body>
