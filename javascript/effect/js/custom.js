@@ -1,5 +1,5 @@
     const highlight = function (){
-    highlightAll();
+    hljs.highlightAll();
     }
 
     //modal
