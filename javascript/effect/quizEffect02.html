@@ -692,13 +692,39 @@
             transform: rotate(0);
         }
 
+        /* window */
         .quiz__source {
             position: absolute;
             right: 100px;
             bottom: 100px;
         }
 
-        .window {
+        .quiz__source button {
+            border: 1px solid #fff;
+            background: #111;
+            color: #FFF;
+            font-family: 'NexonLv1Gothic';
+            font-size: 16px;
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .quiz__source button:hover {
+            background: #FFF;
+            color: #000;
+        }
+
+        #button {
+            display: block;
+        }
+
+        #button:checked ~ #window {
+            display: block;
+        }
+
+        #window {
             min-width: 360px;
             min-height: 220px;
             background-color: #c7c7c7;
@@ -707,6 +733,7 @@
             border-top: 2px solid #FCFCFC;
             border-right: 2px solid #2A2A2A;
             border-bottom: 2px solid #2A2A2A;
+            /* display: none; */
         }
 
         .title-bar {
@@ -898,6 +925,70 @@
         .scroll.-row>.end::after {
             transform: rotate(90deg);
         }
+
+        #window.show {
+            animation: foldout 1s ease forwards;
+        }
+
+        #window.show.hide {
+            animation: foldin 1s 0.3s ease backwards;
+        }
+
+        @keyframes foldout {
+            0% {
+                transform: scaleX(0) scaleY(0.001)
+            }
+
+            50% {
+                transform: scaleX(1) scaleY(0.001);
+            }
+
+            100% {
+                transform: scaleX(1) scaleY(1);
+            }
+        }
+
+        @keyframes foldin {
+            0% {
+                transform: scaleX(1) scaleY(1)
+            }
+
+            50% {
+                transform: scaleX(1) scaleY(0.001);
+            }
+
+            100% {
+                transform: scaleX(0) scaleY(0.001);
+            }
+        }
+
+        #window.show .source-btn {
+            animation: zoomout 0.5s 1s ease forwards;
+        }
+
+        #window.show.hide .close {
+            animation: zoomin 0.5s ease forwards;
+        }
+
+        @keyframes zoomout {
+            0% {
+                transform: scale(0)
+            }
+
+            100% {
+                transform: scale(1)
+            }
+        }
+
+        @keyframes zoomin {
+            0% {
+                transform: scale(1)
+            }
+
+            100% {
+                transform: scale(0)
+            }
+        }
     </style>
 </head>
 
@@ -958,39 +1049,42 @@
 
         <div class="quiz__source">
             <button class="source-btn">소스보기</button>
-            <div class="title-bar"></div>
-            <div class="minimize">
-                <div class="symbol"></div>
-            </div>
-            <div class="maximize">
-                <div class="symbol"></div>
-            </div>
-            <div class="close">
-                <div class="symbol"></div>
-            </div>
-            <div class="menu-bar">
-                <span>File</span>
-                <span>Edit</span>
-                <span>View</span>
-                <span>Help</span>
-            </div>
-            <div class="content-container">
-                <div class="content">
-                    <div class="main"></div>
-                    <div class="scroll">
+            <div id="window">
+                <div class="title-bar">
+                    <div class="minimize">
+                        <div class="symbol"></div>
+                    </div>
+                    <div class="maximize">
+                        <div class="symbol"></div>
+                    </div>
+                    <div class="close">
+                        <div class="symbol"></div>
+                    </div>
+                </div>
+                <div class="menu-bar">
+                    <span>File</span>
+                    <span>Edit</span>
+                    <span>View</span>
+                    <span>Help</span>
+                </div>
+                <div class="content-container">
+
+                    <div class="content">
+                        <div class="main"></div>
+                        <div class="scroll">
+                            <div class="start"></div>
+                            <div class="progress"></div>
+                            <div class="end"></div>
+                        </div>
+                    </div>
+                    <div class="scroll -row">
                         <div class="start"></div>
                         <div class="progress"></div>
                         <div class="end"></div>
                     </div>
                 </div>
-                <div class="scroll.-row">
-                    <div class="start"></div>
-                    <div class="progress"></div>
-                    <div class="end"></div>
-                </div>
-                <div class="window_footer"></div>
+                <div class="footer"></div>
             </div>
-            <button class="source-close">닫기</button>
         </div>
 
     </main>
@@ -1032,6 +1126,15 @@
                 quizview.classList.add("false");
             }
         });
+
+        function ondisplay() {
+            const display = document.getElementById("window");
+            if (display.style.display == 'block') {
+                display.style.display == 'none'
+            } else {
+                display.style.display == 'block'
+            }
+        }
     </script>
 </body>
 
