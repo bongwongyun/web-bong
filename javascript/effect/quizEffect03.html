@@ -106,13 +106,13 @@
         }
 
         #footer {
-            margin-top: 200px;
+            margin-top: 150px;
             width: 100%;
             background: #4e4e4e;
             text-align: center;
             padding: 10px;
-            position: absolute;
-            bottom: 0;
+            position: relative;
+            transform: translateY(-100%);
         }
 
         #footer a {
@@ -216,23 +216,45 @@
             color: #F5534F;
             opacity: 0;
         }
-        
+
         .quiz__view.like .true {
             opacity: 1;
             animation: wobble 0.6s;
         }
+
         .quiz__view.dislike .false {
             opacity: 1;
             animation: wobble 0.6s;
         }
+
         @keyframes wobble {
-            0%   {transform: translateZ(0)}
-            15%  {transform: translate3d(-25%, 0, 0) rotate(-5deg)}
-            30%  {transform: translate3d(20%, 0, 0) rotate(3deg)}
-            45%  {transform: translate3d(-15%, 0, 0) rotate(-3deg)}
-            60%  {transform: translate3d(10%, 0, 0) rotate(2deg)}
-            75%  {transform: translate3d(-5%, 0, 0) rotate(-1deg)}
-            100% {transform: translateZ(0)}
+            0% {
+                transform: translateZ(0)
+            }
+
+            15% {
+                transform: translate3d(-25%, 0, 0) rotate(-5deg)
+            }
+
+            30% {
+                transform: translate3d(20%, 0, 0) rotate(3deg)
+            }
+
+            45% {
+                transform: translate3d(-15%, 0, 0) rotate(-3deg)
+            }
+
+            60% {
+                transform: translate3d(10%, 0, 0) rotate(2deg)
+            }
+
+            75% {
+                transform: translate3d(-5%, 0, 0) rotate(-1deg)
+            }
+
+            100% {
+                transform: translateZ(0)
+            }
         }
 
         .quiz__answer {
@@ -418,7 +440,7 @@
             border: 4px solid #451d1c;
             border-left-color: transparent;
             border-top-color: transparent;
-            z-index: 2;
+            z-index: 0;
         }
 
         .dog .mouth::before {
@@ -546,6 +568,7 @@
             height: 250%;
             border-radius: 20px 20px 35px 35px;
         }
+
         .true .dog .face::before {
             margin-top: 50px;
         }
@@ -649,6 +672,7 @@
             transform: rotate(0);
             animation: none;
         }
+
         @keyframes movetongue {
             100% {
                 height: 27px;
@@ -670,7 +694,241 @@
                 visibility: visible;
             }
         }
-        
+
+        /* window */
+        .quiz__source {
+            position: absolute;
+            right: 120px;
+            bottom: 100px;
+        }
+
+        .quiz__source button {
+            border: 1px solid #fff;
+            background: #111;
+            color: #FFF;
+            font-family: 'NexonLv1Gothic';
+            font-size: 16px;
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .quiz__source button:hover {
+            background: #FFF;
+            color: #000;
+        }
+
+        #button {
+            display: block;
+        }
+
+        #button:checked~#window {
+            display: block;
+        }
+
+        #window {
+            min-width: 100%;
+            min-height: 100%;
+            background-color: #c7c7c7;
+            padding: 4px;
+            border-left: 2px solid #FCFCFC;
+            border-top: 2px solid #FCFCFC;
+            border-right: 2px solid #2A2A2A;
+            border-bottom: 2px solid #2A2A2A;
+            margin-top: 100px;
+        }
+
+        .title-bar {
+            background-color: #000080;
+            padding: 4px;
+            height: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .title-bar>.minimize,
+        .title-bar>.maximize,
+        .title-bar>#close {
+            width: 26px;
+            height: 22px;
+            background-color: #c7c7c7;
+            margin-left: 4px;
+            border-left: 2px solid #FCFCFC;
+            border-top: 2px solid #FCFCFC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .title-bar>.minimize:hover,
+        .title-bar>.maximize:hover,
+        .title-bar>#close:hover {
+            background-color: #bababa;
+            border-left: 2px solid #2A2A2A;
+            border-top: 2px solid #2A2A2A;
+            border-right: 2px solid #FCFCFC;
+            border-bottom: 2px solid #FCFCFC;
+        }
+
+        .title-bar>.minimize {
+            align-items: flex-end;
+        }
+
+        .title-bar>.minimize>.symbol {
+            width: 60%;
+            height: 3px;
+            background-color: #000000;
+            margin-bottom: 2px;
+        }
+
+        .title-bar>.maximize>.symbol {
+            width: 70%;
+            height: 80%;
+            border: 2px solid #000000;
+            border-top-width: 4px;
+        }
+
+        .title-bar>#close>.symbol {
+            width: 70%;
+            height: 3px;
+            background-color: #000000;
+            transform: rotate(45deg);
+        }
+
+        .title-bar>#close>.symbol::after {
+            content: "";
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #000000;
+            transform: rotate(90deg);
+        }
+
+        .menu-bar>span {
+            padding: 8px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .menu-bar>span::first-letter {
+            text-decoration: underline;
+        }
+
+        .menu-bar>span:hover {
+            background-color: #bababa;
+        }
+
+        .content-container {
+            border-left: 2px solid #2A2A2A;
+            border-top: 2px solid #2A2A2A;
+            border-right: 2px solid #FCFCFC;
+            border-bottom: 2px solid #FCFCFC;
+        }
+
+        .content-container>.content {
+            display: flex;
+            height: 100%;
+        }
+
+        .content-container>.content>.main2,
+        .content-container>.content>.scroll-left {
+            height: 100%;
+        }
+
+        .content-container>.content>.main2 {
+            width: calc(100% - 26px);
+        }
+
+        .content-container>.content>.scroll {
+            width: 26px;
+        }
+
+        .scroll {
+            background-color: #D7D7D7;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .scroll>.progress {
+            width: 24px;
+            height: 70%;
+            cursor: pointer;
+            border-left: 2px solid #FCFCFC;
+            border-top: 2px solid #FCFCFC;
+            border-right: 2px solid #2A2A2A;
+            border-bottom: 2px solid #2A2A2A;
+            background-color: #c7c7c7;
+        }
+
+        .scroll>.progress:hover {
+            background-color: #bababa;
+        }
+
+        .scroll>.start,
+        .scroll>.end {
+            width: 24px;
+            height: 22px;
+            position: relative;
+            border-left: 2px solid #FCFCFC;
+            border-top: 2px solid #FCFCFC;
+            border-right: 2px solid #2A2A2A;
+            border-bottom: 2px solid #2A2A2A;
+            background-color: #c7c7c7;
+        }
+
+        .scroll>.start:hover,
+        .scroll>.end:hover {
+            background-color: #bababa;
+            border-left: 2px solid #2A2A2A;
+            border-top: 2px solid #2A2A2A;
+            border-right: 2px solid #FCFCFC;
+            border-bottom: 2px solid #FCFCFC;
+        }
+
+        .scroll>.start::after,
+        .scroll>.end::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 6px;
+            left: 4px;
+            border-top: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid #000000;
+        }
+
+        .scroll>.end::after {
+            transform: rotate(180deg);
+        }
+
+        .scroll.-row {
+            flex-direction: row;
+        }
+
+        .scroll.-row>.progress {
+            width: 30%;
+            height: 24px;
+        }
+
+        .scroll.-row>.start::after {
+            transform: rotate(-90deg);
+        }
+
+        .scroll.-row>.end::after {
+            transform: rotate(90deg);
+        }
     </style>
 </head>
 
@@ -700,8 +958,8 @@
                     <span class="quiz__Ask"></span>
                 </h3>
                 <div class="quiz__view">
-                        <div class="true">정답입니다.</div>
-                        <div class="false">틀렸습니다.</div>
+                    <div class="true">정답입니다.</div>
+                    <div class="false">틀렸습니다.</div>
                     <div class="dog">
                         <div class='head'>
                             <div class='ears'></div>
@@ -734,8 +992,8 @@
                     <span class="quiz__Ask"></span>
                 </h3>
                 <div class="quiz__view">
-                        <div class="true">정답입니다.</div>
-                        <div class="false">틀렸습니다.</div>
+                    <div class="true">정답입니다.</div>
+                    <div class="false">오답입니다.</div>
                     <div class="dog">
                         <div class='head'>
                             <div class='ears'></div>
@@ -768,8 +1026,8 @@
                     <span class="quiz__Ask"></span>
                 </h3>
                 <div class="quiz__view">
-                        <div class="true">정답입니다.</div>
-                        <div class="false">틀렸습니다.</div>
+                    <div class="true">정답입니다.</div>
+                    <div class="false">오답입니다.</div>
                     <div class="dog">
                         <div class='head'>
                             <div class='ears'></div>
@@ -797,7 +1055,95 @@
             </div>
         </div>
 
-        <div class="quiz__source"></div>
+        <div class="quiz__source">
+            <button class="source-btn" onclick="getShow()">소스보기</button>
+            <div id="window" style="display: none;">
+                <div class="title-bar">
+                    <div class="minimize">
+                        <div class="symbol"></div>
+                    </div>
+                    <div class="maximize">
+                        <div class="symbol"></div>
+                    </div>
+                    <div id="close" class="source-btn" onclick="getHide()">
+                        <div class="symbol"></div>
+                    </div>
+                </div>
+                <div class="menu-bar">
+                    <span>File</span>
+                    <span>Edit</span>
+                    <span>View</span>
+                    <span>Help</span>
+                </div>
+                <div class="content-container">
+
+                    <div class="content">
+                        <div class="main2">
+                            //문제출력 <br>
+                            quizType[0].textContent = quizInfo[0].answerType; <br>
+                            quizType[1].textContent = quizInfo[1].answerType; <br>
+                            quizType[2].textContent = quizInfo[2].answerType; <br>
+                            <br>
+                            quiznumber[0].textContent = quizInfo[0].answerNum + ". "; <br>
+                            quiznumber[1].textContent = quizInfo[1].answerNum + ". "; <br>
+                            quiznumber[2].textContent = quizInfo[2].answerNum + ". "; <br>
+                            <br>
+                            quizAsk[0].textContent = quizInfo[0].answerAsk; <br>
+                            quizAsk[1].textContent = quizInfo[1].answerAsk; <br>
+                            quizAsk[2].textContent = quizInfo[2].answerAsk; <br>
+                            <br>
+                            quizResult[0].textContent = quizInfo[0].answerResult; <br>
+                            quizResult[1].textContent = quizInfo[1].answerResult; <br>
+                            quizResult[2].textContent = quizInfo[2].answerResult; <br>
+                            <br>
+                            quizInfo.forEach((e, i) => {                                        <br>           
+                            quizType[i].textContent = quizInfo[i].answerType;                  <br>
+                            quiznumber[i].textContent = quizInfo[i].answerNum + ". ";         <br>
+                            quizAsk[i].textContent = quizInfo[i].answerAsk;                   <br>
+                            quizResult[i].textContent = "정답은 " + quizInfo[i].answerResult + " 입니다."; <br>
+                            })   
+                            <br>
+                            //정답 숨기기                   <br>
+                            quizResult.forEach(el => {          <br>
+                            el.style.display = "none";          <br>
+                            })                                  <br>    
+                            <br>
+                            //정답 확인                           <br>                   
+                            quizconfirm.forEach((btn, num) => {    <br>
+                            btn.addEventListener("click", () => {  <br>
+                            // btn.style.display = "none";         <br>
+                            // quizResult[num].style.display = "block";   <br>
+                            <br>
+                            // 사용자 정답 == quizInfo 정답          <br>
+                            const userWord = quizInput[num].value.toLowerCase().trim();     <br>
+                            <br>
+                            if(userWord == quizInfo[num].answerResult){   <br>
+                            quizview[num].classList.add("true");          <br>
+                            quizconfirm[num].style.display = "none";      <br>
+                            } else {                                      <br>
+                            quizview[num].classList.add("false");          <br>
+                            quizconfirm[num].style.display = "none";        <br>
+                            quizResult[num].style.display = "block";        <br>
+                            quizInput[num].style.display = "none";          <br>
+                            }                                               <br>    
+                            })                                              <br>    
+                            })                                          
+                        </div>
+                        <div class="scroll">
+                            <div class="start"></div>
+                            <div class="progress"></div>
+                            <div class="end"></div>
+                        </div>
+                    </div>
+                    <div class="scroll. -row">
+                        <div class="start"></div>
+                        <div class="progress"></div>
+                        <div class="end"></div>
+                    </div>
+                </div>
+                <div class="footer"></div>
+            </div>
+        </div>
 
     </main>
 
@@ -806,36 +1152,35 @@
     </footer>
 
     <script>
-        const quizType = document.querySelectorAll(".quiz__Type");       //퀴즈 종류
-        const quiznumber = document.querySelectorAll(".quiz__number");   //퀴즈 번호
-        const quizAsk = document.querySelectorAll(".quiz__Ask");         //퀴즈 질문
+        const quizType = document.querySelectorAll(".quiz__Type"); //퀴즈 종류
+        const quiznumber = document.querySelectorAll(".quiz__number"); //퀴즈 번호
+        const quizAsk = document.querySelectorAll(".quiz__Ask"); //퀴즈 질문
         const quizconfirm = document.querySelectorAll(".quiz__confirm"); //퀴즈 정답 버튼
-        const quizResult = document.querySelectorAll(".quiz__result");   //퀴즈 확인
-        const quizview = document.querySelectorAll(".quiz__view");       //퀴즈 화면
-        const quizInput = document.querySelectorAll(".quiz__input");     //사용자 정답
+        const quizResult = document.querySelectorAll(".quiz__result"); //퀴즈 확인
+        const quizview = document.querySelectorAll(".quiz__view"); //퀴즈 화면
+        const quizInput = document.querySelectorAll(".quiz__input"); //사용자 정답
 
         //문제정보
-        const quizInfo = [
-            {
-                answerType : "javascript",
-                answerNum : 1,
-                answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
-                answerResult : "javascript"
+        const quizInfo = [{
+                answerType: "javascript",
+                answerNum: 1,
+                answerAsk: "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
+                answerResult: "javascript"
             },
             {
-                answerType : "html",
-                answerNum : 2,
-                answerAsk : "Element에 적용되는 CSS 스타일을 다른 CSS 스타일로 부드럽게 전환시켜 주는 용어는?",
-                answerResult : "animation"
+                answerType: "html",
+                answerNum: 2,
+                answerAsk: "Element에 적용되는 CSS 스타일을 다른 CSS 스타일로 부드럽게 전환시켜 주는 용어는?",
+                answerResult: "animation"
             },
             {
-                answerType : "css",
-                answerNum : 3,
-                answerAsk : "현재 문서와 외부 리소스의 관계를 명시해주는 용어는?",
-                answerResult : "link"
+                answerType: "css",
+                answerNum: 3,
+                answerAsk: "현재 문서와 외부 리소스의 관계를 명시해주는 용어는?",
+                answerResult: "link"
             }
         ]
-        
+
         //문제출력
         // quizType[0].textContent = quizInfo[0].answerType;
         // quizType[1].textContent = quizInfo[1].answerType;
@@ -852,7 +1197,7 @@
         // quizResult[0].textContent = quizInfo[0].answerResult;
         // quizResult[1].textContent = quizInfo[1].answerResult;
         // quizResult[2].textContent = quizInfo[2].answerResult;
-        
+
         // //for문
         // for(let i=0; i<quizInfo.length; i++){
         //     quizType[i].textContent = quizInfo[i].answerType;
@@ -860,7 +1205,7 @@
         //     quizAsk[i].textContent = quizInfo[i].answerAsk;
         //     quizResult[i].textContent = quizInfo[i].answerResult;
         // }
-        
+
         //forEach
         quizInfo.forEach((e, i) => {
             quizType[i].textContent = quizInfo[i].answerType;
@@ -883,7 +1228,7 @@
                 // 사용자 정답 == quizInfo 정답
                 const userWord = quizInput[num].value.toLowerCase().trim();
 
-                if(userWord == quizInfo[num].answerResult){
+                if (userWord == quizInfo[num].answerResult) {
                     quizview[num].classList.add("true");
                     quizconfirm[num].style.display = "none";
                 } else {
@@ -894,6 +1239,15 @@
                 }
             })
         })
+
+        function getShow() {
+            document.getElementById("window").style.display = "block";
+
+        }
+
+        function getHide() {
+            document.getElementById("window").style.display = "none";
+        }
     </script>
 </body>
 
