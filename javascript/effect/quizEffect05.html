@@ -723,7 +723,7 @@
 
     <script>
 
-        const quizWrap = document.querySelectorAll(".quiz__wrap")
+        const quizWrap = document.querySelector(".quiz__wrap")
 
         //문제정보
         const quizInfo = [
@@ -775,10 +775,10 @@
             quizInfo.forEach((question, number) => {
             html.push(`
             <div class="quiz">
-                <h2 class="quiz__type">${question}</h2>
+                <h2 class="quiz__type">${question.answerType}</h2>
                 <h3 class="quiz__question">
-                    <span class="quiz__number"></span>
-                    <span class="quiz__ask"></span>
+                    <span class="quiz__number">${question.answerNum}</span>
+                    <span class="quiz__ask">${question.answerAsk}</span>
                 </h3>
                 <div class="quiz__view">
                     <div class="true">정답입니다</div>
@@ -847,15 +847,15 @@
             quizInfo.forEach((question, number) => {
                 const quizselectswrap = quizselects[number]                //전체 보기 박스
                 const userselector = `input[name=select${number}]:checked` //사용자가 클릭한 것
-                const useranswer = (quizselectswrap.querySelector(userselector) || {}).value  //클릭한 값의 속성 값을 가져옮
+                const userAnswer = (quizselectswrap.querySelector(userselector) || {}).value   //클릭한 값의 속성 값을 가져옮
 
-                if (useranswer == question.answerResult) {
+                if (userAnswer == question.answerResult) {
                     quizview[number].classList.add("like")
                     scoreCurrent++;
                 } else {
                     quizview[number].classList.add("dislike")
                     const div = document.createElement("div")
-                    quizselectswrap.appendChild(div).innerHTML =`<p class="quiz__EX">${question.answerEx}</p>`
+                    quizselectswrap.appendChild(div).innerHTML =`<p class="quiz__EX">${question.answerEx}</p>`  
                 }
             })
             quizresult.innerHTML = `${quizInfo.length}문제중에${scoreCurrent}맞추셨습니다.`
