@@ -24,7 +24,7 @@
            width: 100%;
            height: 100vh;
            overflow: hidden;
-           cursor: none;
+           /* cursor: none; */
         }
         .mouse__wrap p {
            line-height: 2;
@@ -44,83 +44,29 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 10px;
-            height: 10px;
+            width: 200px;
+            height: 200px;
             z-index: 9999;
             border: 3px solid #fff;
             border-radius: 50%;
-            background-color: rgba(255,255,255,0.4);
-            user-select: none;
-            pointer-events: none;
-            transition: transform 0.3s , opacity 0.2s;
-        }
-        .cursor-follower {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            left: 0;
-            top: 0;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.4);
-            user-select: none;
-            pointer-events: none;
-            transition: transform 0.3s , opacity 0.2s;
-        }
-        .cursor.active {
-            transform:  scale(0);
-        }
-        .cursor-follower.active {
-            transform: scale(5);
-            background: rgba(232, 322, 223, 0.4)
-        }
-        .cursor.show {
-            transform:  scale(0);
-        }
-        .cursor-follower.show {
-            transform: scale(5);
-            background: rgba(232, 322, 223, 0.4)
-        } 
-        .cursor.style1 {
-            background-color: aqua;
-            border-color: aquamarine;
-        }
-        .cursor.style2 {
-            background-color: rgb(3, 24, 107);
-            border-color: rgb(8, 31, 133);
-            transform: rotate(45deg) scale(2);
-        }
-        .cursor.style3 {
-            background-color: rgb(3, 31, 145);
-            border-color: rgb(8, 68, 92);
-            transform: rotate(90deg) scale(2);
-        }
-        .cursor.style4 {
-            background-color: rgb(143, 8, 170);
-            border-color: rgb(255, 76, 165);
-            transform: rotate(180deg) scale(2);
-        }
-        .cursor.style5 {
-            background-color: rgb(255, 28, 96);
-            border-color: rgb(255, 76, 165);
-            transform: rotate(360deg) scale(2);
-        }
-        .cursor.style6 {
-            background-color: rgb(255, 85, 17);
-            border-color: rgba(253, 30, 0, 0.986);
-            transform: rotate(720deg) scale(2);
+            background: url(../effect/img/Frame21.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            border: 5px solid #fff;
         }
     </style>
 </head>
-<body class="img08">
+<body class="body-img01">
     <!-- main -->
     <main>
-        <section id="mouseType02">
+        <section id="mouseType03">
             <div class="cursor"></div>
             <div class="cursor-follower"></div>
 
             <div class="mouse__wrap">
-            <p>No <span>great man</span> ever <span>complains</span> of want of <span>opportunity</span>.</p>
-            <p><span class="active">위대한 사람 </span>은 <span>기회</span> 가 없다고 <span> 원망</span> 하지 않는다.</p>
+            <p> <span>Success</span> doesn't come <span>overnight</span>.</p>
+            <p><span>성공</span> 은 <span>하룻밤</span> 사이에 오지 않는다.</p>
             </div>
             
         </section>
@@ -129,14 +75,14 @@
     <!-- info -->
     <div class="info">
         <div class="title">
-            <h1><a href="mouseEffect.html">JavaScript Mouse Effect 02</a></h1>
-            <p>마우스 이펙트 - 따라다니기 2 : GSAP</p>
+            <h1><a href="mouseEffect.html">JavaScript Mouse Effect 03</a></h1>
+            <p>마우스 이펙트 - 따라다니기 3 : 조명 효과</p>
         </div>
         <div class="number">
             <ul>
                 <li><a href="mouseEffect01.html">1</a></li>
-                <li class="active"><a href="mouseEffect02.html">2</a></li>
-                <li><a href="mouseEffect03.html">3</a></li>
+                <li><a href="mouseEffect02.html">2</a></li>
+                <li class="active"><a href="mouseEffect03.html">3</a></li>
                 <li><a href="mouseEffect04.html">4</a></li>
                 <li><a href="mouseEffect05.html">5</a></li>
                 <li><a href="mouseEffect06.html">6</a></li>
@@ -203,41 +149,18 @@
         // highlight();
         // modal();
         // tabMenu();
-
-        const cursor = document.querySelector(".cursor")
-        const follower = document.querySelector(".cursor-follower")
-
-
         
-        window.addEventListener("mousemove", e => {
-            // 커서 좌표값 할당
-            cursor.style.left = e.pageX + 10 + "px";  
-            cursor.style.top = e.pageY + 10 + "px";
-            follower.style.left = e.pageX + "px";
-            follower.style.top = e.pageY + "px";
+        function follow(e) {
 
-            //오버 효과
-            //span 오버 했을 때 클래스 active 추가 / 나갔을 때 active 삭제
-            //mouseover,mouseenter / mouseout,mouseleave / 이벤트 버블링 (중요)    
-            
-            document.querySelectorAll(".mouse__wrap span").forEach(span => {
-            
-            span.addEventListener("mouseenter", ()=> {
-                cursor.classList.add("active")
-                follower.classList.add("active")
-                })
-                span.addEventListener("mouseout", ()=> {
-                    cursor.classList.remove("active")
-                    follower.classList.remove("active")
-                })
-            });
-            gsap.to(cursor, {duration: .3 ,left: e.pageX + 10, top:e.pageY + 10})
-            gsap.to(follower, {duration: .8 ,left: e.pageX, top:e.pageY})
-            
-            //출력
+
+            gsap.to(".cursor", {duration: .3, left: e.pageX, top: e.pageY})
+
+            //출력용
             document.querySelector(".pageX").innerText = e.pageX
             document.querySelector(".pageY").innerText = e.pageY
-        })
+            
+        }
+        window.addEventListener("mousemove", follow);
     </script>
 </body>
 </html>
