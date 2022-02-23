@@ -24,9 +24,43 @@
            width: 100%;
            height: 100vh;
            overflow: hidden;
-           cursor: none;
+           /* cursor: none; */
         }
-        .mouse__wrap p {
+        .mouse__img {
+            position: relative;
+        }
+        .mouse__img figure {
+            position: relative;
+            width: 50vw;
+            height: 49vh;
+            /* overflow: hidden;
+            background-color: #fff;*/
+            border: 3px solid #fff; 
+            transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+        }
+        .mouse__img figure:hover {
+            transform: scale(1.234);
+        }
+        .mouse__img figure img {
+            position: absolute;
+            left: -5%;
+            top: -5%;
+            width: 110%;
+            height: 110%;
+            opacity: 0.4;
+            object-fit: cover;
+        }
+        .mouse__img figcaption {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 1.3vw;
+            line-height: 1.6;
+            white-space: nowrap;
+        }
+        /* .mouse__wrap p {
            line-height: 2;
            font-weight: 300;
            font-size: 2.5vw;
@@ -39,8 +73,8 @@
         .mouse__wrap p span {
             border-bottom: 0.15vw dashed orange;
             color: orange;
-        }
-        .cursor {
+        } */
+        /* .cursor {
             position: absolute;
             left: 0;
             top: 0;
@@ -49,34 +83,52 @@
             z-index: -1;
             border: 3px solid #fff;
             border-radius: 50%;
-            background: url(../effect/img/Frame21.jpg);
+            background: url(../effect/img/Frame22.jpg);
             background-size: cover;
             background-position: center center;
             background-attachment: fixed;
             border: 5px solid #fff;
+        } */
+        .cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 1000;
+            user-select: none;
+            pointer-events: none;
         }
     </style>
 </head>
-<body class="body-img01">
+<body class="body-img02">
     <!-- main -->
     <main>
-        <section id="mouseType03">
+        <section id="mouseType04">
             <div class="cursor"></div>
             <div class="cursor-follower"></div>
 
             <div class="mouse__wrap">
-            <p> <span>Success</span> doesn't come <span>overnight</span>.</p>
-            <p><span>성공</span> 은 <span>하룻밤</span> 사이에 오지 않는다.</p>
+                <div class="mouse__img">
+                    <figure>
+                        <img src="../effect/img/Frame22.jpg" alt="">
+                    </figure>
+                    <figcaption>
+                        <p>Better late than never.</p>
+                        <p>아예 안하는 것보단 늦게라도 하는 게 낫다.</p>
+                    </figcaption>
+                </div>
             </div>
-            
         </section>
     </main>
     <!-- //main -->
     <!-- info -->
     <div class="info">
         <div class="title">
-            <h1><a href="mouseEffect.html">JavaScript Mouse Effect 03</a></h1>
-            <p>마우스 이펙트 - 따라다니기 3 : 조명 효과</p>
+            <h1><a href="mouseEffect.html">JavaScript Mouse Effect 04</a></h1>
+            <p>마우스 이펙트 - 따라다니기 4 : 이미지 효과</p>
         </div>
         <div class="number">
             <ul>
@@ -137,7 +189,8 @@
 
             <li>pageX : <span class="pageX">0</span>px</li>
             <li>pageY : <span class="pageY">0</span>px</li>
-            
+            <li>standardX : <span class="standardX">0</span>px</li>
+            <li>standardY : <span class="standardY">0</span>px</li>
         </ul>
     </div>
     <!-- //info -->
@@ -149,21 +202,29 @@
         // highlight();
         // modal();
         // tabMenu();
-            // const circle01 = document.querySelector(".cursor").clientWidth  //190 : border값이 빠진 상태
-            // const circle02 = document.querySelector(".cursor").offsetWidth  //200 :  '' 들어간 상태
-            const circle = document.querySelector(".cursor").getBoundingClientRect() //bottom, height, left, right, top, Width x, y 값을 표현  
-
-        function follow(e) {
-           
-            gsap.to(".cursor", {duration: .3, left: e.pageX - 100, top: e.pageY - 100})
-            // gsap.to(".cursor", {duration: .3, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2})
-
-            //출력용
-            document.querySelector(".pageX").innerText = e.pageX
-            document.querySelector(".pageY").innerText = e.pageY
+       
+        const circle = document.querySelector(".cursor").getBoundingClientRect()
+        
+        document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
+            //커서
+            gsap.to(".cursor", {duration: .3, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2})
             
-        }
-        window.addEventListener("mousemove", follow);
+
+            //마우스 좌표 값
+            let mousepageX = e.pageX
+            let mousepageY = e.pageY
+
+            //마우스 좌표 값을 가운데 초기화
+            //전체 가로
+            // window.innerWidth 1920            //브라우저 크기
+            // window.outerWidth 1920            //브라우저 크기
+            // window.screen.Width 1920          /화면 크기
+            // window.Width.screen.Height 1080
+            
+            let windowWidth = window.screen.Height
+
+            console.log(windowWidth)
+       })
     </script>
 </body>
 </html>

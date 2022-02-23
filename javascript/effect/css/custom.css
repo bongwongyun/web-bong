@@ -63,6 +63,10 @@ body::before {
 }
 
 /* info */
+/* .info {
+    position: relative;
+    z-index: 20;
+} */
 .title {
     position: absolute;
     left: 20px;
@@ -130,8 +134,8 @@ body::before {
 /* attr */
 .attr {
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 10px;
+    bottom: 10px;
     font-size: 14px;
     line-height: 1.6;
 }
