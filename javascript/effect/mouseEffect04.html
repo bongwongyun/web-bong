@@ -24,17 +24,17 @@
            width: 100%;
            height: 100vh;
            overflow: hidden;
-           /* cursor: none; */
         }
         .mouse__img {
             position: relative;
+            cursor: none;
         }
         .mouse__img figure {
             position: relative;
             width: 50vw;
             height: 49vh;
-            /* overflow: hidden;
-            background-color: #fff;*/
+            overflow: hidden;
+            /* background-color: #fff; */
             border: 3px solid #fff; 
             transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
         }
@@ -91,8 +91,8 @@
         } */
         .cursor {
             position: absolute;
-            left: 0;
-            top: 0;
+            left: -30px;
+            top: -30px;
             width: 20px;
             height: 20px;
             background: #fff;
@@ -101,13 +101,27 @@
             user-select: none;
             pointer-events: none;
         }
+        .cursor ul {
+            position: absolute;
+            left: 40px;
+            top: 0;
+        }
+        
+        .cursor ul li {
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body class="body-img02">
     <!-- main -->
     <main>
         <section id="mouseType04">
-            <div class="cursor"></div>
+            <div class="cursor">
+                <!-- <ul>
+                    <li>pageX : <span class="pageX">0</span>px</li>
+                    <li>pageY : <span class="pageY">0</span>px</li>
+                </ul> -->
+            </div>
             <div class="cursor-follower"></div>
 
             <div class="mouse__wrap">
@@ -134,8 +148,8 @@
             <ul>
                 <li><a href="mouseEffect01.html">1</a></li>
                 <li><a href="mouseEffect02.html">2</a></li>
-                <li class="active"><a href="mouseEffect03.html">3</a></li>
-                <li><a href="mouseEffect04.html">4</a></li>
+                <li><a href="mouseEffect03.html">3</a></li>
+                <li class="active"><a href="mouseEffect04.html">4</a></li>
                 <li><a href="mouseEffect05.html">5</a></li>
                 <li><a href="mouseEffect06.html">6</a></li>
                 <li><a href="mouseEffect07.html">7</a></li>
@@ -186,11 +200,10 @@
     </div>
     <div class="attr">
         <ul>
-
-            <li>pageX : <span class="pageX">0</span>px</li>
-            <li>pageY : <span class="pageY">0</span>px</li>
-            <li>standardX : <span class="standardX">0</span>px</li>
-            <li>standardY : <span class="standardY">0</span>px</li>
+            <li>mousepageX : <span class="mousepageX">0</span>px</li>
+            <li>mousepageY : <span class="mousepageY">0</span>px</li>
+            <li>centerpageX : <span class="centerpageX">0</span>px</li>
+            <li>centerpageY : <span class="centerpageY">0</span>px</li>
         </ul>
     </div>
     <!-- //info -->
@@ -206,6 +219,7 @@
         const circle = document.querySelector(".cursor").getBoundingClientRect()
         
         document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
+            
             //커서
             gsap.to(".cursor", {duration: .3, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2})
             
@@ -218,12 +232,31 @@
             //전체 가로
             // window.innerWidth 1920            //브라우저 크기
             // window.outerWidth 1920            //브라우저 크기
-            // window.screen.Width 1920          /화면 크기
-            // window.Width.screen.Height 1080
-            
-            let windowWidth = window.screen.Height
+            // window.screen.Width 1920          //화면 크기
+            // window.screen.Height 1080         //화면 크기
 
-            console.log(windowWidth)
+            //마우스 좌표 값을 가운데 초기화
+            //전체 길이/2 - 마우스 x좌표값 == 0
+
+            let centerpageX = window.innerWidth/2 - mousepageX
+            let centerpageY = window.innerHeight/2 - mousepageY
+            
+
+            //이미지 출력하기
+            // const imgMove = document.querySelector(".mouse__img figure img")
+            // imgMove.style.transform = "translate("+centerpageX/20 + "px, "+ centerpageY/20 + "px)"
+
+            gsap.to(".mouse__img figure img", {duration: 0.3, x: e.centerpageX - circle.width/20, y: e.centerpageY - circle.height/20})
+
+            //출력
+            // document.querySelector(".pageX").textContent = centerpageX
+            // document.querySelector(".pageY").textContent = centerpageY
+
+            document.querySelector(".mousepageX").textContent = mousepageX
+            document.querySelector(".mousepageY").textContent = mousepageY
+            document.querySelector(".centerpageX").textContent = centerpageX
+            document.querySelector(".centerpageY").textContent = centerpageY
+
        })
     </script>
 </body>
