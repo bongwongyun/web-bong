@@ -23,13 +23,16 @@
            width: 100%;
            height: 100vh;
            overflow: hidden;
+           cursor: none;
         }
         .mouse__img {
             position: relative;
             text-align: center;
-            transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+            perspective: 800px;
+            transform: rotateX(0deg) rotateY(0deg);
             transform-style:  preserve-3d;
             will-change: transform;
+            transition: all 1s;
         }
         .mouse__img figure {
             width: 50vw;
@@ -57,7 +60,20 @@
             line-height: 1.6;
             background: rgba(0,0,0,0.5);
             padding: 1vw 2vw;
-            transform: translate3d(-50%, -50%, 150px);
+            transform: translate3d(-50%, -50%, 50px);
+        }
+        .cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 1000;
+            user-select: none;
+            pointer-events: none;
+            mix-blend-mode: difference;
         }
     </style>
 </head>
@@ -148,6 +164,8 @@
             <li>mousepageY : <span class="mousepageY">0</span>px</li>
             <li>centerpageX : <span class="centerpageX">0</span>px</li>
             <li>centerpageY : <span class="centerpageY">0</span>px</li>
+            <li>maxPageX : <span class="maxPageX">0</span>px</li>
+            <li>maxPageY : <span class="maxPageY">0</span>px</li>
         </ul>
     </div>
     <!-- //info -->
@@ -159,18 +177,54 @@
         // highlight();
         // modal();
         // tabMenu();
+
+        const circle = document.querySelector(".cursor").getBoundingClientRect()
         
         function mousemove(e){
-            let mousepageX = e.pageX
-            let mousepageX = e.pageY
+
             //마우스 좌표 값
+            let mousepageX = e.pageX
+            let mousepageY = e.pageY
 
             //마우스 좌표 기준점을 가운데로 변경
+            let centerpageX = window.innerWidth/2 - mousepageX 
+            let centerpageY = window.innerHeight/2 - mousepageY
+            
+            //원 크기
+            let circlewidth = mousepageX - circle.width/2
+            let circleheight = mousepageY - circle.height/2
 
-            document.querySelector(".mousepageX").textContent = e.pageX
-            document.querySelector(".mousepageY").textContent = e.pageY
+            //이미지 움직이기
+            //transform: rotateX(0deg) rotateY(0deg)
+            const imgMove = document.querySelector(".mouse__img")
+            imgMove.style.transform = "perspective: 800px rotateX("+ - mousepageX + "deg) rotateY("+ - mousepageY + "deg)"
+            
+            //최소값 -50 최대값 50 설정
+            let maxPageX = Math.max(-50, Math.min(50, centerpageX))
+            let maxPageY = Math.max(-50, Math.min(50, centerpageY))
+
+            //각도 줄이는 설정
+            let anlexpageX = maxPageX * 0.12
+            let anlexpageY = maxPageY * 0.12
+
+            //부드럽게 설정
+            let softpageX = 0, softpageY = 0
+            softpageX += (anlexpageX - softpageX) * 0.4
+            softpageY += (anlexpageY - softpageY) * 0.4
+
+            //커서
+            gsap.to(".cursor", {duration: .3, x: mousepageX - circle.width/2, y: mousepageY - circle.height/2}) 
+
+            //출력
+            document.querySelector(".mousepageX").textContent = mousepageX
+            document.querySelector(".mousepageY").textContent = mousepageY
+            document.querySelector(".centerpageX").textContent = centerpageX
+            document.querySelector(".centerpageY").textContent = centerpageY
+            document.querySelector(".maxPageX").textContent = maxPageX
+            document.querySelector(".maxPageY").textContent = maxPageY
+            
         }
-        //출력
+        
         document.addEventListener("mousemove", mousemove)
         
     </script>
