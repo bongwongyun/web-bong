@@ -197,7 +197,7 @@
             //이미지 움직이기
             //transform: rotateX(0deg) rotateY(0deg)
             const imgMove = document.querySelector(".mouse__img")
-            imgMove.style.transform = "perspective: 800px rotateX("+ - maxPageX + "deg) rotateY("+ - maxPageY + "deg)"
+            imgMove.style.transform = "perspective: 800px rotateX("+ - centerpageX + "deg) rotateY("+ - centerpageY + "deg)"
             
             //최소값 -50 최대값 50 설정
             let maxPageX = Math.max(-50, Math.min(50, centerpageX))
