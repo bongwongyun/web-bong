@@ -11,7 +11,7 @@
 			margin: 0;
 			padding: 0;
 		}
-
+	
 		.container {
 			width: 1440px;
 			margin: 0 auto;
@@ -29,8 +29,6 @@
 			font-size: 30px;
 			color: #2947A9;
 		}
-
-		.quiz__manu {}
 
 		.quiz__manu ul {
 			margin-left: 420px;
@@ -51,8 +49,6 @@
 		.quiz__manu ul li a:hover {
 			color: orange;
 		}
-
-		.quiz__Sign {}
 
 		.quiz__Sign a {
 			font-size: 20px;
@@ -413,41 +409,211 @@
 			border-radius: 2px;
 			padding: 16px 20px 16px 20px;
 		}
+
 		.brain__quiz {
 			height: 1100px;
 		}
+
 		.brain__quiz h3 {
 			font-size: 36px;
 			font-weight: bold;
 			position: relative;
 			top: 90px;
 		}
+
 		.brain__quiz ul {
 			position: relative;
 			top: 130px;
-			line-height:50px;
+			line-height: 50px;
 			font-size: 26px;
 			font-weight: bold;
 			color: #2947A9;
 			border-left: 5px solid #2947A9;
 			width: 90px;
 			height: 50px;
+			padding: 5px;
 		}
+
 		.brain__quiz ul li {
 			list-style-type: none;
 			position: relative;
 			top: 20px;
-			line-height:50px;
+			line-height: 50px;
 			font-size: 24px;
 			font-weight: normal;
+			padding: 5px;
 		}
+
 		.brain__quiz ul li a {
 			text-decoration: none;
 			color: #000;
 		}
+
 		.brain__quiz ul li a:hover {
 			border-left: 5px solid #2947A9;
 			color: #2947A9;
+			padding: 5px;
+			transition: all 0.2s;
+		}
+
+		.brain__img {
+			float: right;
+		}
+
+		.brain__img1 {
+			background: url(../조별과제/img/Component\ 4.jpg);
+			width: 400px;
+			height: 330px;
+			position: relative;
+			right: 500px;
+			top: 100px;
+		}
+
+		.brain__img2 {
+			width: 400px;
+			height: 330px;
+			background: url(../조별과제/img/Component\ 5.jpg);
+			position: relative;
+			right: 0;
+			top: -230px;
+		}
+
+		.brain__img3 {
+			width: 400px;
+			height: 330px;
+			background: url(../조별과제/img/Component\ 6.jpg);
+			position: relative;
+			right: 0;
+			top: -190px;
+		}
+
+		.brain__img4 {
+			width: 400px;
+			height: 330px;
+			background: url(../조별과제/img/Component\ 7.jpg);
+			position: relative;
+			right: 500px;
+			top: -515px;
+		}
+
+		.brain__img2 .brain04 {
+			background: #333;
+		}
+
+		.brain__dot {
+			display: flex;
+			position: relative;
+			left: 600px;
+			bottom: -900px;
+			width: 800px;
+			word-break: break-all;
+			margin: 0;
+		}
+
+		.brain__dot ul {
+			border: none;
+			width: 150px;
+			height: 20px;
+		}
+
+		.brain__dot li {
+			width: 16px;
+			height: 16px;
+			border: 1px solid #adadad;
+			border-radius: 100%;
+			background: #adadad;
+			align-items: center;
+			display: inline-block;
+		}
+
+		.brain__dot li:first-child {
+			border: 1px solid #2947A9;
+			background: #2947A9;
+		}
+
+		.brain__dot ul li {
+			position: relative;
+			top: -125px;
+		}
+
+		.brain__dot a {
+			border: 1px solid #000;
+			background-color: #000;
+			color: #fff;
+			text-align: center;
+			text-decoration: none;
+			align-items: center;
+			font-size: 18px;
+			width: 300px;
+			height: 60px;
+			margin-left: 10px;
+			margin-right: 20px;
+			line-height: 55px;
+		}
+
+		.quiz__CTA {
+			height: 700px;
+			display: block;
+			text-align: center;
+			margin-top: 50px;
+		}
+		.quiz__CTA h3 {
+			font-size: 36px;
+			font-weight: bold;
+			position: relative;
+			left: 180px;
+			top: 50px;
+		}
+		.quiz__CTA p {
+			position: relative;
+			left: 180px;
+			top: 80px;
+		}
+		.quiz__CTA a {
+			position: relative;
+			left: -250px;
+			top: 180px;
+			width: 271px;
+			height: 53px;
+			border: 1px solid #2947A9;
+			background: #2947A9;
+			text-decoration: none;
+			color: #fff;
+			padding: 16px 100px 16px 100px;
+		}
+		.quiz__CTA .waring {
+			position: relative;
+			left: 180px;
+			top: 120px;
+		}
+		.join-box {
+			display: flex;
+			flex-wrap: wrap;
+			position: relative;
+			left: 400px;
+			top: 120px;
+			width: 800px;
+		}
+		input {
+			width: 240px;
+			height: 40px;
+			margin-left: 30px;
+			margin-top: 20px;
+		}
+		.input_Message::placeholder {
+			position: relative;
+			top: -45px;
+			left: 5px;
+		}
+		.input_Message {
+			width: 514px;
+			height: 135px;
+		}
+		.waring {
+			font-size: 16px;
+			float: left;
+			margin-left: 250px;
+			margin-top: 5px;
 		}
 	</style>
 </head>
@@ -571,17 +737,65 @@
 	<!-- line -->
 
 	<!-- brain quiz -->
-		<div class="container">
-			<div class="brain__quiz">
+	<div class="container">
+		<div class="brain__quiz">
 			<h3>뇌 풀기 문제</h3>
 			<ul>난이도
 				<li> <a href="#">상</a> </li>
 				<li> <a href="#">중</a> </li>
 				<li> <a href="#">하</a> </li>
-			</ul>	
+			</ul>
+			<div class="brain__img">
+				<div class="brain__img1"></div>
+				<div class="brain__img2"></div>
+				<div class="brain__img3"></div>
+				<div class="brain__img4"></div>
+			</div>
+			<div class="brain__dot">
+				<a href="#">back</a>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<a href="#">next</a>
 			</div>
 		</div>
+	</div>
 	<!-- brain quiz -->
+	<!-- CTA -->
+	<div class="container">
+		<div class="quiz__CTA">
+			<h3>Do you wanna take a quiz?</h3>
+			<p>We are ready to work on a project of any complexity, <br>
+				whether it’s commercial or residential.</p>
+			<div class="join-box">
+				<div>
+					<input type="email" id="YouName" class="input_write" name="YouName" placeholder="   Your Name"
+						autocomplete="off" autofocus required>
+				</div>
+				<div>
+					<input type="Reason for Contacting" id="Reason for Contacting" class="input_write" name="Reason for Contacting" maxlength="20"
+						placeholder="   Reason for Contacting" autocomplete="off" required>
+				</div>
+				<div>
+					<input type="Email" id="youEmail" class="input_write" name="youEmail" maxlength="20"
+						placeholder="   Email" autocomplete="off" required>
+				</div>
+				<div>
+					<input type="Phone" id="youPhone" class="input_write" name="youPhone" maxlength="20"
+						placeholder="   Phone" autocomplete="off" required>
+				</div>
+				<div>
+					<input type="Message" id="Message" class="input_Message" name="Message" maxlength="20"
+						placeholder=" Message" autocomplete="off" required>
+				</div>
+			</div>
+			<p class="waring">indicates a required field</p>
+			<a href="#">Submit</a>
+		</div>
+		<!-- CTA -->
 </body>
 
 </html>
