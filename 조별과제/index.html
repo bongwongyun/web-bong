@@ -66,7 +66,10 @@
 		}
 
 		.quiz__Sign a:hover {
+			font-weight: bold;
+			font-size: 20px;
 			color: #2947A9;
+			background: rgb(209, 196, 216);
 		}
 
 		.quiz__main {
@@ -259,6 +262,7 @@
 			background: #2947A9;
 			margin: 10px 70px 70px 10px;
 		}
+
 		.Servi__img4 img {
 			position: relative;
 			top: 0;
@@ -271,6 +275,7 @@
 			background: #f5f5f5;
 			margin: 10px 70px 70px 10px;
 		}
+
 		.Servi__img5 img {
 			position: relative;
 			top: 35px;
@@ -278,6 +283,7 @@
 			width: 40px;
 			height: 40px;
 		}
+
 		.Servi__img5 a {
 			position: relative;
 			top: 100px;
@@ -292,6 +298,7 @@
 			background: #2947A9;
 			margin: 10px 70px 70px 10px;
 		}
+
 		.Servi__img6 img {
 			position: relative;
 			top: 40px;
@@ -311,35 +318,136 @@
 			left: 210px;
 			top: 100px;
 		}
+
 		.quiz__flow {
 			height: 800px;
 		}
-		.quiz__flow h2 {
+
+		.quiz__flowh3 {
+			width: 200px;
+			height: 140px;
 			font-size: 60px;
 			font-weight: bold;
 			color: #2947A9;
-			text-align: right;
+			text-align: left;
 			position: relative;
-			right: 380px;
+			left: 920px;
+			bottom: 600px;
 		}
+
 		.quiz__flow img {
 			float: left;
+			position: relative;
+			left: 300px;
 		}
+
 		.quiz__flow p {
 			width: 330px;
 			height: 70px;
 			font-size: 20px;
 			position: relative;
 			left: 920px;
-			bottom: 400px;
+			bottom: 380px;
 		}
+
 		.quiz__flow a {
 			text-align: right;
 			border: 1px solid #2947A9;
-			border-radius: 5px;
+			border-radius: 2px;
 			background: #2947A9;
 			color: #fff;
 			text-decoration: none;
+			position: relative;
+			top: 200px;
+			left: 540px;
+			padding: 10px 40px 10px 40px;
+			width: 170px;
+			height: 50px;
+		}
+
+		.quiz__line {
+			height: 300px;
+		}
+
+		.line__img {
+			height: 300px;
+			background: url(../조별과제/img/man-made-word-quiz-with-wood-blocks\ 1.jpg) no-repeat, rgba(0, 0, 0, 0.4);
+			background-size: cover;
+			background-blend-mode: multiply;
+			background-position: 50%;
+			text-align: center;
+		}
+
+		.line__img h4 {
+			color: #fff;
+			width: 880px;
+			height: 80px;
+			font-size: 36px;
+			text-align: left;
+			position: relative;
+			top: 70px;
+			left: 250px;
+		}
+
+		.line__img p {
+			color: #fff;
+			width: 400px;
+			height: 30px;
+			font-size: 24px;
+			text-align: left;
+			position: relative;
+			top: 90px;
+			left: 250px;
+		}
+
+		.line__img a {
+			text-decoration: none;
+			color: #fff;
+			font-size: 18px;
+			position: relative;
+			top: 10px;
+			left: 500px;
+			width: 160px;
+			height: 60px;
+			border: 1px solid #fff;
+			border-radius: 2px;
+			padding: 16px 20px 16px 20px;
+		}
+		.brain__quiz {
+			height: 1100px;
+		}
+		.brain__quiz h3 {
+			font-size: 36px;
+			font-weight: bold;
+			position: relative;
+			top: 90px;
+		}
+		.brain__quiz ul {
+			position: relative;
+			top: 130px;
+			line-height:50px;
+			font-size: 26px;
+			font-weight: bold;
+			color: #2947A9;
+			border-left: 5px solid #2947A9;
+			width: 90px;
+			height: 50px;
+		}
+		.brain__quiz ul li {
+			list-style-type: none;
+			position: relative;
+			top: 20px;
+			line-height:50px;
+			font-size: 24px;
+			font-weight: normal;
+		}
+		.brain__quiz ul li a {
+			text-decoration: none;
+			color: #000;
+		}
+		.brain__quiz ul li a:hover {
+			border-left: 5px solid #2947A9;
+			color: #2947A9;
 		}
 	</style>
 </head>
@@ -439,12 +547,41 @@
 	<div class="container">
 		<div class="quiz__flow">
 			<img src="../조별과제/img/Component_2.png" alt="chart">
-			<h2>flow<br> chart</h2>
-			<p>Our company has been the leading provided construction services to clients throughout the USA since 1988.</p>
+			<div class="quiz__flowh3">
+				<h3>flow<br>chart</h3>
+			</div>
+			<div class="quiz__flowp">
+				<p>Our company has been the leading provided construction services to clients throughout the USA since
+					1988.</p>
+			</div>
 			<a href="#">Contact Us</a>
 		</div>
 	</div>
 	<!-- flow chart -->
+	<!-- line -->
+
+	<div class="quiz__line">
+		<div class="line__img">
+			<h4>Take the quiz as many times as you like There are <br> many opportunities</h4>
+			<p>Just one call away: +84 1102 2703</p>
+			<a href="#">Get your quiz</a>
+		</div>
+	</div>
+
+	<!-- line -->
+
+	<!-- brain quiz -->
+		<div class="container">
+			<div class="brain__quiz">
+			<h3>뇌 풀기 문제</h3>
+			<ul>난이도
+				<li> <a href="#">상</a> </li>
+				<li> <a href="#">중</a> </li>
+				<li> <a href="#">하</a> </li>
+			</ul>	
+			</div>
+		</div>
+	<!-- brain quiz -->
 </body>
 
 </html>
