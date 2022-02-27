@@ -44,6 +44,14 @@
 			height: inherit;
 		}
 
+		input {
+			width: 240px;
+			height: 40px;
+			margin-left: 30px;
+			margin-top: 20px;
+			padding-left: 10px;
+		}
+
 		.quiz__header {
 			display: flex;
 			align-items: center;
@@ -626,18 +634,10 @@
 			width: 800px;
 		}
 
-		input {
-			width: 240px;
-			height: 40px;
-			margin-left: 30px;
-			margin-top: 20px;
-			
-		}
-
 		.input_Message::placeholder {
 			position: relative;
 			top: -45px;
-			left: 5px;
+			left: 0;
 		}
 
 		.input_Message {
@@ -898,8 +898,8 @@
 				whether it’s commercial or residential.</p>
 			<div class="join-box">
 				<div>
-					<input type="email" id="YouName" class="input_write" name="YouName" placeholder="   Your Name"
-						autocomplete="off">
+					<input type="email" id="YouName" class="input_write" name="YouName" placeholder="Your Name"
+						autocomplete="off" required>
 				</div>
 				<div>
 					<input type="Reason for Contacting" id="Reason for Contacting" class="input_write"
@@ -908,15 +908,15 @@
 				</div>
 				<div>
 					<input type="Email" id="youEmail" class="input_write" name="youEmail" maxlength="20"
-						placeholder="   Email" autocomplete="off" required>
+						placeholder="Email" autocomplete="off" required>
 				</div>
 				<div>
 					<input type="Phone" id="youPhone" class="input_write" name="youPhone" maxlength="20"
-						placeholder="   Phone" autocomplete="off" required>
+						placeholder="Phone" autocomplete="off" required>
 				</div>
 				<div>
 					<input type="Message" id="Message" class="input_Message" name="Message" maxlength="20"
-						placeholder=" Message" autocomplete="off" required>
+						placeholder="Message" autocomplete="off" required>
 				</div>
 			</div>
 			<p class="waring">indicates a required field</p>
@@ -937,7 +937,7 @@
 					<h4>새 소식 받아보기</h4>
 					<div>
 						<input type="Your email here" id="remailhere" class="input_foot" name="remailhere"
-							maxlength="20" placeholder="   Your email here" autocomplete="off" required>
+							maxlength="20" placeholder="Your email here" autocomplete="off" required>
 					</div>
 					<a href="#" class="Subscribe">Subscribe</a>
 					<h4 class="right__sns">소셜</h4>
