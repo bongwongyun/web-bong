@@ -1301,7 +1301,27 @@
     </div>
     <div class="code">
         <pre class="line-numbers"><code class="language-js">{
-   
+    const text = "javascript"
+    const result = Array.from(text)
+
+    document.querySelector(".sample15_M1").innerHTML = "Array.from()";
+
+    console.log(result)
+
+    const text2 = "javascript"
+    const result2 = Array.from(text2, el => el+"10")
+
+    document.querySelector(".sample15_M2").innerHTML = "Array.from('+10')";
+
+    const text3 = "javascript"
+    const result3 = [...text3].map(el => el)
+
+    document.querySelector(".sample15_M3").innerHTML = ".map()";
+
+    const text4 = [100,200,300,400,500]
+    const result4 = text4.sort(function(a,b){return a-b})
+
+    document.querySelector(".sample15_M4").innerHTML = ".sort()"; 
 }</code></pre>
     </div>
 </div>
@@ -1819,7 +1839,7 @@
 
             document.querySelector(".sample15_N2").innerHTML = 2;
             document.querySelector(".sample15_Q2").innerHTML = "javascript";
-            document.querySelector(".sample15_M2").innerHTML = "Array.from()";
+            document.querySelector(".sample15_M2").innerHTML = "Array.from('+10')";
             document.querySelector(".sample15_R2").innerHTML = result2;
 
             const text3 = "javascript"
