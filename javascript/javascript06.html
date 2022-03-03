@@ -1720,7 +1720,7 @@
             const result3 = arrText.find(el => el === "javascript");
 
             document.querySelector(".sample11_N3").innerHTML = 3;
-            document.querySelector(".sample11_Q3").innerHTML = "[100,200,300,400,500]";
+            document.querySelector(".sample11_Q3").innerHTML = "['javascript','react','vue']";
             document.querySelector(".sample11_M3").innerHTML = "find(el => el === javascript)";
             document.querySelector(".sample11_R3").innerHTML = result3;
 
@@ -1728,7 +1728,7 @@
             const result4 = arrText.findIndex(el => el === "javascript");
 
             document.querySelector(".sample11_N4").innerHTML = 4;
-            document.querySelector(".sample11_Q4").innerHTML = "[100,200,300,400,500]";
+            document.querySelector(".sample11_Q4").innerHTML = "['javascript','react','vue']";
             document.querySelector(".sample11_M4").innerHTML = "find(el => el === javascript)";
             document.querySelector(".sample11_R4").innerHTML = result4;
 
@@ -1736,7 +1736,7 @@
             const result5 = arrText.findIndex(el => el === "html");
 
             document.querySelector(".sample11_N5").innerHTML = 5;
-            document.querySelector(".sample11_Q5").innerHTML = "[100,200,300,400,500]";
+            document.querySelector(".sample11_Q5").innerHTML = "['javascript','react','vue']";
             document.querySelector(".sample11_M5").innerHTML = "find(el => el === html)";
             document.querySelector(".sample11_R5").innerHTML = result5;
         }
@@ -1829,6 +1829,14 @@
             document.querySelector(".sample15_Q3").innerHTML = "javascript";
             document.querySelector(".sample15_M3").innerHTML = ".map()";
             document.querySelector(".sample15_R3").innerHTML = result3;
+
+            const text4 = [100,200,300,400,500]
+            const result4 = text4.sort(function(a,b){return a-b})
+
+            document.querySelector(".sample15_N4").innerHTML = 4;
+            document.querySelector(".sample15_Q4").innerHTML = "javascript";
+            document.querySelector(".sample15_M4").innerHTML = ".sort()";
+            document.querySelector(".sample15_R4").innerHTML = result4;
         }
         //숙제
         //[100,200,300,400,500,600,700]
