@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout12</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1440px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 100px;
+            background: rgb(237, 242, 196);
+        }
+        #article {
+            height: 400px;
+            background: rgb(230, 212, 152);
+        }
+        #section {
+            height: 400px;
+            background: rgb(242, 177, 108);
+        }
+        .section1__0 {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: 900px;
+            height: 100px;
+        }
+        .section1__0 section {
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgb(242, 157, 0);
+            border-radius: 10px;
+            background: rgb(242, 157, 0);
+            margin-top: 50px;
+            margin-right: 20px;
+            margin-left: 40px;
+            position: relative;
+            top: 30px;
+            left: 40px;
+        }
+        #footer {
+            height: 100px;
+            background: rgb(238, 141, 13);
+        }
+
+        @media (max-width:1220px) {
+            #wrap {
+                width: 100%;
+            }
+            .section1__0 {
+                width: 800px;
+                height: 100px;
+            }
+            .section1__5 {
+                display: none;
+            }
+            .section1__10 {
+                display: none;
+            }
+        }
+        @media (max-width:760px) {
+            #wrap {
+                width: 100%;
+            }
+            #section {
+                height: 600px;
+            }
+            .section1__0 {
+                flex-wrap: wrap;
+                width: 600px;
+                height: 100px;
+            }
+            .section1__10 {
+                display: block;
+            }
+        }   
+        @media (max-width:630px) {
+            #section {
+                height: 900px;
+            }
+            .section1__0 {
+                flex-wrap: wrap;
+                width: 400px;
+                height: 100px;
+            }
+            .section1__0 section {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <article id="article"></article>
+        <section id="section">
+                <section class="section1__0">
+                    <section class="section1__1"></section>
+                    <section class="section1__2"></section>
+                    <section class="section1__3"></section>
+                    <section class="section1__4"></section>
+                    <section class="section1__5"></section>
+                    <section class="section1__6"></section>
+                    <section class="section1__7"></section>
+                    <section class="section1__8"></section>
+                    <section class="section1__9"></section>
+                    <section class="section1__10"></section>
+                </section>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>

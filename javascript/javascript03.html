@@ -234,7 +234,7 @@
         //    func();
         //}
         {
-            func = () => function () {
+            func = () => {
                 document.write("함수가 실행되었습니다.5");
             }
             func();
@@ -243,12 +243,12 @@
         //const func =  function(){
         //    document.write("함수가 실행되었습니다.6");
         //}
-
+        {    
         const func = () => {
             document.write("함수가 실행되었습니다.6")
             func();
         }
-
+        }
         //07. 화살표 함수 : 리턴값 함수
         //{
         //    function func(){
@@ -316,6 +316,48 @@
             func = str => str;
 
             document.write("함수가 실행되었습니다.");
+        }
+        //13. 내부 함수
+        {
+            function fun(){
+                function funA() {
+                    document.write("함수가 실행되었습니다.")
+                }
+                funA()
+                function funB() {
+                    document.write("함수가 실행되었습니다.")
+                }
+                funB()
+            }
+            fun()
+        }
+        //14. 즉시 실행 함수
+        {
+            // function func() {
+            //     document.write("함수가 실행되었습니다.")
+            // }
+            // func()
+            // (function () {
+            //     document.write("함수가 실행되었습니다.")
+            // }())
+            (() => {
+                document.write("함수가 실행되었습니다.")
+            })()
+        }
+        //15. 파라미터 함수
+        {
+            function func(str = "함수가 실행되었습니다.") {
+                document.write(str)
+            }
+            func()
+        }
+        //16. 아규먼트 함수
+        {
+            function func(a, b) {
+                document.write(arguments[0])
+                document.write(arguments[1])
+            }
+            func("함수가 실행되었습니다.","함수가 실행되었습니다.")
         }
     </script>
 </main>
