@@ -47,18 +47,34 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'GmarketSans';
         }
 
-        .wrap {}
+        .wrap {
+            width: 100%;
+        }
+
+        .container {
+            display: block;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+
+        .contents {
+            display: flex;
+            margin: 0 auto;
+            margin-top: 120px;
+            margin-right: 630px;
+        }
 
         .CARD-TYPE01 {
-            width: 1162px;
-            height: 591px;
-            padding: 120px 380px 120px 378px;
+            width: 1920px;
+            height: 831px;
             flex-grow: 0;
             background-color: #fff;
-            margin: 0 auto;
             display: flex;
+            margin: 0 auto;
         }
 
         .CARD-TYPE01 a {
@@ -67,7 +83,6 @@
             font-size: 18px;
             font-weight: 300;
             font-style: normal;
-            font-family: 'GmarketSans';
             color: #fff;
             line-height: 1.53;
             letter-spacing: normal;
@@ -81,7 +96,6 @@
             margin: 40px 242px 20px 2px;
             font-size: 16px;
             font-weight: 500;
-            font-family: 'GmarketSans';
             font-style: normal;
             line-height: normal;
             letter-spacing: normal;
@@ -95,7 +109,6 @@
             width: 303px;
             height: 116px;
             margin: 20px 92px 35px 0;
-            font-family: 'GmarketSans';
             font-size: 50px;
             font-weight: 300;
             font-style: normal;
@@ -109,7 +122,6 @@
             width: 332px;
             height: 108px;
             margin: 35px 61px 30px 2px;
-            font-family: 'GmarketSans';
             font-style: normal;
             font-size: 18px;
             font-weight: 300;
@@ -128,22 +140,17 @@
         }
 
         .site_img1 {
-            width: 175px;
-            height: 44px;
-            margin: 0 0 80px 20px;
-            padding: 448px 179px 20px 20px;
+            width: 374px;
+            height: 512px;
             object-fit: contain;
             background-repeat: 10px;
             background: url(../zpl/img/site01.jpg) no-repeat;
-            position: relative;
-            left: -13px;
-            top: 73px;
+            margin-right: 20px;
         }
 
         .site_img1 a {
             width: 127px;
             height: 28px;
-            font-family: 'GmarketSans';
             font-size: 18px;
             font-weight: 300;
             font-style: normal;
@@ -151,6 +158,8 @@
             letter-spacing: normal;
             text-align: left;
             color: #fff;
+            position: relative;
+            top: 457px;
         }
 
         .Rectangle-676 {
@@ -163,22 +172,17 @@
         }
 
         .site_img2 {
-            width: 175px;
-            height: 43px;
-            margin: 0 0 80px 20px;
-            padding: 448px 178px 20px 20px;
+            width: 373px;
+            height: 511px;
             object-fit: contain;
             border-radius: 10px;
             background: url(../zpl/img/site02.jpg) no-repeat;
-            position: relative;
-            left: 404px;
-            top: -589px;
+            margin-top: -79px;
         }
 
         .site_img2 a {
             width: 127px;
             height: 28px;
-            font-family: 'GmarketSans';
             font-size: 18px;
             font-weight: 300;
             font-style: normal;
@@ -186,6 +190,8 @@
             letter-spacing: normal;
             text-align: left;
             color: #fff;
+            position: relative;
+            top: 457px;
         }
 
         .Rectangle-677 {
@@ -196,24 +202,29 @@
             background-color: black;
         }
 
-        @media (max-width:600px) {
+        @media (max-width:1110px) {
             .wrap {
                 width: 100%;
-                margin: 0 auto;
             }
 
             .CARD-TYPE01 {
+                width: 100%;
                 flex-direction: column;
-                margin: 0 auto;
             }
-            .site_img1 {
-                background: url(../zpl/img/site01@2x.jpg);
+            .container {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            .contents {
+                width: 100%;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .container p {
+                flex-wrap: wrap;
             }
             .site_img2 {
-                background: url(../zpl/img/site02@2x.jpg);
-                position: relative;
-                left: 0;
-                top: 0;
+                margin-top: 60px;
             }
         }
     </style>
