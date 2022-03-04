@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARD-TYPE01</title>
+
+    <style>
+        @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 500;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GmarketSans';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {}
+
+        .CARD-TYPE01 {
+            width: 1162px;
+            height: 591px;
+            padding: 120px 380px 120px 378px;
+            flex-grow: 0;
+            background-color: #fff;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .CARD-TYPE01 a {
+            width: 171px;
+            height: 28px;
+            font-size: 18px;
+            font-weight: 300;
+            font-style: normal;
+            font-family: 'GmarketSans';
+            color: #fff;
+            line-height: 1.53;
+            letter-spacing: normal;
+            text-align: left;
+            text-decoration: none;
+        }
+
+        .imgtext {
+            width: 151px;
+            height: 18px;
+            margin: 40px 242px 20px 2px;
+            font-size: 16px;
+            font-weight: 500;
+            font-family: 'GmarketSans';
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #777;
+            list-style: block;
+            text-decoration: underline;
+        }
+
+        .webstory {
+            width: 303px;
+            height: 116px;
+            margin: 20px 92px 35px 0;
+            font-family: 'GmarketSans';
+            font-size: 50px;
+            font-weight: 300;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #111;
+        }
+
+        .Gmarket_Sans_Light {
+            width: 332px;
+            height: 108px;
+            margin: 35px 61px 30px 2px;
+            font-family: 'GmarketSans';
+            font-style: normal;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.5;
+            letter-spacing: normal;
+            text-align: left;
+            color: #777;
+        }
+
+        .Rectangle-675 {
+            width: 220px;
+            height: 47px;
+            margin: 30px 173px 177px 2px;
+            padding: 14px 25px 14px 24px;
+            background-color: black;
+        }
+
+        .site_img1 {
+            width: 175px;
+            height: 44px;
+            margin: 0 0 80px 20px;
+            padding: 448px 179px 20px 20px;
+            object-fit: contain;
+            background-repeat: 10px;
+            background: url(../zpl/img/site01.jpg) no-repeat;
+            position: relative;
+            left: -13px;
+            top: 73px;
+        }
+
+        .site_img1 a {
+            width: 127px;
+            height: 28px;
+            font-family: 'GmarketSans';
+            font-size: 18px;
+            font-weight: 300;
+            font-style: normal;
+            line-height: 1.53;
+            letter-spacing: normal;
+            text-align: left;
+            color: #fff;
+        }
+
+        .Rectangle-676 {
+            width: 175px;
+            height: 52px;
+            padding: 12px 24px 11px;
+            opacity: 0.4;
+            border-radius: 50px;
+            background-color: black;
+        }
+
+        .site_img2 {
+            width: 175px;
+            height: 43px;
+            margin: 0 0 80px 20px;
+            padding: 448px 178px 20px 20px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: url(../zpl/img/site02.jpg) no-repeat;
+            position: relative;
+            left: 404px;
+            top: -589px;
+        }
+
+        .site_img2 a {
+            width: 127px;
+            height: 28px;
+            font-family: 'GmarketSans';
+            font-size: 18px;
+            font-weight: 300;
+            font-style: normal;
+            line-height: 1.53;
+            letter-spacing: normal;
+            text-align: left;
+            color: #fff;
+        }
+
+        .Rectangle-677 {
+            width: 175px;
+            height: 52px;
+            padding: 12px 24px 11px;
+            border-radius: 50px;
+            background-color: black;
+        }
+
+        @media (max-width:600px) {
+            .wrap {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .CARD-TYPE01 {
+                flex-direction: column;
+                margin: 0 auto;
+            }
+
+            .site_img2 {
+                position: relative;
+                left: 0;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="CARD-TYPE01">
+            <div class="container">
+                <p class="imgtext">이미지 텍스트 유형01</p>
+                <h3 class="webstory">웹스토리보이 <br>
+                    사이트</h3>
+                <p class="Gmarket_Sans_Light">웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 강의 사이트입니다. <br>
+                    Gmarket Sans Light 22px 150% <br>
+                    #67778A </p>
+                <a href="#" class="Rectangle-675">더 많은 유형 살펴보기</a>
+            </div>
+            <div class="contents">
+                <div class="site_img1"><a href="#" class="Rectangle-676">레퍼런스 사이트</a></div>
+                <div class="site_img2"><a href="#" class="Rectangle-677">튜토리얼 사이트</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
