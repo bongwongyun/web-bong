@@ -43,6 +43,42 @@
              document.write(obj[0].b,"<br>")
              document.write(obj[1].c,"<br>")
         }
+        {
+            const arrnum = [100,200,300,400,500]
+            let result = 0;
+
+            for (let i = 0; i < arrnum.length; i++) {
+                result += arrnum[i];
+                
+            }
+            document.write(result)
+        }
+        {
+            function func() {
+                let a =[1,2,3,4,5,6,7,8,9],cnt = 0
+                for (let i = 0; i < a.length; i++) {
+                    if(a[i] % 2 != 0){
+                        cnt = cnt + 1 
+                    }
+                    
+                }
+                document.write(cnt)
+            }
+            func()
+        }
+        {
+            console.log(-3 % 4);
+        }
+        {
+            function func(data, exp) {
+                let result = 3;
+                for (let i = 0; i < exp; i++) {
+                    result = result * data;
+                }
+                document.write(result)
+            }
+            func(2,5)
+        }
     </script>
 </body>
 </html>

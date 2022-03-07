@@ -1036,7 +1036,7 @@ document.querySelector(".sample07_R7").innerHTML = text7;
         //10.문자열 메서드 : startsWidth() : 문자열 포함 여부 검색 :반환 (불린)
         //11.문자열 메서드 : endWidth() : 문자열 포함 여부 검색 :반환 (불린)
         {
-            const str = "자바스크립트(javacript)공부";
+            const str = "자바스크립트(javacript) 공부";
             
             const text1 = str.indexOf("javacript");
 
@@ -1119,7 +1119,7 @@ document.querySelector(".sample07_R7").innerHTML = text7;
         {
             const str = "자바스크립트(javacript)공부";
 
-            const text1 = str.charAt(4);
+            const text1 = str.charAt(1);
 
             document.querySelector(".sample06_N1").innerHTML = "1";
             document.querySelector(".sample06_Q1").innerHTML = str;
@@ -1138,7 +1138,7 @@ document.querySelector(".sample07_R7").innerHTML = text7;
         //15.문자열 메서드 : substr() : 지정된 범위 내 문자열을 추출 : 반환 (문자열)
         //slice(시작 인덱스)
         //slice(시작 인덱스,종료 인덱스)
-        //시작 값이 정료 값보다 클 경우 : 결과 값이 없음
+        //시작 값이 종료 값보다 클 경우 : 결과 값이 없음
         //substring() : 시작 값이 종료 값보다 클 경우 : 두 값을 바꿔서 처리
         //substr(시작 인덱스,글자수)
         {
@@ -1165,11 +1165,11 @@ document.querySelector(".sample07_R7").innerHTML = text7;
             document.querySelector(".sample07_M3").innerHTML = "slice(3, -1)";
             document.querySelector(".sample07_R3").innerHTML = text3;
 
-            const text4 = str.slice(7,-4);
+            const text4 = str.slice(-14,-4);
 
             document.querySelector(".sample07_N4").innerHTML = "4";
             document.querySelector(".sample07_Q4").innerHTML = str;
-            document.querySelector(".sample07_M4").innerHTML = "slice(7,-4)";
+            document.querySelector(".sample07_M4").innerHTML = "slice(-14,-4)";
             document.querySelector(".sample07_R4").innerHTML = text4;
 
             const text5 = str.slice(5, 1);
