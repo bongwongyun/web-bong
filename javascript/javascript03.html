@@ -159,7 +159,7 @@
         </div>
         <!-- //sample3 -->
 
-        <!-- sample3 -->
+        <!-- sample4 -->
         <div class="script">
             <div id="sample4" class="sample">
                 <h3>04. 리턴값 함수</h3>
@@ -181,7 +181,196 @@
                 </div>
             </div>
         </div>
-        <!-- //sample2 -->
+        <!-- //sample4 -->
+
+        <!-- sample5 -->
+         <div class="script">
+            <div id="sample5" class="sample">
+                <h3>05. 화살표 함수 : 선언적 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    func = () => {
+        document.write("함수가 실행되었습니다.5");
+    }
+    func();
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다.5"
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample5 -->
+
+        <!-- sample6 -->
+        <div class="script">
+            <div id="sample6" class="sample">
+                <h3>06. 화살표 함수 : 익명 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    const func = () => {
+        document.write("함수가 실행되었습니다.6")
+    func();
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다.6"
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample6 -->
+
+        <!-- sample7 -->
+        <div class="script">
+            <div id="sample7" class="sample">
+                <h3>07. 화살표 함수 : 리턴값 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    func = () => {
+        const str = "함수가 실행되었습니다.7";
+        return str;
+    }
+    document.write(func());
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다.7"
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample7 -->
+
+        <!-- sample8 -->
+        <div class="script">
+            <div id="sample8" class="sample">
+                <h3>08. 화살표 함수 : 익명 함수  + 매개변수 + 리턴값</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    const func = (str) => {
+        return str;
+    }
+    document.write(func("함수가 실행되었습니다.8"));
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다.8"
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample8 -->
+
+        <!-- sample9 -->
+         <div class="script">
+            <div id="sample9" class="sample">
+                <h3>09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    const func = str => {
+        return str;
+    }
+    document.write(func("함수가 실행되었습니다."));
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다."
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample9 -->
+
+        <!-- sample10 -->
+        <div class="script">
+            <div id="sample10" class="sample">
+                <h3>10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    func = str => str;
+
+    document.write("함수가 실행되었습니다.");
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다."
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample10 -->
+
+        <!-- sample11 -->
+        <div class="script">
+            <div id="sample11" class="sample">
+                <h3>11. 내부 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    function fun(){
+        function funA() {
+            document.write("함수가 실행되었습니다.")
+        }
+        funA()
+        function funB() {
+            document.write("함수가 실행되었습니다.")
+        }
+        funB()
+    }
+    fun()
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다."
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample11 -->
+
+        <!-- sample12 -->
+        <div class="script">
+            <div id="sample12" class="sample">
+                <h3>12. 즉시 실행 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    (() => {
+        document.write("함수가 실행되었습니다.")
+    })()
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다."
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample12 -->
     
     <!-- script -->
     <script src="assets/js/prism.js"></script>
@@ -244,8 +433,8 @@
         //    document.write("함수가 실행되었습니다.6");
         //}
         {    
-        const func = () => {
-            document.write("함수가 실행되었습니다.6")
+            const func = () => {
+                document.write("함수가 실행되었습니다.6")
             func();
         }
         }
