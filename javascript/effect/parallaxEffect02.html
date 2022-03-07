@@ -245,18 +245,55 @@
             list-style: none;
             line-height: 1.6;
         }
+
+        #parallax__dot {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 12px 8px;
+            border-radius: 30px;
+        }
+        #parallax__dot li {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            list-style: none;
+            margin: 8px;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
+            transition: box-shadow .2s ease;
+        }
+        #parallax__dot li a {
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            transition: all .2s ease;
+        }
+        #parallax__dot li.active {
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
+        }
+        #parallax__dot li.active a {
+            transform: scale(0.4);
+        }
     </style>
 </head>
 
 <body>
     <!-- parallax title -->
     <header id="parallax__title">
-        <h1><a href="parallaxEffect.html">JavaScript parallax Effect 01</a></h1>
-        <p>패럴렉스 이펙트 : 스크롤링 효과 - 메뉴 이동</p>
+        <h1><a href="parallaxEffect.html">JavaScript parallax Effect 02</a></h1>
+        <p>패럴렉스 이펙트 : 스크롤링 효과 - 사이드 메뉴</p>
         <ul>
-            <li class="active"><a href="parallaxEffect01.html">1</a></li>
-            <li><a href="parallaxEffect02.html">2</a></li>
-            <li><a href="parallaxEffect02.html">3</a></li>
+            <li><a href="parallaxEffect01.html">1</a></li>
+            <li class="active"><a href="parallaxEffect02.html">2</a></li>
+            <li><a href="parallaxEffect03.html">3</a></li>
             <li><a href="parallaxEffect02.html">4</a></li>
             <li><a href="parallaxEffect02.html">5</a></li>
             <li><a href="parallaxEffect02.html">6</a></li>
@@ -265,10 +302,10 @@
         </ul>
     </header>
     <!-- parallax title -->
-    <!-- parallax nav -->
-    <nav id="parallax__nav">
+    <!-- parallax dot -->
+    <nav id="parallax__dot">
         <ul>
-            <li class="active"><a href="#section1">s1</a></li>
+            <li class="active"><a href="#section1"><span>s1</span></a></li>
             <li><a href="#section2">s2</a></li>
             <li><a href="#section3">s3</a></li>
             <li><a href="#section4">s4</a></li>
@@ -279,7 +316,7 @@
             <li><a href="#section9">s9</a></li>
         </ul>
     </nav>
-    <!-- parallax nav -->
+    <!-- parallax dot -->
     <!-- parallax cont -->
     <main id="parallax__cont">
         <div id="contents">
@@ -384,138 +421,67 @@
     <div class="scrollTop">
         scrollTop : <span>0</span>px
     </div>
-    <div class="scrollInfo">
-        <ul>
-            <li>#section1 offset() : <span class="offset1">0</span>px</li>
-            <li>#section2 offset() : <span class="offset2">0</span>px</li>
-            <li>#section3 offset() : <span class="offset3">0</span>px</li>
-            <li>#section4 offset() : <span class="offset4">0</span>px</li>
-            <li>#section5 offset() : <span class="offset5">0</span>px</li>
-            <li>#section6 offset() : <span class="offset6">0</span>px</li>
-            <li>#section7 offset() : <span class="offset7">0</span>px</li>
-            <li>#section8 offset() : <span class="offset8">0</span>px</li>
-            <li>#section9 offset() : <span class="offset9">0</span>px</li>
-        </ul>
-    </div>
     <!-- scroll -->
 
     <!-- script -->
     <script>
 
-
-        // document.querySelectorAll("#parallax__nav li a").forEach(li => {
-        //     li.addEventListener("click", (e) => {
-        //         e.preventDefault()
-        //         document.querySelector(li.getAttribute("a")).scrollIntoView({
-        //             behavior: "smooth"
-        //         })
-        //     })
-        // })
-        document.querySelectorAll("#parallax__nav li a").forEach((element, index) => {
-            element.addEventListener("click", (e) => {
+       document.querySelectorAll("#parallax__dot a").forEach(el => {
+            el.addEventListener("click", e => {
                 e.preventDefault();
-                let sectionOffset = document.querySelectorAll(".content__item")[index].offsetTop
-                window.scrollTo({top:sectionOffset, behavior:'smooth'});
+                //window.scroll(0, 1000);
+                //window.scroll({left: 0, top: 1000});
+                //window.scroll({left: 0, top: 1000,  behavior: "smooth"});
+                // window.scrollTo(0, 1000);
+                // window.scrollTo({left: 0, top: 1000});
+                // window.scrollTo({left: 0, top: 1000,  behavior: "smooth"});
+                // window.scrollBy(0, 1000);
+                // window.scrollBy({left: 0, top: 1000});
+                // window.scrollBy({left: 0, top: 1000,  behavior: "smooth"});
+                document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
             })
         })
-
 
         window.addEventListener("scroll", () => {
-            // let scrollTop = window.pageYOffset
-            // let scrollTop = document.documentElement.scrollTop
-            // let scrollTop = window.scrollY
-
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
-            // if (scrollTop > document.getElementById("section01").offsetTop) {
-            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-            //         li.classList.remove("active")
-            //     })
-            //     document.querySelector("#parallax__nav ul li:nth-child(1)").classList.add("active")
-            // }
-            // if (scrollTop > document.getElementById("section02").offsetTop) {
-            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-            //         li.classList.remove("active")
-            //     })
-            //     document.querySelector("#parallax__nav ul li:nth-child(2)").classList.add("active")
-            // }
-            // if (scrollTop > document.getElementById("section03").offsetTop) {
-            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-            //         li.classList.remove("active")
-            //     })
-            //     document.querySelector("#parallax__nav ul li:nth-child(3)").classList.add("active")
-            // }
-            // if (scrollTop > document.getElementById("section04").offsetTop) {
-            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-            //         li.classList.remove("active")
-            //     })
-            //     document.querySelector("#parallax__nav ul li:nth-child(4)").classList.add("active")
-            // }
-            // if (scrollTop > document.getElementById("section05").offsetTop) {
-            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-            //         li.classList.remove("active")
-            //     })
-            //     document.querySelector("#parallax__nav ul li:nth-child(5)").classList.add("active")
-            // }
-            // if (scrollTop > document.getElementById("section06").offsetTop) {
-            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-            //         li.classList.remove("active")
-            //     })
-            //     document.querySelector("#parallax__nav ul li:nth-child(6)").classList.add("active")
-            // }
-            // if (scrollTop > document.getElementById("section07").offsetTop) {
-            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-            //         li.classList.remove("active")
-            //     })
-            //     document.querySelector("#parallax__nav ul li:nth-child(7)").classList.add("active")
-            // }
-            // if (scrollTop > document.getElementById("section08").offsetTop) {
-            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-            //         li.classList.remove("active")
-            //     })
-            //     document.querySelector("#parallax__nav ul li:nth-child(8)").classList.add("active")
-            // }
-            // if (scrollTop > document.getElementById("section09").offsetTop) {
-            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-            //         li.classList.remove("active")
-            //     })
-            //     document.querySelector("#parallax__nav ul li:nth-child(9)").classList.add("active")
-            // }
 
-            //for
-            // for (let i = 1; i <=9; i++) {
-            //     if (scrollTop >= document.getElementById("section"+i).offsetTop - 2 ) {
-            //        document.querySelectorAll("#parallax__nav ul li").forEach(li => {
-            //            li.classList.remove("active")
-            //        })
-            //        document.querySelector("#parallax__nav ul li:nth-child("+i+")").classList.add("active")
+            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop)
+
+            // for (let i = 0; i <=9; i++) {
+            //     if (scrollTop >= document.getElementById("section"+i).offsetTop-2) {
+            //         document.querySelectorAll("#parallax__dot li").forEach(li => {
+            //             li.classList.remove("active")
+            //         })
+            //         document.querySelector("#parallax__dot li:nth-child("+i+")").classList.add("active")
             //     }
+                
             // }
-
-            //forEach
-            document.querySelectorAll(".content__item").forEach((element, index) => {
-                if (scrollTop >= element.offsetTop - 2) {
-                    document.querySelectorAll("#parallax__nav li").forEach(li => {
-                        li.classList.remove("active")
-                    })
-                    document.querySelector("#parallax__nav li:nth-child(" + (index + 1) + ")").classList
-                        .add("active")
-                }
+            document.querySelectorAll("#parallax__nav li a").forEach((element, index) => {
+            if(scrollTop >= element.offsetTop -2){
+                document.querySelectorAll("#parallax__dot li").forEach(li => {
+                    li.classList.remove("active")
             })
-
-
-            //info
-            document.querySelector(".scrollTop span").innerText = scrollTop
-
-            document.querySelector(".offset1").innerText = document.getElementById("section01").offsetTop
-            document.querySelector(".offset2").innerText = document.getElementById("section02").offsetTop
-            document.querySelector(".offset3").innerText = document.getElementById("section03").offsetTop
-            document.querySelector(".offset4").innerText = document.getElementById("section04").offsetTop
-            document.querySelector(".offset5").innerText = document.getElementById("section05").offsetTop
-            document.querySelector(".offset6").innerText = document.getElementById("section06").offsetTop
-            document.querySelector(".offset7").innerText = document.getElementById("section07").offsetTop
-            document.querySelector(".offset8").innerText = document.getElementById("section08").offsetTop
-            document.querySelector(".offset9").innerText = document.getElementById("section09").offsetTop
+            document.querySelector("#parallax__dot li:nth-child("+(index+1)+")").classList.add("actove")            
+            }
         })
+    })    
+            //스크롤 값 구하기
+            // window.screenY
+            // window.pageYOffset
+            // document.documentElement.scrollTop
+
+            // window.screenX     //ie 작동 불가능
+            // window.pageXOffset
+            // document.documentElement.scrollLeft
+            //스크롤 값으로 이동하기
+            // window.scroll()
+            // window.scrollTo() //절대적 위치 
+            // window.scrollBy() //상대적 위치
+
+            // element.scroll()
+            // element.scrollTo()
+            // element.scrollBy()
+            // element.scrollIntoView()        
     </script>
 </body>
 
