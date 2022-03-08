@@ -367,6 +367,81 @@
             </div>
         </div>
         <!-- //sample12 -->
+
+        <!-- sample13 -->
+        <div class="script">
+            <div id="sample13" class="sample">
+                <h3>13. 파라미터 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    function func(str = "함수가 실행되었습니다.") {
+        document.write(str)
+    }
+    func()
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다."
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample13 -->
+
+        <!-- sample14 -->
+        <div class="script">
+            <div id="sample14" class="sample">
+                <h3>14. 아규먼트 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    function func(a, b) {
+        document.write(arguments[0])
+        document.write(arguments[1])
+    }
+    func("함수가 실행되었습니다.","함수가 실행되었습니다.")
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다."
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample14 -->
+
+         <!-- sample15 -->
+         <div class="script">
+            <div id="sample15" class="sample">
+                <h3>15. 아규먼트 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers"><code class="language-js">{
+    function func(num){
+        if(num&lt;=1){
+            document.write("함수가 실행되었습니다.")
+        } else {
+            document.write("함수가 실행되었습니다.")
+            func(num-1)
+        }
+    }
+    func(5)
+}</code></pre>
+                </div>
+    
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        "함수가 실행되었습니다."
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //sample15 -->
     
     <!-- script -->
     <script src="assets/js/prism.js"></script>
