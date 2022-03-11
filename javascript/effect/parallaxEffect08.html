@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NexonLv1Gothic';
+            font-weight: 500;
+        }
+        body {
+            height: 20000px;
+        }
+        .scrollTop {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            z-index: 10000;
+        }
+        /* common */
+        .fixed {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            height: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 1000;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+            object-fit: cover;
+        }
+        #contents {}
+        #section01 {}
+        /* section01__bg*/
+        .section01__bg img {
+            width: 70%;
+            height: 17vh;
+        }
+        .section01__text01 {
+            color: #fff;
+            text-align: center;
+            font-size: 7vw;
+            transform: translate(-50%,-50%) scale(0);
+        }
+        .section01__text02 {
+            color: #fff;
+            text-align: center;
+            font-size: 7vw;
+            transform: translate(-50%,-50%) scale(1);
+            white-space: nowrap;
+        }
+        .section01__text03 {
+            color: #fff;
+            text-align: center;
+            font-size: 7vw;
+            transform: translate(-50%,-50%) scale(1);
+            white-space: nowrap;
+        }
+        /* section02 */
+        .section02__bg {
+            width: 100%;
+            height: 100vh;
+            background: #000;
+        }
+        .section02__text01 {
+            color: #fff;
+            text-align: center;
+            font-size: 3.5vw;
+            transform: translate(-50%,-50%) scale(1);
+            white-space: nowrap;
+        }
+        .section02__img01 {
+            width: 50vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="scrollTop">0</div>
+
+    <div id="contents">
+        <section id="section01"
+        data-6500 = "display : block"
+        data-6501 = "display : none">
+            <div class="section01__bg">
+                <img data-0 = "width : 70%; height : 17vh;"
+                     data-1000 = "width : 100%; height : 17vh;"
+                     data-2000 = "width : 100%; height : 50vh;"
+                     data-6000 = "width : 100%; height : 50vh;"
+                     data-6500 = "width : 100%; height : 0vh;"
+                src="../effect/img/masood-unsplash.jpg" 
+                alt="이미지" class="fixed">
+            </div>
+            <div class="section01__text01 fixed"
+            data-1000="transform: translate(-50%,-50%) scale(0); top : 50%"
+            data-2000="transform: translate(-50%,-50%) scale(1); top : 50%"
+            data-3000="transform: translate(-50%,-50%) scale(1); top : 50%"
+            data-4000="transform: translate(-50%,-50%) scale(1); top : -10%">
+                안녕하세요!
+            </div>
+            <div class="section01__text02 fixed"
+            data-3000="transform: translate(-50%,-50%) scale(1); top : 100%"
+            data-4000="transform: translate(-50%,-50%) scale(1); top : 50%"
+            data-5000="transform: translate(-50%,-50%) scale(1); top : -10%">
+                반갑습니다!
+            </div>
+            <div class="section01__text03 fixed"
+            data-4000="transform: translate(-50%,-50%) scale(1); top -10%; left : -50%"
+            data-5000="transform: translate(-50%,-50%) scale(1); top 50%; left : 50%"
+            data-6000="transform: translate(-50%,-50%) scale(1); top -10%; left : -50%">
+                환영합니다!
+            </div>
+        </section>
+        <!-- section01 -->
+
+        <section id="section02"
+        data-10000 = "display : block"
+        data-10001 = "display : none">
+            <div class="section02__bg fixed"
+            data-6501="width: 0%; height : 0vh border-radius : 500px"
+            data-7000="width: 100%; height : 100vh border-radius : 0px"></div>
+            <div class="section02__text01 fixed"
+            data-7000="transform: translate(-50%,-50%) scale(0); top : 50%"
+            data-8000="transform: translate(-50%,-50%) scale(1); top : 50%">
+                알라후 아크바르~!
+            </div>
+            <div class="section02__img01">
+                <img src="../effect/img/MacBook Pro 13.png" alt="이미지2">
+            </div>
+        </section><!-- section02 -->
+
+        <section id="section03"></section><!-- section03 -->
+        <section id="section04"></section><!-- section04 -->
+        <section id="section05"></section><!-- section05 -->
+        <section id="section06"></section><!-- section06 -->
+    </div>
+
+
+    <script src="js/scroll.min.js"></script><!-- type = "text/JavaScript" 옛날버전 -->
+    <script>
+        var s = skrollr.init();
+
+        function scroll() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
+            document.querySelector(".scrollTop").innerText = Math.round(scrollTop)
+            
+            document.querySelector(".section01__bg img").style.width = scrollTop + "px"
+            
+            
+            requestAnimationFrame(scroll)
+        }
+        scroll()
+    </script>
+</body>
+</html>
