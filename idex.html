@@ -79,6 +79,53 @@
             }
             func(2,5)
         }
+
+        const circle = document.querySelector(".cursor").getBoundingClientRect();
+
+        function mouseMove(e){
+            // 마우스 좌표 값
+            let mousePageX = e.pageX;
+            let mousePageY = e.pageY;
+
+            // 마우스 좌표 기준점을 가운데로 설정
+            let centerPageX = window.innerWidth / 2 - mousePageX
+            let centerPageY = window.innerHeight / 2 - mousePageY
+
+            // 최소값 : -50, 최대값 : 50 으로 설정
+            let maxPageX = Math.max(-300, Math.min(300, centerPageX));
+            let maxPageY = Math.max(-300, Math.min(300, centerPageY));
+
+            // 각도 줄이는 설정
+            let anglepageX = maxPageX * 0.12
+            let anglepageY = maxPageY * 0.12
+            // 부드럽게 설정
+            let softPageX = 0;
+            let softPageY = 0;
+            softPageX += (anglepageX - softPageX) * 0.6;
+            softPageY += (anglepageY - softPageY) * 0.6;
+
+
+            // 이미지 움직이기 transform: rotateX, rotateY
+            const imgMove = document.querySelector(".mouse__img");
+            imgMove.style.transform = "perspective(600px) rotateX("+softPageY+"deg) rotateY("+ -softPageX+"deg)"
+
+            // 원 크기
+            let circleWidth = mousePageX - circle.width/2;
+            let circleHeight = mousePageY - circle.height/2
+
+            // 커서
+            gsap.to(".cursor", {duration: 0.3, left: circleWidth, top: circleHeight})
+           
+            // 출력
+            document.querySelector(".mousePageX").textContent = mousePageX
+            document.querySelector(".mousePageY").textContent = mousePageY
+            document.querySelector(".centerPageX").textContent = centerPageX
+            document.querySelector(".centerPageY").textContent = centerPageY
+            document.querySelector(".maxPageX").textContent = maxPageX
+            document.querySelector(".maxPageY").textContent = maxPageY
+        }
+
+        document.addEventListener("mousemove", mouseMove)
     </script>
 </body>
 </html>
