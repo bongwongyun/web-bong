@@ -526,8 +526,6 @@ UPDATE Mymember SET YOUPASS = '1234567' WHERE MYMEMBERID BETWEEN 5 AND 10;
 UPDATE Mymember SET YOUPASS = '****' ORDER BY MYMEMBERID DESC LIMIT 10;
                     </code></pre>
                     
-                    
-                    
                     <h3 id="intro7-4" class="page-header">데이터 삭제하기</h3>
                     <h4>전체 데이터 삭제</h4>
                     <div class="bs-callout bs-callout-info">
@@ -556,10 +554,121 @@ DELETE FROM mymember ORDER BY YOUNAME LIMIT 5;
 DELETE FROM mymember WHERE MYMEMBERID IN (8,9,10);
                     </code></pre>
 
+                    <h4 class="pt20">필드명 바꾸기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT 필드명 FROM 테이블명 엘리어스 JOIN 연결할 테이블명 엘리어스 ON(조건문);
+                    </div>
+                    <pre><code class="language-js">
+SELECT M.YOUNAME, M.YOUEMAIL, R.YOUCONT, R.REGTIME AS REVIEWTIME FROM MYMEMBER M JOIN MYREVIEW R ON(m.memberID = R.MEMBERID);
+</code></pre>
+                </div>
+                <h4 class="pt20">필드 내용이 없는 경우 표시</h4>
+                    <div class="bs-callout bs-callout-info">
+SELECT M.YOUNAME, M.YOUEMAIL, R.YOUCONT, R.REGTIME FROM MYMEMBER M LEFT JOIN MYREVIEW R ON(m.memberID = R.MEMBERID);
+                    </div>
+                    <pre><code class="language-js">
+SELECT M.YOUNAME, M.YOUEMAIL, R.YOUCONT, R.REGTIME AS REVIEWTIME FROM MYMEMBER M JOIN MYREVIEW R ON(m.memberID = R.MEMBERID);
+</code></pre>
                 </div>
                 <!-- box -->
+
+                <!--box-->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">테이블 합치기</h2>
+                    <div class="bs-callout bs-callout-info">
+SELECT 필드명 FROM 테이블명 엘리어스 JOIN 연결할 테이블명 엘리어스 ON(조건문);
+                    </div>
+                    <pre><code class="language-js">
+SELECT M.YOUNAME, M.YOUEMAIL, R.YOUCONT, R.REGTIME FROM MYMEMBER M JOIN MYREVIEW R ON(m.memberID = r.memberID);
+</code></pre>
+                    <pre><code class="language-js">
+CREATE TABLE myMember (
+    myMemberID INT(10) unsigned AUTO_increment, 
+    YOUEMAIL varchar(40) NOT NULL,
+    YOUNAME varchar(12) NOT NULL,
+    YOUPASS varchar(20) NOT NULL,
+    YOUBIRTH varchar(12) NOT NULL,
+    YOUAGE INT(10) NOT NULL,
+    YOUPHONE INT (20) NOT NULL,
+    REGTIME INT(11) NOT NULL,
+    PRIMARY KEY(myMemberID) 
+) CHARSET=UTF8;
+
+CREATE TABLE myReview (
+    reviewID int (10) unsigned auto_increment,
+    memberID int (10) unsigned,
+    youCont tinytext NOT NULL,
+    REGTIME INT(11) NOT NULL,
+    PRIMARY KEY (reviewID)
+) CHARSET=UTF8;
+
+INSERT INTO myReview(memberID, youCont, regtime) VALUES('1', '쓰읍~ 이건 좀;;','25648');
+INSERT INTO myReview(memberID, youCont, regtime) VALUES('5', '킄','35478');
+INSERT INTO myReview(memberID, youCont, regtime) VALUES('8', '오우오우;;','12785');
+INSERT INTO myReview(memberID, youCont, regtime) VALUES('9', '와','02118');
+INSERT INTO myReview(memberID, youCont, regtime) VALUES('11', '굿','45678');
+INSERT INTO myReview(memberID, youCont, regtime) VALUES('12', '예','25050');
+INSERT INTO myReview(memberID, youCont, regtime) VALUES('15',  '핫','87820');
+INSERT INTO myReview(memberID, youCont, regtime) VALUES('3', '호','15456');
+INSERT INTO myReview(memberID, youCont, regtime) VALUES('2', '불호','20002');
+INSERT INTO myReview(memberID, youCont, regtime) VALUES('18','~~~~~@@@###','36687');
+                    </code></pre>
             </div>
-            <!-- //row -->
+              <!--box-->
+
+              <!--box-->
+              <div class="bs-docs-section">
+                <h2 id="intro9" class="page-header">집계 함수</h2>
+                <pre><code class="language-js">
+CREATE TABLE myRecode (
+recodeID INT(10) unsigned AUTO_increment,
+MemberID INT(10) unsigned, 
+javascript tinyint  NOT NULL,
+html tinyint NOT NULL,
+css tinyint NOT NULL,
+mysql tinyint NOT NULL,
+react tinyint NOT NULL,
+PRIMARY KEY(RecodeID) 
+) CHARSET=UTF8;
+
+INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('1','5', '20', '10', '40', '30');
+INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('2','10', '40', '10', '85', '60');
+INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('3','20', '60', '10', '40', '80');
+INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('4','40', '30', '10', '95', '90');
+INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('5','50', '60', '10', '75', '40');
+INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('6','80', '80', '10', '40', '20');
+INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('7','30', '70', '10', '75', '10');
+INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('8','20', '90', '10', '40', '50');
+INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('9','10', '100', '10', '65', '10');
+INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('10','10', '10', '10', '40', '5');
+                </code></pre>
+                <h3 id="intro9-1" class="pt20">집계 합수의 종류</h3>
+                <pre><code class="language-js">
+SELECT COUNT (javascript) FROM myRecode;
+</code></pre>
+<pre><code class="language-js">
+SELECT SUM (javascript) FROM myRecode;
+    </code></pre>
+    <pre><code class="language-js">
+SELECT AVG (javascript) FROM myRecode;
+    </code></pre>
+    <pre><code class="language-js">
+SELECT MAX (javascript) FROM myRecode;
+    </code></pre>
+    <pre><code class="language-js">
+SELECT MIN (javascript) FROM myRecode;
+    </code></pre>
+        </div>
+        <h3 id="intro9-2" class="pt20">그룹별 집계</h3>
+        <h4>GROUP BY</h4>
+        <pre><code class="language-js">
+
+</code></pre>
+          <!--box-->
+        </div>
+
+
+<!-- //row -->
             <div class="col-md-3">
                 <div class="bs-sidebar hidden-print" role="complementary">
                     <ul class="nav bs-sidenav">
@@ -582,12 +691,14 @@ DELETE FROM mymember WHERE MYMEMBERID IN (8,9,10);
                                 <li><a href="#intro5-4">테이블 삭제</a></li>
                                 <li><a href="#intro5-5">테이블 복사</a></li>
                             </ul>
+                        </li>
                         <li><a href="#intro6">테이블 수정</a>
                             <ul class="nav bs-sidenav">
                                 <li><a href="#intro6-1">필드 만들기</a></li>
                                 <li><a href="#intro6-2">필드 수정하기</a></li>
                                 <li><a href="#intro6-3">필드 삭제하기</a></li>
                             </ul>
+                        </li>
                         <li><a href="#intro7">테이블 데이터</a>
                             <ul class="nav bs-sidenav">
                                 <li><a href="#intro7-1">데이터 입력하기</a></li>
@@ -595,18 +706,26 @@ DELETE FROM mymember WHERE MYMEMBERID IN (8,9,10);
                                 <li><a href="#intro7-3">데이터 수정하기</a></li>
                                 <li><a href="#intro7-4">데이터 삭제하기</a></li>
                             </ul>
-                            <li><a href="#intro8">테이블 합치기</a>
-                                <ul class="nav bs-sidenav">
-                                    <li><a href="#intro8-1">데이터 입력하기</a></li>
-                                    <li><a href="#intro8-2">데이터 불러오기</a></li>
-                                    <li><a href="#intro8-3">데이터 수정하기</a></li>
-                                    <li><a href="#intro8-4">데이터 삭제하기</a></li>
-                                </ul>
+                        </li>  
+                        <li><a href="#intro8">테이블 합치기</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro8-1">데이터 입력하기</a></li>
+                                <li><a href="#intro8-2">데이터 불러오기</a></li>
+                                <li><a href="#intro8-3">데이터 수정하기</a></li>
+                                <li><a href="#intro8-4">데이터 삭제하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro9">집계 함수</a>
+                            <ul class="nav bs-sidenav">
+                                <li><a href="#intro9-1">데이터 입력하기</a></li>
+                                <li><a href="#intro9-2">데이터 불러오기</a></li>
+                                <li><a href="#intro9-3">데이터 수정하기</a></li>
+                                <li><a href="#intro9-4">데이터 삭제하기</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div>
-
         <!--layout1-->
         <div class="bs-docs-section">
 
