@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -95,14 +96,7 @@
                 <!-- box -->
                 <div class="bs-docs-section">
                     <h2 id="intro02" class="page-header">MYSQL 설치</h2>
-                    <p class="lead">
-                        MYSQL는 데이터 베이스 소프트웨어 입니다.
-                        일반적으로 데이터를 추가하거나 검색, 추출하는 기능을 모두 포함해서 데이터 베이스라고 부릅니다.
-                    </p>
-                    <p>MYSQL는 세계에서 가장 많이 쓰이는 오픈 소스의 관계형 데이터 베이스 관리 시스템(RDBMS)입니다.
-                        MYSQL는 PHP 스크립트 언어화 상호 연동이 잘 되면서 오프소스로 개발된 무료 프로그램입니다.
-                        그래서 홈페이지나 쇼핑몰(워드프레스, cafe24, 제로보드, 그누보드)등 일반적으로 웹 개발에 널리 사용하고 있습니다.
-                    </p>
+                    <img src="/MYSQL/img/mamp.jpg" alt="설치완료짤">
                 </div>
                 <!-- box -->
 
@@ -193,7 +187,7 @@ show databases;
                         use 데이터 베이스 이름;
                     </div>
                     <pre><code class="language-js">
-                
+Database changed
                     </code></pre>
                     <h3 id="intro4-4" class="page-header">데이터 베이스 삭제</h3>
                     <div class="bs-callout bs-callout-info">
@@ -277,29 +271,30 @@ DESC myMember;
                         drop table 테이블 이름;
                     </div>
                     <pre><code class="language-js">
-                
+mysql> drop table mymember;
+Query OK, 0 rows affected (0.01 sec)
                     </code></pre>
 
                     <h3 id="intro5-5" class="page-header">테이블 복사</h3>
                     <div class="bs-callout bs-callout-info">
-                        create table 새로운 테이블 이름 select * from 복사할 테이블 이름;
+create table 새로운 테이블 이름 select * from 복사할 테이블 이름;
                     </div>
                     <pre><code class="language-js">
-                        create table 새로운 테이블 이름 select * from 복사할 테이블 이름;
+create table 새로운 테이블 이름 select * from 복사할 테이블 이름;
                     </code></pre>
                     <h3 id="pt20" class="page-header">테이블 구조 복사</h3>
                     <div class="bs-callout bs-callout-info">
-                        CREATE TABLE 새로운 테이블명 LIKE 복사할 테이블명;
+CREATE TABLE 새로운 테이블명 LIKE 복사할 테이블명;
                     </div>
                     <pre><code class="language-js">
-                        CREATE TABLE 새로운 테이블명 LIKE 복사할 테이블명;
+CREATE TABLE 새로운 테이블명 LIKE 복사할 테이블명;
                     </code></pre>
                     <h3 id="pt20" class="page-header">테이블 데이터 복사</h3>
                     <div class="bs-callout bs-callout-info">
-                        INSERT INTO CREATE TABLE 새로운 테이블명 SELECT * FROM 복사할 테이블명;
+INSERT INTO CREATE TABLE 새로운 테이블명 SELECT * FROM 복사할 테이블명;
                     </div>
                     <pre><code class="language-js">
-                        INSERT INTO CREATE TABLE 새로운 테이블명 SELECT * FROM 복사할 테이블명;
+INSERT INTO CREATE TABLE 새로운 테이블명 SELECT * FROM 복사할 테이블명;
                     </code></pre>
                 </div>
                 <!-- box -->
@@ -526,6 +521,8 @@ UPDATE Mymember SET YOUPASS = '1234567' WHERE MYMEMBERID BETWEEN 5 AND 10;
 UPDATE Mymember SET YOUPASS = '****' ORDER BY MYMEMBERID DESC LIMIT 10;
                     </code></pre>
                     
+                    
+                    
                     <h3 id="intro7-4" class="page-header">데이터 삭제하기</h3>
                     <h4>전체 데이터 삭제</h4>
                     <div class="bs-callout bs-callout-info">
@@ -554,27 +551,13 @@ DELETE FROM mymember ORDER BY YOUNAME LIMIT 5;
 DELETE FROM mymember WHERE MYMEMBERID IN (8,9,10);
                     </code></pre>
 
-                    <h4 class="pt20">필드명 바꾸기</h4>
-                    <div class="bs-callout bs-callout-info">
-                        SELECT 필드명 FROM 테이블명 엘리어스 JOIN 연결할 테이블명 엘리어스 ON(조건문);
-                    </div>
-                    <pre><code class="language-js">
-SELECT M.YOUNAME, M.YOUEMAIL, R.YOUCONT, R.REGTIME AS REVIEWTIME FROM MYMEMBER M JOIN MYREVIEW R ON(m.memberID = R.MEMBERID);
-</code></pre>
-                </div>
-                <h4 class="pt20">필드 내용이 없는 경우 표시</h4>
-                    <div class="bs-callout bs-callout-info">
-SELECT M.YOUNAME, M.YOUEMAIL, R.YOUCONT, R.REGTIME FROM MYMEMBER M LEFT JOIN MYREVIEW R ON(m.memberID = R.MEMBERID);
-                    </div>
-                    <pre><code class="language-js">
-SELECT M.YOUNAME, M.YOUEMAIL, R.YOUCONT, R.REGTIME AS REVIEWTIME FROM MYMEMBER M JOIN MYREVIEW R ON(m.memberID = R.MEMBERID);
-</code></pre>
                 </div>
                 <!-- box -->
 
-                <!--box-->
-                <div class="bs-docs-section">
+                 <!--box-->
+                 <div class="bs-docs-section">
                     <h2 id="intro8" class="page-header">테이블 합치기</h2>
+                    <h3 id="intro8-1" class="page-header">JOIN 사용하기</h3>
                     <div class="bs-callout bs-callout-info">
 SELECT 필드명 FROM 테이블명 엘리어스 JOIN 연결할 테이블명 엘리어스 ON(조건문);
                     </div>
@@ -616,7 +599,6 @@ INSERT INTO myReview(memberID, youCont, regtime) VALUES('18','~~~~~@@@###','3668
             </div>
               <!--box-->
 
-              <!--box-->
               <div class="bs-docs-section">
                 <h2 id="intro9" class="page-header">집계 함수</h2>
                 <pre><code class="language-js">
@@ -659,16 +641,16 @@ SELECT MAX (javascript) FROM myRecode;
 SELECT MIN (javascript) FROM myRecode;
     </code></pre>
         </div>
-        <h3 id="intro9-2" class="pt20">그룹별 집계</h3>
-        <h4>GROUP BY</h4>
-        <pre><code class="language-js">
-
-</code></pre>
+        <h3  id="intro9-2" class="page-header pt20">그룹별 집계</h3>
+                    <h4>GROUP BY</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT 필드명 FROM 테이블명 GROUP BY 필드명
+                    </div>
+<pre class="language-js"><code>SELECT memberID avg(javscript) FROM myRecode WHERE memberID IN(1,2,3,4) GROUP BY memberID;</code></pre>
           <!--box-->
-        </div>
-
-
-<!-- //row -->
+            </div>
+            
+            <!-- //row -->
             <div class="col-md-3">
                 <div class="bs-sidebar hidden-print" role="complementary">
                     <ul class="nav bs-sidenav">
@@ -706,26 +688,23 @@ SELECT MIN (javascript) FROM myRecode;
                                 <li><a href="#intro7-3">데이터 수정하기</a></li>
                                 <li><a href="#intro7-4">데이터 삭제하기</a></li>
                             </ul>
-                        </li>  
-                        <li><a href="#intro8">테이블 합치기</a>
-                            <ul class="nav bs-sidenav">
-                                <li><a href="#intro8-1">데이터 입력하기</a></li>
-                                <li><a href="#intro8-2">데이터 불러오기</a></li>
-                                <li><a href="#intro8-3">데이터 수정하기</a></li>
-                                <li><a href="#intro8-4">데이터 삭제하기</a></li>
-                            </ul>
                         </li>
-                        <li><a href="#intro9">집계 함수</a>
-                            <ul class="nav bs-sidenav">
-                                <li><a href="#intro9-1">데이터 입력하기</a></li>
-                                <li><a href="#intro9-2">데이터 불러오기</a></li>
-                                <li><a href="#intro9-3">데이터 수정하기</a></li>
-                                <li><a href="#intro9-4">데이터 삭제하기</a></li>
-                            </ul>
-                        </li>
+                            <li><a href="#intro8">테이블 합치기</a>
+                                <ul class="nav bs-sidenav">
+                                    <li><a href="#intro8-1">join 사용하기</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#intro9">집계 함수</a>
+                                <ul class="nav bs-sidenav">
+                                    <li><a href="#intro9-1">집계 함수의 종류</a></li>
+                                    <li><a href="#intro9-2">그룹별 집계</a></li>
+                                </ul>
+                            </li>
                     </ul>
                 </div>
             </div>
+        </div>
+
         <!--layout1-->
         <div class="bs-docs-section">
 
