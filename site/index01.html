@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- css style -->
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .wrap {}
+    /* .header {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5%;
+    }
+    .header > div {
+        
+    }
+    .header > div a {
+        line-height: 15vh;
+        vertical-align:middle;
+        text-align: center;
+        font-weight: bold;
+        float: right;
+    } */
+    #header {height: 100px;display: flex; justify-content: space-between;}
+    #header h1 {float: left; padding-top: 5px;}
+    #header h1 img {width: 130px;}
+    #header .nav {float: right; z-index: 100; position: relative; margin-top: 20px;}
+    #header .nav li {position: relative; float: left; width: 120px; text-align: center;}
+    #header .nav li a {display: block; padding: 20px 15px; background: #ccc;}
+    #header .nav li a:hover {background: #ddd;}
+    #header .nav li ul.submenu {display: none; position: absolute; left: 0; top: 59px; background: #ddd;}
+    #header .nav li ul.submenu li a {padding: 10px;}
+    #header .nav li ul.submenu li a:hover {background: #999;}
+    .clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
+    
+    .notice {position: relative; padding: 30px;}
+    .notice ul li {float: left; margin-right: 20px;}
+    .notice ul li a {font-size: 24px; color: #999; font-weight: bold;}
+    .notice ul li.active a {color: #000;}
+    .notice ul li ul {position: absolute; left: 30px; top: 70px;}
+    .notice ul li ul li {width: 95%; padding: 5px 0;}
+    .notice ul li ul li a {float: left; width: 60%; font-size: 16px; color: #333;
+        overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: normal;}
+    .notice ul li ul li span {float: right; width: 20%;}
+    .notice .more {position: absolute; right: 30px; top: 35px;}
+
+    .logo {
+        width: 220px;
+        height: 185px;
+        background: url(../site/img/Slice\ 2.jpg);
+    }
+    .body {}
+    .banner {
+        width: 2200px;
+        height: 740px;
+        background-image: url(../site/img/Slice\ 1.jpg);
+        background-size: contain;
+    }
+    .main {
+        display: flex;
+        justify-content: space-between;
+    }
+    .more {
+        width: 982px;
+        height: 435px;
+        margin-top: 70px;
+        border: 1px solid #bbbbbb;
+    }
+    .more ul {
+
+    }
+    .event {
+        margin-top: 70px;
+        width: 984px;
+        height: 487px;
+        background: url(../site/img/Slice\ 4.jpg) no-repeat;
+        margin-left: 10%;
+    }
+    .img__text {
+        font-weight: bold;
+    }
+    .img__box {
+        display: flex;
+        justify-content: space-between;
+        height: 468px;
+        min-height: 10px;
+    }
+    .img__box .img1 {
+        width: 100%;
+        background: url(../site/img/Slice\ 5.jpg) no-repeat;
+    }
+    .img__box .img2 {
+        width: 100%;
+        background: url(../site/img/Slice\ 6.jpg) no-repeat;
+    }
+    .img__box .img3 {
+        width: 100%;
+        background: url(../site/img/Slice\ 7.jpg) no-repeat;
+    }
+    .img__box .img4 {
+        width: 100%;
+        background: url(../site/img/Slice\ 8.jpg) no-repeat;
+    }
+    .text {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <div class="container">
+        <!-- <div class="header">
+            <div class="logo"></div>
+            <div><a href="#">즐길거리</a></div>
+            <div><a href="#">요금/우대혜택</a></div>
+            <div><a href="#">참여프로그램</a></div>
+            <div><a href="#">이용가이드</a></div>
+            <div><a href="#">소통서비스</a></div>
+        </div> -->
+        <header id="header" class="clearfix">
+            <h1><a href="#"><img src="../site/img/Slice 2.jpg" alt="롯데월드"></a></h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">즐길거리</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">요금/우대혜택</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">참여프로그램</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이용가이드</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">소통서비스</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        <div class="banner"></div>
+        <div class="body">
+            <!-- <div class="main">
+            <div class="more">
+                <ul>롯데월드 소식 | 뉴스 공지 <a href="#">더보기</a>
+                    <li><a href="#">그럴싸진관 미라클</a></li>
+                    <li><a href="#">드림스테이지 '힘내 소중한 너'</a></li>
+                    <li><a href="#">'힘내 소중한 너' 음원 발매</a></li>
+                    <li><a href="#">이용 요금 조정 안내</a></li>
+                </ul>
+            </div>
+                <a href="#"><div class="event"></div></a>
+            </div>
+            <div class="img__text">특별한 경험
+                <div class="img__box">
+                <div class="img1"></div>
+                <div class="img2"></div>
+                <div class="img3"></div>
+                <div class="img4"></div>
+                </div>
+            </div>
+            <div class="text">
+                <p>연간회원안내</p>
+                <p>프리미엄 투어</p>
+                <p>공연참여 프로그램</p>
+                <p>단체 프로그램</p>
+            </div> -->
+            <article class="notice">
+                <ul class="clearfix">
+                    <li class="active"><a href="#">롯데월드 소식</a>
+                        <ul>
+                            <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                            <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                            <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                            <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">뉴스&middot;공지</a>
+                        <ul>
+                            <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                            <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                            <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                            <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="#" class="more">더보기 +</a>
+            </article>
+        </div>
+        <div class="footer"></div>
+    </div>
+</div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/site/script/script.js"></script>
+<script>
+        $(document).ready(function(){
+            $("h1").click(function(){
+                alert("bbb")
+            });
+        });
+</script>
+</html>

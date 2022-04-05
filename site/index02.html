@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #wrap {}
+        #container {
+            width: 1280px;
+            margin: 0 auto;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        #nav {
+            display: flex;
+            justify-content: space-between;
+        }
+        #contents {}
+        #footer {}
+        .logo {}
+        .logo_img {
+            width: 200px;
+            height: 90px;
+            background: url(../site/img/_img1.jpg) no-repeat;
+            background-size: contain;
+        }
+        #header ul {
+            display: flex;
+            list-style: none;
+        }
+        #header ul li {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+        }
+        #header ul li:hover {
+            cursor: pointer;
+            background: #999;
+        }
+        #header ul li a {
+            font-weight: bold;
+            text-decoration: none;
+            color: #000;
+            font-size: 24px;
+        }
+        #header .submenu {
+            display: block;
+            background: #999;
+        }
+        .banner {
+            width: 100%;
+            height: 520px;
+            background: url(../site/img/_img2.jpg) no-repeat;
+            background-size: contain;
+        }
+        .con_img {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+        }
+        .con_img1 {
+            width: 100%;
+            height: 200px;
+            background: url(../site/img/_img7.jpg) no-repeat;
+            background-size: contain;
+            margin-top: 20px;
+        }
+        .con_img2 {
+            width: 100%;
+            height: 200px;
+            background: url(../site/img/_img6.jpg) no-repeat;
+            background-size: contain;
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+        .contents__img {
+            display: flex;
+            position: relative;
+        }
+        .contents__img img {
+            width: 100%;
+            height: 400px;
+            background-size: contain;
+        }
+        .contents__img .best01 {
+            width: 100%;
+            height: 400px;
+            background: url(../site/img/_img3.jpg) no-repeat;
+            background-size: contain;
+        }
+        .contents__img .best02 {
+            width: 100%;
+            height: 400px;
+            background: url(../site/img/_img4.jpg) no-repeat;
+            background-size: contain;
+        }
+        .contents__img .best03 {
+            width: 100%;
+            height: 400px;
+            background: url(../site/img/_img5.jpg) no-repeat;
+            background-size: contain;
+        }
+        .contents__text {
+            display: flex;
+            justify-content: space-between;
+            margin-top: -7%;
+            margin-bottom: 5%;
+            margin-right: 10%;
+            margin-left: 10%;
+        }
+        .contents__text img {
+            width: 45px;
+            height: 45px;
+        }
+        #contents h2 {
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        } 
+        #contents h2 span {
+            font-weight: bold;
+            color: #bbbb;
+        } 
+        #contents p {
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        #contents p span {
+            font-weight: bold;
+            font-size: 16px;
+            color: #bbbb;
+        }
+        #footer img {
+            width: 100%;
+            background: url(../site/img/_img5.jpg) no-repeat;
+            background-size: contain;
+        }
+        .best01_text {
+            margin-left: -60px;
+        }
+        .best02_text {
+            margin-left: 60px;
+        }
+        .best03_text {
+            position: relative;
+            left: 40px;
+        }
+        .best03_text_img {
+            position: relative;
+            left: 60px;
+        }
+        .slideList {position: relative; width: 1280px; z-index: 50; overflow: hidden; display: flex;}
+        .slideList .slideImg {position: relative; width: 1280px; float: left;}
+        .slideList .slideImg img {}
+        .slideList .slideImg h2 {position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%,-50%); background: rgba(0,0,0,0.4); padding: 10px 30px;
+        border-radius: 20px;}
+
+        /* .layer_bg {display: none; position: fixed; left: 0; top: 0; z-index: 900;
+        width: 100%; height: 100%; background: rgba(0,0,0,0.8);}
+        .layer {display: none; position: absolute; left: 30px; top: 30px; z-index: 1000;
+        width: 500px; height: 500px; border: 3px solid #000; background: #fff;}
+        .layer h2 {padding: 20px; color: #000;}
+        .layer .close {position: absolute; bottom: 20px; right: 20px;} */
+    </style>
+</head>
+<body>
+        <div class="wrap">
+            <div id="container">
+                <div id="header">
+                    <div class="logo">
+                        <div class="logo_img"></div>
+                    </div>
+                <nav class="nav">
+                    <ul>
+                        <li class="menu"><a href="#">COOKIT소개</a>
+                            <ul class="submenu" style="display:none">
+                                <li><a href="#">subMenu-1</a></li>
+                                <li><a href="#">subMenu-2</a></li>
+                                <li><a href="#">subMenu-3</a></li>
+                                <li><a href="#">subMenu-4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu"><a href="#">COOKIT메뉴</a>
+                            <ul class="submenu" style="display:none">
+                                <li><a href="#">subMenu-1</a></li>
+                                <li><a href="#">subMenu-2</a></li>
+                                <li><a href="#">subMenu-3</a></li>
+                                <li><a href="#">subMenu-4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu"><a href="#">리뷰</a>
+                            <ul class="submenu" style="display:none">
+                                <li><a href="#">subMenu-1</a></li>
+                                <li><a href="#">subMenu-2</a></li>
+                                <li><a href="#">subMenu-3</a></li>
+                                <li><a href="#">subMenu-4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu"><a href="#">이벤트</a>
+                            <ul class="submenu" style="display:none">
+                                <li><a href="#">subMenu-1</a></li>
+                                <li><a href="#">subMenu-2</a></li>
+                                <li><a href="#">subMenu-3</a></li>
+                                <li><a href="#">subMenu-4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu"><a href="#">MY쿡킷</a>
+                            <ul class="submenu" style="display:none">
+                                <li><a href="#">subMenu-1</a></li>
+                                <li><a href="#">subMenu-2</a></li>
+                                <li><a href="#">subMenu-3</a></li>
+                                <li><a href="#">subMenu-4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                </div>
+                <!-- <div id="nav">
+                    <div class="banner"></div>
+                </div> -->
+                <div class="slideList">
+                    <div class="slideImg">
+                        <h2>이미지1</h2>
+                        <img src="../site/img/_img2.jpg" alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트1" style="width: 1280px;">
+                    </div>
+                    <div class="slideImg">
+                        <h2>이미지2</h2>
+                        <img src="../site/img/_img02.jpg" alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트2" style="width: 1280px;">
+                    </div>
+                    <div class="slideImg">
+                        <h2>이미지3</h2>
+                        <img src="../site/img/_img2.jpg" alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트3" style="width: 1280px">
+                    </div>
+                </div>
+                <!-- layer -->
+                <!-- <div class="layer_bg"></div>
+                <div class="layer">
+                    <h2>제목</h2>
+                    <a href="#" class="close">닫기</a>
+                </div> -->
+                <div id="contents">
+                    <div class="con_img">
+                        <div class="con_img1">
+                            <a href="#"></a>
+                        </div>
+                        <div class="con_img2">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                    <h2>실시간 베스트&nbsp;|<span>&nbsp;생생한 리뷰</span></h2>
+                    <div class="contents__img">
+                    <div class="best01">
+                    </div>
+                    <div class="best02">
+                    </div>
+                    <div class="best03">
+                    </div>
+                    </div>
+                    <div class="contents__text">
+                    <p class="best01_text">평양식 어묵쟁반 <br>    
+                        33,800원<span>&nbsp; / 3인분</span>
+                    </p>
+                        <img src="../site/img/_img9.jpg" alt="장바구니">
+                    <p class="best02_text">새우주꾸미 삼겹살 <br>    
+                        29,800원<span>&nbsp; / 3인분</span></p>
+                        <img src="../site/img/_img9.jpg" alt="장바구니">
+                    <p class="best03_text">방풍나물 아귀찜 <br>    
+                        32,800원<span>&nbsp; / 3인분</span></p>
+                        <img src="../site/img/_img9.jpg" alt="장바구니" class="best03_text_img">
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <img src="../site/img/_img8.jpg" alt="fooimg">
+            </div>
+        </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    var currentIndex = 0;
+    setInterval(function(){
+        if(currentIndex < 2){
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        var slidePosition = currentIndex * (-1280)+"px";
+        $(".slideImg").animate({left:slidePosition}, 300);
+    }, 3840);
+
+    $(".right").click(function(){
+        $(".layer").slideDown(300);
+        $(".layer_bg").show();
+    })
+    $(".layer .close").click(function(){
+        $(".layer").slideUp(300);
+        $(".layer_bg").hide();
+    })
+    $(document).ready(function(){
+        $(".menu>a").mouseout(function(){
+            var submenu = $(this).next("ul");
+ 
+            if( submenu.is(":visible") ){
+                submenu.slideUp();
+            }else{
+                submenu.slideDown();
+            }
+        }).mouseover(function(){
+            $(this).next("ul").slideDown();
+        });
+    });
+</script>
+
+<script>
+//     var index = 0; 
+//     window.onload = function(){
+//         slideShow();
+//     }
+    
+//     function slideShow() {
+//     var i;
+//     var x = document.getElementsByClassName("slide1");
+//     for (i = 0; i < x.length; i++) {
+//        x[i].style.display = "none";   
+//     }
+//     index++;
+//     if (index > x.length) {
+//         index = 1;
+//     }   
+//     x[index-1].style.display = "block";
+//     setTimeout(slideShow, 4000); 
+ 
+// }
+</script>
+</html>

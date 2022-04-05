@@ -1,0 +1,881 @@
+/* 전체 레이아웃 */
+#wrap {
+    height: 2000px;
+}
+.gray {
+    background: #f5f5f5;
+}
+.white {
+    background: #FFF !important;
+}
+/* 컨테이너 */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 헤더 01 float를 사용한 경우
+    float으로 인한 영역 깨짐 현상 발생 (하이트 값을 인식 못함) 
+    1. 깨지는 영역에 clear: both; 설정 
+    2. 부모 영역한테 overflow:hidden; 설정
+    3. 가상의 영역(clearfix) 속성을 설정
+#header {
+    clear: both;
+    overflow: hidden;
+    min-width: none;
+    border: 1px solid #000;
+}
+#header .logo {
+    width: 20%;
+    float: left;
+}
+#header .logo a {
+    display: inline-block;
+    text-align: left;
+    padding: 20px 30px;
+}
+#header .logo a em {
+    font-size: 20px;
+    font-weight: 300;
+}
+#header .menu {
+    width: 60%;
+    float: left;
+    text-align: center;
+}
+#header .menu li {
+    display: inline-block;
+}
+#header .menu li a {
+    display: inline-block;
+    padding: 20px 30px; 
+}
+#header .member {
+    width: 20%;
+    float: left;
+    text-align: right;
+    padding: 10px 20px;
+}
+#header .member a {
+    border: 1px solid #000;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 9px 18px;
+}
+*/
+/* 헤더 02 flex를 사용한 경우 */
+/* Three Values : flex-grow / flex-shrink / flex-basis */
+/*
+#header {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-around;
+    min-width: 1200px;
+    white-space: nowrap;
+}
+#header .logo {
+    flex: 0 0 20%;
+}
+#header .logo a {
+    font-size: 30px;
+    padding: 12px 18px;
+    display: inline-block;
+}
+#header .logo a em {
+    font-size: 18px;
+    font-weight: 300;
+}
+#header .menu {
+    flex: 0 0 60%;
+    text-align: center;
+}
+#header .menu li {
+    display: inline;
+}
+#header .menu li a {
+    display: inline-block;
+    padding: 20px 30px; 
+}
+#header .member {
+    flex: 0 0 20%;
+    text-align: right;
+    padding: 10px 18px;
+}
+#header .member a {
+    border: 1px solid #000;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 9px 22px;
+}
+*/
+/* 헤더03 Grid를 사용하는 경우 */
+
+#header {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    min-width: 1200px;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+#header .logo a {
+    font-size: 30px;
+    padding: 22px 22px;
+    display: inline-block;
+}
+
+#header .logo a em {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#header .menu {
+    text-align: center;
+}
+
+#header .menu li {
+    display: inline-block;
+    padding: 20px 30px;
+}
+
+#header .menu li a {
+    display: inline-block;
+    padding: 20px 30px;
+    position: relative;
+    transition: background 0.4s;
+}
+
+#header .menu li a:hover {
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+#header .member {
+    text-align: right;
+    padding: 22px 22px;
+}
+
+#header .member a {
+    border: 1px solid #000;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 9px 22px;
+}
+
+#header .member a:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* 배너 */
+#banner {}
+
+/* .img_Type {
+    width: 100%;
+    height: 700px; */
+    /* background-image: url(/refer/img/gd01.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+
+    /* background: url(../img/gd01.jpg) no-repeat center / cover;
+} */
+
+
+/* .slider {
+    position: relative;
+    white-space: nowrap;
+}
+.slider-img {
+    height: 600px;
+    background: url(../img/gd01.jpg) no-repeat center / cover ;
+}
+.slider-img .desc {
+    margin: 0 auto;
+    min-width: 1200px;
+    padding: 100px 0;
+    color: #fff;
+}
+.slider-img .desc span {
+    font-size: 18px;
+}
+.slider-img .desc h4 {
+    font-size: 110px;
+    font-weight: 300;
+    margin-left: -8px;
+}
+.slider-img .desc p{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 100px;
+}
+.slider-img .desc .btn a {
+    font-size: 16px;
+    padding: 10px 40px;
+    display: inline-block;
+}
+.slider-img .desc .btn .white {
+    background: #fff;
+    color: #000;
+}
+.slider-img .desc .btn .black {
+    background: #000;
+    color: #fff;
+}
+.slider-arrow a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 27px;
+    height: 56px;
+    background: url(../img/icon.svg.svg);
+}
+.slider-arrow .left {
+    left: 10px;
+    background-position: -103px -35px;
+}
+.slider-arrow .right {
+    right: 10px;
+    background-position: -148px -35px;
+}
+.slider-dot {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+}
+.slider-dot .dot {
+    width: 30px;
+    height: 30px;
+    background: url(../img/icon.svg.svg);
+    background-position: 0 -100px;
+    display: inline-block;
+    margin: 2px;
+   
+}
+.slider-dot .dot.active {
+    background-position: -50px -100px;
+}
+.slider-dot .dot.play {
+    background-position: 0 -50px;
+}
+.slider-dot .dot.stop {
+    background-position: -50px -50px;
+} */
+ 
+/* swiper */
+.swiper {
+    width: 100%;
+    height: 600px;
+}
+.swiper-wrapper {}
+.swiper-slide:nth-child(1n) {
+    background: url(../img/gd01.jpg) no-repeat center / cover ;
+}
+.swiper-slide:nth-child(2n) {
+    background: url(../img/gd02.jpg) no-repeat center / cover ;
+}
+.swiper-slide:nth-child(3n) {
+    background: url(../img/gd03.jpg) no-repeat center / cover ;
+}
+.swiper-slide {}
+.swiper-slide .desc {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 100px 0;
+    color: #fff;
+}
+.swiper-slide .desc span {
+    font-size: 18px;
+}
+.swiper-slide .desc h4 {
+    font-size: 110px;
+    font-weight: 300;
+    margin-left: -8px;
+}
+.swiper-slide .desc p {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 100px;
+}
+.swiper-slide .desc .btn a {
+    font-size: 16px;
+    padding: 11px 50px;
+    display: inline-block;
+}
+.swiper-slide .desc .btn .white {
+    background: #fff;
+    color: #000;
+}
+.swiper-slide .desc .btn .black {
+    background: #000;
+    color: #fff;
+}
+
+.swiper-button-prev {
+    width: 30px;
+    height: 30px;
+    background: url(../img/icon.svg.svg);
+    background-position: -95px -50px;
+}
+.swiper-button-prev::after {
+    font-size: 0 !important;
+}
+.swiper-button-next {
+    width: 30px;
+    height: 30px;
+    background: url(../img/icon.svg.svg);
+    background-position: -145px -50px;
+}
+.swiper-button-next::after {
+    font-size: 0 !important;
+}
+.swiper-pagination-bullet {
+    width: 14px !important;
+    height: 14px !important;
+    background: #ffF !important;
+}
+
+/* 웹 사이트에서 이미지를 표현하는 방법
+    1. HTML 태그를 통해서 : img 태그 : 의미가 있는 이미지 (로고,메뉴) --> alt(대체 문자)
+    2. CSS 속성을 통해서  : background 속성 : 의미가 없는 이미지 --> ir효과(대체 문자를 CSS속성으로)
+    3. 이미지 스프라이트 : background와 ir 효과를 통해서 이미지 표현
+*/
+/* 이미지 텍스트 유형 */
+
+/* 유형1 img_text_type */
+.imgtext_Type01 {
+    padding: 150px 0;
+    overflow: hidden;
+}
+
+.imgtext_Type01 .text {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    margin-right: 20px;
+}
+
+.imgtext_Type01 .text .text_title {
+    font-family: 'GmarketSans';
+    font-size: 50px;
+    font-weight: 500;
+    margin: 70px 0 45px -4px;
+}
+
+.imgtext_Type01 .text .text_desc {
+    font-family: 'NEXON Lv1 Gothic';
+    font-size: 18px;
+    font-weight: 300;
+    color: #888;
+    margin-bottom: 55px;
+}
+
+.imgtext_Type01 .text .text_more {
+    font-family: 'NEXON Lv1 Gothic';
+    font-size: 18px;
+}
+
+.imgtext_Type01 .text .text_more a {
+    color: #af3029;
+}
+
+.imgtext_Type01 .text .text_more svg {
+    vertical-align: 2px;
+}
+
+.imgtext_Type01 .img1 {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    margin-right: 20px;
+    background-image: url(../img/text_Type_bg01.jpg);
+    background-size: 100%;
+}
+
+.imgtext_Type01 .img2 {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    background-image: url(../img/text_Type_bg02.jpg);
+}
+
+@media (-webkit-min-device-pixel-ratio : 1.5) {
+    .imgtext_Type01 .img1 {
+        background-image: url(../img/text_Type_bg01@2x.jpg);
+    }
+
+    .imgtext_Type01 .img2 {
+        background-image: url(../img/text_Type_bg02@2x.jpg);
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio : 2.5) {
+    .imgtext_Type01 .img1 {
+        background-image: url(../img/text_Type_bg01@3x.jpg);
+    }
+
+    .imgtext_Type01 .img2 {
+        background-image: url(../img/text_Type_bg02@3x.jpg);
+    }
+}
+
+/* imgtext_Type02 */
+.imgtext_Type02 {
+    background: #ffffff;
+    overflow: hidden;
+    padding: 150px 0;
+    min-width: 1200px;
+}
+
+.imgtext_Type02 .left {
+    float: left;
+    width: 48.5%;
+    height: 535px;
+    background: url(../img/josh-bryan-7uEiMYcnhM4-unsplash\ 1@1x.jpg) no-repeat center center;
+    background-size: cover;
+    margin-right: 1.5%
+}
+
+.imgtext_Type02 .right {
+    font-family: 'GmarketSans';
+    float: left;
+    width: 48.5%;
+    height: 535px;
+    margin-left: 1.5%;
+}
+
+.imgtext_Type02 .right .sub {
+    font-size: 16px;
+    color: #000;
+    margin-top: 43px;
+    margin-bottom: 10px;
+    display: inline-block;
+    border-bottom: 1px solid #000;
+}
+
+.imgtext_Type02 .right .title {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 38px;
+    white-space: nowrap;
+}
+
+.imgtext_Type02 .right .desc {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 38px;
+
+}
+
+.imgtext_Type02 .right .view {
+    font-size: 24px;
+    font-weight: 300;
+    background: #000;
+    padding: 9px 46px;
+    display: inline-block;
+    color: #fff;
+}
+
+/* 이미지 유형 01(img_type01) */
+.img_Type01 {
+    padding: 150px 0;
+}
+
+.img_Type01 h3 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+.img_Type01 h3 em {
+    font-size: 20px;
+    color: #777;
+    vertical-align: -4px;
+}
+
+.img_Type01 .img-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img_Type01 .img-wrap .left {
+    width: 590px;
+    height: 360px;
+    background: url(../img/nike-NIKE\ Air\ Force\ 1_1920\ 1.jpg);
+    position: relative;
+    overflow: hidden;
+}
+
+.img_Type01 .img-wrap .left .view {
+    font-size: 14px;
+    font-weight: 300;
+    background: #000;
+    padding: 9px 46px;
+    display: inline-block;
+    color: #fff;
+}
+
+.img_Type01 .img-wrap .right {
+    width: 590px;
+    height: 360px;
+    background: url(../img/nike-NIKE\ Air\ Force\ 1_1920\ 2.jpg);
+    position: relative;
+    overflow: hidden;
+}
+
+.img_Type01 .img-wrap .left .left-cont {
+    position: relative;
+    left: 20px;
+    bottom: -320px;
+    transition: bottom 0.40s cubic-bezier(0.07, 0.71, 0.26, 0.99);
+}
+
+.img_Type01 .img-wrap .left:hover .left-cont {
+    bottom: -100px;
+}
+
+.img_Type01 .img-wrap .right .right-cont {
+    position: relative;
+    left: 20px;
+    bottom: -320px;
+    z-index: 1;
+    transition: bottom 0.40s cubic-bezier(0.07, 0.71, 0.26, 0.99);
+}
+
+.img_Type01 .img-wrap .right:hover .right-cont {
+    bottom: -100px;
+}
+
+.img_Type01 .img-wrap .right .bgi {
+    width: 400px;
+    height: 200px;
+    opacity: 0.3;
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    z-index: 1;
+    transition: bottom 0.40s cubic-bezier(0.07, 0.71, 0.26, 0.99);
+}
+
+.img_Type01 .img-wrap .right .bgi:hover {
+    bottom: -100px;
+}
+
+.img_Type01 .img-wrap h3 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.img_Type01 .img-wrap p {
+    color: #fff;
+    font-size: 14px;
+    padding-right: 200px;
+    margin-bottom: 15px;
+}
+
+.img_Type01 .img-wrap a {
+    color: #fff;
+    display: inline-block;
+    background: #000;
+    padding: 5px 20px;
+}
+
+/* 이미지 유형 02(img_type02) */
+.img_Type02 {
+    padding: 150px 0;
+}
+
+.img_Type02 h3 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+.img_Type02 h3 em {
+    font-size: 20px;
+    color: #777;
+    vertical-align: -4px;
+}
+
+.img_Type02 .img-wrap ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img_Type02 .img-wrap li {
+    width: 387px;
+    height: 387px;
+    background-size: 100%;
+    position: relative;
+    perspective: 800px;
+}
+
+.img_Type02 .img-wrap li::after {
+    content: '';
+    display: block;
+    background: #fff;
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    top: 30px;
+    bottom: 30px;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    transform: rotateX(-90deg);
+}
+.img_Type02 .img-wrap li:hover:after {
+    opacity: 0.8;
+    transform: rotateX(0deg);
+}
+.img_Type02 .img-wrap li span {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 36px);
+    color: #000;
+    z-index: 100;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+.img_Type02 .img-wrap li span em {
+    display: block;
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.3s;
+}
+.img_Type02 .img-wrap li span a {
+    display: block;
+    background: #000;
+    border-radius: 40px;
+    margin-top: 5px;
+    padding: 7px 24px 5px 24px;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.img_Type02 .img-wrap li:hover span {
+    top: 50%;   
+}
+.img_Type02 .img-wrap li:hover span em {
+    color: #000;
+}
+.img_Type02 .img-wrap li:hover span a {
+    opacity: 1;
+}
+.img_Type02 .img-wrap li:nth-child(1) {
+    background-image: url(../img/shoes-g4c1d1ba20_1920.jpg);
+}
+
+.img_Type02 .img-wrap li:nth-child(2) {
+    background-image: url(../img/feet-g34a9e97da_1920.jpg);
+}
+
+.img_Type02 .img-wrap li:nth-child(3) {
+    background-image: url(../img/shoes-gb6c07a611_1280.jpg);
+}
+
+/* banner_type01 */
+.banner_type01 {
+    padding: 150px 0;
+    background: #f5f5f5;
+    text-align: center;
+    background: url(../img/junior-samson-kWpBUh2bdwE-unsplash\ 1.jpg) center center no-repeat;
+    color: #fff;
+    background-size: cover;
+}
+.banner_type01 h3 {
+    font-family: 'GmarketSans';
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 65px;
+}
+.banner_type01 p {
+    font-family: 'GmarketSans';
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 65px;
+}
+.banner_type01 a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: underline;
+}
+/* footer */
+.footer_type01 {
+    padding: 150px 0;
+    background: #f5f5f5;
+    font-family: 'GmarketSans';
+}
+.footer-manu {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 50px;
+}
+.footer-manu > div {
+    width: 16%;
+}
+.footer-manu > div h3 {
+    font-weight: 500;
+    margin-bottom: 35px;
+    font-size: 20px;
+}
+.footer-manu > div li a{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.8;
+    position: relative;
+    color: #777;
+    transition: all 0.3s;
+}
+.footer-manu > div li a:hover {
+    color: #af3029;
+}
+.footer-manu > div li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+
+}
+.footer-manu > div li a:hover::before {
+    transform: scaleX(1);
+    color: #af3029;
+}
+.footer-rights {
+    text-align: center;
+}
+.footer-sns {
+    margin-top: 10px;
+}
+.footer-sns ul {
+    display: flex;
+    justify-content: center;
+}
+.footer-sns li {}
+.footer-sns li a {
+    width: 40px;
+    height: 40px;
+    margin: 4px 6px;
+    background: #ccc;
+    display: inline-block;
+    background: url(../img/icon.svg);
+}
+.footer-sns li:nth-child(2) a{
+    background-position: -50px 0;
+}
+.footer-sns li:nth-child(3) a{
+    background-position: -100px 0;
+}
+.footer-sns li:nth-child(4) a{
+    background-position: -150px 0;
+}
+
+
+/* 회원 가입 : join-type */
+.join-type {
+   padding: 200px 0;
+}
+.member-form {
+    max-width: 665px;
+    height: 1200px;
+    border: 1px solid #dedede;
+    background: #fff;
+    margin: 0 auto;
+    padding: 50px;
+}
+.member-form02 {
+    max-width: 665px;
+    height: 500px;
+    border: 1px solid #dedede;
+    background: #fff;
+    margin: 0 auto;
+    padding: 50px;
+}
+.member-form h3 {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.member-form .list li {
+    font-size: 14px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 10px;
+}
+.member-form .list li::before {
+    content: ' ';
+    width: 3px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    top: 7px;
+    border-radius: 100%;
+}
+.member-form .tag {
+    font-size: 16px;
+    text-decoration: underline;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+.member-form2 {
+    background: #EAEAEA;
+    padding: 20px 20px 20px 30px;
+}
+.member-form2 li{
+    font-size: 14px;
+    position: relative;
+    padding-left: 10px;
+}
+.member-form2 li::before {
+    content: ' ';
+    width: 3px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    top: 7px;
+    border-radius: 100%;
+}
+form {
+    margin-top: 30px;
+}
+.join-box label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.join-box input {
+    border:  1px solid #dfdfdf;
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+.join-submit {
+    font-size: 16px;
+    background: #EEE;
+    padding: 15px;
+    width: 100%;
+    display: block;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.join-submit:hover {
+    box-shadow: inset 0 0 0 2px #000;
+    background: #fff;
+}
