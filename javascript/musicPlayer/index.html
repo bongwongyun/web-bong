@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins";
+        }
+        :root {
+            --pink : #FF74A4;
+            --violet : #9F6EA3;
+            --white : #fff;
+            --lightshadow : rgba(0, 0, 0, 0.15);
+            --lightblack : #515C6F;
+            --pinkshadow : #FFCBDD;
+            --darkwhite : #CECACA;
+        }
+        body {
+            height: 100vh;
+            background: linear-gradient(var(--pink) 0%, var(--violet) 100%);
+        }
+        .wrap__music {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100%;
+        }
+        .music__inner {
+            width: 380px;
+            padding: 25px 30px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 15px;
+            background: var(--white);
+            box-shadow: 0px 6px 15px var(--lightshadow);
+        }
+        .music__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .music__top i {
+            font-size: 30px;
+            color: var(--lightblack);
+        }
+        .music__top h3 {
+            font-size: 18px;
+            color: var(--lightblack);
+            font-weight: 500;
+        }
+        .music__img {
+            width: 100%;
+            height: 256px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-top: 25px;
+            box-shadow: 0px 6px 12px var(--lightshadow);
+        }
+        .music__img img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            object-fit: cover;
+        }
+        .music__song {
+            text-align: center;
+            margin: 30px;
+        }
+        .music__song p {
+            color: var(--lightblack);
+        }
+        .music__song .name {
+            font-size: 21px;
+        }
+        .music__song .artist {
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 35px;
+            font-weight: 300;
+        }
+        .music__progress {
+            height: 6px;
+            width: 100%;
+            border-radius: 10px;
+            background: #F0F0F0;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+        .music__progress .bar {
+            height: inherit;
+            width: 10%;
+            position: relative;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--pink) 0%, var(--violet) 100%);
+        }
+        .music__progress .timer {
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--lightblack);
+            font-size: 0.9em;
+        }
+        .music__control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .music__control i {
+            font-size: 28px;
+            user-select: none;
+            background: linear-gradient(90deg, var(--pink) 0%, var(--violet) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .music__control i:nth-child(2),
+        .music__control i:nth-child(4) {
+            font-size: 40px;
+        }
+        .music__control .play-pause {
+            width: 54px; height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(var(--white) 0%, var(--darkwhite) 100%);
+            box-shadow: 0 0 0 2px var(--pink);
+            z-index: 1;
+        }
+        .music__control .play-pause::before {
+            content :'';
+            width: 40px; height: 40px;
+            border-radius: inherit;
+            background: linear-gradient(var(--pink) 0%, var(--violet) 100%);
+            position: absolute;
+            z-index: -1;
+        }
+        .music__control .play-pause i {
+            -webkit-text-fill-color: var(--white);
+            opacity: 0.8;
+        }
+        .music__list {
+            position: absolute;
+            background: var(--white);
+            width: 100%;
+            left: 0;
+            z-index: 10;
+            border-radius: 15px;
+            padding: 15px 30px;
+            box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
+            transition: all 0.15s ease-out;
+            bottom: -400px;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .music__list.show {
+            bottom: 0;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .music__list .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--lightblack);
+            margin-bottom: 10px;
+        }
+        .music__list .title .queue {
+            vertical-align: -6px;
+        }
+        .music__list .list {
+            color: var(--lightblack)
+        }
+        .music__list .list > ul {
+            max-height: 260px;
+            margin: 10px 0;
+            overflow: auto;
+        }
+        .music__list .list > ul::-webkit-scrollbar {
+            width: 0;
+        }
+        .music__list .list > ul > li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #E5E5E5;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+        .music__list .list > ul > li > div em {
+            font-style: normal;
+        }
+        .music__list .list > ul > li > div p {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap__music">
+        <div class="music__inner">
+            <div class="music__top">
+                <i class="material-icons">expand_more</i>
+                <h3>Now Playing</h3>
+                <i class="material-icons">more_horiz</i>
+            </div>
+            <!-- /music__top -->
+            <div class="music__img">
+                <img src="" alt="">
+            </div>
+            <!-- /music__img -->
+            <div class="music__song">
+                <p class="name"></p>
+                <p class="artist"></p>
+            </div>
+            <!-- music__song -->
+            <div class="music__progress">
+                <div class="bar">
+                    <audio id="main-audio" src=""></audio>
+                </div>
+                <div class="timer">
+                    <span class="current">0:00</span>
+                    <span class="max">0:00</span>
+                </div>
+            </div>
+            <!-- music__progress -->
+            <div class="music__control">
+                <i id="control-repeat" class="material-icons">repeat</i>
+                <!-- <i class="material-icons">repeat_one</i> -->
+                <i id="control-prev" class="material-icons">skip_previous</i>
+                <div class="play-pause">
+                    <i id="control-play" class="material-icons">play_arrow</i>
+                    <!-- <i class="material-icons">pause</i> -->
+                </div>
+                <i id="control-next" class="material-icons">skip_next</i>
+                <i id="control-list" class="material-icons">queue_music</i>
+            </div>
+            <!-- music__control -->
+            <div class="music__list">
+                <div class="title">
+                    <div>
+                        <i class="material-icons queue">queue_music</i>
+                        <h4>music list</h4>
+                    </div>
+                    <i class="material-icons">close</i>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <div>
+                                <em>제목</em>
+                                <p>가수 이름</p>
+                            </div>
+                            <span>1:23</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- music__list -->
+        </div>
+    </div>
+    <script src="apl/music.js"></script>
+    <script>
+        const musicwrap = document.querySelector(".wrap__music");
+        const musicimg = musicwrap.querySelector(".music__img img");
+        const musicname = musicwrap.querySelector(".music__song .name");
+        const musicartist = musicwrap.querySelector(".music__song .artist");
+        const musicaudio = musicwrap.querySelector("#main-audio");
+        const musicplay = musicwrap.querySelector("#control-play");
+        const musicprevbtn = musicwrap.querySelector("#control-prev");
+        const musicnextbtn = musicwrap.querySelector("#control-next");
+
+        var musicIndex = 10;
+
+        //음악 재생
+        function loadmusic(number) {
+            musicimg.src = `imgs/${Allmusic[number -1].img}.jpg`;
+            musicimg.alt = Allmusic[number -1].name;
+            musicname.innerText = Allmusic[number -1].name;
+            musicartist.innerText = Allmusic[number -1].artist;
+            musicaudio.src = `music/${Allmusic[number -1].audio}.mp3`;
+        }
+
+        window.addEventListener("load", () => {
+            loadmusic(musicIndex);
+        })
+        //시작
+        function playmusic() {
+            musicwrap.classList.add("paused");
+            musicplay.innerText = "pause";
+            musicaudio.play();
+        };
+        //정지
+        function pausemusic() {
+            musicwrap.classList.remove("paused");
+            musicplay.innerText = "play_arrow";
+            musicaudio.pause();
+        };
+        //이전 곡
+        function prevmusic() {
+            musicIndex--;
+            musicIndex < 1 ? musicIndex = Allmusic.length : musicIndex = musicIndex;
+            loadmusic(musicIndex);
+            playmusic();
+        };
+        //다음 곡
+        function nextmusic() {
+            musicIndex++;
+            musicIndex > Allmusic.length ? musicIndex = 1 : musicIndex = musicIndex;
+            loadmusic(musicIndex);
+            playmusic();
+        };
+        musicplay.addEventListener("click", () => {
+            const ismusicpaused = musicwrap.classList.contains("paused");
+            ismusicpaused ? pausemusic() : playmusic();
+        });
+        musicprevbtn.addEventListener("click", prevmusic);
+        musicnextbtn.addEventListener("click", nextmusic);
+    </script>
+</body>
