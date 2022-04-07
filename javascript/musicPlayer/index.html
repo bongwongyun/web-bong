@@ -122,6 +122,35 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .music__control i:nth-child(2),
+        .music__control i:nth-child(4) {
+            font-size: 40px;
+        }
+        .music__control .play-pause {
+            width: 54px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(var(--white) 0%,  var(--darkwhite) 100%);
+            box-sizing: 0 0 5px var(--pink);
+        }
+        .music__control .play-pause::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            border-radius: inherit;
+            position: absolute;
+            background:linear-gradient( var(--pink) 0%,  var(--violet) 100%);
+            z-index: -1;
+        }
+        .music__control .play-pause i {
+            color: var(--white);
+            background: transparent;
+            -webkit-text-fill-color: var(--white);
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
