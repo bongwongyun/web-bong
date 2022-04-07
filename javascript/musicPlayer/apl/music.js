@@ -2,19 +2,19 @@ var allmusic = [
     {
         name:"Better Now",
         artist: "Post Malone",
-        img: "포스트 말론 02.jpg",
+        img: "포스트 말론 02",
         src: "Post Malone Better Now"
     },
     {
         name:"Circles",
         artist: "Post Malone",
-        img: "노래이미지-2",
-        src: "노래-2"
+        img: "포스트 말론 03",
+        src: "Post Malone Circles"
     },
     {
         name:"rockstar",
         artist: "Post Malone",
-        img: "노래이미지-3",
+        img: "포스트 말론 04",
         src: "노래-3"
     },
     {
@@ -26,7 +26,7 @@ var allmusic = [
     {
         name:"I Feel It Coming",
         artist: "The Weeknd&Daft Punk",
-        img: "노래이미지-5",
+        img: "포스트 말론 01",
         src: "노래-5"
     },
     {
@@ -44,19 +44,19 @@ var allmusic = [
     {
         name:"Brave Shine",
         artist: "Aimer",
-        img: "노래이미지-8",
+        img: "aimer01",
         src: "노래-8"
     },
     {
         name:"SPARK AGAIN",
         artist: "Aimer",
-        img: "노래이미지-9",
+        img: "aimer02",
         src: "노래-9"
     },
     {
         name:"잔향산가",
         artist: "Aimer",
         img: "aimer03",
-        src: "귀멸의 칼날 2기 환락의 거리편 OP잔향산가 Aimer"
+        src: "귀멸의 칼날 2기 환락의 거리편 OP 잔향산가"
     }
 ]
