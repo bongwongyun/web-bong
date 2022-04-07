@@ -135,6 +135,7 @@
             border-radius: 50%;
             background: linear-gradient(var(--white) 0%,  var(--darkwhite) 100%);
             box-sizing: 0 0 0 5px var(--pink);
+            z-index: 1;
         }
         .music__control .play-pause::before {
             content: '';
@@ -216,7 +217,7 @@
             </div>
             <!-- /music__top -->
             <div class="music__img">
-                <img src="imgs/포스트 말론 01.jpg" alt="이미지1">
+                <img src="" alt="">
             </div>
             <!-- /music__img -->
             <div class="music__song">
@@ -263,41 +264,6 @@
                             </div>
                             <span>1:23</span>
                         </li>
-                        <li>
-                            <div>
-                                <em>제목</em>
-                                <p>가수 이름</p>
-                            </div>
-                            <span>1:23</span>
-                        </li>
-                        <li>
-                            <div>
-                                <em>제목</em>
-                                <p>가수 이름</p>
-                            </div>
-                            <span>1:23</span>
-                        </li>
-                        <li>
-                            <div>
-                                <em>제목</em>
-                                <p>가수 이름</p>
-                            </div>
-                            <span>1:23</span>
-                        </li>
-                        <li>
-                            <div>
-                                <em>제목</em>
-                                <p>가수 이름</p>
-                            </div>
-                            <span>1:23</span>
-                        </li>
-                        <li>
-                            <div>
-                                <em>제목</em>
-                                <p>가수 이름</p>
-                            </div>
-                            <span>1:23</span>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -313,7 +279,7 @@
         const musicaudio = musicwrap.querySelector("#main-audio");
         const musicplay = musicwrap.querySelector("#control-play");
         const musicprevbtn = musicwrap.querySelector("#control-prev");
-        const musicnextbtn = musicwrap.querySelector("#control-play");
+        const musicnextbtn = musicwrap.querySelector("#control-next");
 
         var musicIndex = 10;
 
@@ -329,12 +295,13 @@
         window.addEventListener("load", () => {
             loadmusic(musicIndex);
         })
-
+        //시작
         function playmusic() {
             musicwrap.classList.add("paused");
             musicplay.innerText = "pause";
             musicaudio.play();
         }
+        //정지
         function pausemusic() {
             musicwrap.classList.remove("paused");
             musicplay.innerText = "play_arrow";
@@ -343,19 +310,20 @@
         //이전 곡
         function prevmusic() {
             musicIndex--;
+            musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex;
             loadmusic(musicIndex);
             playmusic();
         }
         //다음 곡
         function nextmusic() {
             musicIndex++;
+            musicIndex > allMusic.length ? musicIndex = 1 : musicIndex = musicIndex;
             loadmusic(musicIndex);
             playmusic();
         }
         musicplay.addEventListener("click", () => {
             const ismusicpaused = musicwrap.classList.contains("paused");
             ismusicpaused ? pausemusic() : playmusic();
-            playmusic() 
         })
         musicprevbtn.addEventListener("click", prevmusic);
         musicnextbtn.addEventListener("click", nextmusic);

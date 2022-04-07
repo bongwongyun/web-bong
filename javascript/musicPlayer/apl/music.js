@@ -2,8 +2,8 @@ var allmusic = [
     {
         name:"Better Now",
         artist: "Post Malone",
-        img: "포스트 말론 04.jpg",
-        src: "Post Malone Swae Lee  Sunflower SpiderMan Into the SpiderVerse.mp3"
+        img: "포스트 말론 02.jpg",
+        src: "../javascript/musicPlayer/music/Post Malone Better Now"
     },
     {
         name:"Circles",
@@ -56,7 +56,7 @@ var allmusic = [
     {
         name:"잔향산가",
         artist: "Aimer",
-        img: "aimer03.jpg",
+        img: "aimer03",
         src: "귀멸의 칼날 2기 환락의 거리편 OP잔향산가 Aimer.mp3"
     }
 ]
