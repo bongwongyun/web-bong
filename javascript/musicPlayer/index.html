@@ -134,7 +134,7 @@
             justify-content: center;
             border-radius: 50%;
             background: linear-gradient(var(--white) 0%,  var(--darkwhite) 100%);
-            box-sizing: 0 0 5px var(--pink);
+            box-sizing: 0 0 0 5px var(--pink);
         }
         .music__control .play-pause::before {
             content: '';
@@ -142,13 +142,66 @@
             height: 40px;
             border-radius: inherit;
             position: absolute;
-            background:linear-gradient( var(--pink) 0%,  var(--violet) 100%);
+            background:linear-gradient(var(--pink) 0%,  var(--violet) 100%);
             z-index: -1;
         }
         .music__control .play-pause i {
-            color: var(--white);
-            background: transparent;
             -webkit-text-fill-color: var(--white);
+            opacity: 0.8;
+        }
+        .music__list {
+            position: absolute;
+            background: var(--white);
+            width: 100%;
+            left: 0;
+            bottom: -400px;
+            z-index: 10;
+            padding: 15px 30px;
+            border-radius: 15px;
+            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.15s ease-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .music__list.show {
+            bottom: 0;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .music__list .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--lightblack);
+            margin-bottom: 10px;
+        }
+        .music__list .title .queue {
+            vertical-align: -6px;
+        }
+        .music__list .list {
+            color: var(--lightblack);
+        }
+        .music__list .list > ul {
+            min-height: 260px;
+            margin: 10px 0;
+            overflow: auto;
+        }
+        .music__list .list > ul::-webkit-scrollbar {
+            width: 0;
+        }
+        .music__list .list > ul > li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+        .music__list .list > ul > li > div {}
+        .music__list .list > ul > li > div em {
+            font-style: normal;
+        }
+        .music__list .list > ul > li > div p {
             opacity: 0.8;
         }
     </style>
@@ -192,7 +245,79 @@
                 <i id="control-list" class="material-icons">queue_music</i>
             </div>
             <!-- music__control -->
-            <div class="music__list"></div>
+            <div class="music__list">
+                <div class="title">
+                    <div>
+                        <i class="material-icons queue">queue_music</i>
+                        <h4>music list</h4>
+                    </div>
+                    <i class="material-icons">close</i>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <div>
+                                <em>제목</em>
+                                <p>가수 이름</p>
+                            </div>
+                            <span>1:23</span>
+                        </li>
+                        <li>
+                            <div>
+                                <em>제목</em>
+                                <p>가수 이름</p>
+                            </div>
+                            <span>1:23</span>
+                        </li>
+                        <li>
+                            <div>
+                                <em>제목</em>
+                                <p>가수 이름</p>
+                            </div>
+                            <span>1:23</span>
+                        </li>
+                        <li>
+                            <div>
+                                <em>제목</em>
+                                <p>가수 이름</p>
+                            </div>
+                            <span>1:23</span>
+                        </li>
+                        <li>
+                            <div>
+                                <em>제목</em>
+                                <p>가수 이름</p>
+                            </div>
+                            <span>1:23</span>
+                        </li>
+                        <li>
+                            <div>
+                                <em>제목</em>
+                                <p>가수 이름</p>
+                            </div>
+                            <span>1:23</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- music__list -->
         </div>
     </div>
+    <script src="../javascript/musicPlayer/apl/music.js"></script>
+    <script>
+        const musicwrap = document.querySelector(".wrap__music");
+        const musicimg = musicwrap.querySelector(".music__img img");
+        const musicname = musicwrap.querySelector(".music__song .name");
+        const musicartist = musicwrap.querySelector(".music__song .artist");
+
+        var musicIndex = 10;
+        //음악 재생
+        function loadmusic() {
+            
+        }
+
+        window.addEventListener("load", () => {
+            loadmusic(musicIndex);
+        })
+    </script>
 </body>
