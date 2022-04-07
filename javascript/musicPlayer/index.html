@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins";
+        }
+        :root {
+            --pink : #FF74A4;
+            --violet : #9F6EA3;
+            --white : #fff;
+            --lightshadow : rgba(0, 0, 0, 0.15);
+            --lightblack : #515C6F;
+            --pinkshadow : #FFCBDD;
+            --darkwhite : #CECACA;
+        }
+        body {
+            height: 100vh;
+            background: linear-gradient(var(--pink) 0%, var(--violet) 100%);
+        }
+        .wrap__music {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100%;
+        }
+        .music__inner {
+            width: 380px;
+            padding: 25px 30px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 15px;
+            background: var(--white);
+            box-shadow: 0px 6px 15px var(--lightshadow);
+        }
+        .music__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .music__top i {
+            font-size: 30px;
+            color: var(--lightblack);
+        }
+        .music__top h3 {
+            font-size: 18px;
+            color: var(--lightblack);
+            font-weight: 500;
+        }
+        .music__img {
+            width: 100%;
+            height: 256px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-top: 25px;
+            box-shadow: 0px 6px 12px var(--lightshadow);
+        }
+        .music__img img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            object-fit: cover;
+        }
+        .music__song {
+            text-align: center;
+            margin: 30px;
+        }
+        .music__song p {
+            columns: var(--lightblack);
+        }
+        .music__song .name {
+            font-size: 21px;
+        }
+        .music__song .artist {
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 35px;
+            font-weight: 300;
+        }
+        .music__progress {
+            height: 6px;
+            width: 100%;
+            border-radius: 10px;
+            background: #f0f0f0;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+        .music__progress .bar {
+            height: inherit;
+            width: 5%;
+            position: relative;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--pink) 0%,  var(--violet) 100%);
+        }
+        .music__progress .timer {
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--lightblack);
+            font-size: 1em;
+        }
+        .music__control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .music__control i {
+            font-size: 28px;
+            user-select: none;
+            background: linear-gradient(90deg, var(--pink) 0%,  var(--violet) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap__music">
+        <div class="music__inner">
+            <div class="music__top">
+                <i class="material-icons">expand_more</i>
+                <h3>Now Playing</h3>
+                <i class="material-icons">more_horiz</i>
+            </div>
+            <!-- /music__top -->
+            <div class="music__img">
+                <img src="imgs/포스트 말론 01.jpg.uezzlpg" alt="이미지1">
+            </div>
+            <!-- /music__img -->
+            <div class="music__song">
+                <p class="name">we</p>
+                <p class="artist">web</p>
+            </div>
+            <div class="music__progress">
+                <div class="bar">
+                    <audio id="main-audio" src=""></audio>
+                </div>
+                <div class="timer">
+                    <span class="current">0:00</span>
+                    <span class="max">0:00</span>
+                </div>
+            </div>
+            <!-- music__progress -->
+            <div class="music__control">
+                <i id="control-repeat" class="material-icons">repeat</i>
+                <!-- <i class="material-icons">repeat_one</i> -->
+                <i id="control-prev" class="material-icons">skip_previous</i>
+                <div class="play-pause">
+                    <i id="control-play" class="material-icons">play_arrow</i>
+                    <!-- <i class="material-icons">pause</i> -->
+                </div>
+                <i id="control-next" class="material-icons">skip_next</i>
+                <i id="control-list" class="material-icons">queue_music</i>
+            </div>
+            <!-- music__control -->
+            <div class="music__list"></div>
+        </div>
+    </div>
+</body>

@@ -22,7 +22,7 @@
         .slider__img {                  /* 화면 보이는 구간 */
             width: 800px;
             height: 480px;
-            /* overflow: hidden; */
+            overflow: hidden;
             position: relative;
         }
         .slider__inner {                /* 이미지 움직이는 영역 */
@@ -71,7 +71,7 @@
             left: 0;
         }
         .slider__btn a.next {
-             right: 0;
+            right: 0;
         }
         .slider__btn a:hover {
             background: rgb(241, 96, 86);
@@ -354,6 +354,7 @@
                 //네번째 이미지 : left:-3200px;
                 //오번째 이미지 : left:-4000px; 
             }
+
             //닷 메뉴 셋팅
             function dotInit() {
                 for (let i = 0; i < sliderLength; i++) {
@@ -365,6 +366,21 @@
                 sliderDot.firstElementChild.classList.add("active");
             }
             dotInit();
+
+            //닷 버튼 활성화
+            function dotActive() {
+                var dotAll = document.querySelectorAll(".slider__dot .dot");
+                dotAll.forEach(dot => { //전체 닷 메뉴 활성화
+                    dot.classList.remove("active");
+                })
+                if (currentIndex==sliderLength) { //마지막 이미지 왔을때
+                    dotAll[0].classList.add("active");
+                } else if (currentIndex == -1) {
+                    dotAll[sliderLength - 1].classList.add("active");
+                } else {
+                    dotAll[currentIndex].classList.add("active"); //현재 보고있는 닷 활성화
+                }
+            }
 
             function autoPlay() {
                 sliderTimer = setInterval(()=> {
@@ -390,7 +406,7 @@
 
                 if (currentIndex == -1) {
                     sliderInner.style.left = -(sliderLength*sliderWidth) + "px";
-                    currentIndex = sliderLength -1;
+                    currentIndex = sliderLength - 1 ;
                 }
                 if (currentIndex == sliderLength) {
                     sliderInner.style.left = -(1*sliderWidth) + "px";
@@ -401,12 +417,12 @@
                 stopPlay(); 
             })
             sliderInner.addEventListener("mouseleave", () => {
-            if(document.querySelector(".play").classList.contains("show")){
-                stopPlay();
-            } else {
-                autoPlay();
-            }
-        })
+                if(document.querySelector(".play").classList.contains("show")){
+                    stopPlay();
+                } else {
+                    autoPlay();
+                }
+            })
             document.querySelector(".Play").addEventListener("click", () => {
                 document.querySelector(".Play").classList.remove("show")
                 document.querySelector(".Stop").classList.add("show")
@@ -420,7 +436,5 @@
             })
         </script>                                              
 
-
-        
 </body>
 </html>
