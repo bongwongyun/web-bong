@@ -54,9 +54,9 @@ var allmusic = [
         src: "노래-9"
     },
     {
-        name:"잔향산가",
-        artist: "Aimer",
-        img: "aimer03",
-        src: "귀멸의 칼날 2기 환락의 거리편 OP 잔향산가"
+        name:"Better Now",
+        artist: "Post Malone",
+        img: "포스트 말론 02",
+        src: "Post Malone-Better Now"
     }
 ]
