@@ -327,17 +327,17 @@
             const sliderDot = document.querySelector(".slider__dot");  
             console.log(slider)
 
-            var currentIndex = 0;
-            var sliderWidth = sliderimg.offsetWidth;       //이미지 가로값
-            var sliderLength = slider.length;              //이미지 갯수
-            var sliderFirst = slider[0];                  //첫번쨰 이미지
-            var sliderLast = slider[sliderLength - 1];    //마지막 이미지
-            var cloneFirst = sliderFirst.cloneNode(true);  //첫번째 이미지 복사
-            var cloneLast = sliderLast.cloneNode(true);    //마지막 이미지 복사
-            var posInitial ="";
-            var dotIndex = "";
-            var sliderTimer = "";
-            var Interval = 2400;
+            let currentIndex = 0;
+            let sliderWidth = sliderimg.offsetWidth;       //이미지 가로값
+            let sliderLength = slider.length;              //이미지 갯수
+            let sliderFirst = slider[0];                  //첫번쨰 이미지
+            let sliderLast = slider[sliderLength - 1];    //마지막 이미지
+            let cloneFirst = sliderFirst.cloneNode(true);  //첫번째 이미지 복사
+            let cloneLast = sliderLast.cloneNode(true);    //마지막 이미지 복사
+            let posInitial ="";
+            let dotIndex = "";
+            let sliderTimer = "";
+            let Interval = 2400;
             
 
             //이미지 복사  appendTo/prependTo : append/prepend
@@ -378,11 +378,11 @@
             }
 
             sliderBtnPrev.addEventListener("click", () => {
-                var prevIndex = currentIndex - 1;
+                let prevIndex = currentIndex - 1;
                 gotoslider(prevIndex);
             })
             sliderBtnNext.addEventListener("click", () => {
-                var nextIndex = currentIndex + 1;
+                let nextIndex = currentIndex + 1;
                 gotoslider(nextIndex);
             })
             sliderInner.addEventListener("transitionend", () => {

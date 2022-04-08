@@ -3,60 +3,60 @@ var Allmusic = [
         name:"Better Now",
         artist: "Post Malone",
         img: "포스트 말론 02",
-        src: "Post Malone Better Now"
+        audio: "PostMalone-Better-Now"
     },
     {
         name:"Circles",
         artist: "Post Malone",
         img: "포스트 말론 03",
-        src: "Post Malone Circles"
+        audio: "PostMalone-Circles"
     },
     {
         name:"rockstar",
         artist: "Post Malone",
         img: "포스트 말론 04",
-        src: "노래-3"
+        audio: "PostMalone-rockstar"
     },
     {
-        name:"Sunflower SpiderMan Into the SpiderVerse",
-        artist: "Post Malone Swae Lee",
-        img: "노래이미지-4",
-        src: "노래-4"
+        name:"Sunflower",
+        artist: "Post Malone&Swae Lee",
+        img: "포스트 말론 01",
+        audio: "PostMalone-Sunflower"
     },
     {
         name:"I Feel It Coming",
         artist: "The Weeknd&Daft Punk",
-        img: "포스트 말론 01",
-        src: "노래-5"
+        img: "위캔드 02",
+        audio: "IFeelItComing"
     },
     {
         name:"Out of Time",
         artist: "The Weeknd",
-        img: "노래이미지-6",
-        src: "노래-6"
+        img: "위캔드 01",
+        audio: "OutofTime"
     },
     {
         name:"Save Your Tears",
         artist: "The Weeknd",
-        img: "노래이미지-7",
-        src: "노래-7"
+        img: "위캔드 03",
+        audio: "SaveYourTears"
     },
     {
         name:"Brave Shine",
         artist: "Aimer",
         img: "aimer01",
-        src: "노래-8"
+        audio: "Aimer-BraveShine"
     },
     {
         name:"SPARK AGAIN",
         artist: "Aimer",
         img: "aimer02",
-        src: "노래-9"
+        audio: "불꽃소방대2기OP-SPARKAGAIN"
     },
     {
-        name:"Better Now",
-        artist: "Post Malone",
-        img: "포스트 말론 02",
-        src: "Post Malone-Better Now"
+        name:"잔향산가",
+        artist: "Aimer",
+        img: "Aimer03",
+        audio: "귀멸의칼날2기환락의거리편OP-잔향산가"
     }
 ]
