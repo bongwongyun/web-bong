@@ -23,4 +23,3 @@ slider effct
 https://bongwongyun.github.io/web-bong/javascript/effect/sliderEffect01.html
 
 music Player
-https://bongwongyun.github.io/web-bong/javascript/musicPlayer/index.html
