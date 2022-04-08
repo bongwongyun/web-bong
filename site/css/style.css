@@ -284,7 +284,7 @@
 .swiper-slide .desc {
     margin: 0 auto;
     max-width: 1200px;
-    padding: 100px 0;
+    padding: 100px 0; 
     color: #fff;
 }
 .swiper-slide .desc span {
