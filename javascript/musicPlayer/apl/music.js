@@ -56,7 +56,7 @@ var Allmusic = [
     {
         name:"잔향산가",
         artist: "Aimer",
-        img: "Aimer03",
+        img: "aimer03",
         audio: "귀멸의칼날2기환락의거리편OP-잔향산가"
     }
 ]
