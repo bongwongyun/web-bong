@@ -197,7 +197,7 @@
             //이미지 움직이기
             //transform: rotateX(0deg) rotateY(0deg)
             const imgMove = document.querySelector(".mouse__img")
-            imgMove.style.transform = "perspective:800px rotateX("+ centerpageY + "deg) rotateY("+ -centerpageX + "deg)"
+            imgMove.style.transform = "perspective(800px) rotateX("+ centerpageY + "deg) rotateY("+ -centerpageX + "deg)"
             
             //최소값 -50 최대값 50 설정
             let maxPageX = Math.max(-300, Math.min(300, centerpageX))
@@ -209,11 +209,11 @@
 
             //부드럽게 설정
             let softpageX = 0, softpageY = 0
-            softpageX += (anglepageX - softpageX) * 0.6
-            softpageY += (anglepageY - softpageY) * 0.6
+            softpageX += (anglepageX - softpageX) * 0.4
+            softpageY += (anglepageY - softpageY) * 0.4
 
             //커서
-            gsap.to(".cursor", {duration: .3, x: mousepageX - circle.width/2, y: mousepageY - circle.height/2}) 
+            gsap.to(".cursor", {duration: .3, left: mousepageX - circlewidth/2, top: mousepageY - circleheight/2}) 
 
             //출력
             document.querySelector(".mousepageX").textContent = mousepageX

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트</title>
+
+    <link rel="stylesheet" href="css/NexonLv1Gothic.css">
+    <link rel="stylesheet" href="css/min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .slider {
+            background: url("../effect/img/me08-bg01.jpg");
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            line-height: 100vh;
+            text-align: center;
+            color: white;
+            font-size: 10vh;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .slider::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(45, 15, 51, .3);
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            font-family: "Roboto", sans-serif;
+        }
+
+        #container #bk {
+            width: 2100px;
+            height: 1200px;
+            position: absolute;
+            left: calc((100vw - 2480px)/2);
+            top: calc((100vh - 1230px)/2);
+            transition: 0.3s ease-out;
+        }
+
+        #container #bk .item {
+            width: 300px;
+            height: 400px;
+            float: left;
+            transition: 0.5s ease-out;
+            position: relative;
+            perspective: 600px;
+        }
+
+        #container #bk .item__front {
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            z-index: 900;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+            backface-visibility: hidden;
+            transition: all 0.8s ease-in-out;
+        }
+
+        #container #bk .item__front img {
+            max-width: 100%;
+        }
+
+        #container #bk .item__back {
+            width: 300px;
+            height: 400px;
+            padding: 40px;
+            z-index: 1000;
+            box-sizing: border-box;
+            position: absolute;
+            left: 0px;
+            transition: 0.5s ease-out;
+            transform: rotateY(-180deg);
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            transition: all 0.8s ease-in-out;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        #container #bk .item__back:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #container #bk .item__back h2 {
+            margin: 0;
+            margin-bottom: 15px;
+            color: #fff;
+            position: relative;
+            z-index: 5;
+            box-shadow: 240px 42px 58px -8px rgba(0, 0, 0, 0);
+        }
+
+        #container #bk .item__back p {
+            position: relative;
+            z-index: 5;
+            box-shadow: 240px 42px 58px -8px rgba(0, 0, 0, 0);
+        }
+
+        #container #bk .item__back img {
+            max-width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        #container #bk .flip .item__front {
+            z-index: 900;
+            transform: rotateY(180deg);
+        }
+
+        #container #bk .flip .item__back {
+            background: #333;
+            z-index: 1000;
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+
+        body {
+            position: relative;
+        }
+
+        section {
+            height: 100vh;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: background 250ms cubic-bezier(0.32, -0.24, 0.24, 0.98);
+            z-index: 2;
+        }
+
+        section:hover~.default {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        section:hover::after {
+            transition-timing-function: cubic-bezier(1, 1.6, 0.3, 1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        section+section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        section:nth-of-type(1) div {
+            background-color: #bf4040;
+        }
+
+        section:nth-of-type(2) div {
+            background-color: #80bf40;
+        }
+
+        section:nth-of-type(3) div {
+            background-color: #40bfbf;
+        }
+
+        section:nth-of-type(4) div {
+            background-color: #8040bf;
+        }
+
+        section div {
+            position: fixed;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            transition: opacity 250ms linear;
+            background-blend-mode: multiply;
+        }
+
+        section article {
+            width: 95%;
+            max-width: 600px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            padding: 1rem 2rem;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0px 1px 0px 2px rgba(255, 255, 255, 0.05);
+            border-radius: 2px;
+            transform: translateX(-50%) translateY(0%);
+            transition: transform 500ms cubic-bezier(0.32, -0.24, 0.24, 0.98);
+        }
+
+        section h1 {
+            margin-top: 1rem;
+        }
+
+        section:hover>div {
+            opacity: 1;
+        }
+
+        section:hover>div article {
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        section>div,
+        div.bg {
+            background-image: url(../effect/img/me08-bg02.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        div.default {
+            position: fixed;
+            width: 100%;
+            top: 50%;
+            transition: opacity 250ms;
+        }
+
+        div.bg {
+            position: fixed;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            background-blend-mode: multiply;
+            background-color: #2A2B26;
+            z-index: -1;
+        }
+
+        body {
+            background-color: #2A2B26;
+            color: #D7D7CE;
+        }
+
+        h1 {
+            font-weight: 100;
+            width: 100%;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.6;
+            font-weight: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <section id=s1>
+            <div>
+                <article>
+                    <h1>Scroll Jacking with CSS</h1>
+                    <p>Right now you are reading content inside of a fixed-position child of a relatively-positioned
+                        transparent area.</p>
+                    <p>You are hovering over the transparent area (the white tint background) which is displaying this
+                        content. This fixed child content has a colored background image with a blend mode which appears
+                        to modify the original background image you saw before hover.</p>
+                    <p>If you keep scrolling down you will see a line. If you hover beneath that line you will be
+                        hovering over the next section and it will make this content disappear.</p>
+                </article>
+            </div>
+        </section>
+        <section id=s2>
+            <div>
+                <article>
+                    <h1>Changing Hover Areas</h1>
+                    <p>You are now reading the second section's fixed content with a green background. This is because
+                        you are hovering over the second section (the white tint background).</p>
+                    <p>If you didn't move your mouse and scrolled to get here, you may have noticed that the hover event
+                        doesn't fire until scrolling has completely stopped. This is default browser behavior.</p>
+                    <p>This means you can quickly scroll to the bottom of the page and it will skip the sections along
+                        the way.</p>
+                </article>
+            </div>
+        </section>
+        <section id=s3>
+            <div>
+                <article>
+                    <h1>Why This is Awesome</h1>
+                    <p>As you can see, the result is pretty amazing for not using any Javascript. This goes to show you
+                        that CSS can do some pretty crazy things.</p>
+                </article>
+            </div>
+        </section>
+        <section id=s4>
+            <div>
+                <article>
+                    <h1>Why This Sucks</h1>
+                    <p>First off, you cant select this text because the "hover" section areas are sitting on top of it.
+                        This is because we need to hover event to make this work.</p>
+                    <p>Secondly, this pen is useless if you aren't hovering over it, so you cant use this on a tablet or
+                        phone. Relying on hover is a terrible idea.</p>
+                </article>
+            </div>
+        </section>
+    </div>
+
+        <div class=default>
+            <h1>Hover if you know what's good for ya</h1>
+        </div>
+
+        <div class=bg></div>
+
+
+    <div class="info">
+        <div class="title">
+            <h1><a href="mouseEffect.html">JavaScript Mouse Effect 08</a></h1>
+            <p>마우스 이펙트 - 자유</p>
+        </div>
+
+        <div class="number">
+            <ul>
+                <li><a href="mouseEffect01.html">1</a></li>
+                <li><a href="mouseEffect02.html">2</a></li>
+                <li><a href="mouseEffect03.html">3</a></li>
+                <li><a href="mouseEffect04.html">4</a></li>
+                <li><a href="mouseEffect05.html">5</a></li>
+                <li><a href="mouseEffect06.html">6</a></li>
+                <li><a href="mouseEffect07.html">7</a></li>
+                <li class="active"><a href="mouseEffect08.html">8</a></li>
+            </ul>
+        </div>
+        <div class="source">
+            <button class="source-btn">소스보기</button>
+            <div id="modal">
+                <div class="modal-wrap">
+                    <div class="modal-cont">
+                        <div class="code-view">
+                            <div class="view-header" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="view-title">
+                                <ul>
+                                    <li class="active"><a href="#">HTML</a></li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">JavaScript</a></li>
+                                </ul>
+                            </div>
+                            <div class="view-cont">
+                                <div>
+                                    <pre><code class="language-html">
+</code></pre>
+                                </div>
+                                <!-- //cont1 -->
+                                <div>
+                                    <pre><code class="language-javascript">
+</code></pre>
+                                </div>
+                                <!-- //cont2 -->
+                                <div>
+                                    <pre><code class="language-javascript">
+</code></pre>
+                                </div>
+                                <!-- //cont3 -->
+                            </div>
+                        </div>
+                    </div>
+                    <button class="modal-close">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //info -->
+
+    <!-- Scripts    -->
+    <script src="js/highlight.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/sirxemic/jquery.ripples/master/dist/jquery.ripples-min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            "use strict";
+            $('.slider').ripples({
+                resolution: 512,
+                dropRadius: 10, //px
+                perturbance: 0.04,
+            });
+        });
+
+    </script>
+</body>
+
+</html>
