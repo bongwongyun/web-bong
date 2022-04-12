@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins";
+        }
+        body {
+            background: #17A2B8;
+        }
+        .typing__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .typing__inner {
+            width: 60vw;
+            min-width: 900px;
+            min-height: 40vh;
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .input__field {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            padding: 10px;
+        }
+        .typing__text {
+            border: 1px solid #C3C3C3;
+            border-radius: 10px;
+            padding: 30px;
+            min-height: 300px;
+            font-size: 22px;
+            font-weight: 300;
+            text-align: justify;
+            word-break: break-all; 
+        }
+        .typing__text p span {
+            position: relative;
+        }
+        .typing__text p span.correct{
+            color: aqua;
+        }
+        .typing__text p span.incorrect{
+            color: red;
+            background: rgb(224, 165, 165);
+            outline: 1px solid #fff;
+            border-radius: 4px;
+        }
+        .typing__text p span.active {
+            color: #17A2B8;
+            position: relative;
+        }
+        .typing__text p span.active::before {
+            content: '';
+            position: absolute;
+            left: 0;bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #17A2B8;
+            animation: blink 1s ease-in-out infinite;
+            opacity: 0;
+        }
+        @keyframes blink {
+            50%{opacity: 1;}
+        }
+        .typing__info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .typing__info button {
+            width: 210px;
+            background: #17A2B8;
+            color:#fff;
+            font-family: "Poppins";
+            border: 0;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 22px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .typing__info ul {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+        .typing__info ul li {
+            width: 20%;
+            list-style: none;
+            display: flex;
+            font-size: 20px;
+            border-left: 1px solid #C3C3C3;
+            padding-top: 10px;
+            padding-left: 20px;
+            padding-right: 30px;
+        }
+        .typing__info ul li:first-child {
+            padding-left: 0;
+            border-left: 0;
+        }
+        .typing__info li p {
+            white-space: nowrap;
+        }
+        .typing__info li span {
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="typing__wrap">
+        <input type="text" class="input__field">
+        <div class="typing__inner">
+            <div class="typing__text">
+                <p></p>
+            </div>
+            <div class="typing__info">
+                <ul>
+                    <li class="time">
+                        <p>Time left : </p>
+                        <span><b>60</b>s</span>
+                    </li>
+                    <li class="mistakes">
+                        <p>mistakes : </p>
+                        <span>0</span>
+                    </li>
+                    <li class="wpm">
+                        <p>wpm : </p>
+                        <span>0</span>
+                    </li>
+                    <li class="cpm">
+                        <p>cpm : </p>
+                        <span>0</span>
+                    </li>
+                </ul>
+                <button class="Again">Try Again</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const typing = [
+            "Dangerously ill with a rare blood disorder, and determined to save others suffering his same fate, Dr. Michael Morbius (Jared Leto) attempts a desperate gamble. While at first it seems to be a radical success, a darkness inside him is unleashed. Will good override evil or will Morbius succumb to his mysterious new urges?",
+            "Decorated veteran Will Sharp (Yahya Abdul-Mateen II), desperate for money to cover his wife’s medical bills, asks for help from the one person he knows he shouldn’t—his adoptive brother Danny (Jake Gyllenhaal). A charismatic career criminal, Danny instead offers him a score: the biggest bank heist in Los Angeles",
+            "Dr. Karn (John Malkovich), an odd, eccentric specialist, guides unknowing patients through the reincarnation transition. When Harrison (Thomas Mann) experiences mysterious recurring dreams, he turns to Dr. Karn for help and reveals his encounter with a woman (Rosa Salazar) he loved in a previous life. Noticing a glitch",
+            "After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero. His test comes when Dr. Robotnik returns, this time with a new partner, Knuckles, in search for an emerald that has the power to destroy civilizations. Sonic teams up with his own sidekick, Tails, and together they embark on",
+            "Set in the Los Angeles of the slight future, Her follows Theodore Twombly, a complex, soulful man who makes his living writing touching, personal letters for other people. Heartbroken after the end of a long relationship, he becomes intrigued with a new, advanced operating system, which promises to be an intuitive entity",
+            "Shrek is feeling over-domesticated in the fourth installment. He has lost his roar. It used to send villagers running away in terror. Now they run to him and ask him to sign their pitchforks and torches. To regain his ogre mojo, he strikes a deal with Rumpelstiltskin. The pact goes awry and Shrek must confront",
+            "For the first time, Oscar-winning directors Elizabeth Chai Vasarhelyi and Jimmy Chin (Free Solo, The Rescue) point their lenses to the sky, covering the inspirational rise of SpaceX and Elon Musk’s two-decade effort to resurrect America’s space travel ambitions. Offering rare access inside the first crewed mission",
+            "Mercenary Nick Boon (Neal McDonough is trying to atone for his life as an enforcer for a ruthless syndicate. Running from his past, Boon moves to a remote area in the pacific northwest where he meets a struggling widow (Christiane Seidel) and her son. When he finds the pair living in fear of a criminal kingpin (Tommy Flanagan)",
+            "Ten years after he was last seen, Bull (Neil Maskel), a vicious mob enforcer, seeks revenge on the gang that double-crossed him. He returns home to methodically track down those who betrayed him and find his beloved son. With the ominous warning: “I’m coming for all of them,” Bull stalks his former gang,",
+            "Special Forces Sergeant James Harper (Chris Pine) is involuntarily discharged from the Army and cut-off from his pension. In debt, out of options and desperate to provide for his family, Harper contracts with a private underground military force. When the very first assignment goes awry, the elite soldier finds himself",
+            "A decade after abruptly breaking up with Naomi, Kris invites her to dinner to catch-up on their complicated lives, relationships, and Kris' transition.",
+            "Set-up on a pre-arranged date by their old-fashioned Indian parents, Ravi (Karan Soni) and Rita (Geraldine Viswanathan) seemingly have nothing in common. The situation turns both awkward and enlightening when they find themselves trapped inside together for a week.",
+            "Nitram (Caleb Landry Jones) lives with his mother (Judy Davis) and father (Anthony LaPaglia) in suburban Australia in the Mid 1990s. He lives a life of isolation and frustration at never being able to fit in. That is until he unexpectedly finds a close friend in a reclusive heiress, Helen (Essie Davis). However, when that relationship meets",
+            "Brilliant, but reclusive author Loretta Sage (Sandra Bullock) has spent her career writing about exotic places in her popular romance-adventure novels featuring handsome cover model Alan (Channing Tatum), who has dedicated his life to embodying the hero character, “Dash.” While on tour promoting her new book with Alan, Loretta is kidnapped",
+            "Brave and resilient sex trafficking survivors around the world share their struggles to break free from their past and find hope for the future.",
+            "It’s the week before Halloween. Char’s bedridden mother, Angela, has mysteriously gone missing. All that remains is her abandoned car parked in the middle of a field. When Angela returns home to their North Dublin estate the following evening without explanation, it becomes clear to Char and her grandmother",
+            "A celebrated Israeli filmmaker named Y arrives in a remote desert village to present one of his films at a local library. Struggling to cope with the recent news of his mother’s terminal illness, he is pushed into a spiral of rage when the host of the screening, a government employee, asks him to sign a form placing",
+            "Yuuta Okkotsu is haunted. Ever since his childhood friend Rika died in a traffic accident, her ghost has stuck with him. But her spirit does not appear as the sweet girl Yuuta once knew. Instead, she manifests as a monstrous and powerful entity who fiercely protects him. Unable to control Rika's violent behavior",
+            "In 1979, a group of young filmmakers set out to make an adult film in rural Texas, but when their reclusive, elderly hosts catch them in the act, the cast find themselves fighting for their lives."
+        ]
+        const typingText = document.querySelector(".typing__text p")
+        const inputfield = document.querySelector(".input__field")
+        const typingstop = document.querySelector(".mistakes span")
+        const typingTime = document.querySelector(".time span b")
+        const typingwpm = document.querySelector(".wpm span") //1분 동안 입력한 단어
+        const typingcpm = document.querySelector(".cpm span") //1분 동안 입력한 글자수
+        const typingAgain = document.querySelector(".Again")
+
+        let charIndex = 0;
+        let mistakes = 0;
+        let timer;
+        let maxTime = 60;
+        let timeLeft = maxTime;
+        let isTyping = 0;
+
+        function type() {
+           let typeIndex = Math.floor(Math.random() * typing.length);
+           console.log(typing[typeIndex].split("").forEach(span => {
+            // typingText.innerHTML='';
+               let spanTag = `<span>${span}</span>`;
+               typingText.innerHTML += spanTag;
+           }));
+           document.addEventListener("keydown", () => inputfield.focus());
+           typingText.addEventListener("click", () => inputfield.focus());
+        }
+        
+        function initTyping() {
+            const characters = typingText.querySelectorAll("span");
+            let typingChar = inputfield.value.split("")[charIndex]
+
+            if (charIndex < characters.length-1 && timeLeft > 0) {
+             
+                if (!isTyping) {
+                timer = setInterval(initTimer, 1000);
+                isTyping = true;
+            }
+
+            if (typingChar == null) {
+                charIndex--;
+                if (characters[charIndex].classList.contains("incorrect")) {
+                    mistakes--;
+                }
+                characters[charIndex].classList.remove("correct", "incorrect");
+            } else {
+                if (characters[charIndex].innerText === typingChar) {
+                    characters[charIndex].classList.add("correct");
+                } else {
+                    mistakes++;
+                    characters[charIndex].classList.add("incorrect");
+                }
+                charIndex++;
+            }
+            characters.forEach(span => span.classList.remove("active"));
+            characters[charIndex].classList.add("active");
+            typingstop.innerText = mistakes
+            // characters[charIndex-1].classList.remove("active");
+
+            let wpm = Math.round((((charIndex - mistakes)/5) / (maxTime - timeLeft)) * 60);
+            wpm = wpm < 0 || !wpm || wpm == Infinity ? 0 : wpm;
+            typingwpm.innerText = wpm;
+            typingcpm.innerText = charIndex - mistakes;
+        } else {
+            clearInterval(timer);
+            inputfield.value ="";
+        }
+    }
+        function initTimer() {
+            if (timeLeft > 0) {
+                timeLeft--;
+                typingTime.innerText = timeLeft
+            } else {
+                clearInterval(timer)
+            }
+        }
+        function resetGame() {
+            type();
+            clearInterval(timer);
+            timeLeft = maxTime;
+            isTyping = charIndex = mistakes = 0;
+            typingstop.innerText = mistakes;
+            typingwpm.innerText = 0;
+            typingcpm.innerText = 0;
+        }
+        type()
+        inputfield.addEventListener("input", initTyping);
+        typingAgain.addEventListener("click", resetGame)
+    </script>
+</body>
+</html>
