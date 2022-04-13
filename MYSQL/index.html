@@ -274,27 +274,31 @@ DESC myMember;
 mysql> drop table mymember;
 Query OK, 0 rows affected (0.01 sec)
                     </code></pre>
-
                     <h3 id="intro5-5" class="page-header">테이블 복사</h3>
                     <div class="bs-callout bs-callout-info">
 create table 새로운 테이블 이름 select * from 복사할 테이블 이름;
                     </div>
                     <pre><code class="language-js">
-create table 새로운 테이블 이름 select * from 복사할 테이블 이름;
+CREATE table myMember SELECT * FROM myMember;
+Query OK, 20 rows affected (0.05 sec)
+Records: 20  Duplicates: 0  Warnings: 0
                     </code></pre>
                     <h3 id="pt20" class="page-header">테이블 구조 복사</h3>
                     <div class="bs-callout bs-callout-info">
 CREATE TABLE 새로운 테이블명 LIKE 복사할 테이블명;
                     </div>
                     <pre><code class="language-js">
-CREATE TABLE 새로운 테이블명 LIKE 복사할 테이블명;
+CREATE table myMember LIKE myMember;
+Query OK, 0 rows affected (0.03 sec)
                     </code></pre>
                     <h3 id="pt20" class="page-header">테이블 데이터 복사</h3>
                     <div class="bs-callout bs-callout-info">
-INSERT INTO CREATE TABLE 새로운 테이블명 SELECT * FROM 복사할 테이블명;
+INSERT INTO 기본 테이블명 SELECT * FROM 복사할 테이블명;
                     </div>
                     <pre><code class="language-js">
-INSERT INTO CREATE TABLE 새로운 테이블명 SELECT * FROM 복사할 테이블명;
+INSERT INTO myMember SELECT * FROM myMember;
+Query OK, 20 rows affected (0.06 sec)
+Records: 20  Duplicates: 0  Warnings: 0
                     </code></pre>
                 </div>
                 <!-- box -->
