@@ -520,12 +520,10 @@ UPDATE Mymember SET YOUPASS = '1234';
                     <pre><code class="language-js">
 UPDATE Mymember SET YOUPASS = '1234567' WHERE MYMEMBERID BETWEEN 5 AND 10;
                     </code></pre>
-                    <h4 class="pt20">5회원부터 10회원까지의 비밀번호를 '1234567' 변경</h4>
+                    <h4 class="pt20">10회원까지의 비밀번호를 '****' 변경</h4>
                     <pre><code class="language-js">
 UPDATE Mymember SET YOUPASS = '****' ORDER BY MYMEMBERID DESC LIMIT 10;
                     </code></pre>
-                    
-                    
                     
                     <h3 id="intro7-4" class="page-header">데이터 삭제하기</h3>
                     <h4>전체 데이터 삭제</h4>
@@ -629,10 +627,10 @@ INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('9','1
 INSERT INTO myRecode(memberID,javascript, html, css, mysql, react) VALUES('10','10', '10', '10', '40', '5');
                 </code></pre>
                 <h3 id="intro9-1" class="pt20">집계 합수의 종류</h3>
-                <pre><code class="language-js">
+    <pre><code class="language-js">
 SELECT COUNT (javascript) FROM myRecode;
 </code></pre>
-<pre><code class="language-js">
+    <pre><code class="language-js">
 SELECT SUM (javascript) FROM myRecode;
     </code></pre>
     <pre><code class="language-js">
