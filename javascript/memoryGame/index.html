@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cardGame</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+        body {
+            background: #007bff;
+        }
+        .wrap__card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .card__inner {
+            width: 700px;
+            height: 700px;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 30px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+            width: 100%;
+            height: 100%;
+        }
+        .cards li {
+            width: calc(100% / 4 - 20px);
+            height: calc(100% / 4 - 20px);
+            border: 1px solid #222;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .cards li .view {
+            position: absolute;
+            background: rgb(146, 166, 253);
+            padding: 10%;
+            transition: transform 0.4s linear;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            user-select: none;
+            pointer-events: none;
+        }
+        .cards li .view.front {
+            z-index: 10;
+            transform: rotateY(0deg);
+        }
+        .cards li .view.back {
+            transform: rotateY(180deg);
+        }
+        .cards li.flip .view.front {
+            transform: rotateY(-180deg);
+        }
+        .cards li.flip .view.back {
+            transform: rotateY(0deg);
+        }
+        .cards li.shake {
+            animation: shake 0.4s ease-in-out;
+        }
+        @keyframes shake {
+            0% {transform: translateX(0);}
+            20% {transform: translateX(-13px);}
+            40% {transform: translateX(13px);}
+            60% {transform: translateX(-8px);}
+            80% {transform: translateX(8px);}
+            100% {transform: translateX(0);}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap__card">
+        <div class="card__inner">
+            <ul class="cards">
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/astronaut.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/crown.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/cross.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/crown.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/earth.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/smartphone.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/sun.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/astronaut.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/smartphone.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/ufo.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/earth.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/recycle-symbol.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/recycle-symbol.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/cross.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/sun.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="../memoryGame/img/king-sejong.png" alt="">
+                    </div>
+                    <div class="view back">
+                        <img src="../memoryGame/img/ufo.png" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        //HTML/CSS 디자인 구성
+        //클릭한 카드 뒤집기
+        //두 개의 카드 뒤집기 확인하기(첫번째, 두번째)
+        //클릭한 이미지의 두 개의 이미지 가져오기
+        //두 개의 이미지 비교하기
+        //틀린 이미지 애니메이션 효과 주기
+        //빨리 클릭 하면 버그 발생
+
+        const cards = document.querySelectorAll(".cards li");
+
+        let cardone, cardtwo;
+        let disableDeck = false;
+
+        function flipCard(e) {
+            let clickCard = e.target;
+            if (clickCard !== cardone && !disableDeck) {
+                clickCard.classList.add("flip");
+                if (!cardone) {
+                    return cardone = clickCard;
+                }
+            
+                cardtwo = clickCard;
+                
+                disableDeck = true;
+
+                let cardoneimg = cardone.querySelector(".back img").src;
+                let cardtwoimg = cardtwo.querySelector(".back img").src;
+
+                matchCards(cardoneimg,cardtwoimg)
+            }
+        };
+        //두 개의 이미지 비교하기
+        function matchCards(img1, img2) {
+                if (img1 == img2) {
+                    cardone.removeEventListener("click", flipCard);
+                    cardtwo.removeEventListener("click", flipCard);
+                    cardone = cardtwo = "";
+                    disableDeck = false;
+                } else {
+                setTimeout(() => {
+                    cardone.classList.add("shake");
+                    cardtwo.classList.add("shake");
+                }, 400);
+                setTimeout(() => {
+                    cardone.classList.remove("shake", "flip");
+                    cardtwo.classList.remove("shake", "flip");
+                    cardone = cardtwo = "";
+                    disableDeck = false;
+                }, 1400);
+            }
+        }
+        cards.forEach(card => {
+            card.addEventListener("click", flipCard);
+        });
+    </script>
+</body>
+</html>
