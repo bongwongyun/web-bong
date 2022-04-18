@@ -19,8 +19,8 @@ https://bongwongyun.github.io/web-bong/site/web%20class/index.html
 가구 사이트 제작
 https://bongwongyun.github.io/web-bong/web%20site/index.html
 
-slider effct
-https://bongwongyun.github.io/web-bong/javascript/effect/sliderEffect01.html
-
 music Player
 https://bongwongyun.github.io/web-bong/javascript/musicPlayer/index.html
+
+사이트 리서치
+https://bongwongyun.github.io/web-bong/siteResearch/index.html
