@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cardGame</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -86,18 +87,58 @@
             80% {transform: translateX(8px);}
             100% {transform: translateX(0);}
         }
+        .card__sound {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+        }
+        .card__sound button {
+            line-height: 40px;
+            background: #fff;
+            width: 40px;
+            height: 40px;
+            color: #007bff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            border: 0;
+        }
+        .card__start {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+        .card__start button {
+            line-height: 40px;
+            background: #fff;
+            width: 40px;
+            height: 40px;
+            color: #007bff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            border: 0;
+        }
     </style>
 </head>
 <body>
     <div class="wrap__card">
         <div class="card__inner">
+            <div class="card__start">
+                <button class="material-icons">shop</button>
+            </div>
+            <div class="card__sound">
+                <button class="material-icons">volume_up</button>
+                <audio id="cardsound" src="audio/Jeremy_Black.mp3" loop="loop"></audio>
+            </div>
             <ul class="cards">
                 <li>
                     <div class="view front">
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/astronaut.png" alt="">
+                        <img src="../memoryGame/img/img-1.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -105,7 +146,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/crown.png" alt="">
+                        <img src="../memoryGame/img/img-2.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -113,7 +154,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/cross.png" alt="">
+                        <img src="../memoryGame/img/img-1.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -121,7 +162,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/crown.png" alt="">
+                        <img src="../memoryGame/img/img-2.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -129,7 +170,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/earth.png" alt="">
+                        <img src="../memoryGame/img/img-3.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -137,7 +178,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/smartphone.png" alt="">
+                        <img src="../memoryGame/img/img-4.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -145,7 +186,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/sun.png" alt="">
+                        <img src="../memoryGame/img/img-3.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -153,7 +194,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/astronaut.png" alt="">
+                        <img src="../memoryGame/img/img-4.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -161,7 +202,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/smartphone.png" alt="">
+                        <img src="../memoryGame/img/img-5.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -169,7 +210,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/ufo.png" alt="">
+                        <img src="../memoryGame/img/img-6.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -177,7 +218,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/earth.png" alt="">
+                        <img src="../memoryGame/img/img-5.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -185,7 +226,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/recycle-symbol.png" alt="">
+                        <img src="../memoryGame/img/img-6.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -193,7 +234,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/recycle-symbol.png" alt="">
+                        <img src="../memoryGame/img/img-7.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -201,7 +242,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/cross.png" alt="">
+                        <img src="../memoryGame/img/img-8.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -209,7 +250,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/sun.png" alt="">
+                        <img src="../memoryGame/img/img-7.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -217,7 +258,7 @@
                         <img src="../memoryGame/img/king-sejong.png" alt="">
                     </div>
                     <div class="view back">
-                        <img src="../memoryGame/img/ufo.png" alt="">
+                        <img src="../memoryGame/img/img-8.png" alt="">
                     </div>
                 </li>
             </ul>
@@ -232,11 +273,79 @@
         //두 개의 이미지 비교하기
         //틀린 이미지 애니메이션 효과 주기
         //빨리 클릭 하면 버그 발생
+        //다 완성했음
+        //카드 섞기
 
         const cards = document.querySelectorAll(".cards li");
+        const cardvolume = document.querySelector(".card__sound button")
+        const cardSound = document.querySelector("#cardsound")
+        const cardStart = document.querySelector(".card__start")
 
         let cardone, cardtwo;
         let disableDeck = false;
+        let matchedCard = 0
+
+        let sound = [
+            "audio/match2.mp3",
+            "audio/match.mp3",
+            "audio/up.mp3",
+        ]
+        let soundMatch = new Audio(sound[0])
+        let soundNoMatch = new Audio(sound[1])
+        let soundSuccess = new Audio(sound[2])
+
+        // cardvolume.addEventListener("click", ()=>{
+        //     cardvolume.classList.toggle("is-playing")
+
+        //     if (cardvolume.classList.contains("is-playing")) {
+        //         cardvolume.innerText="volume_up"
+        //         cardSound.play()
+        //     } else {
+        //         cardvolume.innerText="volume_off"
+        //         cardSound.pause()
+        //     }
+        // })
+        //뮤직 재생
+        cardvolume.addEventListener("click", function() {
+            this.classList.toggle("is-playing")
+
+            if (this.classList.contains("is-playing")) {
+                cardvolume.innerText="volume_up"
+                cardSound.play()
+            } else {
+                cardvolume.innerText="volume_off"
+                cardSound.pause()
+            }
+        })
+        //시작 버튼
+        cardStart.addEventListener("click", ()=>{
+            shuffledCard()
+        })
+        //카드 섞기
+        function shuffledCard() {
+            cardone, cardtwo ="";
+            disableDeck = false;
+            matchedCard = 0;
+            
+
+            let arr = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8]
+            let result = arr.sort(()=>Math.random()>0.5 ? 1 : - 1)
+
+            cards.forEach((card, index) => {
+                card.classList.remove("flip")
+                setTimeout(()=>{
+                    card.classList.add("flip")
+                },200 * index)
+
+                setTimeout(()=>{
+                    card.classList.remove("flip")
+                },4000)
+                let imgTag = card.querySelector(".back img")
+                imgTag.src = `img/img-${arr[index]}.png`;
+            })
+            
+        }
+        shuffledCard()
 
         function flipCard(e) {
             let clickCard = e.target;
@@ -259,10 +368,19 @@
         //두 개의 이미지 비교하기
         function matchCards(img1, img2) {
                 if (img1 == img2) {
-                    cardone.removeEventListener("click", flipCard);
-                    cardtwo.removeEventListener("click", flipCard);
+                    matchedCard++;
+
+                    if(matchedCard == 8) {
+                        setTimeout(()=>{
+                            alert("성공하셨습니다~")
+                        },1000)
+                        
+                    }
+                    // cardone.removeEventListener("click", flipCard);
+                    // cardtwo.removeEventListener("click", flipCard);
                     cardone = cardtwo = "";
                     disableDeck = false;
+                    soundMatch.play()
                 } else {
                 setTimeout(() => {
                     cardone.classList.add("shake");
@@ -273,12 +391,16 @@
                     cardtwo.classList.remove("shake", "flip");
                     cardone = cardtwo = "";
                     disableDeck = false;
-                }, 1400);
+                }, 1600);
+                soundNoMatch.play()
             }
         }
         cards.forEach(card => {
             card.addEventListener("click", flipCard);
         });
+        function cardaudio() {
+            
+        }
     </script>
 </body>
 </html>

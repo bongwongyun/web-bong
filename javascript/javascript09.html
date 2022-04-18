@@ -130,7 +130,12 @@
                 <div class="btn">
                     <a href="#c" class="btn1">버튼을 클릭</a>
                     <div class="code">
-                        <pre class="line-numbers"><code class="language-js">{   
+                        <pre class="line-numbers"><code class="language-js">{
+    const btn = document.querySelector("#sample1 .btn1");
+
+    btn.addEventListener("click", () => {
+        alert("알림창");
+    });                           
 }</pre></code></div>
                 </div>
             </div>
@@ -144,7 +149,16 @@
             <div class="btn">
                 <a href="#c" class="btn1">버튼을 클릭</a>
                 <div class="code">
-                    <pre class="line-numbers"><code class="language-js">{   
+                    <pre class="line-numbers"><code class="language-js">{
+    const btn = document.querySelector("#sample2 .btn1");
+
+    btn.addEventListener("click", () => {
+        const conf = confirm("오늘 공부할 준비가 되었나요?");
+
+        document.querySelector("#sample2 .view").innerText = conf;
+    });
+    // 만약에 true 면 네 준비되었습니다.
+    // 만약에 false 면 아니요 아직입니다.   
 }</pre></code></div>
             </div>
         </div>
@@ -158,7 +172,14 @@
             <div class="btn">
                 <a href="#c" class="btn1">버튼을 클릭</a>
                 <div class="code">
-                    <pre class="line-numbers"><code class="language-js">{   
+                    <pre class="line-numbers"><code class="language-js">{
+    const btn = document.querySelector("#sample3 .btn1");
+
+    btn.addEventListener("click", () => {
+        const conf = prompt("오늘 공부 할 준비가 되었습니까?");
+
+        document.querySelector("#sample3 .view").innerText = conf;
+    });   
 }</pre></code></div>
             </div>
         </div>
