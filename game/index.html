@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=euc-kr" />
+    <title>game</title>
+    <link rel="stylesheet" href="../game/css/cg.css">
+    <link href="https://webfontworld.github.io/fontlab/LABDigital.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none;
+        }
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .header {
+            background: #E35FA4;
+            color: #EEEEEE;
+            font-size: 24px;
+            padding-left: 14px;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header > div {
+            padding-top: 10px;
+            padding-right: 15px;
+        }
+        /* Container */
+        .box {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            /* SVG Filters should be applied to the container */
+            -webkit-filter: url("#filter-name");
+            filter: url("#filter-name");
+            /* pointer-events: none; */
+           
+        }
+
+        /* Dot */
+        .dot {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 0;
+            left: 0;
+            margin-top: -20px;
+            margin-left: -20px;
+            background: #EEEEEE;
+            border-radius: 40px;
+            transition: ease .1s;
+            /* pointer-events: none; */
+            user-select: none;
+            
+        }
+        /* cursor */
+        /* .cursor {
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            width: 50px;
+            user-select: none;
+            pointer-events: none;
+        } */
+        .dot:nth-child(5) {
+            background: #9C27B0;
+            transition: ease .1s;
+            transform: scale(1);
+        }
+
+        .dot:nth-child(4) {
+            background: #B037AD;
+            transition: ease .12s;
+            transform: scale(.8);
+        }
+
+        .dot:nth-child(3) {
+            background: #C245AA;
+            transition: ease .14s;
+            transform: scale(.6);
+        }
+
+        .dot:nth-child(2) {
+            background: #D252A7;
+            transition: ease .16s;
+            transform: scale(.4);
+        }
+
+        .dot:nth-child(1) {
+            background: #E35FA4;
+            transition: ease .18s;
+            transform: scale(.2);
+        }
+        main {
+            
+        }
+        .btn {
+            position: absolute;
+            text-align: center;
+            
+        }
+        .btn a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(140deg, #ce9dd6 30%, #C1BBFC 50%, rgba(255,255,255,.6) 70%);
+            transition: all 0.3s;
+        }
+        .btn a img {
+            width: 30px;
+            padding-top: 10px;
+        }
+        .btn a span {
+            position: absolute;
+            left: 50%; bottom: -30px;
+            transform: translateX(-50%);
+            background: rgb(250, 193, 255);
+            padding: 0 10px;
+            white-space: nowrap;
+            border-radius: 20px;
+        }
+        .btn:hover a {
+            background: rgb(247, 163, 255);
+        }
+        .btn1 {
+            left: 100px;
+            top: 100px;
+        }
+        .btn2 {
+            left: 200px;
+            top: 100px;
+        }
+        .btn3 {
+            left: 330px;
+            top: 100px;
+        }
+        .musicBox {
+            position: absolute;
+            right: -500px;
+            top: 10px;
+            width: 400px;
+            height: 600px;
+            transition: all 0.4s;
+        }
+        .memoryBox {
+            position: absolute;
+            right: -1100px;
+            top: 50px;
+            width: 1000px;
+            height: 800px;
+            transition: all 0.4s;
+            overflow-y: hidden;
+        }
+        .typengBox {
+            position: absolute;
+            right: -1100px;
+            top: 50px;
+            width: 1000px;
+            height: 600px;
+            transition: all 0.4s;
+            overflow: hidden;
+        }
+        .musicBox.show {
+            right: 10px;
+        }
+        .memoryBox.show {
+            right: 10px;
+        }
+        .typengBox.show {
+            right: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h3>game site</h3>
+           <div> 현재 <span id="clock"></span> 입니다<br /></div>
+        </div>
+    </header>
+    <div class="box">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <main>
+        <div class="btn btn01" style="top: 100px; left: 50px;">
+            <a href="#">
+                <img src="img/guitar-light.svg" alt="">
+                <span>Music</span>
+            </a>
+        </div>
+        <div class="btn btn02" style="top: 100px; left: 150px;">
+            <a href="#">
+                <img src="img/game_gaming_play_video_icon.svg" alt="">
+                <span>Momory Game</span>
+            </a>
+        </div>
+        <div class="btn btn03" style="top: 100px; left: 277px;">
+            <a href="#">
+                <img src="img/gamepad_game_icon.svg" alt="">
+                <span>Typing Game</span>
+            </a>
+        </div>
+        <div class="musicBox">
+            <iframe class="musicBoxIframe" src="musicPlayer/index.html" frameborder="0"></iframe>
+        </div>
+        <div class="memoryBox">
+            <iframe class="musicBoxIframe" src="memoryGame/index.html" frameborder="0"></iframe>
+        </div>
+        <div class="typengBox">
+            <iframe class="musicBoxIframe" src="typengGame/index.html" frameborder="0"></iframe>
+        </div>
+    </main>
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <script>
+        $(document).mousemove(function (e) {
+            //Get 'container' offset:
+            o = $('.box').offset();
+            //Track mouse position:
+            $(".dot").css({
+                "top": e.pageY - o.top,
+                "left": e.pageX - o.left
+            });
+        });
+        $(".btn01").draggable();
+        $(".btn02").draggable();
+        $(".btn03").draggable();
+        $(".btn01").click(function () {
+            $(".musicBox").toggleClass("show")
+        })
+        $(".btn02").click(function () {
+            $(".memoryBox").toggleClass("show")
+        })
+        $(".btn03").click(function () {
+            $(".typengBox").toggleClass("show")
+        })
+        $().draggable();
+
+        $(".btn").click(function(event) {
+            console.log("btn"); // 겹쳐진 영역을 클릭해도 box1요소의 이벤트가 반응한다.
+        });
+
+        function printTime() {
+        var clock = document.getElementById("clock");            // 출력할 장소 선택
+        var now = new Date();                                                  // 현재시간
+        var nowTime = now.getFullYear() + "년" + (now.getMonth()+1) + "월" + now.getDate() + "일" + now.getHours() + "시" + now.getMinutes() + "분" + now.getSeconds() + "초";
+        clock.innerHTML = nowTime;           // 현재시간을 출력
+        setTimeout("printTime()",1000);         // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
+    }
+    window.onload = function() {                         // 페이지가 로딩되면 실행
+    printTime();
+
+}
+
+    </script>
+</body>
+
+</html>
