@@ -148,7 +148,7 @@ body {
     height: 800px;
     transition: all 0.4s;
 }
-.typengBox {
+.typingBox {
     position: absolute;
     right: -1100px;
     top: 50px;
@@ -162,7 +162,7 @@ body {
 .memoryBox.show {
     right: 10px;
 }
-.typengBox.show {
+.typingBox.show {
     right: 10px;
 }
 iframe {
