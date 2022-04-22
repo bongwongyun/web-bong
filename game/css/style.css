@@ -46,12 +46,12 @@ body {
     left: 0;
     margin-top: -20px;
     margin-left: -20px;
-    background: #EEEEEE;
+    background: #9C27B0;
     border-radius: 40px;
     transition: ease .1s;
-    /* pointer-events: none; */
+    pointer-events: none;
     user-select: none;
-    
+    z-index: 1;
 }
 /* cursor */
 /* .cursor {
@@ -92,13 +92,9 @@ body {
     transition: ease .18s;
     transform: scale(.2);
 }
-main {
-    
-}
 .btn {
     position: absolute;
     text-align: center;
-    
 }
 .btn a {
     display: inline-block;

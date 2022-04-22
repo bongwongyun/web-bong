@@ -13,19 +13,18 @@
 </head>
 
 <body>
+    
     <header>
         <div class="header">
             <h3>game site</h3>
            <div> 현재 <span id="clock"></span> 입니다<br /></div>
         </div>
     </header>
-    <div class="box">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-    </div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
     <main>
         <div class="btn btn01" style="top: 100px; left: 50px;">
             <a href="#">
@@ -56,6 +55,7 @@
         </div>
     </main>
 
+    
     <!-- script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -64,7 +64,7 @@
     <script>
         $(document).mousemove(function (e) {
             //Get 'container' offset:
-            o = $('.box').offset();
+            o = $('body').offset();
             //Track mouse position:
             $(".dot").css({
                 "top": e.pageY - o.top,
