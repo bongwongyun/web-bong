@@ -132,6 +132,10 @@ body {
     left: 330px;
     top: 100px;
 }
+.btn4 {
+    left: 430px;
+    top: 100px;
+}
 .musicBox {
     position: absolute;
     right: -500px;
@@ -156,6 +160,14 @@ body {
     height: 600px;
     transition: all 0.4s;
 }
+.tetrisBox {
+    position: absolute;
+    right: -1100px;
+    top: 50px;
+    width: 1000px;
+    height: 800px;
+    transition: all 0.4s;
+}
 .musicBox.show {
     right: 10px;
 }
@@ -163,6 +175,9 @@ body {
     right: 10px;
 }
 .typingBox.show {
+    right: 10px;
+}
+.tetrisBox.show {
     right: 10px;
 }
 iframe {
