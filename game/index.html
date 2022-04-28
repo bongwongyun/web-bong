@@ -28,25 +28,25 @@
     <main>
         <div class="btn btn01" style="top: 150px; left: 100px;">
             <a href="#">
-                <img src="img/guitar-light.svg" alt="">
+                <img src="img/mp3-player.png" alt="">
                 <span>Music</span>
             </a>
         </div>
-        <div class="btn btn02" style="top: 150px; left: 200px;">
+        <div class="btn btn02" style="top: 150px; left: 327px;">
             <a href="#">
-                <img src="img/game_gaming_play_video_icon.svg" alt="">
+                <img src="img/playing-card.png" alt="">
                 <span>Momory Game</span>
             </a>
         </div>
-        <div class="btn btn03" style="top: 150px; left: 327px;">
+        <div class="btn btn03" style="top: 150px; left: 200px;">
             <a href="#">
-                <img src="img/gamepad_game_icon.svg" alt="">
+                <img src="img/keyboard.png" alt="">
                 <span>Typing Game</span>
             </a>
         </div>
-        <div class="btn btn04" style="top: 150px; left: 427px;">
+        <div class="btn btn04" style="top: 150px; left: 440px;">
             <a href="#">
-                <img src="img/gamepad_game_icon.svg" alt="">
+                <img src="img/tetris.png" alt="">
                 <span>Tetris Game</span>
             </a>
         </div>
@@ -59,8 +59,8 @@
         <div class="typingBox">
             <iframe class="musicBoxIframe" src="typingGame/index.html" frameborder="0"></iframe>
         </div>
-        <div class="typingBox">
-            <iframe class="musicBoxIframe" src="typingGame/index.html" frameborder="0"></iframe>
+        <div class="tetrisBox">
+            <iframe class="musicBoxIframe" src="tetrisGame/index.html" frameborder="0"></iframe>
         </div>
     </main>
 
@@ -71,6 +71,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     
     <script>
+        //마우스 커서
         $(document).mousemove(function (e) {
             //Get 'container' offset:
             o = $('body').offset();
@@ -80,9 +81,11 @@
                 "left": e.pageX - o.left
             });
         });
+        //게임 아이콘
         $(".btn01").draggable();
         $(".btn02").draggable();
         $(".btn03").draggable();
+        $(".btn04").draggable();
         $(".btn01").click(function () {
             $(".musicBox").toggleClass("show")
         })
@@ -91,6 +94,9 @@
         })
         $(".btn03").click(function () {
             $(".typingBox").toggleClass("show")
+        })
+        $(".btn04").click(function () {
+            $(".tetrisBox").toggleClass("show")
         })
         $().draggable();
 
