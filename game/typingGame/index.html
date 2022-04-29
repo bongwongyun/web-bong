@@ -189,11 +189,14 @@
 
         function type() {
            let typeIndex = Math.floor(Math.random() * typing.length);
-           console.log(typing[typeIndex].split("").forEach(span => {
-            // typingText.innerHTML='';
+           typingText.innerHTML="";
+           
+           typing[typeIndex].split("").forEach(span => {
+            
                let spanTag = `<span>${span}</span>`;
                typingText.innerHTML += spanTag;
-           }));
+               typingText.querySelector("span").classList.add("active");
+           });
            document.addEventListener("keydown", () => inputfield.focus());
            typingText.addEventListener("click", () => inputfield.focus());
         }
@@ -211,7 +214,7 @@
 
             if (typingChar == null) {
                 charIndex--;
-                if (characters[charIndex].classList.contains("incorrect")) {
+                if (characters[charIndex].classList.contains("correct","incorrect")) {
                     mistakes--;
                 }
                 characters[charIndex].classList.remove("correct", "incorrect");
@@ -232,7 +235,7 @@
             let wpm = Math.round((((charIndex - mistakes)/5) / (maxTime - timeLeft)) * 60);
             wpm = wpm < 0 || !wpm || wpm == Infinity ? 0 : wpm;
             typingwpm.innerText = wpm;
-            typingcpm.innerText = charIndex - mistakes;
+            typingcpm.innerText = Math.round((charIndex - mistakes) / (maxTime - timeLeft) * 60);
         } else {
             clearInterval(timer);
             inputfield.value ="";
@@ -248,12 +251,12 @@
         }
         function resetGame() {
             type();
-            clearInterval(timer);
             timeLeft = maxTime;
             isTyping = charIndex = mistakes = 0;
-            typingstop.innerText = mistakes;
+            typingstop.innerText = 0;
             typingwpm.innerText = 0;
             typingcpm.innerText = 0;
+            inputfield.value = "";
         }
         type()
         inputfield.addEventListener("input", initTyping);
