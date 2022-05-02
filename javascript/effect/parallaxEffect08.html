@@ -259,7 +259,7 @@
         document.body.style.height = parallaxWidth + "px";
 
         function scroll() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
+            let scrollTop = window.scrollX || document.documentElement.scrollTop || window.scrollY
 
             document.querySelector(".scrollTop span").innerText = scrollTop
 
