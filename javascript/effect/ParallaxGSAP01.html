@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴렉스 이펙트</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Poppins:wght@900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        body {
+            background: #222;
+            color: #fff;
+            font-family: "NexonLv1Gothic";
+            font-weight: 300;
+        }
+
+        #parallax__title {
+            padding: 20px;
+        }
+
+        #parallax__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+        }
+
+        #parallax__title p {
+            font-size: 16px;
+        }
+
+        #parallax__title ul {
+            margin-top: 10px;
+        }
+
+        #parallax__title li {
+            display: inline;
+        }
+
+        #parallax__title li a {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        #parallax__title li.active a {
+            background: #fff;
+            color: #000;
+        }
+
+        #parallax__nav {
+            position: fixed;
+            right: 20px;
+            top: -200px;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 15px 20px;
+            border-radius: 50px;
+            transition: top 0.3s ease-in-out;
+        }
+
+        #parallax__nav.show {
+            top: 20px;
+        }
+
+        #parallax__nav li {
+            list-style: none;
+            display: inline;
+        }
+
+        #parallax__nav li a {
+            display: inline-block;
+            padding: 5px 20px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #parallax__nav li.active a {
+            background: #fff;
+            color: #000;
+            border-radius: 50px;
+        }
+
+        #parallax__cont {
+            width: 98%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        #parallax__foot {}
+
+        .content__item {
+            width: 1000px;
+            max-width: 70vw;
+            margin: 30vw auto;
+            text-align: left;
+            margin-right: 0;
+            position: relative;
+            padding-top: 15vw;
+        }
+
+        .content__item:nth-child(even) {
+            margin-left: 0;
+            text-align: right;
+        }
+
+        .content__item__num {
+            font-size: 25vw;
+            position: absolute;
+            left: -5vw;
+            top: 0;
+            opacity: 0.07;
+            font-family: "Lato";
+            font-weight: 100;
+        }
+
+        .content__item:nth-child(even) .content__item__num {
+            left: auto;
+            right: -5vw;
+        }
+
+        .content__item__title {
+            padding-bottom: 5px;
+            font-weight: 400;
+        }
+
+        .content__item__imgwrap {
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content__item__img {
+            position: absolute;
+            left: -5%;
+            top: -5%;
+            width: 110%;
+            height: 110%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            filter: saturate(0%);
+            transition: all 0.5s;
+        }
+
+        .content__item__img:hover {
+            filter: saturate(100%);
+            transform: scale(1.025);
+        }
+
+        .content__item:nth-child(1) .content__item__img {
+            background-image: url(../assets/img/image09.jpg);
+        }
+
+        .content__item:nth-child(2) .content__item__img {
+            background-image: url(../assets/img/image08.jpg);
+        }
+
+        .content__item:nth-child(3) .content__item__img {
+            background-image: url(../assets/img/image07.jpg);
+        }
+
+        .content__item:nth-child(4) .content__item__img {
+            background-image: url(../assets/img/image06.jpg);
+        }
+
+        .content__item:nth-child(5) .content__item__img {
+            background-image: url(../assets/img/image05.jpg);
+        }
+
+        .content__item:nth-child(6) .content__item__img {
+            background-image: url(../assets/img/image04.jpg);
+        }
+
+        .content__item:nth-child(7) .content__item__img {
+            background-image: url(../assets/img/image03.jpg);
+        }
+
+        .content__item:nth-child(8) .content__item__img {
+            background-image: url(../assets/img/image02.jpg);
+        }
+
+        .content__item:nth-child(9) .content__item__img {
+            background-image: url(../assets/img/image01.jpg);
+        }
+
+        .content__item__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            margin-top: -5vw;
+            margin-right: -5vw;
+            z-index: 100;
+            position: relative;
+            word-break: keep-all;
+        }
+
+        .content__item:nth-child(even) .content__item__desc {
+            margin-left: auto;
+            margin-right: -4vw;
+        }
+
+        /* scroll */
+        .scrollTop {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 50px;
+        }
+
+        .scrollInfo {
+            position: fixed;
+            left: 20px;
+            bottom: 70px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .scrollInfo li {
+            list-style: none;
+            line-height: 1.6;
+        }
+
+        /* option */
+        /* 한번에 나타나기 */
+        /* #contents > section {
+            opacity: 0;
+            transition: all 4s;
+        }
+        #contents > section.show {
+            opacity: 1;
+        } */
+        /* 개별적으로 나타내기 */
+        #contents>section .content__item__num {
+            opacity: 1;
+            transform: translateY(200px);
+            transition: all 0.5s 0.1s cubic-bezier(0.75, 0.111, 0.165, 1);
+        }
+
+        #contents>section .content__item__title {
+            opacity: 1;
+            transform: translateX(-100px);
+            transition: all 0.5s 0.2s cubic-bezier(0.75, 0.111, 0.165, 1);
+        }
+
+        #contents>section .content__item__imgwrap {
+            opacity: 1;
+            transform: translateX(-200px) rotate(20deg) skew(30deg);
+            transition: all 0.5s 0.4s cubic-bezier(0.75, 0.111, 0.165, 1);
+        }
+
+        #contents>section .content__item__desc {
+            opacity: 1;
+            transform: translateX(-200px);
+            transition: all 0.5s 0.8s cubic-bezier(0.75, 0.111, 0.165, 1);
+        }
+
+        #contents>section.show .content__item__num {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #contents>section.show .content__item__title {
+            opacity: 0;
+            transform: translateX(0);
+        }
+
+        #contents>section.show .content__item__imgwrap {
+            opacity: 1;
+            transform: translateY(0) rotate(0) skew(0);
+        }
+
+        #contents>section.show .content__item__desc {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        #contents>section:nth-child(even) .content__item__title {
+            transform: translateX(100px);
+        }
+
+        #contents>section:nth-child(even).show .content__item__title {
+            transform: translateX(0);
+        }
+
+        #contents>section:nth-child(even) .content__item__desc {
+            transform: translateX(200px);
+        }
+
+        #contents>section:nth-child(even).show .content__item__desc {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- parallax title -->
+    <header id="parallax__title">
+        <h1><a href="parallaxEffect.html">JavaScript parallax GSAP</a></h1>
+        <p>패럴렉스 이펙트 : 스크롤링 효과 - 나타나기</p>
+        <ul>
+            <li><a href="parallaxEffect01.html">1</a></li>
+            <li><a href="parallaxEffect02.html">2</a></li>
+            <li><a href="parallaxEffect03.html">3</a></li>
+            <li><a href="parallaxEffect04.html">4</a></li>
+            <li><a href="parallaxEffect05.html">5</a></li>
+            <li><a href="parallaxEffect06.html">6</a></li>
+            <li><a href="parallaxEffect07.html">7</a></li>
+            <li><a href="parallaxEffect08.html">8</a></li>
+            <li><a href="parallaxEffect09.html">9</a></li>
+        </ul>
+    </header>
+    <!-- parallax title -->
+    <!-- parallax nav -->
+    <nav id="parallax__nav">
+        <ul>
+            <li><a href="#section01"><span>메뉴1</span></a></li>
+            <li><a href="#section02">메뉴2</a></li>
+            <li><a href="#section03">메뉴3</a></li>
+            <li><a href="#section04">메뉴4</a></li>
+            <li><a href="#section05">메뉴5</a></li>
+            <li><a href="#section06">메뉴6</a></li>
+            <li><a href="#section07">메뉴7</a></li>
+            <li><a href="#section08">메뉴8</a></li>
+            <li><a href="#section09">메뉴9</a></li>
+        </ul>
+    </nav>
+    <!-- parallax nav -->
+    <!-- parallax cont -->
+    <main id="parallax__cont">
+        <div id="contents">
+            <section id="section01" class="content__item">
+                <span class="content__item__num">01</span>
+                <h2 class="content__item__title">section01</h2>
+                <figure class="content__item__imgwrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">나 자신에 대한 자신감을 잃으면
+                    온 세상이 나의 적이 된다.</p>
+            </section>
+            <!-- section01 -->
+
+            <section id="section02" class="content__item">
+                <span class="content__item__num">02</span>
+                <h2 class="content__item__title">section02</h2>
+                <figure class="content__item__imgwrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">인생에서 가장 슬픈 세 가지.
+                    할 수 있었는데, 해야 했는데, 해야만 했는데.</p>
+            </section>
+            <!-- section02 -->
+
+            <section id="section03" class="content__item">
+                <span class="content__item__num">03</span>
+                <h2 class="content__item__title">section03</h2>
+                <figure class="content__item__imgwrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">같은 실수를 두려워하되
+                    새로운 실수를 두려워하지 마라.
+                    실수는 곧 경험이다.</p>
+            </section>
+            <!-- section03 -->
+
+            <section id="section04" class="content__item">
+                <span class="content__item__num">04</span>
+                <h2 class="content__item__title">section04</h2>
+                <figure class="content__item__imgwrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc"> 큰 목표를 이루고 싶으면 허락을 구하지 마라.</p>
+            </section>
+            <!-- section04 -->
+
+            <section id="section05" class="content__item">
+                <span class="content__item__num">05</span>
+                <h2 class="content__item__title">section05</h2>
+                <figure class="content__item__imgwrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">창조적인 삶을 살려면 내가 틀릴지도 모른다는 공포를 버려야 한다.</p>
+            </section>
+            <!-- section05 -->
+
+            <section id="section06" class="content__item">
+                <span class="content__item__num">06</span>
+                <h2 class="content__item__title">section06</h2>
+                <figure class="content__item__imgwrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">성공한 사람이 되려고 노력하기보다 가치있는 사람이 되려고 노력하라.</p>
+            </section>
+            <!-- section06 -->
+
+            <section id="section07" class="content__item">
+                <span class="content__item__num">07</span>
+                <h2 class="content__item__title">section07</h2>
+                <figure class="content__item__imgwrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">남들이 당신에게 던진 벽돌들로 탄탄한 기반을 쌓을 수 있어야 성공한다.</p>
+            </section>
+            <!-- section07 -->
+
+            <section id="section08" class="content__item">
+                <span class="content__item__num">08</span>
+                <h2 class="content__item__title">section08</h2>
+                <figure class="content__item__imgwrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">지옥을 겪고 있다면 계속 겪어 나가라.</p>
+            </section>
+            <!-- section08 -->
+
+            <section id="section09" class="content__item">
+                <span class="content__item__num">09</span>
+                <h2 class="content__item__title">section09</h2>
+                <figure class="content__item__imgwrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">자기가 세상을 바꿀 수 있다고 생각할 정도로 미친 사람들이 세상을 바꾼다.</p>
+            </section>
+            <!-- section09 -->
+        </div>
+    </main>
+
+    <!-- scroll -->
+    <div class="scrollTop">
+        scrollTop : <span>0</span>px
+    </div>
+    <!-- scroll -->
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    </script>
+    <script>
+        gsap.utils.toArray(".content__item__imgwrap").forEach(elem => {
+            ScrollTrigger.create({
+                trigger: elem,
+                start: "top 100%",
+                end: "bottom 0%",
+                markers: true,
+                onEnter: function(){
+                    gsap.fromTo(
+                        elem,
+                            {
+                                y: 200,
+                                autoAlpha: 0    //opacity === autoAlpha
+                            },{
+                                duration: 1.25,
+                                y:0,
+                                autoAlpha: 1,
+                                ease: "power4.out",
+                                overwrite: "auto"
+                            }
+                    );
+                },
+                onLeave: function(){
+                    gsap.fromTo(
+                        elem, {
+                            autoAlpha: 1,
+                        },{
+                            autoAlpha: 0,
+                            overwrite: "auto"
+                        }
+                    );
+                },
+                onEnterBack: function(){
+                    gsap.fromTo(
+                        elem, {
+                            y: -100,
+                            autoAlpha: 0
+                        },{
+                            duration: 1.25,
+                            y:0,
+                            autoAlpha: 1,
+                            ease: "power4.out",
+                            overwrite: "auto"
+                        }
+                    )
+                },
+                onLeaveBack: function(){
+                    gsap.fromTo(
+                        elem, {
+                            autoAlpha: 1,
+                        },{
+                            autoAlpha: 0,
+                            overwrite: "auto"
+                        }
+                    );
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
