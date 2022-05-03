@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../game/css/cg.css">
     <link rel="stylesheet" href="../game/css/style.css">
     <link href="https://webfontworld.github.io/fontlab/LABDigital.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -44,22 +45,26 @@
                 <span>Typing Game</span>
             </a>
         </div>
-        <div class="btn btn04" style="top: 150px; left: 440px;">
+        <div class="btn btn04" style="top: 150px; left: 450px;">
             <a href="#">
                 <img src="img/tetris.png" alt="">
                 <span>Tetris Game</span>
             </a>
         </div>
         <div class="musicBox">
+            <i class="material-icons close">close</i>
             <iframe class="musicBoxIframe" src="musicPlayer/index.html" frameborder="0"></iframe>
         </div>
         <div class="memoryBox">
+            <i class="material-icons close">close</i>
             <iframe class="musicBoxIframe" src="memoryGame/index2.html" frameborder="0"></iframe>
         </div>
         <div class="typingBox">
+            <i class="material-icons close">close</i>
             <iframe class="musicBoxIframe" src="typingGame/index.html" frameborder="0"></iframe>
         </div>
         <div class="tetrisBox">
+            <i class="material-icons close">close</i>
             <iframe class="musicBoxIframe" src="tetrisGame/index.html" frameborder="0"></iframe>
         </div>
     </main>
@@ -97,6 +102,18 @@
         })
         $(".btn04").click(function () {
             $(".tetrisBox").toggleClass("show")
+        })
+        $(".material-icons").click(function () {
+            $(".musicBox").removeClass("show")
+        })
+        $(".material-icons").click(function () {
+            $(".memoryBox").removeClass("show")
+        })
+        $(".material-icons").click(function () {
+            $(".typingBox").removeClass("show")
+        })
+        $(".material-icons").click(function () {
+            $(".tetrisBox").removeClass("show")
         })
         $().draggable();
 
