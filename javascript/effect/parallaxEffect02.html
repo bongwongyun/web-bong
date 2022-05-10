@@ -426,7 +426,6 @@
 
     <!-- script -->
     <script>
-
        document.querySelectorAll("#parallax__dot a").forEach(el => {
             el.addEventListener("click", e => {
                 e.preventDefault();
@@ -445,7 +444,6 @@
 
         window.addEventListener("scroll", () => {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
-
             document.querySelector(".scrollTop span").innerText = Math.round(scrollTop)
 
             // for (let i = 0; i <=9; i++) {
@@ -457,12 +455,12 @@
             //     }
                 
             // }
-            document.querySelectorAll("#parallax__nav li a").forEach((element, index) => {
-            if(scrollTop >= element.offsetTop -2){
+            document.querySelectorAll(".content__item").forEach((element, index) => {
+            if(scrollTop >= element.offsetTop - 2){
                 document.querySelectorAll("#parallax__dot li").forEach(li => {
                     li.classList.remove("active")
             })
-            document.querySelector("#parallax__dot li:nth-child("+(index+1)+")").   classList.add("actove")            
+            document.querySelector("#parallax__dot li:nth-child("+(index+1)+")").   classList.add("active")            
             }
         })
     })    
@@ -474,6 +472,7 @@
             // window.screenX     //ie 작동 불가능
             // window.pageXOffset
             // document.documentElement.scrollLeft
+
             //스크롤 값으로 이동하기
             // window.scroll()
             // window.scrollTo() //절대적 위치 
