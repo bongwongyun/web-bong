@@ -8,11 +8,13 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #222;
-  padding: 20px;
+  padding: 10px;
 }
 header h3 {
   color: #222;
-  font-family: "Fugaz One";
+  font-family: "Gmarket Sans";
+  font-weight: bold;
+  font-size: 2vw;
   padding-left: 30px;
 }
 header ul {
@@ -26,6 +28,8 @@ header ul li {
 header ul li a {
   color: #000;
   text-decoration: none;
+  font-family: 'Gmarket Sans';
+  font-weight: 600;
 }
 header ul li a:hover {
   color: #ffc435;
@@ -37,26 +41,28 @@ header ul li a:hover {
 .main__wrap h2 {
   font-family: "Fugaz One";
   font-weight: bold;
-  font-size: 17vw;
+  font-size: 17.3vw;
   text-align: center;
   letter-spacing: normal;
+  line-height: 1;
+  margin-bottom: -1.5%;
 }
 .main__banner {
   width: 95%;
   height: 80vh;
   margin: 0 auto;
-  background: url(../img/smit-patel.jpg) no-repeat;
+  background: url(../img/banner.png) no-repeat;
   background-size: cover;
   color: #fff;
-  border: 2px solid #222;
+  border: 1px solid #222;
 }
 .main__banner h3 {
   float: left;
   text-align: left;
   padding: 50px;
   font-size: 4vw;
-  font-style: oblique;
-  line-height: 1;
+  font-family: "Fugaz One";
+  line-height: 0.9;
 }
 .main__box {
   display: flex;
@@ -67,24 +73,51 @@ header ul li a:hover {
   padding-top: 20px;
 }
 .main__box .box01 {
-  background: #999;
+  background: url(../img/box01.png) no-repeat;
+  background-size: cover;
   width: 580px;
   height: 30.5vw;
-  border: 2px solid #222;
+  border: 1px solid #222;
   margin-right: 20px;
 }
 .main__box .box02 {
-  background: #888;
+  background: url(../img/box02.png) no-repeat;
+  background-size: cover;
   width: 580px;
   height: 30.5vw;
-  border: 2px solid #222;
+  border: 1px solid #222;
   margin-right: 20px;
 }
 .main__box .box03 {
-  background: #777;
+  background: url(../img/box03.png) no-repeat;
+  background-size: cover;
   width: 580px;
   height: 30.5vw;
-  border: 2px solid #222;
+  border: 1px solid #222;
+}
+.main__box .box01 p {
+  font-family: 'GmarketSans';
+  font-size: 5vw;
+  font-weight: 100;
+  color: #fff;
+  text-align: center;
+  margin-top: 67%;
+}
+.main__box .box02 p {
+  font-family: 'GmarketSans';
+  font-size: 5vw;
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+  margin-top: 67%;
+}
+.main__box .box03 p {
+  font-family: 'GmarketSans';
+  font-size: 5vw;
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+  margin-top: 67%;
 }
 .main__line {
   margin: 0 auto;
