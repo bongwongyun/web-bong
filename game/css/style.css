@@ -165,7 +165,7 @@ body {
     right: -1100px;
     top: 50px;
     width: 1000px;
-    height: 800px;
+    height: 900px;
     transition: all 0.4s;
 }
 .musicBox.show {
