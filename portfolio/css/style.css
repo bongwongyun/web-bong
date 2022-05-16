@@ -167,7 +167,7 @@ header ul li a:hover {
 }
 .main__info {
   width: 50%;
-  height: 800px;
+  height: 55vw;
   border: 2px solid #222;
   margin-top: 1vw;
 }
@@ -176,7 +176,7 @@ header ul li a:hover {
 }
 .main__coingImg {
   width: 95%;
-  height: 660px;
+  height: 40vw;
   margin: 0 auto;
   margin-top: 20px;
   border: 2px solid #222;
@@ -188,7 +188,7 @@ header ul li a:hover {
 }
 .main__coingImg a {
   position: absolute;
-  top: 82%;
+  top: 84%;
   left: 60%;
   font-family: 'GmarketSans';
   font-size: 22px;
@@ -204,16 +204,16 @@ header ul li a:hover {
   left: 78%;
 } 
 .main__info h3 {
-  margin-top: 10px;
-  margin-left: 2%;
+  margin-top: 1vw;
+  margin-left: 1vw;
   text-align: left;
   font-family: 'GmarketSans';
   font-weight: 500;
   font-size: 2em;
 }
 .main__info p {
-  margin-top: 10px;
-  margin-left: 2.3%;
+  margin-top: 1vw;
+  margin-left: 1vw;
   text-align: left;
   font-family: 'GmarketSans';
   font-weight: 300;
