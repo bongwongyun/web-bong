@@ -70,7 +70,8 @@ header ul li a:hover {
   align-items: center;
   margin: 0 auto;
   width: 95%;
-  padding-top: 20px;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
 }
 .main__box .box01 {
   background: url(../img/box01.png) no-repeat;
@@ -78,7 +79,7 @@ header ul li a:hover {
   width: 580px;
   height: 30.5vw;
   border: 1px solid #222;
-  margin-right: 20px;
+  margin-right: 1vw;
 }
 .main__box .box02 {
   background: url(../img/box02.png) no-repeat;
@@ -86,7 +87,7 @@ header ul li a:hover {
   width: 580px;
   height: 30.5vw;
   border: 1px solid #222;
-  margin-right: 20px;
+  margin-right: 1vw;
 }
 .main__box .box03 {
   background: url(../img/box03.png) no-repeat;
@@ -124,7 +125,6 @@ header ul li a:hover {
   border-top: 2px solid #222;
   border-bottom: 2px solid #222;
   height: 300px;
-  margin-top: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -162,19 +162,17 @@ header ul li a:hover {
 }
 .main__coding {
   width: 95%;
-  height: 800px;
   margin: 0 auto;
   display: flex;
-  
 }
 .main__info {
   width: 50%;
   height: 800px;
   border: 2px solid #222;
-  margin-top: 40px;
+  margin-top: 1vw;
 }
 .main__info:nth-child(1) {
-  margin-right: 20px;
+  margin-right: 1vw;
 }
 .main__coingImg {
   width: 95%;
@@ -188,10 +186,10 @@ header ul li a:hover {
   width: 90%;
   margin-top: 30px;
 }
-.main__coingImg a{
+.main__coingImg a {
   position: absolute;
-  top: 80%;
-  left: 70%;
+  top: 82%;
+  left: 60%;
   font-family: 'GmarketSans';
   font-size: 22px;
   text-decoration: none;
@@ -201,6 +199,10 @@ header ul li a:hover {
   background: #ffc435;
   padding: 5px 20px 5px 20px;
 }
+.main__coingImg .a__code {
+  position: absolute;
+  left: 78%;
+} 
 .main__info h3 {
   margin-top: 10px;
   margin-left: 2%;
