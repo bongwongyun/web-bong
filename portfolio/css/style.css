@@ -189,17 +189,18 @@ header ul li a:hover {
   margin-top: 30px;
 }
 .main__coingImg a {
-  position: relative;
-  top: 80px;
-  left: 160px;
+  position: absolute;
+  top: 80%;
+  left: 70%;
   font-family: 'GmarketSans';
-  font-size: 30px;
+  font-size: 22px;
   text-decoration: none;
   color: #222;
   border: 2px solid #222;
   border-radius: 25px;
   background: #ffc435;
-  padding: 5px;
+  padding: 5px 20px 5px 20px;
+  margin-left: 20px;
 }
 .main__info h3 {
   margin-top: 10px;
