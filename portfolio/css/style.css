@@ -188,7 +188,7 @@ header ul li a:hover {
   width: 90%;
   margin-top: 30px;
 }
-.main__coingImg a {
+.main__coingImg a{
   position: absolute;
   top: 80%;
   left: 70%;
@@ -200,7 +200,6 @@ header ul li a:hover {
   border-radius: 25px;
   background: #ffc435;
   padding: 5px 20px 5px 20px;
-  margin-left: 20px;
 }
 .main__info h3 {
   margin-top: 10px;
