@@ -136,3 +136,82 @@ header ul li a:hover {
   position: absolute;
   top: -50px;
 }
+.main__line2 {
+  margin: 0 auto;
+  border-top: 2px solid #222;
+  border-bottom: 2px solid #222;
+  background: #ffc435;
+  height: 300px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.main__line2 h3 {
+  font-size: 30vh;
+  font-family: "Fugaz One";
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  letter-spacing: -10px;
+  position: absolute;
+  top: -50px;
+}
+.main__cont {
+  /* width: 95%;
+  height: 800px; */
+}
+.main__coding {
+  width: 95%;
+  height: 800px;
+  margin: 0 auto;
+  display: flex;
+  
+}
+.main__info {
+  width: 50%;
+  height: 800px;
+  border: 2px solid #222;
+  margin-top: 40px;
+}
+.main__info:nth-child(1) {
+  margin-right: 20px;
+}
+.main__coingImg {
+  width: 95%;
+  height: 660px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 2px solid #222;
+  position: relative;
+}
+.main__coingImg img {
+  width: 90%;
+  margin-top: 30px;
+}
+.main__coingImg a {
+  position: relative;
+  top: 80px;
+  left: 100px;
+  font-family: 'GmarketSans';
+  font-size: 30px;
+  text-decoration: none;
+  color: #222;
+  border: 1px solid #222;
+  border-radius: 20px;
+  background: #ffc435;
+}
+.main__info h3 {
+  margin-top: 10px;
+  margin-left: 2%;
+  text-align: left;
+  font-family: 'GmarketSans';
+  font-weight: 500;
+  font-size: 2em;
+}
+.main__info p {
+  margin-top: 10px;
+  margin-left: 2.3%;
+  text-align: left;
+  font-family: 'GmarketSans';
+  font-weight: 300;
+}
