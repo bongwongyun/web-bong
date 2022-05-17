@@ -9,13 +9,14 @@ header {
   align-items: center;
   border-bottom: 1px solid #222;
   padding: 10px;
+  height: 100%;
 }
 header h3 {
   color: #222;
   font-family: "Gmarket Sans";
   font-weight: bold;
   font-size: 2vw;
-  padding-left: 30px;
+  padding-left: 3vw;
   z-index: 1;
 }
 header ul {
@@ -24,8 +25,8 @@ header ul {
   z-index: 1;
 }
 header ul li {
-  padding-left: 80px;
-  padding-right: 30px;
+  padding-left: 6vw;
+  padding-right: 3vw;
 }
 header ul li a {
   color: #000;
@@ -140,6 +141,7 @@ header ul li a:hover {
   font-weight: bold;
   text-align: center;
   margin-top: -4.5%;
+  letter-spacing: -0.8vw;
 }
 .main__line2 {
   margin: 0 auto;
@@ -160,8 +162,8 @@ header ul li a:hover {
   margin-top: -4.6%;
 }
 .main__cont {
-  /* width: 95%;
-  height: 800px; */
+  width: 95%;
+  height: 20vw;
 }
 .main__coding {
   width: 95%;
@@ -188,7 +190,11 @@ header ul li a:hover {
   width: 90%;
   margin-top: 2vw;
 }
-.main__coingImg a {
+.link_code {
+  margin-top: 2vw;
+  margin-left: 20vw;
+}
+.link_code a {
   font-family: 'GmarketSans';
   font-size: 2vw;
   text-decoration: none;
@@ -196,19 +202,19 @@ header ul li a:hover {
   border: 2px solid #222;
   border-radius: 40px;
   background: #ffc435;
-  padding: 10px 20px 5px 20px;
-  width: 100px;
 }
-.link_code {
-  margin-top: 2vw;
-  margin-left: 20vw;
+.link_code .a__site {
+  padding: 10px 25px 5px 25px;
+}
+.link_code .a__code {
+  padding: 10px 30px 5px 30px;
 }
 .main__info h3 {
   margin-top: 1vw;
   margin-left: 1vw;
   text-align: left;
   font-family: 'GmarketSans';
-  font-weight: 500;
+  font-weight: 300;
   font-size: 2vw;
 }
 .main__info p {
@@ -220,8 +226,16 @@ header ul li a:hover {
   font-size: 1vw;
 }
 @media (max-width:1000px) {
+  header ul li {
+    padding-left: 4vw;
+    padding-right: 2vw;
+  }
   .main__info {
     height: 54vw;
+  }
+  .link_code {
+    margin-top: 1vw;
+    margin-left: 10vw;
   }
 }
 @media (max-width:800px) {
@@ -230,7 +244,7 @@ header ul li a:hover {
   }
   .link_code {
     margin-top: 1vw;
-    margin-left: 16vw;
+    margin-left: 12vw;
   }
 }
 @media (max-width:600px) {
