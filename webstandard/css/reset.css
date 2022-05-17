@@ -59,9 +59,9 @@ textarea,
 select,
 button,
 table {
-    font-family: 'Nanum Brush Script', cursive;
+    font-family: 'Elice Digital Coding', 'monospace';
     color: #222;
-    font-size: 13px;
+    font-size: 5px;
     line-height: 1.5;
 }
 /* 폰트 스타일 초기화 */

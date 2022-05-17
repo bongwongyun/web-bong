@@ -163,10 +163,10 @@
 
 .tit h2 {
     font-size: 40px;
-    font-family: 'Nanum Brush Script', cursive;
+    font-family: 'Elice Digital Coding', 'monospace';
     text-align: center;
     padding: 5px 0;
-    letter-spacing: 2px;
+    letter-spacing: -10px;
     color: #f5f;
 }
 
@@ -367,7 +367,7 @@
     height: 80px;
     background: url(../img/pngwing.com.png) no-repeat;
     position: absolute;
-    top: -22px;
+    top: -26px;
     left: -8px;
 }
 
@@ -381,19 +381,19 @@
     padding-left: 70px;
     border-bottom: 1px solid #000;
     padding: 15px;
-    font-family: '나눔 브러시 스크립트', 필기체;
+    font-family: 'Elice Digital Coding', 'monospace';
 }
 
 .con .col1 .ico_img {
-    background-position: -2px -775px;
+    background-position: -42px -645px;
 }
 
 .con .col2 .ico_img {
-    background-position: -5px -775px;
+    background-position: -152px -645px;
 }
 
 .con .col3 .ico_img {
-    background-position: -5px -775px;
+    background-position: -96px -645px;
 }
 
 .con .col4 .ico_img {
@@ -417,19 +417,19 @@
 }
 
 .con .col3 .ico_img:hover {
-    background-position: 5px -645px;
-}
-
-.con .col4 .ico_img:hover {
-    background-position: -5px -775px;
-}
-
-.con .col5 .ico_img:hover {
     background-position: -115px -775px;
 }
 
-.con .col6 .ico_img:hover {
+.con .col4 .ico_img:hover {
+    background-position: -110px -775px;
+}
+
+.con .col5 .ico_img:hover {
     background-position: -215px -775px;
+}
+
+.con .col6 .ico_img:hover {
+    background-position: -115px -775px;
 }
 
 /* 레이아웃 */
@@ -485,8 +485,9 @@
 }
 
 .notice h4 {
-    font-size: 20px;
-    padding-bottom: 3px;
+    font-size: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     color: #f5f;
     font-weight: bold;
 }
@@ -500,7 +501,7 @@
 }
 
 .notice ul li a {
-    font-size: 14px;
+    font-size: 10px;
     color: #222;
     font-weight: 700;
 }
@@ -508,7 +509,7 @@
 .notice a.more {
     position: absolute;
     right: 0;
-    top: 5px;
+    top: 10px;
     display: block;
     background: url(../img/icon.png) -150px -90px;
     width: 17px;
@@ -520,7 +521,7 @@
     position: relative;
 }
 .notice2 h4 {
-    font-size: 20px;
+    font-size: 14px;
     padding-bottom: 3px;
     margin-top: 15px;
     color: #f5f;
@@ -546,13 +547,13 @@
     width: 30%;
     text-align: right;
     color: #222;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 700;
 }
 .notice2 a.more {
     position: absolute;
     right: 0;
-    top: 5px;
+    top: 0;
     display: block;
     background: url(../img/icon.png) -150px -90px;
     width: 17px;
@@ -564,8 +565,9 @@
     position: relative;
 }
 .notice3 h4 {
-    font-size: 20px;
-    padding-bottom: 3px;
+    font-size: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     color: #f5f;
     font-weight: bold;
 }
@@ -595,13 +597,13 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 700; 
 } 
 .notice3 a.more {
     position: absolute;
     right: 0;
-    top: 5px;
+    top: 10px;
     display: block;
     background: url(../img/icon.png) -150px -90px;
     width: 17px;
@@ -610,13 +612,15 @@
 
 /* maus over1 */
 .notice3_hover h4 {
-    font-size: 20px;
-    padding-bottom: 3px;
+    font-size: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     color: #f5f;
     font-weight: bold;
 }
 .notice3_hover ul {
-    overflow: hidden;
+    overflow: hidden;   
+    padding-bottom: 6px;
 }
 .notice3_hover li {
     float: left;
@@ -675,7 +679,7 @@
 .notice3_hover li a strong {
     padding-top: 3px;
     display: inline-block;
-    font-size: 12px;
+    font-size: 10px;
 }
 /* 콘텐츠 요소를 보이지 하지 않게 하는 방법 */
 /*  1.display: none -- block (영역 비표현)
@@ -880,7 +884,7 @@
 }
 .login_header {
     overflow: hidden;
-    font-size: 16px;
+    font-size: 10px;
     height: 30px;
 }
 .login_header .lh_check {
@@ -925,11 +929,11 @@
     display: inline;
 }
 .login_footer li a {
-    font-size: 12px;
+    font-size: 10px;
 }
 /* 팝업창 */
 .popup {
-    margin-top: 15px;
+    margin-top: 5px;
 }
 .popup h4 {
     font-size: 14px;
