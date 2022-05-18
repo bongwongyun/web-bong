@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        :root {
+  --step--2: clamp(3.13rem, 2.62rem + 2.51vw, 5.76rem);
+  --step--1: clamp(3.75rem, 3.09rem + 3.29vw, 7.20rem);
+  --step-0: clamp(4.50rem, 3.64rem + 4.29vw, 9.00rem);
+}
+
+@-webkit-keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes marquee-r {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes marquee-r {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes rollCage {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(5turn);
+  }
+}
+@keyframes rollCage {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(5turn);
+  }
+}
+body {
+  background-color: #1A1F24;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 600;
+}
+
+.marquee {
+  border-bottom: 1px solid #efefef;
+  color: #fefefe;
+  font-size: var(--step-0);
+  height: calc(170px + 4rem);
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+}
+.marquee img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 150px;
+}
+
+.track {
+  height: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+  position: absolute;
+  transition: background-color 300ms ease, color 300ms ease;
+  white-space: nowrap;
+}
+.track .text {
+  -webkit-animation: marquee 50000ms linear infinite;
+          animation: marquee 50000ms linear infinite;
+  align-items: center;
+  display: inline-flex;
+  will-change: transform;
+}
+.track .text.-r {
+  -webkit-animation-name: marquee-r;
+          animation-name: marquee-r;
+}
+.track .text.-twox {
+  -webkit-animation-duration: 25000ms;
+          animation-duration: 25000ms;
+}
+.track:hover {
+  background-color: #efefef;
+  color: #1A1F24;
+}
+.track:hover img {
+  -webkit-animation: rollCage 10000ms linear infinite;
+          animation: rollCage 10000ms linear infinite;
+}
+.track:hover .-green {
+  color: #BEB9A3;
+}
+
+.-green {
+  color: #C1FF1D;
+  font-weight: 900;
+}
+    </style>
+</head>
+<body>
+    <div class="marquee">
+        <div class="track">
+            <span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span><span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span><span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span><span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span>
+        </div>
+    </div>
+    
+    <div class="marquee">
+        <div class="track">
+            <span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span>
+        </div>
+    </div>
+    
+    <div class="marquee">
+        <div class="track">
+            <span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span><span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span><span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span><span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span>
+        </div>
+    </div>
+    
+    <div class="marquee">
+        <div class="track">
+            <span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span>
+        </div>
+    </div>
+    
+    <div class="marquee">
+        <div class="track">
+            <span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span><span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span><span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span><span class="text -r">Nicolas.<span class="-green">Nicolas.</span></span>
+        </div>
+    </div>
+    
+    <div class="marquee">
+        <div class="track">
+            <span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span><span class="text -twox">Cage.<span class="-green">Cage.</span><img src="https://assets.codepen.io/13313/image+1.png" /></span>
+        </div>
+    </div>
+</body>
+</html>

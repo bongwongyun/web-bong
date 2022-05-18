@@ -93,12 +93,12 @@
         #footer {
             margin-top: 150px;
             width: 100%;
-            background: #fff;
+            background: #4e4e4e;
             text-align: center;
             padding: 20px;
         }
         #footer a {
-            color: #000;
+            color: #fff;
             font-size: 16px;
         }
 
@@ -624,6 +624,206 @@
         @keyframes cry {
             100% {visibility: visible;}
         }
+        /* window */
+        .quiz__source {
+            position: absolute;
+            right: 120px;
+            bottom: 60px ;
+        }
+
+        .quiz__source button {
+            border: 1px solid #fff;
+            background: #111;
+            color: #FFF;
+            font-family: 'NexonLv1Gothic';
+            font-size: 16px;
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .quiz__source button:hover {
+            background: #FFF;
+            color: #000;
+        }
+        #window {
+            min-width: 360px;
+            min-height: 220px;
+            background-color: #c7c7c7;
+            padding: 4px;
+            border-left: 2px solid #FCFCFC;
+            border-top: 2px solid #FCFCFC;
+            border-right: 2px solid #2A2A2A;
+            border-bottom: 2px solid #2A2A2A;
+        }
+
+        .title-bar {
+            background-color: #000080;
+            padding: 4px;
+            height: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .title-bar>.minimize,
+        .title-bar>.maximize,
+        .title-bar>.close {
+            width: 26px;
+            height: 22px;
+            background-color: #c7c7c7;
+            margin-left: 4px;
+            border-left: 2px solid #FCFCFC;
+            border-top: 2px solid #FCFCFC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .title-bar>.minimize:hover,
+        .title-bar>.maximize:hover,
+        .title-bar>.close:hover {
+            background-color: #bababa;
+            border-left: 2px solid #2A2A2A;
+            border-top: 2px solid #2A2A2A;
+            border-right: 2px solid #FCFCFC;
+            border-bottom: 2px solid #FCFCFC;
+        }
+
+        .title-bar>.minimize {
+            align-items: flex-end;
+        }
+
+        .title-bar>.minimize>.symbol {
+            width: 60%;
+            height: 3px;
+            background-color: #000000;
+            margin-bottom: 2px;
+        }
+
+        .title-bar>.maximize>.symbol {
+            width: 70%;
+            height: 80%;
+            border: 2px solid #000000;
+            border-top-width: 4px;
+        }
+
+        .title-bar>.close>.symbol {
+            width: 70%;
+            height: 3px;
+            background-color: #000000;
+            transform: rotate(45deg);
+        }
+
+        .title-bar>.close>.symbol::after {
+            content: "";
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #000000;
+            transform: rotate(90deg);
+        }
+
+        .menu-bar>span {
+            padding: 8px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .menu-bar>span::first-letter {
+            text-decoration: underline;
+        }
+
+        .menu-bar>span:hover {
+            background-color: #bababa;
+        }
+
+        .content-container {
+            border-left: 2px solid #2A2A2A;
+            border-top: 2px solid #2A2A2A;
+            border-right: 2px solid #FCFCFC;
+            border-bottom: 2px solid #FCFCFC;
+        }
+
+        .content-container>.content {
+            display: flex;
+            width: 0;
+            height: 0;
+        }
+
+        
+        .content-container>.content>.main {
+            width: calc(100% - 26px);
+        }
+
+        #window.show {
+            animation: foldout 1s ease forwards;
+        }
+
+        #window.show.hide {
+            animation: foldin 1s 0.3s ease backwards;
+        }
+
+        @keyframes foldout {
+            0% {
+                transform: scaleX(0) scaleY(0.001)
+            }
+
+            50% {
+                transform: scaleX(1) scaleY(0.001);
+            }
+
+            100% {
+                transform: scaleX(1) scaleY(1);
+            }
+        }
+
+        @keyframes foldin {
+            0% {
+                transform: scaleX(1) scaleY(1)
+            }
+
+            50% {
+                transform: scaleX(1) scaleY(0.001);
+            }
+
+            100% {
+                transform: scaleX(0) scaleY(0.001);
+            }
+        }
+
+        #window.show .source-btn {
+            animation: zoomout 0.5s 1s ease forwards;
+        }
+
+        #window.show.hide .close {
+            animation: zoomin 0.5s ease forwards;
+        }
+
+        @keyframes zoomout {
+            0% {
+                transform: scale(0)
+            }
+
+            100% {
+                transform: scale(1)
+            }
+        }
+
+        @keyframes zoomin {
+            0% {
+                transform: scale(1)
+            }
+
+            100% {
+                transform: scale(0)
+            }
+        }
     </style>
 </head>
 
@@ -638,9 +838,6 @@
                     <li><a href="quizEffect03.html">3</a></li>
                     <li><a href="quizEffect04.html">4</a></li>
                     <li><a href="quizEffect05.html">5</a></li>
-                    <li><a href="quizEffect06.html">6</a></li>
-                    <li><a href="quizEffect07.html">7</a></li>
-                    <li><a href="quizEffect08.html">8</a></li>
                 </ul>
             </ul>
         </nav>
@@ -681,7 +878,6 @@
             </div>
         </div>
 
-        <div class="quiz__source">
             <div class="quiz__source">
                 <button class="source-btn" onclick="getShow()">소스보기</button>
                 <div id="window" style="display: none;">
@@ -703,7 +899,34 @@
                         <span>Help</span>
                     </div>
                     <div class="content-container">
-    
+                        const quizType = document.querySelector(".quiz__Type"); //퀴즈 종류 <br>
+                        const quiznumber = document.querySelector(".quiz__number"); //퀴즈 번호 <br>
+                        const quizAsk = document.querySelector(".quiz__Ask"); //퀴즈질문 <br>
+                        const quizconfirm = document.querySelector(".quiz__confirm"); //정답 확인 버튼 <br>
+                        const quizResult = document.querySelector(".quiz__result"); //정답 확인 <br>
+                        const quizDog = document.querySelector(".quiz__view .dog"); //강아지 <br>
+                        //문제정보 <br>
+                        const answerType = "HTML"; <br>
+                        const answerNum = 1; <br>
+                        const answerAsk = "컨텐츠의 구조를 정의 하는 마크업 언어는?"; //문제
+                        <br>
+                        const answerResult = "html"; //답안 <br>
+                
+                        //문제출력 <br>
+                        quizType.textContent = answerType; <br>
+                        quiznumber.textContent = answerNum + ". "; <br>
+                        quizAsk.textContent = answerAsk; <br>
+                        quizResult.textContent = answerResult; <br>
+                
+                        //정답확인 <br>
+                        //정답 버튼을 클릭하면 정답을 보이게 설정 <br>
+                
+                        quizconfirm.addEventListener("click", () => {
+                            quizconfirm.style.display = "none";
+                            quizResult.style.display = "block";
+                            quizDog.classList.add("like");
+                            quizDog.classList.add("dislike");
+                        });
                         <div class="content">
                             <div class="main"></div>
                             <div class="scroll">
@@ -721,10 +944,8 @@
                     <div class="footer"></div>
                 </div>
             </div>
-        </div>
 
     </main>
-
 
     <footer id="footer">
         <a href="mailto:nexus486@naver.com">nexus486@naver.com</a>
@@ -759,6 +980,24 @@
             quizDog.classList.add("like");
             quizDog.classList.add("dislike");
         });
+
+        function ondisplay() {
+            const display = document.getElementById("window");
+            if (display.style.display == 'block') {
+                display.style.display == 'none'
+            } else {
+                display.style.display == 'block'
+            }
+        }
+
+        function getShow() {
+            document.getElementById("window").style.display = "block";
+
+        }
+
+        function getHide() {
+            document.getElementById("window").style.display = "none";
+        }
     </script>
 </body>
 

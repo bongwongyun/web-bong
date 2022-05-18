@@ -134,6 +134,7 @@ header ul li a:hover {
   border-bottom: 2px solid #222;
   height: 20vw;
   overflow: hidden;
+  position: relative;
 }
 .main__line h3 {
   font-size: 20vw;
@@ -142,6 +143,20 @@ header ul li a:hover {
   text-align: center;
   margin-top: -4.5%;
   letter-spacing: -0.8vw;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  display: inline-flex;
+  will-change: transform;
+  animation: marquee 14s linear infinite;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 .main__line2 {
   margin: 0 auto;
@@ -151,6 +166,7 @@ header ul li a:hover {
   height: 20vw;
   margin-top: 20px;
   overflow: hidden;
+  position: relative;
 }
 .main__line2 h3 {
   font-size: 20vw;
@@ -160,6 +176,12 @@ header ul li a:hover {
   color: #fff;
   letter-spacing: -0.5vw;
   margin-top: -4.6%;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  display: inline-flex;
+  will-change: transform;
+  animation: marquee 14s linear infinite;
 }
 .main__cont {
   width: 95%;
