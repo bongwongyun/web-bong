@@ -9,7 +9,10 @@ header {
   align-items: center;
   border-bottom: 1px solid #222;
   padding: 10px;
-  height: 100%;
+  width: 100%;
+  position: fixed;
+  background: #f5f5f5;
+  z-index: 10000;
 }
 header h3 {
   color: #222;
@@ -17,12 +20,10 @@ header h3 {
   font-weight: bold;
   font-size: 2vw;
   padding-left: 3vw;
-  z-index: 1;
 }
 header ul {
   display: flex;
   list-style: none;
-  z-index: 1;
 }
 header ul li {
   padding-left: 6vw;
@@ -32,7 +33,7 @@ header ul li a {
   color: #000;
   text-decoration: none;
   font-family: 'Gmarket Sans';
-  font-weight: 600;
+  font-weight: 300;
 }
 header ul li a:hover {
   color: #ffc435;
@@ -48,7 +49,7 @@ header ul li a:hover {
   text-align: center;
   letter-spacing: normal;
   line-height: 1;
-  margin-bottom: -1.5%;
+  padding-top: 5.5vw;
   z-index: -1;
 }
 .main__banner {
@@ -279,5 +280,139 @@ header ul li a:hover {
   .link_code {
     margin-top: 0.5vw;
     margin-left: 0;
+  }
+}
+
+/* index1 */
+.main__text {
+  margin-bottom: -1vw;
+  padding: 0 2.4vw;
+}
+.main__text h3 {
+  font-family: "Fugaz One";
+  font-weight: bold;
+  font-style: oblique;
+  font-size: 17.1vw;
+  text-align: left;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -.2vw;
+  padding-top: 5.5vw;
+}
+#container {
+  padding: 0 2.4vw;
+  width: 100%;
+  margin: 0 auto;
+}
+#container #con__bg {
+  height: 40vw;
+  border: 2px solid #222;
+}
+#container #con__bg > canvas {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative;
+  z-index: 0;
+}
+#container #con__bg h3 {
+  position: absolute;
+  color: #fff;
+  font-size: 4vw;
+  font-family: "Fugaz One";
+  line-height: 0.9;
+  z-index: 1;
+  transform: translate(10%, 30%);
+}
+.con__box {
+  display: flex;
+  height: 30vw;
+  margin: 2.4vw 0;
+}
+.con__box .boxs {
+  margin: 0 auto;
+}
+.con__box .boxs:nth-child(1) {
+  width: 30vw;
+  background: url(https://images.unsplash.com/photo-1521133573892-e44906baee46?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) center center ,linear-gradient(233deg, #e56420, #c22525, #3d9c31, #37bbde);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: hard-light;
+  animation: hue-rotate 3s linear infinite;
+  border: 2px solid #222;
+  color: #fff;
+  text-align: center;
+  font-family: 'GmarketSans';
+  font-size: 3.7vw;
+  font-weight: 100;
+  padding-top: 21.5vw;  
+}
+.con__box .boxs:nth-child(2) {
+  width: 30vw;
+  background: url(https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1255)
+  center center ,linear-gradient(233deg, #e56420, #c22525, #3d9c31, #37bbde);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: hard-light;
+  animation: hue-rotate 3s linear infinite;
+  margin: 0 2.6vw;
+  border: 2px solid #222;
+  color: #fff;
+  text-align: center;
+  font-family: 'GmarketSans';
+  font-size: 3.7vw;
+  font-weight: 100;
+  padding-top: 21.5vw;
+}
+.con__box .boxs:nth-child(3) {
+  width: 30vw;
+  background: url(https://images.unsplash.com/photo-1555448248-2571daf6344b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287)
+  center center ,linear-gradient(233deg, #e56420, #c22525, #3d9c31, #37bbde);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: hard-light;
+  animation: hue-rotate 3s linear infinite;
+  border: 2px solid #222;
+  color: #fff;
+  text-align: center;
+  font-family: 'GmarketSans';
+  font-size: 3.7vw;
+  font-weight: 100;
+  padding-top: 21.5vw;
+}
+.scroll {
+  font-family: "Gmarket Sans";
+  position: absolute;
+  top: 1.5vw;
+  left: 16vw;
+  z-index: 100000;
+}
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: hue-rotate(0);
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+@media (max-width:1000px) {
+  .main__text h3 {
+    font-size: 17vw;
+  }
+}
+@media (max-width:800px) {
+  .main__text h3 {
+    font-size: 16.9vw;
+    padding-top: 6vw;
+  }
+}
+@media (max-width:600px) {
+  .main__text h3 {
+    padding-top: 8vw;
   }
 }
