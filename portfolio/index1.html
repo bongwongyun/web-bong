@@ -35,8 +35,6 @@
         </ul>
     </header>
 
-    
-
     <div class="main__text">
         <h3>portfolio</h3>
     </div>
@@ -158,10 +156,39 @@
         init();
         animate();
 
-        setInterval(() => (".boxs"),2000)
-
         function init() {
             container = document.getElementById('con__bg');
+
+            setTimeout(() => {
+                gsap.to("header", {
+                    duration:.5,
+                    opacity:1,
+                    dalay:.5,
+                    y:0,
+                    ease:"Power4.out",
+                }),
+                gsap.to(".main__text", {
+                    duration:2,
+                    opacity:1,
+                    dalay:2,
+                    x:0,
+                    ease:"Power4.out",
+                }),
+                gsap.to("#con__bg", {
+                    duration:2.5,
+                    opacity:1,
+                    dalay:2,
+                    x:0,
+                    ease:"Power4.out",
+                }),
+                gsap.to(".con__box", {
+                    duration:3,
+                    opacity:1,
+                    dalay:2,
+                    x:0,
+                    ease:"Power4.out",
+                })
+            }, 500)
 
             camera = new THREE.Camera();
             camera.position.z = 1;

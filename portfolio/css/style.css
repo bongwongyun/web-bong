@@ -13,6 +13,8 @@ header {
   position: fixed;
   background: #f5f5f5;
   z-index: 10000;
+  opacity: 0;
+  transform: translateY(-200px);
 }
 header h3 {
   color: #222;
@@ -287,6 +289,8 @@ header ul li a:hover {
 .main__text {
   margin-bottom: -1vw;
   padding: 0 2.4vw;
+  opacity: 0;
+  transform: translate(-49%);
 }
 .main__text h3 {
   font-family: "Fugaz One";
@@ -297,7 +301,7 @@ header ul li a:hover {
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: -.2vw;
-  padding-top: 5.5vw;
+  padding-top: 5vw;
 }
 #container {
   padding: 0 2.4vw;
@@ -307,6 +311,8 @@ header ul li a:hover {
 #container #con__bg {
   height: 40vw;
   border: 2px solid #222;
+  opacity: 0;
+  transform: translate(-80%);
 }
 #container #con__bg > canvas {
   width: 100% !important;
@@ -327,6 +333,8 @@ header ul li a:hover {
   display: flex;
   height: 30vw;
   margin: 2.4vw 0;
+  opacity: 0;
+  transform: translate(-100%);
 }
 .con__box .boxs {
   margin: 0 auto;
