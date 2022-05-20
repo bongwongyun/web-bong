@@ -333,8 +333,8 @@ header ul li a:hover {
   display: flex;
   height: 30vw;
   margin: 2.4vw 0;
-  opacity: 0;
-  transform: translate(-100%);
+  /* opacity: 0;
+  transform: translate(-100%); */
 }
 .con__box .boxs {
   margin: 0 auto;
@@ -353,6 +353,8 @@ header ul li a:hover {
   font-size: 3.7vw;
   font-weight: 100;
   padding-top: 21.5vw;  
+  opacity: 0;
+  transform: translate(-100%);
 }
 .con__box .boxs:nth-child(2) {
   width: 30vw;
@@ -370,6 +372,8 @@ header ul li a:hover {
   font-size: 3.7vw;
   font-weight: 100;
   padding-top: 21.5vw;
+  opacity: 0;
+  transform: translate(-150%);
 }
 .con__box .boxs:nth-child(3) {
   width: 30vw;
@@ -386,6 +390,8 @@ header ul li a:hover {
   font-size: 3.7vw;
   font-weight: 100;
   padding-top: 21.5vw;
+  opacity: 0;
+  transform: translate(-200%);
 }
 .scroll {
   font-family: "Gmarket Sans";
