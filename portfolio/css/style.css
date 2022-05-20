@@ -302,7 +302,6 @@ header ul li a:hover {
   opacity: 0;
   width: 0;
   height: 0;
-  background: none;
 }
 #container {
   padding: 0 2.4vw;
@@ -421,7 +420,7 @@ header ul li a:hover {
 }
 @media (max-width:1000px) {
   .main__text h3 {
-    font-size: 17vw;
+    font-size: 17vw !important;
   }
   .scroll {
     position: absolute;
@@ -430,13 +429,13 @@ header ul li a:hover {
 }
 @media (max-width:800px) {
   .main__text h3 {
-    font-size: 16.9vw;
+    font-size: 16.9vw !important;
     padding-top: 4.5vw;
   }
 }
 @media (max-width:600px) {
   .main__text h3 {
-    font-size: 17.3vw;
+    font-size: 17.3vw !important;
     padding-top: 5.5vw;
   }
 }
