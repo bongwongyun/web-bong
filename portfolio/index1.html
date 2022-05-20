@@ -41,7 +41,8 @@
 
     <div id="container">
         <div id="con__bg">
-            <h3>BONG<br>FRONTEND</h3>
+            <h3>BONG</h3>
+            <h3>FRONTEND</h3>
         </div>
     </div>
 
@@ -145,7 +146,7 @@
         }
     </script>
 
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
     <script>
@@ -161,48 +162,69 @@
 
             setTimeout(() => {
                 gsap.to("header", {
-                    duration:.5,
-                    opacity:1,
-                    dalay:.5,
-                    y:0,
-                    ease:"Power4.out",
-                }),
-                gsap.to(".main__text", {
-                    duration:2,
-                    opacity:1,
-                    dalay:2,
-                    x:0,
-                    ease:"Power4.out",
-                }),
-                gsap.to("#con__bg", {
-                    duration:2.5,
-                    opacity:1,
-                    dalay:2,
-                    x:0,
-                    ease:"Power4.out",
-                }),
-                gsap.to(".con__box .boxs:nth-child(1)", {
-                    duration:4.5,
-                    opacity:1,
-                    dalay:2,
-                    x:0,
-                    ease:"Power4.out",
-                }),
-                gsap.to(".con__box .boxs:nth-child(2)", {
-                    duration:4, 
-                    opacity:1,
-                    dalay:2,
-                    x:0,
-                    ease:"Power4.out",
-                }),
-                gsap.to(".con__box .boxs:nth-child(3)", {
-                    duration:3.5,
-                    opacity:1,
-                    dalay:2,
-                    x:0,
-                    ease:"Power4.out",
-                })
-            }, 500)
+                        duration: .5,
+                        opacity: 1,
+                        dalay: .5,
+                        y: 0,
+                        ease: "power4.out",
+                    }),
+                    gsap.to(".main__text h3", {
+                        duration: 2.5,
+                        opacity: 1,
+                        dalay: 2,
+                        fontSize:"17.1vw",
+                        background:"#222",
+                        width: "100%",
+                        height: "100%",
+                        ease: "power4.out",
+                    }),
+                    gsap.to("#con__bg", {
+                        duration: 2.5,
+                        opacity: 1,
+                        dalay: 2,
+                        width: "100%",
+                        height: "40vw",
+                        ease: "power4.out",
+                    }),
+                    gsap.to("#con__bg h3:nth-child(1)", {
+                        duration: 4.5,
+                        opacity: 1,
+                        dalay: 2,
+                        y: "60%",
+                        ease: "power4.out",
+                    }),
+                    gsap.to("#con__bg h3:nth-child(2)", {
+                        duration: 5,
+                        opacity: 1,
+                        dalay: 2.5,
+                        y: "150%",
+                        ease: "power4.out",
+                    }),
+                    gsap.to(".con__box .boxs:nth-child(1)", {
+                        duration: 3,
+                        opacity: 1,
+                        dalay: 2.2,
+                        width: "30vw",
+                        height: "30vw",
+                        ease: "power4.out",
+                    }),
+                    gsap.to(".con__box .boxs:nth-child(2)", {
+                        duration: 3.2,
+                        opacity: 1,
+                        dalay: 2.4,
+                        width: "30vw",
+                        height: "30vw",
+                        ease: "power4.out",
+                    }),
+                    gsap.to(".con__box .boxs:nth-child(3)", {
+                        duration: 3.4,
+                        opacity: 1,
+                        dalay: 2.6,
+                        width: "30vw",
+                        height: "30vw",
+                        ease: "power4.out",
+                    })
+            }, 1000)
 
             camera = new THREE.Camera();
             camera.position.z = 1;
@@ -260,7 +282,7 @@
         window.addEventListener("scroll", () => {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
             document.querySelector(".scroll").innerText = Math.round(scrollTop)
-        })    
+        })
     </script>
 </body>
 
