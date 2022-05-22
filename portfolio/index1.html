@@ -88,7 +88,7 @@
                     <a href="#" class="a__code">코드</a>
                 </div>
             </div>
-            <h3>웹표준사이트</h3>
+            <h3>WebStandard</h3>
             <p>웹 접근성을 준수하여 제작한 사이트입니다. <br>
                 웹 표준 및 크로스브라우징을 신경써서 작업하였습니다.
             </p>
@@ -98,7 +98,7 @@
     <div class="main__coding">
         <div class="main__info">
             <div class="main__coingImg">
-                <img src="img/link-img01.png" alt="imac">
+                <img src="img/AppleSite_parallax.png" alt="imac">
                 <div class="link_code">
                     <a href="../javascript/effect/AppleSite_parallax.html" class="a__site">사이트</a>
                     <a href="#" class="a__code">코드</a>
@@ -111,27 +111,29 @@
         </div>
         <div class="main__info">
             <div class="main__coingImg">
-                <img src="img/link-img02.png" alt="imac">
+                <img src="img/javascript.png" alt="imac">
                 <div class="link_code">
-                    <a href="../webstandard/index.html" class="a__site">사이트</a>
+                    <a href="../javascript/index.html" class="a__site">사이트</a>
                     <a href="#" class="a__code">코드</a>
                 </div>
             </div>
-            <h3>웹표준사이트</h3>
-            <p>웹 접근성을 준수하여 제작한 사이트입니다. <br>
+            <h3>자바스크립트 정리사이트</h3>
+            <p>자바스크립트를 공부하면서 정리해둔 사이트입니다. <br>
                 웹 표준 및 크로스브라우징을 신경써서 작업하였습니다.
             </p>
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
 
     <!-- <script id="vertexShader" type="x-shader/x-vertex">
         void main() {
             gl_Position = vec4( position, 1.0 );
         }
-    </script>
+    </script> -->
 
-    <script id="fragmentShader" type="x-shader/x-fragment">
+    <!-- <script id="fragmentShader" type="x-shader/x-fragment">
         #ifdef GL_ES
         precision mediump float;
         #endif
@@ -203,10 +205,6 @@
 
         }
     </script> -->
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
-    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
     <script>
         var container;
         var camera, scene, renderer;
@@ -244,18 +242,18 @@
                         opacity: 1,
                         dalay: 2,
                         width: "100%",
-                        height: "40vw",
+                        height: "50vw",
                         ease: "power4.out",
                     }),
                     gsap.to("#con__bg h3:nth-child(1)", {
-                        duration: 3,
+                        duration: 6,
                         opacity: 1,
                         dalay: 2,
                         y: "60%",
                         ease: "power4.out",
                     }),
                     gsap.to("#con__bg h3:nth-child(2)", {
-                        duration: 3.5,
+                        duration: 6.5,
                         opacity: 1,
                         dalay: 2.5,
                         y: "150%",
@@ -389,7 +387,8 @@
             uniforms.time.value += 0.05;
             renderer.render(scene, camera);
         }
-
+    </script>
+    <script>
         window.addEventListener("scroll", () => {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
             document.querySelector(".scroll").innerText = Math.round(scrollTop)
