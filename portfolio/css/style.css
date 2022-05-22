@@ -207,6 +207,7 @@ header ul li a:hover {
   margin: 2vw;
 }
 .link_code {
+  opacity: 0;
   margin-left:0;
 }
 .link_code a {
@@ -261,7 +262,7 @@ header ul li a:hover {
     height: 54vw;
   }
   .link_code {
-    margin-left: 10vw;
+    margin-left: 10vw !important;
   }
 }
 @media (max-width:800px) {
@@ -269,7 +270,7 @@ header ul li a:hover {
     height: 56vw;
   }
   .link_code {
-    margin-left: 12vw;
+    margin-left: 12vw !important;
   }
 }
 @media (max-width:600px) {
@@ -280,7 +281,7 @@ header ul li a:hover {
     margin: 0;
   }
   .link_code {
-    margin-left: 6vw;
+    margin-left: 6vw !important;
   }
 }
 
@@ -313,13 +314,16 @@ header ul li a:hover {
   height: 0;
   border: 2px solid #222;
   opacity: 0;
+  background: url(../img/KakaoTalk_20220522_231352866.jpg) center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-#container #con__bg > canvas {
+/* #container #con__bg > canvas {
   width: 100% !important;
   height: 100% !important;
   position: relative;
   z-index: 0;
-}
+} */
 #container #con__bg h3 {
   position: absolute;
   color: #fff;
