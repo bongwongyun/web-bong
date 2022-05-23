@@ -233,10 +233,10 @@ body {
     opacity: 0;
   }
   .main__coingImg img {
-    width: 0;
-    height: 0;
+    width: 90%;
     margin: 2vw;
     opacity: 0;
+    transform: translate(0, 5vw);
   }
   .main__info {
     width: 0;
