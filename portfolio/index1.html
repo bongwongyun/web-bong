@@ -127,13 +127,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
 
-    <!-- <script id="vertexShader" type="x-shader/x-vertex">
+    <script id="vertexShader" type="x-shader/x-vertex">
         void main() {
             gl_Position = vec4( position, 1.0 );
         }
-    </script> -->
+    </script>
 
-    <!-- <script id="fragmentShader" type="x-shader/x-fragment">
+    <script id="fragmentShader" type="x-shader/x-fragment">
         #ifdef GL_ES
         precision mediump float;
         #endif
@@ -204,7 +204,7 @@
           gl_FragColor = vec4(1.0 -  color, 1.0);
 
         }
-    </script> -->
+    </script>
     <script>
         var container;
         var camera, scene, renderer;
@@ -246,7 +246,7 @@
                         ease: "power4.out",
                     }),
                     gsap.to("#con__bg h3:nth-child(1)", {
-                        duration: 6,
+                        duration: 4,
                         opacity: 1,
                         dalay: 2,
                         y: "60%",
@@ -315,7 +315,7 @@
                     duration: 4,
                     opacity: 1,
                     dalay: 2.6,
-                    marginLeft: "20vw",
+                    marginLeft: "2vw",
                     ease: "power4.out",
                 })
             }, 5000)
