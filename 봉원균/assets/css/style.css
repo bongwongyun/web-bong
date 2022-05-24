@@ -160,6 +160,36 @@ body {
   }
 
   /* section2 */
+  .main__cont {
+    width: 100%;
+    height: 35vw;
+    margin: 0 auto;
+    display: flex;
+  }
+  .main__cont:nth-child(2) {
+    justify-content: space-between;
+  }
+  .cont_search {
+    width: 47vw;
+    height: 30vw;
+    margin: 2vw;
+    border: 2px solid #222;
+  }
+  .cont_slider {
+    width: 47vw;
+    height: 30vw;
+    float: left;
+    margin: 2vw;
+    border: 2px solid #222;
+  }
+  .cont_text {
+    margin: 2vw;
+    font-family: 'GmarketSans';
+    font-size: 2vw;
+    border: 2px solid #222;
+    width: 47vw;
+    height: 30vw;
+  }
   .main__line {
     border-top: 2px solid #222;
     border-bottom: 2px solid #222;
@@ -231,6 +261,7 @@ body {
     transform: translate(1vw);
     border: 2px solid #222;
     opacity: 0;
+    position: relative;
   }
   .main__coingImg img {
     width: 90%;
@@ -266,14 +297,13 @@ body {
     opacity: 0;
   }
   .link_code {
+    position: absolute;
     opacity: 0;
-    /* margin-top: 1.5vw;
-    margin-left: 20vw; */
-    transform: translate(20vw,5vw);
+    transform: translate(24vw,5vw);
   }
   .link_code a {
     font-family: 'GmarketSans';
-    font-size: 1.8vw;
+    font-size: 1.2vw;
     text-decoration: none;
     color: #222;
     border: 2px solid #222;
@@ -281,10 +311,10 @@ body {
     background: #ffc435;
   }
   .link_code .a__site {
-    padding: 15px 30px 10px 30px;
+    padding: 0.8vw 2vw 0.6vw 2vw;
   }
   .link_code .a__code {
-    padding: 15px 40px 10px 40px;
+    padding: 0.8vw 2.4vw 0.6vw 2.4vw;
   }
   @media (max-width:1000px) {
     header ul li {
@@ -295,7 +325,7 @@ body {
       height: 54vw;
     }
     .link_code {
-        transform: translate(14vw,2vw) !important;
+      transform: translate(23vw,-.5vw) !important;
     }
   }
   @media (max-width:800px) {
@@ -303,7 +333,7 @@ body {
       height: 56vw;
     }
     .link_code {
-        transform: translate(10vw,1vw) !important;
+      transform: translate(22vw,-1vw) !important;
     }
   }
   @media (max-width:600px) {
@@ -314,6 +344,6 @@ body {
       margin: 0;
     }
     .link_code {
-        transform: translate(4vw,1vw) !important;
+      transform: translate(18vw,-1.5vw) !important;
     }
   }
