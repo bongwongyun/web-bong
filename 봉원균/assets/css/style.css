@@ -166,9 +166,6 @@ body {
     opacity: 0;
     display: flex;
   }
-  .main__cont:nth-child(2) {
-    justify-content: space-between;
-  }
   .cont_search {
     width: 47vw;
     height: 30vw;
@@ -196,7 +193,7 @@ body {
   .cont_text {
     margin: 2vw;
     font-family: 'GmarketSans';
-    border: 2px solid #222;
+    /* border: 2px solid #222; */
     width: 47vw;
     height: 30vw;
   }
