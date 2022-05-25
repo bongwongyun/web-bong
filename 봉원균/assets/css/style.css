@@ -125,25 +125,25 @@ body {
     font-weight: 300;
 }
 .sec1_img2 > div:nth-child(1):hover {
-    background: url(/portfolio/img/KakaoTalk_20220522_231350442.jpg) center;
+    background: url(../img/KakaoTalk_20220522_231350442.jpg) center;
     background-repeat: no-repeat;
     background-size: cover;
     animation: none;
-    transition: all .2s;
+    transition: all .3s;
 }
 .sec1_img2 > div:nth-child(2):hover {
-    background: url(/portfolio/img/KakaoTalk_20220522_231351044.jpg) center;
+    background: url(../img/KakaoTalk_20220522_231351044.jpg) center;
     background-repeat: no-repeat;
     background-size: cover;
     animation: none;
-    transition: all .4s;
+    transition: all .3s;
 }
 .sec1_img2 > div:nth-child(3):hover {
-    background: url(/portfolio/img/KakaoTalk_20220522_231352365.jpg) center;
+    background: url(../img/KakaoTalk_20220522_231352365.jpg) center;
     background-repeat: no-repeat;
     background-size: cover;
     animation: none;
-    transition: all .6s;
+    transition: all .3s;
 }
 /* .sec1_img2 > div em:hover {
     display: none;
