@@ -118,12 +118,35 @@
  }
 
  .section2 .pin-wrap>div {
-     min-width: 38vw;
+     min-width: 28vw;
+     position: relative;
  }
+
  .section2 .pin-wrap>div iframe {
-     width: 37vw;
-     height: 30vw;
+     width: 27vw;
+     height: 22vw;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
  }
+
+ .section2 .pin-wrap>div h3 {
+     width: 27vw;
+     position: absolute;
+     top: 0;
+     left: 0;
+     transform: translate(.5vw, 12vw);
+ }
+
+ .section2 .pin-wrap>div p {
+     width: 27vw;
+     position: absolute;
+     top: 0;
+     left: 0;
+     transform: translate(.5vw, 14vw);
+ }
+
  /* .section2 .pin-wrap>div>em {
      color: #fff;
      font-family: 'GmarketSans';
@@ -209,27 +232,81 @@
 
  @media (max-width:1000px) {
      .section2 .pin-wrap>div {
-         min-width: 36vw;
-         min-height: 36vw;
+         min-width: 35vw;
      }
 
-     .section2 .pin-wrap>div>em {
-         top: 25vw;
+     .section2 .pin-wrap>div iframe {
+         width: 34vw;
+         height: 29vw;
+     }
+
+     .section2 .pin-wrap>div h3 {
+         width: 34vw;
+         position: absolute;
+         top: 0;
+         left: 0;
+         transform: translate(.5vw, 15vw);
+     }
+
+     .section2 .pin-wrap>div p {
+         width: 34vw;
+         position: absolute;
+         top: 0;
+         left: 0;
+         transform: translate(.5vw, 18vw);
      }
  }
 
  @media (max-width:800px) {
      .section2 .pin-wrap>div {
-         min-width: 38vw;
-         min-height: 38vw;
+         min-width: 39vw;
      }
+
+     .section2 .pin-wrap>div iframe {
+         width: 38vw;
+         height: 23vw;
+     }
+     .section2 .pin-wrap>div h3 {
+        width: 38vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(.5vw, 12vw);
+    }
+
+    .section2 .pin-wrap>div p {
+        width: 38vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(.5vw, 16vw);
+    }
  }
 
  @media (max-width:600px) {
      .section2 .pin-wrap>div {
-         min-width: 40vw;
-         min-height: 40vw;
+         min-width: 45vw;
      }
+
+     .section2 .pin-wrap>div iframe {
+         width: 44vw;
+         height: 37vw;
+     }
+     .section2 .pin-wrap>div h3 {
+        width: 38vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(.5vw, 19vw);
+    }
+
+    .section2 .pin-wrap>div p {
+        width: 38vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(.5vw, 24vw);
+    }
  }
 
  @keyframes hue-rotate {
