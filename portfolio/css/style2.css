@@ -118,12 +118,13 @@
  }
 
  .section2 .pin-wrap>div {
-     min-width: 35vw;
-     min-height: 35vw;
-     margin-right: 2vw;
+     min-width: 38vw;
  }
-
- .section2 .pin-wrap>div>em {
+ .section2 .pin-wrap>div iframe {
+     width: 37vw;
+     height: 30vw;
+ }
+ /* .section2 .pin-wrap>div>em {
      color: #fff;
      font-family: 'GmarketSans';
      font-size: 6vw;
@@ -182,7 +183,7 @@
      background-size: cover;
      animation: none;
      transition: all .3s;
- }
+ } */
 
  .section4 .pin-wrap {
      height: 100vh;
