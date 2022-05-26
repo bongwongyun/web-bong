@@ -24,8 +24,6 @@
 
 <body>
 
-    <div class="scroll">0</div>
-
     <header id="header">
         <h1>portfolio</h1>
         <nav id="nav">
@@ -56,16 +54,9 @@
         </section>
         <section class="section2 horizontal-scroll">
             <div class="pin-wrap">
-                <div><iframe src="https://bongwongyun.github.io/web-bong/javascript/effect/searchEffect.html" frameborder="0"></iframe>
-                <h3>searchEffect</h3><p>자바스크립트를 이용하여 검색기능을 구현하였습니다.</p></div>
-                <div><iframe src="https://bongwongyun.github.io/web-bong/javascript/effect/sliderEffect.html" frameborder="0"></iframe>
-                <h3>sliderEffect</h3><p>자바스크립트를 이용하여 검색기능을 구현하였습니다.</p></div>
-                <div><iframe src="https://bongwongyun.github.io/web-bong/javascript/effect/quizEffect.html" frameborder="0"></iframe>
-                <h3>quizEffect</h3><p>자바스크립트를 이용하여 검색기능을 구현하였습니다.</p></div>
-                <div><iframe src="https://bongwongyun.github.io/web-bong/javascript/effect/mouseEffect.html" frameborder="0"></iframe>
-                <h3>mouseEffect</h3><p>자바스크립트를 이용하여 검색기능을 구현하였습니다.</p></div>
-                <div><iframe src="https://bongwongyun.github.io/web-bong/javascript/effect/parallaxEffect.html" frameborder="0"></iframe>
-                <h3>parallaxEffect</h3><p>자바스크립트를 이용하여 검색기능을 구현하였습니다.</p></div>
+                <div><em>열정적인</em></div>
+                <div><em>지독한</em></div>
+                <div><em>실력파</em></div>
             </div>
         </section>
         <section class="section3">
@@ -107,7 +98,34 @@
             </div>
         </section>
         <section class="section5">
-            section5
+            <div class="main__coding">
+                <div class="main__info">
+                    <div class="main__coingImg">
+                        <img src="../portfolio/img/AppleSite_parallax.png" alt="imac">
+                        <div class="link_code">
+                            <a href="../javascript/effect/AppleSite_parallax.html" class="a__site">사이트</a>
+                            <a href="#" class="a__code">코드</a>
+                        </div>
+                    </div>
+                    <h3>애플사이트</h3>
+                    <p>애플사이트를 참고하여 만든 사이트입니다. <br>
+                        웹 표준 및 크로스브라우징을 신경써서 작업하였습니다.
+                    </p>
+                </div>
+                <div class="main__info">
+                    <div class="main__coingImg">
+                        <img src="../portfolio/img/javascript.png" alt="imac">
+                        <div class="link_code">
+                            <a href="../javascript/index.html" class="a__site">사이트</a>
+                            <a href="#" class="a__code">코드</a>
+                        </div>
+                    </div>
+                    <h3>자바스크립트 정리사이트</h3>
+                    <p>자바스크립트를 공부하면서 정리해둔 사이트입니다. <br>
+                        웹 표준 및 크로스브라우징을 신경써서 작업하였습니다.
+                    </p>
+                </div>
+            </div>
         </section>
         <section class="section6 horizontal-scroll">
             <div class="pin-wrap">
@@ -282,6 +300,7 @@
             ScrollTrigger.refresh();
         });
     </script>
+
      <script id="vertexShader" type="x-shader/x-vertex">
         void main() {
             gl_Position = vec4( position, 1.0 );
