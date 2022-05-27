@@ -84,39 +84,45 @@
      animation: hue-rotate 10s linear infinite;
      /* opacity: 0; */
  }
- .sec1_img2 > div:nth-child(1) {
-    background: url(https://images.unsplash.com/photo-1521133573892-e44906baee46?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center center;
-    background-size: cover;
-}
-.sec1_img2 > div:nth-child(2) {
-    background: url(https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1255) no-repeat center center;
-    background-size: cover;
-}
-.sec1_img2 > div:nth-child(3) {
-    background: url(https://images.unsplash.com/photo-1555448248-2571daf6344b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center center;
-    background-size: cover;
-}
-.sec1_img2 > div:nth-child(1):hover {
-    background: url(../img/KakaoTalk_20220522_231350442.jpg) center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation: none;
-    transition: all .3s;
-}
-.sec1_img2 > div:nth-child(2):hover {
-    background: url(../img/KakaoTalk_20220522_231352365.jpg) center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation: none;
-    transition: all .3s;
-}
-.sec1_img2 > div:nth-child(3):hover {
-    background: url(../img/KakaoTalk_20220522_231351044.jpg) center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation: none;
-    transition: all .3s;
-}
+
+ .sec1_img2>div:nth-child(1) {
+     background: url(https://images.unsplash.com/photo-1521133573892-e44906baee46?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center center;
+     background-size: cover;
+ }
+
+ .sec1_img2>div:nth-child(2) {
+     background: url(https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1255) no-repeat center center;
+     background-size: cover;
+ }
+
+ .sec1_img2>div:nth-child(3) {
+     background: url(https://images.unsplash.com/photo-1555448248-2571daf6344b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center center;
+     background-size: cover;
+ }
+
+ .sec1_img2>div:nth-child(1):hover {
+     background: url(../img/KakaoTalk_20220522_231350442.jpg) center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     animation: none;
+     transition: all .3s;
+ }
+
+ .sec1_img2>div:nth-child(2):hover {
+     background: url(../img/KakaoTalk_20220522_231352365.jpg) center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     animation: none;
+     transition: all .3s;
+ }
+
+ .sec1_img2>div:nth-child(3):hover {
+     background: url(../img/KakaoTalk_20220522_231351044.jpg) center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     animation: none;
+     transition: all .3s;
+ }
 
  .sec1_img2>div em {
      color: #fff;
@@ -156,10 +162,12 @@
      justify-content: flex-start;
      align-items: center;
  }
- .section2 .pin-wrap > div {
+
+ .section2 .pin-wrap>div {
      min-width: 33vw;
  }
 
+ /* section4 */
  .section4 .pin-wrap {
      height: 100vh;
      display: flex;
@@ -168,7 +176,28 @@
  }
 
  .section4 .pin-wrap>div {
-     min-width: 60vw;
+     min-width: 39vw;
+ }
+
+ .section4 .pin-wrap>div a {
+     color: #222;
+     font-family: "GmarketSans";
+ }
+ .section4 .pin-wrap>div a h3 {
+     margin-top: 1vw;
+     font-weight: 600;
+     font-size: 1.5em;
+ }
+ .section4 .pin-wrap>div a p {
+     margin-top: 1vw;
+     font-weight: 300;
+     font-size: 1em;
+ }
+
+ .section4 .pin-wrap>div a img {
+     width: 37vw;
+     height: 25vw;
+     display: block;
  }
 
  .section6 .pin-wrap {
@@ -182,17 +211,11 @@
      min-width: 60vw;
  }
 
- @media (max-width:1000px) {
-    
- }
+ @media (max-width:1000px) {}
 
- @media (max-width:800px) {
-     
- }
+ @media (max-width:800px) {}
 
- @media (max-width:600px) {
-     
- }
+ @media (max-width:600px) {}
 
  @keyframes hue-rotate {
      from {
@@ -315,7 +338,7 @@
  }
 
  .main__info p {
-     margin-top: 0;
+     margin-top: 1vw;
      margin-left: 0;
      text-align: left;
      font-family: 'GmarketSans';
