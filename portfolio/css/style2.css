@@ -39,7 +39,7 @@
 
  /* section1 */
  .sec1_tit {
-     margin-top: 18px;
+     margin-top: 20px;
      font-family: "Fugaz One";
      font-weight: bold;
      text-transform: uppercase;
@@ -70,7 +70,7 @@
  .sec1_img2 {
      display: flex;
      justify-content: space-between;
-     padding-top: 10vw;
+     /* padding-top: 1.4vw; */
  }
 
  .sec1_img2>div {
@@ -189,9 +189,10 @@
      font-size: 1.5em;
  }
  .section4 .pin-wrap>div a p {
-     margin-top: 1vw;
+     margin-top: .5vw;
      font-weight: 300;
      font-size: 1em;
+     width: 37vw;
  }
 
  .section4 .pin-wrap>div a img {
@@ -238,8 +239,8 @@
      height: 10vw;
      overflow: hidden;
      position: relative;
-     margin-top: 2.1vw;
      width: 0;
+     margin-bottom: 1vw;
  }
 
  .main__line h3 {
