@@ -70,20 +70,53 @@
  .sec1_img2 {
      display: flex;
      justify-content: space-between;
-     margin-top: 2.1vw;
+     padding-top: 10vw;
  }
 
  .sec1_img2>div {
-     width: 30.5vw;
-     height: 30.5vw;
+     width: 32vw;
+     height: 32vw;
      border: 2px solid #222;
      display: flex;
      align-items: end;
      justify-content: center;
      background-blend-mode: hard-light;
      animation: hue-rotate 10s linear infinite;
-     opacity: 0;
+     /* opacity: 0; */
  }
+ .sec1_img2 > div:nth-child(1) {
+    background: url(https://images.unsplash.com/photo-1521133573892-e44906baee46?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center center;
+    background-size: cover;
+}
+.sec1_img2 > div:nth-child(2) {
+    background: url(https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1255) no-repeat center center;
+    background-size: cover;
+}
+.sec1_img2 > div:nth-child(3) {
+    background: url(https://images.unsplash.com/photo-1555448248-2571daf6344b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center center;
+    background-size: cover;
+}
+.sec1_img2 > div:nth-child(1):hover {
+    background: url(../img/KakaoTalk_20220522_231350442.jpg) center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: none;
+    transition: all .3s;
+}
+.sec1_img2 > div:nth-child(2):hover {
+    background: url(../img/KakaoTalk_20220522_231352365.jpg) center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: none;
+    transition: all .3s;
+}
+.sec1_img2 > div:nth-child(3):hover {
+    background: url(../img/KakaoTalk_20220522_231351044.jpg) center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: none;
+    transition: all .3s;
+}
 
  .sec1_img2>div em {
      color: #fff;
@@ -124,7 +157,7 @@
      align-items: center;
  }
  .section2 .pin-wrap > div {
-     min-width: 35.4vw;
+     min-width: 33vw;
  }
 
  .section4 .pin-wrap {
@@ -294,7 +327,7 @@
  .link_code {
      position: absolute;
      opacity: 0;
-     transform: translate(14vw, 5vw);
+     transform: translate(12vw, 5vw);
  }
 
  .link_code a {
