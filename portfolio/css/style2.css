@@ -49,9 +49,8 @@
  }
 
  .sec1_img {
-     height: 600px;
+     height: 400px;
      background-color: #888;
-     margin-top: 2vw;
      border: 2px solid #222;
      overflow: hidden;
      position: relative;
@@ -82,7 +81,7 @@
      justify-content: center;
      background-blend-mode: hard-light;
      animation: hue-rotate 10s linear infinite;
-     /* opacity: 0; */
+     opacity: 0;
  }
 
  .sec1_img2>div:nth-child(1) {

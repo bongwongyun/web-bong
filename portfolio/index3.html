@@ -122,11 +122,6 @@
                     <span>FRONTEND&bull;</span>
                 </h3>
             </div>
-            <div class="sec1_img2">
-                <div><em>열정적인</em></div>
-                <div><em>지독한</em></div>
-                <div><em>실력파</em></div>
-            </div>
         </section>
         <section class="section4 horizontal-scroll">
             <div class="pin-wrap">
@@ -173,20 +168,21 @@
             const tl = gsap.timeline();
             tl.to("#header", {duration: 0.3, top:0, ease: "power2.out"})
             tl.to(".sec1_tit", {duration: 1, fontSize: "17.6vw", ease: "power4.out"})
-            tl.to(".sec1_img", {duration: 1, width: "100%", border:2, height: 600, y:0, ease: "power4.out"}, "-=0.4")
+            tl.to(".sec1_img", {duration: 1, width: "100%", border:2, height: 400, y:0, ease: "power4.out"}, "-=0.4")
             tl.to(".sec1_img .tit .t1", {duration: 0.4, y:0, opacity:1, ease: "power2.out"})
             tl.to(".sec1_img .tit .t2", {duration: 0.4, y:0, opacity:1, ease: "power2.out"})
         }, 2000)
 
         setInterval(() => {
-            gsap.to(".main__line", {
+            gsap.to(".sec1_img2 div", {
                 duration: 1,
                 opacity: 1,
                 delay: 2,
-                width: "100%",
+                width: "30vw",
+                height : "30vw",
                 ease: "power4.out",
             })
-        },3000)
+        },2500)
 
         setInterval(() => {
             gsap.to(".main__info", {
@@ -197,7 +193,7 @@
                 height: "50vw",
                 ease: "power4.out",
             })
-        },2000)
+        },3000)
 
         setInterval(() => {
             gsap.to(".main__coingImg", {
@@ -210,7 +206,7 @@
                 height: "36vw",
                 ease: "power4.out",
             })
-        },3500)
+        },4000)
 
         setInterval(() => {
             gsap.to(".main__coingImg img", {
