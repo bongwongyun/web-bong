@@ -112,14 +112,27 @@
                         웹 표준 및 크로스브라우징을 신경써서 작업하였습니다.
                     </p>
                 </div>
+                <div class="main__info">
+                    <div class="main__coingImg">
+                        <img src="../portfolio/img/gamesite.png" alt="imac">
+                        <div class="link_code">
+                            <a href="../game/index.html" class="a__site">사이트</a>
+                            <a href="#" class="a__code">코드</a>
+                        </div>
+                    </div>
+                    <h3>게임모음 사이트</h3>
+                    <p>자바스크립트를 이용하여 만든 게임을 정리해둔 사이트입니다. <br>
+                        웹 표준 및 크로스브라우징을 신경써서 작업하였습니다.
+                    </p>
+                </div>
             </div>
         </section>
         <section class="section3">
             <div class="main__line">
-                <h3><span>FRONTEND&bull;</span>
-                    <span>FRONTEND&bull;</span>
-                    <span>FRONTEND&bull;</span>
-                    <span>FRONTEND&bull;</span>
+                <h3><span>SITE&bull;CODING&nbsp;</span>
+                    <span>SITE&bull;CODING&nbsp;</span>
+                    <span>SITE&bull;CODING&nbsp;</span>
+                    <span>SITE&bull;CODING&nbsp;</span>
                 </h3>
             </div>
         </section>
@@ -130,12 +143,18 @@
                 기존에 있던 리액트 사이트에 블로그를 추가해 보았습니다.
                 </p></a></div>
                 <div><a href="https://react-vue.netlify.app"><img src="../portfolio/img/react-vue2.png" alt=""><h3>React-vue</h3><p>뷰를 이용하여 만든 사이트입니다. <br> 리액트 사이트를 참고하여 비슷한 구조로 만들었습니다.</p></a></div>
-                <div><a href="http://nexus486.dothome.co.kr/php/pages/main.php"><img src="../portfolio/img/php.png" alt=""><h3>PHP</h3><p>PHP를 이용하여 만든 사이트입니다. <br> 회원가입,블로그,게시판,글 작성, 댓글 남기기 기능을 구현 했습니다.</p></a></div>
-                <div><a href="http://sna123456.dothome.co.kr/Project/game/main.php"><img src="../portfolio/img/team php.png" alt=""><h3>Team PHP</h3><p>PHP를 이용하여 팀원들과 함께 만든 사이트입니다. <br> 퀴즈사이트를 참고하여 남녀노소 즐길 수 있는 사이트 를 만들어 보았습니다.</p></a></div>
+                <div><a href="http://nexus486.dothome.co.kr/php/pages/main.php"><img src="../portfolio/img/php.png" alt=""><h3>PHP</h3><p>PHP를 이용하여 만든 사이트입니다. <br>회원가입,블로그,게시판,글 작성, 댓글 작성 기능을 구현했습니다.</p></a></div>
+                <div><a href="http://sna123456.dothome.co.kr/Project/game/main.php"><img src="../portfolio/img/team php.png" alt=""><h3>Team PHP</h3><p>PHP를 이용하여 팀원들과 함께 만든 사이트입니다. <br> 퀴즈사이트를 참고하여 만들어 보았습니다.</p></a></div>
             </div>
         </section>
         <section class="section5">
-            section5
+            <div class="main__line">
+                <h3><span>REACT&bull;CODING&nbsp;</span>
+                    <span>REACT&bull;CODING&nbsp;</span>
+                    <span>REACT&bull;CODING&nbsp;</span>
+                    <span>REACT&bull;CODING&nbsp;</span>
+                </h3>
+            </div>
         </section>
         <section class="section6 horizontal-scroll">
             <div class="pin-wrap">
@@ -146,7 +165,13 @@
             </div>
         </section>
         <section class="section7">
-            section7
+            <div class="main__line2">
+                <h3><span>FRONTEND&bull;</span>
+                    <span>FRONTEND&bull;</span>
+                    <span>FRONTEND&bull;</span>
+                    <span>FRONTEND&bull;</span>
+                </h3>
+            </div>
         </section>
     </main>
 
@@ -182,7 +207,7 @@
                 height : "32vw",
                 ease: "power4.out",
             })
-        },2500)
+        },2000)
 
         setInterval(() => {
             gsap.to(".main__info", {
@@ -193,7 +218,7 @@
                 height: "40vw",
                 ease: "power4.out",
             })
-        },3000)
+        },2500)
 
         setInterval(() => {
             gsap.to(".main__coingImg", {
@@ -206,7 +231,7 @@
                 height: "30vw",
                 ease: "power4.out",
             })
-        },4000)
+        },3500)
 
         setInterval(() => {
             gsap.to(".main__coingImg img", {
@@ -217,7 +242,7 @@
                 x:0,
                 ease: "power4.out",
             })
-        },5000)
+        },4500)
 
         setInterval(() => {
             gsap.to(".link_code", {
@@ -228,7 +253,7 @@
                 x:"12.5vw",
                 ease: "power4.out",
             })
-        },6500)
+        },5500)
 
         setInterval(() => {
             gsap.to(".main__info h3", {
@@ -245,8 +270,17 @@
                 marginLeft: "1.9vw",
                 ease: "power4.out",
             })
-        },8000)
+        },6500)
 
+        setInterval(() => {
+            gsap.to(".main__line", {
+                duration: 1,
+                opacity: 1,
+                delay: 2,
+                width: "100%",
+                ease: "power4.out",
+            })
+        },7500)
         setInterval(() => {
             gsap.to(".main__line2", {
                 duration: 1,
