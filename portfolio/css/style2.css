@@ -226,6 +226,16 @@
   min-width: 44vw;
   border: 1px solid #222;
   padding: 1vw;
+  margin: 1vw;
+}
+.section6 .pin-wrap > div h3 {
+  margin-left: 1vw;
+  font-size: 2vw;
+  text-transform: uppercase;
+  font-family: "GmarketSans";
+}
+.section6 .pin-wrap > div p {
+  margin: 1vw;
 }
 .section6 .pin-wrap > div iframe {
   width: 40vw;
@@ -394,30 +404,30 @@
     padding-right: 2vw;
   }
   .main__info {
-    height: 54vw;
+    height: 43vw !important;
   }
   .link_code {
-    transform: translate(11vw, 2vw) !important;
+    transform: translate(11vw, -1vw) !important;
   }
 }
 
 @media (max-width: 800px) {
   .main__info {
-    height: 56vw;
+    height: 45vw !important;
   }
   .link_code {
-    transform: translate(11vw, 2vw) !important;
+    transform: translate(10vw, -1vw) !important;
   }
 }
 
 @media (max-width: 600px) {
   .main__info {
-    height: 58vw;
+    height: 47vw !important;
   }
   .main__coingImg a {
     margin: 0;
   }
   .link_code {
-    transform: translate(8vw, 1vw) !important;
+    transform: translate(6vw, -2vw) !important;
   }
 }
