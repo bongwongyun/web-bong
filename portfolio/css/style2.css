@@ -183,6 +183,9 @@
   border: 1px solid #222;
   margin: 1vw;
 }
+.section4 .pin-wrap > div:nth-child(1) {
+  margin-left: 0;
+}
 
 .section4 .pin-wrap > div a {
   color: #222;
@@ -220,7 +223,15 @@
 }
 
 .section6 .pin-wrap > div {
-  min-width: 60vw;
+  min-width: 44vw;
+  border: 1px solid #222;
+  padding: 1vw;
+}
+.section6 .pin-wrap > div iframe {
+  width: 40vw;
+  height: 30vw;
+  margin: 1vw;
+  border: 1px solid #222;
 }
 @keyframes hue-rotate {
   from {
