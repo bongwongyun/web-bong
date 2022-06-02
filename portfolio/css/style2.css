@@ -167,7 +167,7 @@
 }
 
 .section2 .pin-wrap > div {
-  min-width: 33vw;
+  min-width: 50vw;
 }
 
 /* section4 */
@@ -286,29 +286,25 @@
 }
 
 .main__line2 {
-  border-top: 2px solid #222;
-  border-bottom: 2px solid #222;
-  background: #ffc435;
-  height: 17vw;
   overflow: hidden;
-  position: relative;
   width: 0;
 }
 
 .main__line2 h3 {
-  font-size: 15vw;
+  border-top: 2px solid #222;
+  border-bottom: 2px solid #222;
+  font-size: 6vw;
   font-family: "Fugaz One";
   font-weight: bold;
   text-align: center;
+  background: #ffc435;
   color: #fff;
-  letter-spacing: -0.5vw;
-  margin-top: -2.5%;
   position: absolute;
   left: 0;
   overflow: hidden;
   display: inline-flex;
   will-change: transform;
-  animation: marquee 20s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
@@ -328,22 +324,20 @@
   display: flex;
 }
 
-.main__coingImg {
+.main__codingImg {
   width: 0;
   height: 0;
-  margin: 2.1vw;
-  margin-bottom: 0;
-  margin-left: 1.8vw;
+  margin: 2%;
   transform: translate(1vw);
   border: 2px solid #222;
   opacity: 0;
   position: relative;
 }
 
-.main__coingImg img {
-  width: 90%;
-  margin: 2vw;
-  margin-left: 1.6vw;
+.main__codingImg img {
+  width: 98%;
+  margin: 1%;
+  margin-top: 20%;
   opacity: 0;
   transform: translate(0, 5vw);
 }
@@ -354,6 +348,7 @@
   border: 2px solid #222;
   opacity: 0;
   margin-right: 1vw;
+  display: flex;
 }
 .main__info:hover {
   box-shadow: 0 45px 100px rgba(14,21,47,0.4), 0 16px 40px rgba(14,21,47,0.4);
@@ -376,28 +371,26 @@
 
 .main__info h3 {
   margin-top: .5vw;
-  margin-left: 0;
   text-align: left;
   font-family: "GmarketSans";
   font-weight: 300;
-  font-size: 2vw;
+  font-size: 1.5vw;
   opacity: 0;
 }
 
 .main__info p {
-  margin-left: 0;
   text-align: left;
   font-family: "GmarketSans";
   font-weight: 300;
-  font-size: 1vw;
+  font-size: .5vw;
+  margin-top: 0.5vw;
   opacity: 0;
 }
 
 .link_code {
   position: absolute;
   opacity: 0;
-  transform: translate(12.5vw, 5vw);
-  z-index: 9999;
+  transform: translate(1vw, 20vw);
 }
 
 .link_code a {
