@@ -194,16 +194,16 @@
 
 .section4 .pin-wrap > div a h3 {
   margin-top: 1vw;
-  margin: 2vw;
+  margin: 0 2vw .5vw 2vw;
   font-weight: 600;
-  font-size: 1.5em;
+  font-size: 2vw;
 }
 
 .section4 .pin-wrap > div a p {
   margin-top: 0.5vw;
-  margin: 2vw;
+  margin: 0 2vw 2vw 2vw;
   font-weight: 300;
-  font-size: 1em;
+  font-size: 1vw;
   width: 37vw;
 }
 
@@ -236,6 +236,7 @@
 }
 .section6 .pin-wrap > div p {
   margin: 1vw;
+  font-size: 1vw;
 }
 .section6 .pin-wrap > div iframe {
   width: 40vw;
@@ -354,6 +355,24 @@
   opacity: 0;
   margin-right: 1vw;
 }
+.main__info:hover {
+  box-shadow: 0 45px 100px rgba(14,21,47,0.4), 0 16px 40px rgba(14,21,47,0.4);
+  transition: all 0.2s ease-out;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.main__info2:hover {
+  box-shadow: 0 45px 100px rgba(14,21,47,0.4), 0 16px 40px rgba(14,21,47,0.4);
+  transition: all 0.2s ease-out;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.main__info3:hover {
+  box-shadow: 0 45px 100px rgba(14,21,47,0.4), 0 16px 40px rgba(14,21,47,0.4);
+  transition: all 0.2s ease-out;
+  position: relative;
+  transform-style: preserve-3d;
+}
 
 .main__info h3 {
   margin-top: .5vw;
@@ -378,6 +397,7 @@
   position: absolute;
   opacity: 0;
   transform: translate(12.5vw, 5vw);
+  z-index: 9999;
 }
 
 .link_code a {
@@ -431,3 +451,4 @@
     transform: translate(6vw, -2vw) !important;
   }
 }
+/* 3D mouse effect */
