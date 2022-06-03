@@ -1,0 +1,232 @@
+body {
+    background-color: #E5E5E5;
+}
+/* layout */
+.horizontal-scroll {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    left: 0;
+}
+.section2 .pin-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.section4 .pin-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.section4 .pin-wrap > div {
+    min-width: 60vw;
+}
+.section6 .pin-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.section6 .pin-wrap > div {
+    min-width: 60vw;
+}
+/* header */
+#header {
+    position: fixed;
+    left: 0; top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
+    font-family: 'Abel';
+    z-index: 20000;
+    background-color: #E5E5E5;
+    width: 100%;
+    padding: 0 20px;
+    height: 43px;
+}
+#header h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Fugaz One";
+}
+#nav ul {
+    display: flex;
+}
+#nav ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 20px 40px;
+}
+/* container */
+.container {
+    padding: 0 2vw;
+}
+/* section1 */
+.sec1_tit {
+    margin-top: 43px;
+    font-family: "Fugaz One";
+    font-weight: bold;
+    font-size: 17.2vw;
+    text-transform: uppercase;
+    line-height: .7;
+    padding-top: 3.3vw;
+    font-style: italic;
+}
+.sec1_img {
+    height: 600px;
+    background-color: #888;
+    margin-top: 2vw;
+    border: 2px solid #222;
+    overflow: hidden;
+    position: relative;
+}
+.sec1_img .tit {
+    position: absolute;
+    left: 1vw; top: 1vw;
+    color: #fff;
+    font-family: "Fugaz One";
+    font-size: 4vw;
+    line-height: .91;
+}
+.sec1_img2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.1vw;
+}
+.sec1_img2 > div {
+    width: 30.5vw;
+    height: 30.5vw;
+    border: 2px solid #222;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    background-blend-mode: hard-light;
+    animation: hue-rotate 10s linear infinite;
+}
+.sec1_img2 > div:nth-child(1) {
+    background: url(https://images.unsplash.com/photo-1521133573892-e44906baee46?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center center;
+    background-size: cover;
+}
+.sec1_img2 > div:nth-child(2) {
+    background: url(https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1255) no-repeat center center;
+    background-size: cover;
+}
+.sec1_img2 > div:nth-child(3) {
+    background: url(https://images.unsplash.com/photo-1555448248-2571daf6344b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center center;
+    background-size: cover;
+}
+.sec1_img2 > div em {
+    color: #fff;
+    font-size: 4vw;
+    font-family: 'GmarketSans';
+    padding: 3vw;
+    font-weight: 300;
+}
+@keyframes hue-rotate {
+    from {
+      -webkit-filter: hue-rotate(0);
+      -moz-filter: hue-rotate(0);
+      -ms-filter: hue-rotate(0);
+      filter: hue-rotate(0);
+    }
+    to {
+      -webkit-filter: hue-rotate(360deg);
+      -moz-filter: hue-rotate(360deg);
+      -ms-filter: hue-rotate(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
+/* sec2_1 */
+.section2 {
+    position: relative;
+}
+.section2 h2 {
+    position: absolute;
+    left: 0; top: 0;
+    margin-top: 2%;
+    padding-left: 2%;
+    width: 100%;
+    height: 17.8vh;
+    background: #FFC435;
+    font-family: "Fugaz One";
+    white-space: nowrap;
+    font-size: 16vh;
+    line-height: 1.2;
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
+}
+.sec2_1 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 22vh;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+.site {
+    border: 2px solid #000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.site .img {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/link-img01.png) no-repeat center center;
+    background-size: 90%
+}
+.site .txt {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'GmarketSans';
+}
+.site .txt h3 {
+    font-family: 'GmarketSans';
+    font-size: 3vw;
+}
+.site .txt p {
+    font-family: 'GmarketSans';
+}
+.site .txt .btn {
+    margin-top: 4vh;
+}
+.site .txt .btn a {
+    background: #FFC435;
+    border: 2px solid #000;
+    padding: 1% 4%;
+    display: inline-block;
+    border-radius: 50px;
+}
+.site .txt ol {
+    margin-top: 10px;
+    padding-left: 18px;
+}
+.sec2_2 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 22vh;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+.sec2_3 {
+    width: 80vw;
+    background: #ccc;
+}
+.sec2_4 {
+    width: 80vw;
+    background: #ccc;
+}
