@@ -62,8 +62,6 @@
                     <span>SITE&bull;CODING&nbsp;</span>
                     <span>SITE&bull;CODING&nbsp;</span>
                     <span>SITE&bull;CODING&nbsp;</span>
-                    <span>SITE&bull;CODING&nbsp;</span>
-                    <span>SITE&bull;CODING&nbsp;</span>
                 </h3>
             </div>
             <div class="pin-wrap">
@@ -146,10 +144,10 @@
         </section>
         <section class="section3">
             <div class="main__line">
-                <h3><span>SITE&bull;CODING&nbsp;</span>
-                    <span>SITE&bull;CODING&nbsp;</span>
-                    <span>SITE&bull;CODING&nbsp;</span>
-                    <span>SITE&bull;CODING&nbsp;</span>
+                <h3><span>REACT&bull;CODING&nbsp;</span>
+                    <span>REACT&bull;CODING&nbsp;</span>
+                    <span>REACT&bull;CODING&nbsp;</span>
+                    <span>REACT&bull;CODING&nbsp;</span>
                 </h3>
             </div>
         </section>
@@ -186,10 +184,10 @@
         </section>
         <section class="section5">
             <div class="main__line">
-                <h3><span>REACT&bull;CODING&nbsp;</span>
-                    <span>REACT&bull;CODING&nbsp;</span>
-                    <span>REACT&bull;CODING&nbsp;</span>
-                    <span>REACT&bull;CODING&nbsp;</span>
+                <h3><span>EFFECT&bull;CODING&nbsp;</span>
+                    <span>EFFECT&bull;CODING&nbsp;</span>
+                    <span>EFFECT&bull;CODING&nbsp;</span>
+                    <span>EFFECT&bull;CODING&nbsp;</span>
                 </h3>
             </div>
         </section>
@@ -228,7 +226,7 @@
             </div>
         </section>
         <section class="section7">
-            <div class="main__line2">
+            <div class="main__line">
                 <h3><span>FRONTEND&bull;</span>
                     <span>FRONTEND&bull;</span>
                     <span>FRONTEND&bull;</span>
@@ -315,6 +313,21 @@
         }, 2000)
 
         setInterval(() => {
+            gsap.to(".main__line2 h3", {
+                duration: 2,
+                delay: 3,
+                width: "100%",
+                ease: "power4.out",
+            }),
+            gsap.to(".main__line2 h3 span", {
+                duration: 2,
+                delay: 3,
+                opacity: 1,
+                ease: "power4.out",
+            })
+        }, 2500)
+
+        setInterval(() => {
             gsap.to(".main__info", {
                 duration: 2,
                 opacity: 1,
@@ -323,7 +336,7 @@
                 height: "30vw",
                 ease: "power4.out",
             })
-        }, 2500)
+        }, 3000)
 
         setInterval(() => {
             gsap.to(".main__codingImg", {
@@ -336,7 +349,7 @@
                 height: "25vw",
                 ease: "power4.out",
             })
-        }, 3500)
+        }, 4000)
 
         setInterval(() => {
             gsap.to(".main__codingImg img", {
@@ -349,17 +362,6 @@
                 ease: "power4.out",
             })
         }, 4500)
-
-        setInterval(() => {
-            gsap.to(".link_code", {
-                duration: 1,
-                opacity: 1,
-                delay: 2,
-                y: "13vw",
-                x: "1vw",
-                ease: "power4.out",
-            })
-        }, 5500)
 
         setInterval(() => {
             gsap.to(".main__info h3", {
@@ -376,6 +378,17 @@
                     marginLeft: "1vw",
                     ease: "power4.out",
                 })
+        }, 5500)
+
+        setInterval(() => {
+            gsap.to(".link_code", {
+                duration: 1,
+                opacity: 1,
+                delay: 3,
+                y: "12vw",
+                x: "1vw",
+                ease: "power4.out",
+            })
         }, 6500)
 
         setInterval(() => {
@@ -387,15 +400,6 @@
                 ease: "power4.out",
             })
         }, 7500)
-        setInterval(() => {
-            gsap.to(".main__line2", {
-                duration: 1,
-                opacity: 1,
-                delay: 3,
-                width: "100%",
-                ease: "power4.out",
-            })
-        }, 2500)
     </script>
     <script>
         window.addEventListener("load", function () {
