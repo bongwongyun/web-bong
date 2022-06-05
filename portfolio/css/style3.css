@@ -148,6 +148,27 @@ body {
     background-size: cover;
 }
 
+.sec1_img2>div:nth-child(1):hover {
+    background: url(../img/KakaoTalk_20220522_231350442.jpg) no-repeat center center;
+    background-size: cover;
+    transition: all .4s;
+    animation: none;
+}
+
+.sec1_img2>div:nth-child(2):hover {
+    background: url(../img/KakaoTalk_20220522_231351044.jpg) no-repeat center center;
+    background-size: cover;
+    transition: all .4s;
+    animation: none;
+}
+
+.sec1_img2>div:nth-child(3):hover {
+    background: url(../img/KakaoTalk_20220522_231352365.jpg) no-repeat center center;
+    background-size: cover;
+    transition: all .4s;
+    animation: none;
+}
+
 .sec1_img2>div em {
     color: #fff;
     font-size: 4vw;
@@ -193,6 +214,53 @@ body {
     border-top: 2px solid #222;
     border-bottom: 2px solid #222;
 }
+
+.main__line2 {
+    /* overflow: hidden; */
+    margin-top: 2.2vw;
+  }
+  
+  .main__line2 h3 {
+    /* width: 0; */
+    font-size: 6.5vw;
+    font-family: "Fugaz One";
+    font-weight: bold;
+    text-align: center;
+    background: #ffc435;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    display: inline-flex;
+    will-change: transform;
+    animation: marquee2 10s linear infinite;
+  }
+  .main__line2 h3 span {
+    width: 100%;
+    opacity: 1;
+    background: #ffc435;
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
+  }
+
+@keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes marquee2 {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(-50%);
+    }
+  }
 
 .sec2_1 {
     width: 80vw;
