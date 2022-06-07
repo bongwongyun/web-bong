@@ -470,6 +470,36 @@ body {
     background-size: 90%;
 }
 
+.site .img11 {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/team-php.png) no-repeat center center;
+    background-size: 90%;
+}   
+
+.site .img12 {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/team-php.png) no-repeat center center;
+    background-size: 90%;
+}   
+
+.site .img13 {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/team-php.png) no-repeat center center;
+    background-size: 90%;
+}   
+
 .site .txt {
     border: 2px solid #000;
     width: 50%;
