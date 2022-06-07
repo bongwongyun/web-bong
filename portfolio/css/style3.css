@@ -476,7 +476,7 @@ body {
     padding: 2%;
     margin: 2%;
     overflow: hidden;
-    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/team-php.png) no-repeat center center;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/search.png) no-repeat center center;
     background-size: 90%;
 }   
 
@@ -486,7 +486,7 @@ body {
     padding: 2%;
     margin: 2%;
     overflow: hidden;
-    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/team-php.png) no-repeat center center;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/slider.png) no-repeat center center;
     background-size: 90%;
 }   
 
@@ -496,9 +496,29 @@ body {
     padding: 2%;
     margin: 2%;
     overflow: hidden;
-    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/team-php.png) no-repeat center center;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/quiz.png) no-repeat center center;
     background-size: 90%;
-}   
+}
+
+.site .img14 {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/mouse.png) no-repeat center center;
+    background-size: 90%;
+}
+
+.site .img15 {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/parallax.png) no-repeat center center;
+    background-size: 90%;
+}
 
 .site .txt {
     border: 2px solid #000;
