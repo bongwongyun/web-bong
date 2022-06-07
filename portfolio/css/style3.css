@@ -85,19 +85,19 @@ body {
     z-index: 0;
 }
 
-/* .container .sec1 .sec1_img>canvas:hover {
+.container .sec1 .sec1_img>canvas:hover {
     background: url(../img/F67A3557.jpg)no-repeat center center;
     background-size: cover;
     transition: all .4s;
     z-index: 99999;
-} */
+}
 
 /* section1 */
 .sec1_tit {
     margin-top: 43px;
     font-family: "Fugaz One";
     font-weight: bold;
-    font-size: 17.2vw;
+    font-size: 17vw;
     text-transform: uppercase;
     line-height: 0.7;
     padding-top: 3.3vw;
