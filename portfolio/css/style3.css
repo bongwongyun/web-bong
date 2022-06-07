@@ -265,7 +265,7 @@ body {
     left: 0;
     display: inline-flex;
     will-change: transform;
-    animation: marquee2 12s linear infinite;
+    animation: marquee2 24s linear infinite;
 }
 
 .main__line2 h3 span {
@@ -348,6 +348,31 @@ body {
     margin-right: 2vw;
 }
 
+.sec4_1:hover,
+.sec4_2:hover,
+.sec4_3:hover,
+.sec4_4:hover,
+.sec4_5:hover {
+    box-shadow: 0 45px 100px rgba(14, 21, 47, 0.4), 0 16px 40px rgba(14, 21, 47, 0.4);
+    transition: all 0.2s ease-out;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+/* sec5 */
+.sec5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sec5 iframe {
+    width: 80vw;
+    height: 70vh;
+    border: 2px solid #222;
+    margin-top: 2vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
 /* sec6 */
 
 .sec6_1,
@@ -361,6 +386,17 @@ body {
     box-sizing: border-box;
     margin-left: 2vw;
     margin-right: 2vw;
+}
+
+.sec6_1:hover,
+.sec6_2:hover,
+.sec6_3:hover,
+.sec6_4:hover,
+.sec6_5:hover {
+    box-shadow: 0 45px 100px rgba(14, 21, 47, 0.4), 0 16px 40px rgba(14, 21, 47, 0.4);
+    transition: all 0.2s ease-out;
+    position: relative;
+    transform-style: preserve-3d;
 }
 
 .site {
