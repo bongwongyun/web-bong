@@ -355,7 +355,7 @@
             <!-- 당신의 점수는 XX입니다. -->
         </div>
         <div class="buttons">
-            <button class="stop">그만하기</button>
+            <button class="stops">그만하기</button>
             <button class="restart">다시 도전하기</button>
         </div>
     </div>
@@ -367,7 +367,9 @@
         const cards = document.querySelectorAll(".cards li");
         const infoBoxStart = infoBox.querySelector(".start");
         const resultBoxRestart = resultBox.querySelector(".restart");
-        const score = resultBox.querySelector(".score")
+        const score = resultBox.querySelector(".score");
+        const stopBtn = document.querySelector(".stop");
+        const stopsBtn = document.querySelector(".stops");
         
         let cardOne, cardTwo;
         let disableDeck = false;
@@ -405,6 +407,17 @@
             //card.classList.add("flip")
             card.addEventListener("click", flipCard);
         });
+        //그만 하기
+        stopBtn.onclick = () => {
+            infoBox.classList.remove("active");
+            startBtn.classList.add("active");
+        }
+        //게임 끝나고 그만 하기
+        stopsBtn.onclick = () => {
+            resultBox.classList.remove("active");
+            startBtn.classList.add("active");
+        }
+
         function flipCard(e){
             let clickedCard = e.target;
             if(clickedCard !== cardOne && !disableDeck){
