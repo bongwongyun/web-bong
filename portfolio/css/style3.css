@@ -85,13 +85,6 @@ body {
     z-index: 0;
 }
 
-.container .sec1 .sec1_img>canvas:hover {
-    z-index: 99999;
-    background: url(../img/F67A3557.jpg)no-repeat center center;
-    background-size: cover;
-    transition: all .4s;
-}
-
 /* section1 */
 .sec1_tit {
     margin-top: 43px;
