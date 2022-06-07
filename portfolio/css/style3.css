@@ -85,6 +85,13 @@ body {
     z-index: 0;
 }
 
+.container .sec1 .sec1_img>canvas:hover {
+    background: url(../img/F67A3557.jpg)no-repeat center center;
+    background-size: cover;
+    transition: all .4s;
+    z-index: 99999;
+}
+
 /* section1 */
 .sec1_tit {
     margin-top: 43px;
@@ -193,7 +200,7 @@ body {
     }
 }
 
-/* sec2_1 */
+/* sec2 */
 .section2 {
     position: relative;
 }
@@ -215,12 +222,36 @@ body {
     border-bottom: 2px solid #222;
 }
 
+.main__line {
+    height: 10vw;
+    overflow: hidden;
+    position: relative;
+    /* width: 0; */
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
+}
+
+.main__line h3 {
+    font-size: 10vw;
+    font-family: "Fugaz One";
+    font-weight: bold;
+    text-align: center;
+    margin-top: -2.3%;
+    letter-spacing: -0.3vw;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    display: inline-flex;
+    will-change: transform;
+    animation: marquee 20s linear infinite;
+}
+
 .main__line2 {
     /* overflow: hidden; */
     margin-top: 2.2vw;
-  }
-  
-  .main__line2 h3 {
+}
+
+.main__line2 h3 {
     /* width: 0; */
     font-size: 6.5vw;
     font-family: "Fugaz One";
@@ -233,36 +264,119 @@ body {
     display: inline-flex;
     will-change: transform;
     animation: marquee2 10s linear infinite;
-  }
-  .main__line2 h3 span {
+}
+
+.main__line2 h3 span {
     width: 100%;
     opacity: 1;
     background: #ffc435;
     border-top: 2px solid #222;
     border-bottom: 2px solid #222;
-  }
+}
 
 @keyframes marquee {
     from {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  
+
     to {
-      transform: translateX(-50%);
+        transform: translateX(-50%);
     }
-  }
-  
-  @keyframes marquee2 {
+}
+
+@keyframes marquee2 {
     from {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  
+
     to {
-      transform: translateX(-50%);
+        transform: translateX(-50%);
     }
-  }
+}
 
 .sec2_1 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 22vh;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.sec2_2 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 22vh;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.sec2_3 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 22vh;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.sec2_4 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 22vh;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.sec2_5 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 22vh;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+/* sec4 */
+.sec4_1 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 22vh;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.sec4_2 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 22vh;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.sec4_3 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 22vh;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.sec4_4 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 22vh;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.sec4_5 {
     width: 80vw;
     height: 70vh;
     margin-top: 22vh;
@@ -328,6 +442,56 @@ body {
     background-size: 90%;
 }
 
+.site .img6 {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/react.png) no-repeat center center;
+    background-size: 90%;
+}
+
+.site .img7 {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/react-vue2.png) no-repeat center center;
+    background-size: 90%;
+}
+
+.site .img8 {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/react-Blog.png) no-repeat center center;
+    background-size: 90%;
+}
+
+.site .img9 {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/php.png) no-repeat center center;
+    background-size: 90%;
+}
+
+.site .img10 {
+    border: 2px solid #000;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/team-php.png) no-repeat center center;
+    background-size: 90%;
+}
+
 .site .txt {
     border: 2px solid #000;
     width: 50%;
@@ -364,39 +528,4 @@ body {
 .site .txt ol {
     margin-top: 10px;
     padding-left: 18px;
-}
-
-.sec2_2 {
-    width: 80vw;
-    height: 70vh;
-    margin-top: 22vh;
-    box-sizing: border-box;
-    margin-left: 2vw;
-    margin-right: 2vw;
-}
-
-.sec2_3 {
-    width: 80vw;
-    height: 70vh;
-    margin-top: 22vh;
-    box-sizing: border-box;
-    margin-left: 2vw;
-    margin-right: 2vw;
-}
-
-.sec2_4 {
-    width: 80vw;
-    height: 70vh;
-    margin-top: 22vh;
-    box-sizing: border-box;
-    margin-left: 2vw;
-    margin-right: 2vw;;
-}
-.sec2_5 {
-    width: 80vw;
-    height: 70vh;
-    margin-top: 22vh;
-    box-sizing: border-box;
-    margin-left: 2vw;
-    margin-right: 2vw;;
 }
