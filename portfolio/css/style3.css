@@ -367,7 +367,7 @@ body {
 .sec6_4,
 .sec6_5 {
     width: 80vw;
-    height: 80vh;
+    height: 70vh;
     margin-top: 10vw;
     box-sizing: border-box;
     margin-left: 2vw;
@@ -428,15 +428,16 @@ body {
 }
 
 .site {
-    border: 2px solid #000;
+    border: 2px solid #222;
     height: 100%;
     width: 100%;
     display: flex;
     margin-top: 2%;
 }
 
+/* sec2 */
 .site .img {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -446,7 +447,7 @@ body {
 }
 
 .site .img2 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -456,7 +457,7 @@ body {
 }
 
 .site .img3 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -466,7 +467,7 @@ body {
 }
 
 .site .img4 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -476,7 +477,7 @@ body {
 }
 
 .site .img5 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -485,8 +486,9 @@ body {
     background-size: 90%;
 }
 
+/* sec4 */
 .site .img6 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -496,7 +498,7 @@ body {
 }
 
 .site .img7 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -506,7 +508,7 @@ body {
 }
 
 .site .img8 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -516,7 +518,7 @@ body {
 }
 
 .site .img9 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -526,7 +528,7 @@ body {
 }
 
 .site .img10 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -535,65 +537,85 @@ body {
     background-size: 90%;
 }
 
+/* sec6 */
 .site .img11 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
     overflow: hidden;
-    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/search.png) no-repeat center center;
-    background-size: 90%;
-}   
+}  
+
+.site .img11 iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #222;
+}
 
 .site .img12 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
     overflow: hidden;
-    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/slider.png) no-repeat center center;
-    background-size: 90%;
-}   
+}
+
+.site .img12 iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #222;
+}
 
 .site .img13 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
     overflow: hidden;
-    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/quiz.png) no-repeat center center;
-    background-size: 90%;
+}
+
+.site .img13 iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #222;
 }
 
 .site .img14 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
     overflow: hidden;
-    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/mouse.png) no-repeat center center;
-    background-size: 90%;
+}
+
+.site .img14 iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #222;
 }
 
 .site .img15 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
     overflow: hidden;
-    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/parallax.png) no-repeat center center;
-    background-size: 90%;
+}
+
+.site .img15 iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #222;
 }
 
 .site .txt {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
     margin-left: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
     font-family: "GmarketSans";
 }
 
@@ -612,7 +634,7 @@ body {
 
 .site .txt .btn a {
     background: #ffc435;
-    border: 2px solid #000;
+    border: 2px solid #222;
     padding: 2% 4% 1% 4%;
     display: inline-block;
     border-radius: 50px;
