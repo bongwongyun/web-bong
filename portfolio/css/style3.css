@@ -73,6 +73,20 @@ body {
     padding: 20px 40px;
 }
 
+#nav ul li a:hover {
+    color: #ffc435;
+    transition: all .2s;
+  }
+
+/* scroll */
+.scroll {
+    position: fixed;
+    left: 196px;
+    top: 15px;
+    z-index: 100000000;
+    font-family: 'Abel';
+}
+
 /* container */
 .container {
     padding: 0 2vw;
@@ -90,7 +104,7 @@ body {
     margin-top: 43px;
     font-family: "Fugaz One";
     font-weight: bold;
-    font-size: 17.2vw;
+    font-size: 17vw;
     text-transform: uppercase;
     line-height: 0.7;
     padding-top: 3.3vw;
@@ -114,6 +128,7 @@ body {
     font-family: "Fugaz One";
     font-size: 4vw;
     line-height: 0.91;
+    z-index: 99999;
 }
 
 .sec1_img2 {
@@ -193,7 +208,7 @@ body {
     }
 }
 
-/* sec2_1 */
+/* sec2 */
 .section2 {
     position: relative;
 }
@@ -215,12 +230,38 @@ body {
     border-bottom: 2px solid #222;
 }
 
+.main__line {
+    height: 10vw;
+    overflow: hidden;
+    position: relative;
+    /* width: 0; */
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #222;
+    margin-top: 1vw;
+}
+
+.main__line h3 {
+    font-size: 10vw;
+    font-family: "Fugaz One";
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: -2.3%;
+    letter-spacing: -0.3vw;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    display: inline-flex;
+    will-change: transform;
+    animation: marquee 20s linear infinite;
+}
+
 .main__line2 {
     /* overflow: hidden; */
     margin-top: 2.2vw;
-  }
-  
-  .main__line2 h3 {
+}
+
+.main__line2 h3 {
     /* width: 0; */
     font-size: 6.5vw;
     font-family: "Fugaz One";
@@ -232,54 +273,171 @@ body {
     left: 0;
     display: inline-flex;
     will-change: transform;
-    animation: marquee2 10s linear infinite;
-  }
-  .main__line2 h3 span {
+    animation: marquee2 24s linear infinite;
+}
+
+.main__line2 h3 span {
     width: 100%;
     opacity: 1;
     background: #ffc435;
     border-top: 2px solid #222;
     border-bottom: 2px solid #222;
-  }
+}
 
 @keyframes marquee {
     from {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  
-    to {
-      transform: translateX(-50%);
-    }
-  }
-  
-  @keyframes marquee2 {
-    from {
-      transform: translateX(0);
-    }
-  
-    to {
-      transform: translateX(-50%);
-    }
-  }
 
-.sec2_1 {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee2 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.sec2_1,
+.sec2_2,
+.sec2_3,
+.sec2_4,
+.sec2_5 {
     width: 80vw;
     height: 70vh;
-    margin-top: 22vh;
+    margin-top: 10vw;
     box-sizing: border-box;
     margin-left: 2vw;
     margin-right: 2vw;
 }
 
+/* sec3 */ 
+.sec3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sec3 iframe {
+    width: 70vw;
+    height: 60vh;
+    border: 2px solid #222;
+    margin-top: 2vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+/* sec4 */
+.sec4_1,
+.sec4_2,
+.sec4_3,
+.sec4_4,
+.sec4_5  {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 10vw;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+/* sec5 */
+.sec5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sec5 iframe {
+    width: 80vw;
+    height: 70vh;
+    border: 2px solid #222;
+    margin-top: 2vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+/* sec6 */
+.sec6_1,
+.sec6_2,
+.sec6_3,
+.sec6_4,
+.sec6_5 {
+    width: 80vw;
+    height: 70vh;
+    margin-top: 10vw;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+/* sec7 */
+.section7 .profile_bg {
+    border: 2px solid #222;
+    width: 100%;
+    height: 100vh;
+}
+
+.section7 .profile_bg .profile_img {
+    width: 300px;
+    height: 400px;
+    background: url(../img/F67A3557.jpg)no-repeat center center;
+    background-size: cover;
+    border: 2px solid #222;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+.section7 .profile_bg p {
+    text-align: center;
+    font-family: "GmarketSans";
+    font-size: 1.5vw;
+    margin-top: 2%;
+}
+
+.section7 .profile_link {
+    margin-top: 1%;
+    margin-left: 47%;
+}
+.section7 .profile_number {
+    margin-top: 1%;
+    margin-left: 40%;
+    display: flex;
+}
+.section7 .profile_number h3 {
+    margin-top: 1%;
+    margin-left: 2%;
+}
+.section7 .profile_number img {
+    width: 50px;
+    height: 50px;
+}
+.section7 .profile_mail {
+    margin-top: 1%;
+    margin-left: 40%;
+    display: flex;
+}
+.section7 .profile_mail h3 {
+    margin-top: 1%;
+    margin-left: 2%;
+}
+.section7 .profile_mail img {
+    width: 50px;
+    height: 50px;
+}
+
 .site {
-    border: 2px solid #000;
+    border: 2px solid #222;
     height: 100%;
     width: 100%;
     display: flex;
+    margin-top: 2%;
 }
 
+/* sec2 */
 .site .img {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -289,7 +447,7 @@ body {
 }
 
 .site .img2 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -299,7 +457,7 @@ body {
 }
 
 .site .img3 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -309,7 +467,7 @@ body {
 }
 
 .site .img4 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -319,7 +477,7 @@ body {
 }
 
 .site .img5 {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
@@ -328,15 +486,136 @@ body {
     background-size: 90%;
 }
 
+/* sec4 */
+.site .img6 {
+    border: 2px solid #222;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/react.png) no-repeat center center;
+    background-size: 90%;
+}
+
+.site .img7 {
+    border: 2px solid #222;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/react-vue2.png) no-repeat center center;
+    background-size: 90%;
+}
+
+.site .img8 {
+    border: 2px solid #222;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/react-Blog.png) no-repeat center center;
+    background-size: 90%;
+}
+
+.site .img9 {
+    border: 2px solid #222;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/php.png) no-repeat center center;
+    background-size: 90%;
+}
+
+.site .img10 {
+    border: 2px solid #222;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+    background: url(https://bongwongyun.github.io/web-bong/portfolio/img/team-php.png) no-repeat center center;
+    background-size: 90%;
+}
+
+/* sec6 */
+.site .img11 {
+    border: 2px solid #222;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+}  
+
+.site .img11 iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #222;
+}
+
+.site .img12 {
+    border: 2px solid #222;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+}
+
+.site .img12 iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #222;
+}
+
+.site .img13 {
+    border: 2px solid #222;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+}
+
+.site .img13 iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #222;
+}
+
+.site .img14 {
+    border: 2px solid #222;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+}
+
+.site .img14 iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #222;
+}
+
+.site .img15 {
+    border: 2px solid #222;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    overflow: hidden;
+}
+
+.site .img15 iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #222;
+}
+
 .site .txt {
-    border: 2px solid #000;
+    border: 2px solid #222;
     width: 50%;
     padding: 2%;
     margin: 2%;
     margin-left: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
     font-family: "GmarketSans";
 }
 
@@ -355,48 +634,14 @@ body {
 
 .site .txt .btn a {
     background: #ffc435;
-    border: 2px solid #000;
+    border: 2px solid #222;
     padding: 2% 4% 1% 4%;
     display: inline-block;
     border-radius: 50px;
+    line-height: 2;
 }
 
 .site .txt ol {
     margin-top: 10px;
-    padding-left: 18px;
 }
 
-.sec2_2 {
-    width: 80vw;
-    height: 70vh;
-    margin-top: 22vh;
-    box-sizing: border-box;
-    margin-left: 2vw;
-    margin-right: 2vw;
-}
-
-.sec2_3 {
-    width: 80vw;
-    height: 70vh;
-    margin-top: 22vh;
-    box-sizing: border-box;
-    margin-left: 2vw;
-    margin-right: 2vw;
-}
-
-.sec2_4 {
-    width: 80vw;
-    height: 70vh;
-    margin-top: 22vh;
-    box-sizing: border-box;
-    margin-left: 2vw;
-    margin-right: 2vw;;
-}
-.sec2_5 {
-    width: 80vw;
-    height: 70vh;
-    margin-top: 22vh;
-    box-sizing: border-box;
-    margin-left: 2vw;
-    margin-right: 2vw;;
-}

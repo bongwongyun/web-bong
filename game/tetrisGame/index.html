@@ -152,15 +152,13 @@
       font-size: 50px;
       color: #222;
       font-family: 'SF_IceLemon';
-      margin-bottom: 20px;
     }
     .scoreText {
-      width: 12vw;
+      width: 24vw;
       text-align: center;
       font-size: 60px;
       color: #222;
       font-family: 'SF_IceLemon';
-      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -278,14 +276,15 @@
           left: 3,
         };
         init();
+        
         //시작하기
         function init() {
           gameMovingItem = {...movingItem};
           // console.log(gameMovingItem)
-          for (let i = 0; i < game_rows; i++) {
+          for (let i = 0; i <= game_rows; i++) {
             tetrisLine();
           }
-          // rederBlocks();
+          // renderBlocks();
           generateNewBlock();
         }
         //블록 만들기
@@ -301,11 +300,10 @@
           tetrisinner.prepend(li);
         }
         //블록 출력하기
-        function rederBlocks(moveType = " ") {
+        function renderBlocks(moveType = " ") {
           const { type, direction, top, left } = gameMovingItem;
-
           const movingBlocks = document.querySelectorAll(".moving");
-          movingBlocks.forEach(moving => {
+          movingBlocks.forEach((moving) => {
             moving.classList.remove(type, "moving");
           });
 
@@ -330,8 +328,7 @@
               }
 
               setTimeout(() => {
-                rederBlocks("retry");
-
+                renderBlocks("retry");
                 if (moveType === "top") {
                   seizeBlock();
                 }
@@ -379,13 +376,13 @@
           }, gameDuration);
 
           const blockArray = Object.entries(blocks);
-          const redomIndex = Math.floor(Math.random() * blockArray.length);
-          movingItem.type = blockArray[redomIndex][0];
+          const radomIndex = Math.floor(Math.random() * blockArray.length);
+          movingItem.type = blockArray[radomIndex][0];
           movingItem.top = 0;
           movingItem.left = 3;
           movingItem.direction = 0;
           gameMovingItem = {...movingItem};
-          rederBlocks();
+          renderBlocks();
         }
 
         function checkEmpty(target) {
@@ -397,13 +394,13 @@
         //블록 움직이기
         function moveblock(moveType, amount) {
           gameMovingItem[moveType] += amount;
-          rederBlocks(moveType);
+          renderBlocks(moveType);
         }
         //모양 변경
         function changeDirectioin() {
           const direction = gameMovingItem.direction;
           direction === 3 ? (gameMovingItem.direction = 0) : (gameMovingItem.direction += 1);
-          rederBlocks();
+          renderBlocks();
         }
         //스페이스 바
         function dropBlock() {
