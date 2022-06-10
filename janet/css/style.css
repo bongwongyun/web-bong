@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+/* header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px 20px 40px;
+}
+.start {
+    display: flex;
+}
+.logo {
+    width: 115px;
+    height: 34px;
+    background: url(../img/logo.webp);
+}
+form {
+    width: 440px;
+    height: 40px;
+    border-radius: 50px;
+    border: 2px solid #9c57f5;
+    margin-left: 2vw;
+}
+form .txt {
+    margin-top: 1.5%;
+    margin-left: 7%;
+    font-size: 14px;
+    position: relative;
+}
+form input {
+    font-size: 14px;
+    border: 0;
+    width: 60%;
+    margin-left: 2%;
+}
+.submit {
+    width: 29px;
+    height: 30px;
+    background: url(../img/mainSrchBtn.webp);
+    background-size: contain;
+    position: absolute;
+    left: 85%;
+    top: -15%;
+}
+.MyPage a:nth-child(1) {
+    width: 18px;
+    height: 18px;
+    background: url(../img/member_ov.webp) no-repeat;
+}
+.MyPage a:nth-child(2) {
+    padding: 0 4px 0 8px;
+    width: 18px;
+    height: 18px;
+    background: url(../img/login.webp) no-repeat;
+}
+.MyPage a:nth-child(3) {
+    width: 18px;
+    height: 18px;
+    background: url(../img/company.webp) no-repeat;
+}
+.MyPage a span {
+    position: relative;
+    top: 25px;
+    right: 20px;
+    color: #999;
+    font-size: 14px;
+}
+.menu {
+    width: 100%;
+    height: 10vh;
+    margin-left: 1.7%;
+    display: flex;
+}
+.menu .list {
+    width: 55px;
+    height: 55px;
+    background: url(../img/gnb.webp) no-repeat;
+    box-shadow: rgba(0, 0, 0, 0.8);
+}
+.menu .list2 {
+    width: 70%;
+    margin-left: 5%;
+}
+.menu .list2 ul {
+    display: flex;
+}
+.menu .list2 ul li {
+    font-family: 'noto sans kr', 'malgun gothic', 'dotum', sans-serif;
+    margin-top: 1.8%;
+    padding: 0 2%;
+    font-size: 16px;
+    font-weight: 500;
+}
+.menu .list3 {
+    width: 45%;
+}
+.menu .list3 ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4.3%;
+    margin-right: 8.5%;
+}
+.menu .list3 ul li {
+    margin-right: 5%;
+}
+.menu .list3 ul li:nth-child(2) {
+    margin-top: .5%;
+}
+.menu .list3 ul li:nth-child(3) {
+    margin-top: 2.5%;
+}
+.menu .list3 ul li img {}

@@ -645,3 +645,8 @@ body {
     margin-top: 10px;
 }
 
+@media (max-width:1000px) {
+    .profile_link {
+        margin-left: 46%;
+    }
+}
