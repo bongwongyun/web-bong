@@ -121,26 +121,70 @@ form input {
 /* banner */
 .banner {
     width: 70%;
-    height: 40vh;
+    height: 50vh;
     background: #ECEAFC;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'noto sans kr', 'malgun gothic', 'dotum', sans-serif;
 }
 .slider {
-    width: 20vw;
+    width: 22vw;
     height: 20vw;
-    background: #000;
+    background: url(../img/mainBn_top_01.webp) no-repeat center center;
+    background-size: cover;
 }
 .test {
-    width: 30vw;
+    width: 28vw;
     height: 20vw;
-    background: #111;
+    background: #fff;
     margin: 0 1%;
+}
+.test .test01 {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 4%;
+}
+.test .test01 i {
+    width: 19px;
+    height: 19px;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    color: #8e8cfd;
+    font-size: 0.9em;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 0.1em;
+}
+.test .test02 {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+.test .test02 .test02_1 {
+    display: flex;
+} 
+.test .test02 .test02_1 img {
+    height: 58px;
+}
+.test .test03 {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+.test .test03 .test02_1 {
+    display: flex;
+} 
+.test .test03 .test02_1 img {
+    height: 58px;
 }
 .top10 {
     width: 15vw;
     height: 20vw;
-    background: #222;
+    background: #fff;
 }
