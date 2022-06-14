@@ -120,7 +120,7 @@ form input {
 
 /* banner */
 .banner {
-    width: 70%;
+    width: 100%;
     height: 50vh;
     background: #ECEAFC;
     margin: 0 auto;
@@ -141,14 +141,25 @@ form input {
     background: #fff;
     margin: 0 1%;
 }
-.test .test01 {
+.test01 {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     margin-top: 4%;
 }
-.test .test01 i {
+.test01>div {
+    margin-right: 2%;
+}
+.test01 h3 {
+    font-family: 'noto sans kr';
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 1;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+.test01 i {
     width: 19px;
     height: 19px;
     border: 1px solid #dfdfdf;
@@ -159,32 +170,130 @@ form input {
     cursor: pointer;
     padding-top: 0.1em;
 }
-.test .test02 {
+.test02 {
     display: flex;
     justify-content: space-between;
     width: 80%;
     margin: 0 auto;
 }
-.test .test02 .test02_1 {
+.test02 .test02_1 {
     display: flex;
-} 
-.test .test02 .test02_1 img {
+    margin-top: 10%;
+}
+.test02_1_img {
+    background: url(../img/inCrfc.webp) no-repeat center;
+    background-size: cover;
+    width: 72px;
     height: 58px;
 }
-.test .test03 {
+.test02_1_img2 {
+    background: url(../img/iCrtfc.webp) no-repeat center;
+    background-size: cover;
+    width: 72px;
+    height: 58px;
+    margin-left: -20%;
+}  
+.test02_1 img {
+    height: 58px;
+}
+.test02_1text h3 {
+    font-size: 16px;
+    margin-left: 25%;
+    min-width: 100px;
+}
+.test02_1text p {
+    font-size: 10px;
+    margin-left: 25%;
+    min-width: 100px;
+}
+.test03 {
     display: flex;
     justify-content: space-between;
     width: 80%;
     margin: 0 auto;
 }
-.test .test03 .test02_1 {
+.test03 .test03_1 {
     display: flex;
-} 
-.test .test03 .test02_1 img {
+    margin-top: 10%;
+}
+.test03_1_img {
+    background: url(../img/sCrtfc.webp) no-repeat center;
+    background-size: cover;
+    width: 72px;
     height: 58px;
 }
+.test03_1_img2 {
+    background: url(../img/rCrtfc.webp) no-repeat center;
+    background-size: cover;
+    width: 72px;
+    height: 58px;
+    margin-left: -20%;
+}  
+.test03_1 img {
+    height: 58px;
+}
+.test03_1text h3 {
+    font-size: 16px;
+    margin-left: 25%;
+    min-width: 100px;
+}
+.test03_1text p {
+    font-size: 10px;
+    margin-left: 25%;
+    min-width: 100px;
+} 
 .top10 {
     width: 15vw;
     height: 20vw;
     background: #fff;
+}
+.topName {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 4%;
+}
+.topName h3 {
+    font-family: 'noto sans kr';
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 1;
+    margin-top: 10%;
+    margin-left: 8%;
+}
+.topName>div {
+    margin-right: 10%;
+}
+.topName i {
+    width: 19px;
+    height: 19px;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    color: #8e8cfd;
+    font-size: 0.9em;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 0.2em;
+    margin-top: 60%;
+}
+.toplist {
+    margin-top: 8%;
+    margin-left: 10%;
+}
+.toplist ul li {
+    font-size: 16px;
+    color: #999;
+    position: relative;
+}
+.toplist ul li:nth-child(10) {
+    position: absolute;
+    margin-left: -.3%;
+    width: 150px;
+}
+.toplist ul li span {
+    margin-left: 3%;
+    font-weight: 200;
+    font-size: 15px;
+    color: #222;
 }
