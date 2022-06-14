@@ -581,15 +581,16 @@ li:nth-child(8) .imgbox_bg:hover {
 }
 .imgbox_text h3 {
     position: absolute;
-    top: 95px;
+    top: 84px;
     left: 0;
     z-index: 1;
     width: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+    height: 2vw;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
 }
 .imgbox_text h3 span {
     margin-left: 24px;
-    margin-bottom: 20px;    
+    
     color: #fff;
 }
 .subtext {
