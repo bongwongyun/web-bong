@@ -590,7 +590,6 @@ li:nth-child(8) .imgbox_bg:hover {
 }
 .imgbox_text h3 span {
     margin-left: 24px;
-    
     color: #fff;
 }
 .subtext {
@@ -602,4 +601,5 @@ li:nth-child(8) .imgbox_bg:hover {
 }
 .subtext span {
     font-size: .7em;
+    color: #f15959;
 }
