@@ -132,9 +132,19 @@
                 <div class="btnRight"></div>
             </div>
         </div>
+
+        <div class="Hot20">
+            <div class="Hot_header"><div class="hotKeyword"></div><span>hot</span><em>키워드TOP20</em></div>
+            <div class="Hot1-8"></div>
+        </div>
     </main>
 
-    <script src="json/top20.json"></script>
+    <script src="json/Hot20.js"></script>
+    <script>
+        let hot20 = JSON.parse(JSON.stringify(data));
+
+        console.log(hot20)
+    </script>
 </body>
 
 </html>

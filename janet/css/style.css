@@ -364,3 +364,29 @@ form input {
     cursor: pointer;
 }
 /* hotKeyWord */
+.Hot20 {
+    width: 68%;
+    margin: 0 auto;
+}
+.Hot_header {
+    display: flex;
+    align-items: center;
+    font-family: 'noto sans kr';
+}
+.hotKeyword {
+    width: 31px;
+    height: 41px;
+    background: url(../img/hot_keyword.webp) no-repeat;
+}
+.Hot_header span {
+    text-transform: uppercase;
+    color: #8f45ef;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 1%;
+    margin-bottom: .1%;
+}
+.Hot_header em {
+    font-size: 30px;
+    margin-bottom: .1%;
+}
