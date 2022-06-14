@@ -134,6 +134,15 @@ form input {
     height: 20vw;
     background: url(../img/mainBn_top_01.webp) no-repeat center center;
     background-size: cover;
+    position: relative;
+}
+.slider_conuter {
+    position: absolute;
+    top: 88%;
+    left: 88%;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
 }
 .test {
     width: 28vw;
@@ -165,10 +174,10 @@ form input {
     border: 1px solid #dfdfdf;
     background: #fff;
     color: #8e8cfd;
-    font-size: 0.9em;
+    font-size: .7em;
     text-align: center;
     cursor: pointer;
-    padding-top: 0.1em;
+    padding-top: .3em;
 }
 .test02 {
     display: flex;
@@ -278,10 +287,10 @@ form input {
     border: 1px solid #dfdfdf;
     background: #fff;
     color: #8e8cfd;
-    font-size: 0.9em;
+    font-size: .7em;
     text-align: center;
     cursor: pointer;
-    padding-top: 0.1em;
+    padding-top: .2em;
     margin-top: 60%;
 }
 .toplist {
@@ -307,3 +316,51 @@ form input {
 .toplist ul li a:hover {
     border-bottom: 1px solid #222;
 }
+/* dot */
+.dot {
+    margin: 2vw;
+}
+.dotList {
+    display: flex;
+    align-items: center;
+    width: 67%;
+    height: 10vh;
+    margin: 0 auto;
+}
+.dotList1 {
+    border-radius: 10px;
+    background: url(../img/MainBn_scroll_01.webp) no-repeat;
+    width: 100%;
+    height: 100%;
+    margin-left: 1%;
+    margin-top: 1.2%;
+}
+.dotList2 {
+    border-radius: 10px;
+    background: url(../img/MainBn_scroll_02.webp) no-repeat;
+    width: 100%;
+    height: 100%;
+    margin-top: 1.2%;
+}
+.dotList3 {
+    border-radius: 10px;
+    background: url(../img/MainBn_scroll_03.webp) no-repeat;
+    width: 100%;
+    height: 100%;
+    margin-top: 1.2%;
+}
+.btnLeft {
+    background: url(../img/prev.svg)no-repeat;
+    width: 40px;
+    height: 40px;
+    margin-top: 1.2%;
+    cursor: pointer;
+}
+.btnRight {
+    background: url(../img/next.svg)no-repeat;
+    width: 40px;
+    height: 40px;
+    margin-top: 1.2%;
+    cursor: pointer;
+}
+/* hotKeyWord */
