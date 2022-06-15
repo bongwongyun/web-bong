@@ -136,18 +136,31 @@
         <div class="Hot20">
             <div class="Hot_header"><div class="hotKeyword"></div><span>hot</span><em><strong>키워드</strong>TOP20</em></div>
             <div class="Hot1-8">
-                <ul>
-                    <li>
+                <ul class="lists">
+                    <!-- <li id="id">
                         <div class="imgbox">
                             <div class="imgbox_text">
                                 <p>D-12</p>
-                                <h3><span>토익</span></h3>
+                                <h3><span id="title">토익</span></h3>
                             </div>
                         </div>
                         <div class="imgbox_bg"></div>
                         <div class="subtext">
-                            <p>시행기관</p>
-                            <span>시험일</span>
+                            <em>시행기관:<p id="licenseOrgan"></p></em>
+                            <span id="esRegdt">시험일</span>
+                        </div>
+                    </li>
+                    <li id="id">
+                        <div class="imgbox">
+                            <div class="imgbox_text">
+                                <p>D-12</p>
+                                <h3><span id="title01">토익</span></h3>
+                            </div>
+                        </div>
+                        <div class="imgbox_bg"></div>
+                        <div class="subtext">
+                            <p id="licenseOrgan01"></p>
+                            <span id="esRegdt01">시험일</span>
                         </div>
                     </li>
                     <li>
@@ -173,11 +186,7 @@
                     <li>
                         <div class="imgbox"></div>
                         <div class="imgbox_bg"></div>
-                    </li>
-                    <li>
-                        <div class="imgbox"></div>
-                        <div class="imgbox_bg"></div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -185,31 +194,36 @@
 
     <script src="js/Hot20.js"></script>
     <script>
-        // const hotList = document.querySelector(".Hot1-8 ul li");
-        // const ranking = [];
-        
-        let Hot20 = data;
-        
-        console.log(Hot20) 
+      const lists = document.querySelector(".lists");
+      const html = [];
+      let today = new Date();
 
-        function hotKeyWord({id,title,licenseOrgan,esRegdt}) {
-             return (
-                `   <li>
-                        <div class="imgbox"${id}>
-                            <div class="imgbox_text">
-                                <p>D-12</p>
-                                <h3><span>${title}</span></h3>
-                            </div>
-                        </div>
-                        <div class="imgbox_bg"></div>
-                        <div class="subtext">
-                            <p>시행기관: ${licenseOrgan}</p>
-                            <span>시험일: ${esRegdt}</span>
-                        </div>
-                    </li>
-                `
-             )
-        }
+      data.forEach((list) => {
+        let tday = list.esRegdt;
+        let isTday = tday.slice(0, 10);
+        let Dday = new Date(isTday).getTime();
+        let isDday = Math.floor((Dday - today) / (1000 * 60 * 60 * 24));
+
+        html.push(
+        `
+        <li>
+            <div class="imgbox">
+                <div class="imgbox_text">
+                    <p>D`+isDday+`</p>
+                    <h3><span>${list.title}</span></h3>
+                </div>
+            </div>
+            <div class="imgbox_bg"></div>
+            <div class="subtext">
+                <em>시행기관:<p>${list.licenseOrgan}</p></em>
+                <span>시험일:`+isTday +`</span>
+            </div>
+        </li>
+          `
+        );
+      });
+      lists.innerHTML = html.join("");
+
     </script>
 </body>
 
