@@ -136,7 +136,7 @@ form input {
     background-size: cover;
     position: relative;
 }
-.slider_conuter {
+.slider_counter {
     position: absolute;
     top: 88%;
     left: 88%;
@@ -256,7 +256,7 @@ form input {
     height: 63px;
     background: url(../img/d0942d969f0a37cb73a46db345ea874b.png) no-repeat;
     margin-top: 6%;
-    margin-left: 15%;
+    margin-left: 5vw;
 } 
 .top10 {
     width: 300px;
