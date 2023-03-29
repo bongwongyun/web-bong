@@ -420,7 +420,7 @@
             })
             //마우스 이미지 밖으로 나왔을 때 시작
             sliderInner.addEventListener("mouseleave", () => {
-            if(document.querySelector(".play").classList.contains('show')){
+            if(document.querySelector(".play")){
                 stopPlay();
             } else {
                 autoPlay();
