@@ -100,7 +100,7 @@
 <body class="body-img06">
 
     <!-- main -->
-        <section id="slidertype06">
+        <section id="slidertype07">
             <div class="slider__wrap">
                 <div class="slider__img">
                     <div class="slider__inner">
@@ -275,7 +275,8 @@
             function gotoslider(direction) {
                 sliderInner.classList.add("transition");
                 posInitial = sliderInner.offsetLeft;
-                console.log(posInitial)
+                console.log('SA?D?SA?',direction);
+                
                 //오른쪽 버튼
                 if (direction == 1) {
                     //left : -800px
@@ -334,6 +335,7 @@
             sliderInner.addEventListener("transitionend", checkIndex);
 
             dotInit();
+
         </script>                                              
 
 

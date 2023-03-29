@@ -22,7 +22,7 @@
         .slider__img {                  /* 화면 보이는 구간 */
             width: 800px;
             height: 480px;
-            /* overflow: hidden; */
+            overflow: hidden;
             position: relative;
         }
         .slider__inner {                /* 이미지 움직이는 영역 */
@@ -71,7 +71,7 @@
             left: 0;
         }
         .slider__btn a.next {
-             right: 0;
+            right: 0;
         }
         .slider__btn a:hover {
             background: rgb(241, 96, 86);
@@ -97,7 +97,6 @@
         .slider__dot .Play {
             width: 20px;
             height: 20px;
-            display: inline-block;
             vertical-align: 9px;
             margin: 3px;
             text-indent: -9999px;
@@ -167,10 +166,10 @@
     </style>
 </head>
 
-<body class="body-img06">
+<body class="body-img08">
 
     <!-- main -->
-        <section id="slidertype06">
+        <section id="slidertype08">
             <div class="slider__wrap">
                 <div class="slider__img">
                     <div class="slider__inner">
@@ -235,7 +234,12 @@
                             </div>
                             <div class="view-cont">
                                 <div>
-<pre><code class="language-css">
+                            <pre><code class="language-css">
+                              </code></pre></div>
+                            <div><pre><code class="language-css">
+
+                            </code></pre></div>
+                            <div><pre><code class="language-css">
     const sliderwrap = document.querySelector(".slider__wrap");        
     const sliderimg = document.querySelector(".slider__img");               //이미지 보이는 구간
     const sliderInner = document.querySelector(".slider__inner");         //이미지 움직이는 영역
@@ -290,12 +294,6 @@
             gotoslider(index);
         })
     })
-                              </code></pre></div>
-                            <div><pre><code class="language-css">
-
-                            </code></pre></div>
-                            <div><pre><code class="language-css">
-
                             </code></pre></div>
                             <div><pre><code class="language-css">
 
@@ -325,7 +323,7 @@
             const sliderBtnPrev = sliderBtn.querySelector(".prev"); 
             const sliderBtnNext = sliderBtn.querySelector(".next");  
             const sliderDot = document.querySelector(".slider__dot");  
-            console.log(slider)
+            console.log(slider);
 
             let currentIndex = 0;
             let sliderWidth = sliderimg.offsetWidth;       //이미지 가로값
@@ -337,16 +335,31 @@
             let posInitial ="";
             let dotIndex = "";
             let sliderTimer = "";
-            let Interval = 2400;
+            let Interval = 2500;
             
 
             //이미지 복사  appendTo/prependTo : append/prepend
             sliderInner.appendChild(cloneFirst);
             sliderInner.insertBefore(cloneLast, sliderFirst);
+
+            console.log(sliderInner);
             //이미지 움직이기
             function gotoslider(index) {
                 sliderInner.style.left = -sliderWidth * (index+1)+ "px";
 
+                dotActive.forEach(el => {
+                    el.classList.remove("active");
+                });
+
+                if (index == sliderLength) {
+                    dotActive[0].classList.add("active");
+                } else {
+                    dotActive[index].classList.add("active");
+                }
+
+                sliderInner.classList.add("transition");
+                sliderInner.style.left = -sliderWidth * (index + 1) + "px";
+                
                 console.log(currentIndex);
                 currentIndex = index;
                 //두번째 이미지 : left:-1600px;
@@ -366,25 +379,29 @@
             }
             dotInit();
 
+            dotActive = document.querySelectorAll(".slider__dot .dot");
+            //오토 플레이
             function autoPlay() {
                 sliderTimer = setInterval(()=> {
                     gotoslider(currentIndex + 1)
                 }, Interval);
             }
             autoPlay();
-
+            //정지
             function stopPlay() {
                 clearInterval(sliderTimer);
             }
-
+            //이전 버튼
             sliderBtnPrev.addEventListener("click", () => {
                 let prevIndex = currentIndex - 1;
                 gotoslider(prevIndex);
             })
+            //다음 버튼
             sliderBtnNext.addEventListener("click", () => {
                 let nextIndex = currentIndex + 1;
                 gotoslider(nextIndex);
             })
+
             sliderInner.addEventListener("transitionend", () => {
                 sliderInner.classList.remove("transition");
 
@@ -397,26 +414,35 @@
                     currentIndex = 0;
                 }
             })
-            sliderInner.addEventListener("mouseEnter", () => {
+            //마우스 이미지 내로 들어가면 정지
+            sliderInner.addEventListener("mouseenter", () => {
                 stopPlay(); 
             })
+            //마우스 이미지 밖으로 나왔을 때 시작
             sliderInner.addEventListener("mouseleave", () => {
-            if(document.querySelector(".play").classList.contains("show")){
+            if(document.querySelector(".play").classList.contains('show')){
                 stopPlay();
             } else {
                 autoPlay();
             }
-        })
+            })
+            //시작 버튼 일 때 클릭 하면 오토 플레이 
             document.querySelector(".Play").addEventListener("click", () => {
                 document.querySelector(".Play").classList.remove("show")
                 document.querySelector(".Stop").classList.add("show")
                 autoPlay();
             })
-            
+            //종료 버튼 일 때 클릭 하면 정지 
             document.querySelector(".Stop").addEventListener("click", () => {
                 document.querySelector(".Stop").classList.remove("show")
                 document.querySelector(".Play").classList.add("show")
                 stopPlay();
+            })
+
+            document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
+                    dot.addEventListener("click", ()=> {
+                        gotoslider(index);
+                })
             })
         </script>                                              
 
