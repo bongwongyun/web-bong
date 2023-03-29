@@ -736,33 +736,33 @@
                     4:"jQuary"
                 },
                 answerResult : "3",
-                answerEx: "Element에 적용되는 CSS 스타일을 다른 CSS 스타일로 부드럽게 전환시켜 주는 용어는?"
+                answerEx: "Ecma International의 프로토타입 기반의 프로그래밍 언어로, 스크립트 언어에 해당된다."
             },
             {
-                answerType : "javascript",
+                answerType : "html",
                 answerNum : 2,
-                answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
+                answerAsk : "파이썬은 웹 개발 분야에서도 사용되기 때문에 OOO을 이해하고 있다면 파이썬 웹 개발에서도 도움이 된다. 여기서 OOO은?",
                 answerChoice : {
                     1:"html",
                     2:"css",
                     3:"javascript",
                     4:"jQuary"
                 },
-                answerResult : "3",
-                answerEx: "Element에 적용되는 CSS 스타일을 다른 CSS 스타일로 부드럽게 전환시켜 주는 용어는?"
+                answerResult : "1",
+                answerEx: "웹사이트의 모습을 기술하기 위한 마크업 언어."
             },
             {
-                answerType : "javascript",
+                answerType : "css",
                 answerNum : 3,
-                answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
+                answerAsk : "OOO에서 의도한 대로의 오류가 생길 때 이를 검사해내는 프로그램이 유용하게 쓰인다. OOO가 의미하는 것은? ",
                 answerChoice : {
                     1:"html",
                     2:"css",
                     3:"javascript",
                     4:"jQuary"
                 },
-                answerResult : "3",
-                answerEx: "Element에 적용되는 CSS 스타일을 다른 CSS 스타일로 부드럽게 전환시켜 주는 용어는?"
+                answerResult : "2",
+                answerEx: "HTML 등의 마크업 언어로 작성된 문서가 실제로 웹사이트에 표현되는 방법을 정해주는 스타일 시트 언어."
             },
             
         ]
@@ -819,8 +819,6 @@
                             <span class="choice">${question.answerChoice[4]}</span>
                         </label>
                     </div>
-                    <button class="quiz__confirm">정답 확인하기</button>
-                    <div class="quiz__result"></div>
                 </div>
             </div>`
             )
@@ -856,8 +854,10 @@
                     quizselectswrap.appendChild(div).innerHTML =`<p class="quiz__EX">${question.answerEx}</p>`  
                 }
             })
-            quizresult.innerHTML = `${quizInfo.length}문제중에${scoreCurrent}맞추셨습니다.`
+            quizresult.innerHTML = `${quizInfo.length}문제 중 ${scoreCurrent}개를 맞추셨습니다.`
         }
+        console.log(document.querySelector(".quiz__confirm").innerText);
+
         document.querySelector(".quiz__confirm").addEventListener("click", answerQuiz)
 
     </script>
