@@ -828,7 +828,6 @@
                 <div class = "quiz__result"></div>`
             )
             
-            
             quizWrap.innerHTML = html.join('')
         }
         updataQuiz();
@@ -837,7 +836,8 @@
             const quizselects = document.querySelectorAll(".quiz__selects")  //보기 선택 박스
             const quizview = document.querySelectorAll(".quiz__view")        //보기 선택 박스
             const quizresult = document.querySelector(".quiz__result")
-            
+            const quizreset = document.querySelector(".quiz__confirm")       //퀴즈 버튼
+
             let scoreCurrent = 0;
 
             quizInfo.forEach((question, number) => {
@@ -853,10 +853,17 @@
                     const div = document.createElement("div")
                     quizselectswrap.appendChild(div).innerHTML =`<p class="quiz__EX">${question.answerEx}</p>`  
                 }
+                
             })
             quizresult.innerHTML = `${quizInfo.length}문제 중 ${scoreCurrent}개를 맞추셨습니다.`
+
+            if(quizreset.innerText == '정답 확인하기'){
+                quizreset.innerText = '다시하기';
+            } else if (quizreset.innerText == '다시하기') {
+                location.reload();
+            }
+
         }
-        console.log(document.querySelector(".quiz__confirm").innerText);
 
         document.querySelector(".quiz__confirm").addEventListener("click", answerQuiz)
 
