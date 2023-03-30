@@ -106,8 +106,51 @@
                                 </ul>
                             </div>
                             <div class="view-cont">
-                                <div>
-<pre><code class="language-css">
+                            <div><pre><code class="language-css">
+                              </code></pre></div>
+                            <div><pre><code class="language-css">
+@import url(css/NexonLv1Gothic.css);
+@import url(css/min.css);
+@import url(css/custom.css);
+
+/* slider */
+.slider__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.slider__img {
+    position: relative;
+    width: 800px;
+    height: 480px;
+}
+.slider__img .slider {}
+.slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.slider::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 5px 10px 3px;
+}
+.slider:nth-child(1)::before {content: '이미지1';}
+.slider:nth-child(2)::before {content: '이미지2';}
+.slider:nth-child(3)::before {content: '이미지3';}
+.slider:nth-child(4)::before {content: '이미지4';}
+.slider:nth-child(5)::before {content: '이미지5';}
+.slider:nth-child(1){z-index: 5;} 
+.slider:nth-child(2){z-index: 4;}
+.slider:nth-child(3){z-index: 3;}
+.slider:nth-child(4){z-index: 2;}
+.slider:nth-child(5){z-index: 1;}                                
+                            </code></pre></div>
+                            <div><pre><code class="language-css">
 const modal = function(){       
     document.querySelector(".source-btn").addEventListener("click", () => {
         document.querySelector("#modal").classList.add("show");
@@ -138,15 +181,8 @@ const tabMenu = function(){
     })
 }
 tabMenu();
-                              </code></pre></div>
-                            <div><pre><code class="language-css">
-                                
                             </code></pre></div>
                             <div><pre><code class="language-css">
-
-                            </code></pre></div>
-                            <div><pre><code class="language-css">
-
                             </code></pre></div>
                             </div>
                         </div>

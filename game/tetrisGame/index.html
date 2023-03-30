@@ -1,231 +1,238 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris Game</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tetris Game</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      body {
+        height: 100vh;
+        overflow: hidden;
+        background: #f5f5f5;
+      }
 
-    body {
-      height: 100vh;
-      overflow: hidden;
-      background: #f5f5f5;
-    }
+      li {
+        list-style: none;
+      }
 
-    li {
-      list-style: none;
-    }
+      .start__btn {
+        display: none;
+      }
 
-    .start__btn {
-      display: none;
-    }
+      .info__box {
+        display: none;
+      }
 
-    .info__box {
-      display: none;
-    }
+      .result__box {
+        display: none;
+      }
 
-    .result__box {
-      display: none;
-    }
+      .tetris__inner {
+        width: 250px;
+        margin: 25px auto;
+      }
 
-    .tetris__inner {
-      width: 250px;
-      margin: 100px auto;
-    }
+      .tetris__inner > ul {
+        border: 3px solid #000;
+        border-radius: 10px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
 
-    .tetris__inner>ul {
-      border: 3px solid #000;
-      border-radius: 10px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
+      .tetris__inner > ul > li {
+        width: 100%;
+        height: 25px;
+      }
 
-    .tetris__inner>ul>li {
-      width: 100%;
-      height: 25px;
-    }
+      .tetris__inner > ul > li > ul {
+        display: flex;
+      }
 
-    .tetris__inner>ul>li>ul {
-      display: flex;
-    }
+      .tetris__inner > ul > li > ul > li {
+        width: 25px;
+        height: 25px;
+        border: 1px solid #222;
+        box-sizing: border-box;
+      }
 
-    .tetris__inner>ul>li>ul>li {
-      width: 25px;
-      height: 25px;
-      border: 1px solid #222;
-      box-sizing: border-box;
-    }
+      .tmino {
+        border: #a042a2 5px outset !important;
+        background-color: #952d98;
+      }
 
-    .tmino {
-      border: #a042a2 5px outset !important;
-      background-color: #952d98;
-    }
+      .imino {
+        border: #1aa9de 5px outset !important;
+        background-color: #009fda;
+      }
 
-    .imino {
-      border: #1aa9de 5px outset !important;
-      background-color: #009fda;
-    }
+      .omino {
+        border: #fed01a 5px outset !important;
+        background-color: #fecb00;
+      }
 
-    .omino {
-      border: #fed01a 5px outset !important;
-      background-color: #fecb00;
-    }
+      .zmino {
+        border: #ef3e4d 5px outset !important;
+        background-color: #ed2939;
+      }
 
-    .zmino {
-      border: #ef3e4d 5px outset !important;
-      background-color: #ed2939;
-    }
+      .smino {
+        border: #78c53e 5px outset !important;
+        background-color: #69be28;
+      }
 
-    .smino {
-      border: #78c53e 5px outset !important;
-      background-color: #69be28;
-    }
+      .jmino {
+        border: #1a74c4 5px outset !important;
+        background-color: #0065bd;
+      }
 
-    .jmino {
-      border: #1a74c4 5px outset !important;
-      background-color: #0065bd;
-    }
-
-    .lmino {
-      border: #ff861a 5px outset !important;
-      background-color: #ff7900;
-    }
-    #bg {
-      position:absolute;
-      top:0; bottom:0; left:0; right: 0;
-      background: url(http://starmen.net/mother2/maps/onett.png);
-      image-rendering: pixelated;
-      background-size: 400%;
-      animation: 90s background-scroll linear alternate infinite;
-      color: transparent;
-      opacity:0.3;
-      z-index: -1;
-    }
+      .lmino {
+        border: #ff861a 5px outset !important;
+        background-color: #ff7900;
+      }
+      #bg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: url(http://starmen.net/mother2/maps/onett.png);
+        image-rendering: pixelated;
+        background-size: 400%;
+        animation: 90s background-scroll linear alternate infinite;
+        color: transparent;
+        opacity: 0.3;
+        z-index: -1;
+      }
 
       @keyframes background-scroll {
-      0% { background-position: 55% 70%;}
-      100% { background-position: 55% 0%;}
-    }
-    .tetris__wrap {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
-    .game-text {
-      display: none;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      left: 0;
-      top: 0;
-      color: #fff;
-      font-size: 90px;
-      font-family: 'SF_IceLemon';
-    }
-    .game-text > button {
-      margin: 2rem;
-      padding: 0.5rem 1rem;
-      color: #fff;
-      background: #0028f0;
-      border: none;
-      cursor: pointer;
-      border-radius: 6px;
-    }
-    .game-text > button:hover {
-      background: #0099ff;
-    }
-    .s {
-      width: 12vw;
-      text-align: center;
-      font-size: 50px;
-      color: #222;
-      font-family: 'SF_IceLemon';
-    }
-    .scoreText {
-      width: 24vw;
-      text-align: center;
-      font-size: 60px;
-      color: #222;
-      font-family: 'SF_IceLemon';
-    }
-  </style>
-</head>
+        0% {
+          background-position: 55% 70%;
+        }
+        100% {
+          background-position: 55% 0%;
+        }
+      }
+      .tetris__wrap {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      .game-text {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        left: 0;
+        top: 0;
+        color: #fff;
+        font-size: 90px;
+        font-family: "SF_IceLemon";
+      }
+      .game-text > button {
+        margin: 2rem;
+        padding: 0.5rem 1rem;
+        color: #fff;
+        background: #0028f0;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+      .game-text > button:hover {
+        background: #0099ff;
+      }
+      .game-text > span {
+        text-align: center;
+      }
+      .s {
+        width: 12vw;
+        text-align: center;
+        font-size: 50px;
+        color: #222;
+        font-family: "SF_IceLemon";
+      }
+      .scoreText {
+        text-align: center;
+        font-size: 60px;
+        color: #222;
+        font-family: "SF_IceLemon";
+      }
+    </style>
+  </head>
 
-<body>
-  <div id="bg"></div>
-  <!-- start button -->
-  <div class="start__btn active">
-    <button>Start</button>
-  </div>
-  <!-- 규칙 박스 -->
-  <div class="info__box">
-    <div class="title">테트리스 게임을 하기 위한 규칙</div>
-    <div class="list">
-      <ol>
-        <li>당신에게는 기회가 <em>5번</em> 있습니다.</li>
-        <li>기회 5번을 소진하면, 시도가 1번 발생합니다.</li>
-        <li>시도를 3번 하면 게임이 종료됩니다.</li>
-        <li>적은 남은 기회로 완성하면 점수가 높습니다.</li>
-        <li>1등은 기록에 남습니다.</li>
-      </ol>
+  <body>
+    <div id="bg"></div>
+    <!-- start button -->
+    <div class="start__btn active">
+      <button>Start</button>
     </div>
-    <div class="buttons">
-      <button class="stop">그만하기</button>
-      <button class="start">도전하기</button>
+    <!-- 규칙 박스 -->
+    <div class="info__box">
+      <div class="title">테트리스 게임을 하기 위한 규칙</div>
+      <div class="list">
+        <ol>
+          <li>당신에게는 기회가 <em>5번</em> 있습니다.</li>
+          <li>기회 5번을 소진하면, 시도가 1번 발생합니다.</li>
+          <li>시도를 3번 하면 게임이 종료됩니다.</li>
+          <li>적은 남은 기회로 완성하면 점수가 높습니다.</li>
+          <li>1등은 기록에 남습니다.</li>
+        </ol>
+      </div>
+      <div class="buttons">
+        <button class="stop">그만하기</button>
+        <button class="start">도전하기</button>
+      </div>
     </div>
-  </div>
-  <!-- 결과 박스 -->
-  <div class="result__box">
-    <div class="title">게임을 성공하였습니다.</div>
-    <div class="score">
-      <!-- 당신의 점수는 XX입니다. -->
+    <!-- 결과 박스 -->
+    <div class="result__box">
+      <div class="title">게임을 성공하였습니다.</div>
+      <div class="score">
+        <!-- 당신의 점수는 XX입니다. -->
+      </div>
+      <div class="buttons">
+        <button class="stop">그만하기</button>
+        <button class="restart">다시 도전하기</button>
+      </div>
     </div>
-    <div class="buttons">
-      <button class="stop">그만하기</button>
-      <button class="restart">다시 도전하기</button>
+    <!-- 테트리스 박스 -->
+    <div class="tetris__wrap">
+      <div class="game-text">
+        <span>GAME OVER</span>
+        <button>RESTART</button>
+      </div>
+      <div class="scoreText">score</div>
+      <div class="s">0</div>
+      <div class="tetris__inner">
+        <ul></ul>
+        <!-- script -->
+      </div>
     </div>
-  </div>
-  <!-- 테트리스 박스 -->
-  <div class="tetris__wrap">
-    <div class="game-text">
-      <span>GAME OVER</span>
-      <button>RESTART</button>
-    </div>
-    <div class="scoreText">score</div>
-    <div class="s">0</div>
-    <div class="tetris__inner">
-      <ul></ul>
-      <!-- script -->
-    </div>
-    
-  </div>
-  <script>
-    const tetrisinner = document.querySelector(".tetris__inner > ul");
-    const tetrisS = document.querySelector(".s");
-    const gameText =  document.querySelector(".game-text");
-    const restartButton = document.querySelector(".game-text > button");
-    const game_rows = 20;
-    const game_cols = 10;
+    <script>
+      const tetrisinner = document.querySelector(".tetris__inner > ul");
+      const tetrisS = document.querySelector(".s");
+      const gameText = document.querySelector(".game-text");
+      const restartButton = document.querySelector(".game-text > button");
+      const game_rows = 20;
+      const game_cols = 10;
 
-    let gameScore = 0;
-    let gameDuration = 500;
-    let gameInterval;
-    let gameMovingItem;
+      let gameScore = 0;
+      let gameDuration = 500;
+      let gameInterval;
+      let gameMovingItem;
 
-    const blocks = {
-      tmino: [
+      const blocks = {
+        tmino: [
           [[2, 1],[0, 1],[1, 2],[1, 1],],
           [[1, 2],[0, 1],[1, 0],[1, 1],],
           [[1, 0],[0, 1],[2, 1],[1, 1],],
@@ -269,185 +276,187 @@
         ],
       };
 
-        const movingItem = {
-          type: "tmino",
-          direction: 0,
-          top: 0,
-          left: 3,
-        };
-        init();
-        
-        //시작하기
-        function init() {
-          gameMovingItem = {...movingItem};
-          // console.log(gameMovingItem)
-          for (let i = 0; i <= game_rows; i++) {
+      const movingItem = {
+        type: "tmino",
+        direction: 0,
+        top: 0,
+        left: 3,
+      };
+
+      //시작하기
+      function init() {
+        gameMovingItem = { ...movingItem };
+        // console.log(gameMovingItem)
+        for (let i = 0; i <= game_rows; i++) {
+          tetrisLine();
+        }
+        // renderBlocks();
+        generateNewBlock();
+      }
+      //블록 만들기
+      function tetrisLine() {
+        const li = document.createElement("li");
+        const ul = document.createElement("ul");
+
+        for (let j = 0; j < game_cols; j++) {
+          const block = document.createElement("li");
+          ul.prepend(block);
+        }
+        li.prepend(ul);
+        tetrisinner.prepend(li);
+      }
+      //블록 출력하기
+      function renderBlocks(moveType = " ") {
+        const { type, direction, top, left } = gameMovingItem;
+        const movingBlocks = document.querySelectorAll(".moving");
+        movingBlocks.forEach((moving) => {
+          moving.classList.remove(type, "moving");
+        });
+
+        // console.log(gameMovingItem.type)
+        // console.log(gameMovingItem.direction)
+        // console.log(gameMovingItem.top)
+        // console.log(gameMovingItem.left)
+
+        blocks[type][direction].some((block) => {
+          const x = block[0] + left;
+          const y = block[1] + top;
+          const target = tetrisinner.childNodes[y]
+            ? tetrisinner.childNodes[y].childNodes[0].childNodes[x]
+            : null;
+          const isAvailable = checkEmpty(target);
+
+          if (isAvailable) {
+            target.classList.add(type, "moving");
+          } else {
+            gameMovingItem = { ...movingItem };
+            if (moveType === "retry") {
+              clearInterval(gameInterval);
+              showGameoverText();
+            }
+
+            setTimeout(() => {
+              renderBlocks("retry");
+              if (moveType === "top") {
+                seizeBlock();
+              }
+            }, 0);
+            return true;
+          }
+        });
+        movingItem.left = left;
+        movingItem.top = top;
+        movingItem.direction = direction;
+      }
+
+      function seizeBlock() {
+        const movingBlocks = document.querySelectorAll(".moving");
+        movingBlocks.forEach((moving) => {
+          moving.classList.remove("moving");
+          moving.classList.add("seized");
+        });
+        checkMatch();
+      }
+      //블록 한 줄 제거
+      function checkMatch() {
+        const childNodes = tetrisinner.childNodes;
+        childNodes.forEach((child) => {
+          let matched = true;
+          child.children[0].childNodes.forEach((li) => {
+            if (!li.classList.contains("seized")) {
+              matched = false;
+            }
+          });
+          if (matched) {
+            child.remove();
             tetrisLine();
+            gameScore++;
+            tetrisS.innerText = gameScore;
           }
-          // renderBlocks();
-          generateNewBlock();
+        });
+        generateNewBlock();
+      }
+      //새로운 블럭 생성
+      function generateNewBlock() {
+        clearInterval(gameInterval);
+        gameInterval = setInterval(() => {
+          moveblock("top", 1);
+        }, gameDuration);
+
+        const blockArray = Object.entries(blocks);
+        const radomIndex = Math.floor(Math.random() * blockArray.length);
+        movingItem.type = blockArray[radomIndex][0];
+        movingItem.top = 0;
+        movingItem.left = 3;
+        movingItem.direction = 0;
+        gameMovingItem = { ...movingItem };
+        renderBlocks();
+      }
+
+      function checkEmpty(target) {
+        if (!target || target.classList.contains("seized")) {
+          return false;
         }
-        //블록 만들기
-        function tetrisLine() {
-          const li = document.createElement("li");
-          const ul = document.createElement("ul");
-
-          for (let j = 0; j < game_cols; j++) {
-            const block = document.createElement("li");
-            ul.prepend(block);
-          }
-          li.prepend(ul);
-          tetrisinner.prepend(li);
-        }
-        //블록 출력하기
-        function renderBlocks(moveType = " ") {
-          const { type, direction, top, left } = gameMovingItem;
-          const movingBlocks = document.querySelectorAll(".moving");
-          movingBlocks.forEach((moving) => {
-            moving.classList.remove(type, "moving");
-          });
-
-          // console.log(gameMovingItem.type)
-          // console.log(gameMovingItem.direction)
-          // console.log(gameMovingItem.top)
-          // console.log(gameMovingItem.left)
-
-          blocks[type][direction].some((block) => {
-            const x = block[0] + left;
-            const y = block[1] + top;
-            const target = tetrisinner.childNodes[y] ? tetrisinner.childNodes[y].childNodes[0].childNodes[x] : null;
-            const isAvailable = checkEmpty(target);
-
-            if (isAvailable) {
-              target.classList.add(type, "moving");
-            } else {
-              gameMovingItem = {...movingItem};
-              if (moveType === "retry") {
-                clearInterval(gameInterval);
-                showGameoverText();
-              }
-
-              setTimeout(() => {
-                renderBlocks("retry");
-                if (moveType === "top") {
-                  seizeBlock();
-                }
-              }, 0);
-              return true;
-            }
-          });
-          movingItem.left = left;
-          movingItem.top = top;
-          movingItem.direction = direction;
-        }
-
-        function seizeBlock() {
-          const movingBlocks = document.querySelectorAll(".moving");
-          movingBlocks.forEach((moving) => {
-            moving.classList.remove("moving");
-            moving.classList.add("seized");
-          });
-          checkMatch();
-        }
-        //블록 한 줄 제거
-        function checkMatch() {
-          const childNodes = tetrisinner.childNodes;
-          childNodes.forEach((child) => {
-            let matched = true;
-            child.children[0].childNodes.forEach((li) => {
-              if (!li.classList.contains("seized")) {
-                matched = false;
-              }
-            });
-            if (matched) {
-              child.remove();
-              tetrisLine();
-              gameScore++;
-              tetrisS.innerText = gameScore;
-            }
-          });
-          generateNewBlock();
-        }
-        //새로운 블럭 생성
-        function generateNewBlock() {
-          clearInterval(gameInterval);
-          gameInterval = setInterval(() => {
+        return true;
+      }
+      //블록 움직이기
+      function moveblock(moveType, amount) {
+        gameMovingItem[moveType] += amount;
+        renderBlocks(moveType);
+      }
+      //모양 변경
+      function changeDirectioin() {
+        const direction = gameMovingItem.direction;
+        direction === 3
+          ? (gameMovingItem.direction = 0)
+          : (gameMovingItem.direction += 1);
+        renderBlocks();
+      }
+      //스페이스 바
+      function dropBlock() {
+        clearInterval(gameInterval);
+        gameInterval = setInterval(() => {
+          moveblock("top", 1);
+        }, 10);
+      }
+      //게임 아웃 창
+      function showGameoverText() {
+        gameText.style.display = "flex";
+      }
+      init();
+      //게임 오버
+      // function gameover() {
+      //   console.log("gameover");
+      //   // alert("GAME OVER")
+      // }
+      //키보드
+      document.addEventListener("keydown", (e) => {
+        console.log(e);
+        switch (e.keyCode) {
+          case 39:
+            moveblock("left", 1);
+            break;
+          case 37:
+            moveblock("left", -1);
+            break;
+          case 40:
             moveblock("top", 1);
-          }, gameDuration);
-
-          const blockArray = Object.entries(blocks);
-          const radomIndex = Math.floor(Math.random() * blockArray.length);
-          movingItem.type = blockArray[radomIndex][0];
-          movingItem.top = 0;
-          movingItem.left = 3;
-          movingItem.direction = 0;
-          gameMovingItem = {...movingItem};
-          renderBlocks();
+            break;
+          case 38:
+            changeDirectioin();
+            break;
+          case 32:
+            dropBlock();
+            break;
+          default:
+            break;
         }
-
-        function checkEmpty(target) {
-          if (!target || target.classList.contains("seized")) {
-            return false;
-          }
-          return true;
-        }
-        //블록 움직이기
-        function moveblock(moveType, amount) {
-          gameMovingItem[moveType] += amount;
-          renderBlocks(moveType);
-        }
-        //모양 변경
-        function changeDirectioin() {
-          const direction = gameMovingItem.direction;
-          direction === 3 ? (gameMovingItem.direction = 0) : (gameMovingItem.direction += 1);
-          renderBlocks();
-        }
-        //스페이스 바
-        function dropBlock() {
-          clearInterval(gameInterval);
-          gameInterval = setInterval(() => {
-            moveblock("top", 1);
-          }, 10);
-        }
-        //게임 아웃 창
-        function showGameoverText(){
-          gameText.style.display = "flex"
-        }
+      });
+      restartButton.addEventListener("click", () => {
+        tetrisinner.innerHTML = "";
+        gameText.style.display = "none";
         init();
-        //게임 오버
-        // function gameover() {
-        //   console.log("gameover");
-        //   // alert("GAME OVER")
-        // }
-        //키보드
-        document.addEventListener("keydown", (e) => {
-          console.log(e);
-          switch (e.keyCode) {
-            case 39:
-              moveblock("left", 1);
-              break;
-            case 37:
-              moveblock("left", -1);
-              break;
-            case 40:
-              moveblock("top", 1);
-              break;
-            case 38:
-              changeDirectioin();
-              break;
-            case 32:
-              dropBlock();
-              break;
-            default:
-              break;
-          }
-        });
-        restartButton.addEventListener("click",()=>{
-          tetrisinner.innerHTML = "";
-            gameText.style.display = "none";
-            init()
-        });
-  </script>
-</body>
-
+      });
+    </script>
+  </body>
 </html>
