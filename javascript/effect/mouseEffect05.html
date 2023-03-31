@@ -181,7 +181,7 @@
         const circle = document.querySelector(".cursor").getBoundingClientRect()
         
         function mousemove(e){
-
+            
             //마우스 좌표 값
             let mousepageX = e.pageX
             let mousepageY = e.pageY
@@ -213,7 +213,7 @@
             softpageY += (anglepageY - softpageY) * 0.4
 
             //커서
-            gsap.to(".cursor", {duration: .3, left: mousepageX - circlewidth/2, top: mousepageY - circleheight/2}) 
+            gsap.to(".cursor", {duration: .3, left: mousepageX - circlewidth / 4, top: mousepageY - circleheight / 4}) 
 
             //출력
             document.querySelector(".mousepageX").textContent = mousepageX
@@ -222,7 +222,6 @@
             document.querySelector(".centerpageY").textContent = centerpageY
             document.querySelector(".maxPageX").textContent = maxPageX
             document.querySelector(".maxPageY").textContent = maxPageY
-            
         }
         
         document.addEventListener("mousemove", mousemove)
