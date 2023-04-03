@@ -415,7 +415,6 @@
                 hasScroll()
             }
         }, 500)
-        console.log(nowScroll)
        }
 
        function hasScroll() {
@@ -433,11 +432,11 @@
         // console.log("lastScroll : " + lastScroll)
         // console.log("scrollTop : " + scrollTop)
         
-        let nav = document.querySelectorAll("#parallax__nav li")
+        let nav = document.querySelectorAll("#parallax__nav li");
 
         nav.forEach((el, index) => {
-            if (scrollTop >= document.getElementById("section"+(index+1)).offsetTop-2) {
-                nav.forEach(li => {
+            if (scrollTop >= document.getElementById(`section0${index+1}`).offsetTop - 2) {
+             nav.forEach(li => {
                     li.classList.remove("active")
                 })
                 nav[index].classList.add("active")
